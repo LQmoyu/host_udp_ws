@@ -1,0 +1,2 @@
+source;share/dog_udp_comm/environment/ament_prefix_path.sh
+source;share/dog_udp_comm/environment/path.sh

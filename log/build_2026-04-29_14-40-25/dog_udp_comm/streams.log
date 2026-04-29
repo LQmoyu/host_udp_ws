@@ -1,0 +1,46 @@
+[0.018s] Invoking command in '/root/udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/udp_ws/build/dog_udp_comm -- -j6 -l6
+[0.050s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.274s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.286s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[0.332s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.337s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.347s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.364s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.386s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.445s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.447s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.583s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.669s] -- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+[0.670s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.692s] -- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)
+[0.878s] -- Configuring done
+[0.898s] -- Generating done
+[0.907s] -- Build files have been written to: /root/udp_ws/build/dog_udp_comm
+[0.952s] Consolidate compiler generated dependencies of target sender_node
+[0.971s] [ 50%] Building CXX object CMakeFiles/sender_node.dir/src/sender_node.cpp.o
+[19.332s] [100%] Linking CXX executable sender_node
+[20.100s] [100%] Built target sender_node
+[20.114s] Invoked command in '/root/udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/udp_ws/build/dog_udp_comm -- -j6 -l6
+[20.129s] Invoking command in '/root/udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/udp_ws/build/dog_udp_comm
+[20.139s] -- Install configuration: ""
+[20.140s] -- Execute custom install script
+[20.140s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/lib/dog_udp_comm/sender_node
+[20.141s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/lib/dog_udp_comm/keyboard_teleop.py
+[20.141s] -- Symlinking: /root/udp_ws/install/dog_udp_comm/lib/dog_udp_comm/host_mpc_controller.py
+[20.153s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/sender_launch.py
+[20.153s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm
+[20.154s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm
+[20.154s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.sh
+[20.154s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.dsv
+[20.155s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.sh
+[20.155s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.dsv
+[20.156s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.bash
+[20.157s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.sh
+[20.157s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.zsh
+[20.158s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.dsv
+[20.159s] -- Symlinking: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.dsv
+[20.171s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/ament_index/resource_index/packages/dog_udp_comm
+[20.171s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig.cmake
+[20.172s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig-version.cmake
+[20.172s] -- Up-to-date symlink: /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.xml
+[30.007s] Invoked command in '/root/udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/udp_ws/build/dog_udp_comm

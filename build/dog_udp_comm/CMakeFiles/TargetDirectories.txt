@@ -1,0 +1,10 @@
+/root/udp_ws/build/dog_udp_comm/CMakeFiles/uninstall.dir
+/root/udp_ws/build/dog_udp_comm/CMakeFiles/dog_udp_comm_uninstall.dir
+/root/udp_ws/build/dog_udp_comm/CMakeFiles/sender_node.dir
+/root/udp_ws/build/dog_udp_comm/CMakeFiles/test.dir
+/root/udp_ws/build/dog_udp_comm/CMakeFiles/edit_cache.dir
+/root/udp_ws/build/dog_udp_comm/CMakeFiles/rebuild_cache.dir
+/root/udp_ws/build/dog_udp_comm/CMakeFiles/list_install_components.dir
+/root/udp_ws/build/dog_udp_comm/CMakeFiles/install.dir
+/root/udp_ws/build/dog_udp_comm/CMakeFiles/install/local.dir
+/root/udp_ws/build/dog_udp_comm/CMakeFiles/install/strip.dir

@@ -1,0 +1,6 @@
+Invoking command in '/root/udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake /root/udp_ws/src/dog_udp_comm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/udp_ws/install/dog_udp_comm
+Invoked command in '/root/udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake /root/udp_ws/src/dog_udp_comm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/root/udp_ws/install/dog_udp_comm
+Invoking command in '/root/udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /root/udp_ws/build/dog_udp_comm -- -j6 -l6
+Invoked command in '/root/udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /root/udp_ws/build/dog_udp_comm -- -j6 -l6
+Invoking command in '/root/udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --install /root/udp_ws/build/dog_udp_comm
+Invoked command in '/root/udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --install /root/udp_ws/build/dog_udp_comm
