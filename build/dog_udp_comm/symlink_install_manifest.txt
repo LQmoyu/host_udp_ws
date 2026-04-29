@@ -1,6 +1,7 @@
 /root/udp_ws/install/dog_udp_comm/lib/dog_udp_comm/sender_node
 /root/udp_ws/install/dog_udp_comm/lib/dog_udp_comm/keyboard_teleop.py
 /root/udp_ws/install/dog_udp_comm/lib/dog_udp_comm/host_mpc_controller.py
+/root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/person_follow_udp_launch.py
 /root/udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/sender_launch.py
 /root/udp_ws/install/dog_udp_comm/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm
 /root/udp_ws/install/dog_udp_comm/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm
