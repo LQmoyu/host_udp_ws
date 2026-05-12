@@ -1,0 +1,6 @@
+[35m[1mConsolidate compiler generated dependencies of target cspc_lidar[0m
+[ 11%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/node_lidar.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/serial_port.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/timer.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/lidar_data_processing.cpp.o[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/src/node_lidar_ros.cpp.o[0m

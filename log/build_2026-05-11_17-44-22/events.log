@@ -1,0 +1,685 @@
+[0.000000] (-) TimerEvent: {}
+[0.000252] (-) JobUnselected: {'identifier': 'dog_udp_comm'}
+[0.000548] (cspc_lidar) JobQueued: {'identifier': 'cspc_lidar', 'dependencies': OrderedDict()}
+[0.001028] (cspc_lidar) JobStarted: {'identifier': 'cspc_lidar'}
+[0.015069] (cspc_lidar) JobProgress: {'identifier': 'cspc_lidar', 'progress': 'cmake'}
+[0.018146] (cspc_lidar) JobProgress: {'identifier': 'cspc_lidar', 'progress': 'build'}
+[0.019868] (cspc_lidar) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/udp_ws/build/cspc_lidar', '--', '-j6', '-l6'], 'cwd': '/root/udp_ws/build/cspc_lidar', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/root'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CODEX_CI', '1'), ('LANGUAGE', 'zh_CN:zh'), ('USER', 'root'), ('SSH_CLIENT', '192.168.222.48 61529 22'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/root/.vscode-server/cli/servers/Stable-8b640eef5a6c6089c029249d48efa5c99adf7d51/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/tcf.json","messagesFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/8b640eef5a6c6089c029249d48efa5c99adf7d51/nls.messages.json","corruptMarkerFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b912e1cc94c8380c6bb426bdce2c540f.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/tcf.json","_cacheRoot":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn","_resolvedLanguagePackCoreLocation":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/8b640eef5a6c6089c029249d48efa5c99adf7d51","_corruptedFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/corrupted.info"}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('HOBOT_ROOTFS_DIR', '/usr/hobot'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/lib/:/usr/lib/aarch64-linux-gnu:/lib/aarch64-linux-gnu:/app/lib:/app/pub/lib:/middleware/lib:/middleware/pub/lib:/usr/lib/gstreamer'), ('BROWSER', '/root/.vscode-server/cli/servers/Stable-8b640eef5a6c6089c029249d48efa5c99adf7d51/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/root'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/0/vscode-ipc-4796d3bc-1a69-4e7e-b2a2-bb54c3a09aff.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/0/bus'), ('COLORTERM', ''), ('DEBUGINFOD_URLS', ''), ('COLCON_PREFIX_PATH', '/root/ldlidar_ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'root'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('OPENSSL_CONF', '/etc/ssl/openssl.cnf'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '12'), ('VSCODE_CLI_REQUIRE_TOKEN', '02120ee3-486d-4966-abdf-47b29e3c2dd9'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/.codex/tmp/arg0/codex-arg0JVmzfh:/root/.vscode-server/cli/servers/Stable-8b640eef5a6c6089c029249d48efa5c99adf7d51/server/bin/remote-cli:/opt/ros/humble/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/hobot/bin:/app/bin:/middleware/bin:/var/busybox:/usr/local/sbin:/usr/local/bin:/usr/games:/usr/local/games:/snap/bin:/root/.vscode-server/extensions/openai.chatgpt-26.506.31421-linux-arm64/bin/linux-aarch64'), ('VSCODE_AGENT_FOLDER', '/root/.vscode-server'), ('XDG_RUNTIME_DIR', '/run/user/0'), ('CODEX_SANDBOX_NETWORK_DISABLED', '1'), ('LANG', 'C.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/root/ldlidar_ros2_ws/install/ldlidar_stl_ros2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('GST_PLUGIN_PATH', '/usr/hobot/lib/gst-plugins'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019e1667-728f-7a31-8782-8d93354d3c34'), ('GIT_PAGER', 'cat'), ('PWD', '/root/udp_ws/build/cspc_lidar'), ('LC_ALL', 'C.UTF-8'), ('SSH_CONNECTION', '192.168.222.48 61529 192.168.222.200 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('TZ', 'CST-08:00'), ('COLCON', '1'), ('LD_HWCAP_MASK', '0x00000000'), ('CMAKE_PREFIX_PATH', '/root/ldlidar_ros2_ws/install/ldlidar_stl_ros2:/opt/ros/humble')]), 'shell': False}
+[0.060378] (cspc_lidar) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099544] (-) TimerEvent: {}
+[0.199804] (-) TimerEvent: {}
+[0.295483] (cspc_lidar) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.299923] (-) TimerEvent: {}
+[0.341557] (cspc_lidar) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.346066] (cspc_lidar) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.356502] (cspc_lidar) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.373221] (cspc_lidar) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.394746] (cspc_lidar) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.400036] (-) TimerEvent: {}
+[0.453106] (cspc_lidar) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.455667] (cspc_lidar) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.500154] (-) TimerEvent: {}
+[0.594462] (cspc_lidar) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.600272] (-) TimerEvent: {}
+[0.686355] (cspc_lidar) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.700385] (-) TimerEvent: {}
+[0.739291] (cspc_lidar) StdoutLine: {'line': b'-- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[0.775991] (cspc_lidar) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[0.800505] (-) TimerEvent: {}
+[0.840559] (cspc_lidar) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[0.885889] (cspc_lidar) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/aarch64-linux-gnu/libflann_cpp.so)\n'}
+[0.900620] (-) TimerEvent: {}
+[1.000887] (-) TimerEvent: {}
+[1.101158] (-) TimerEvent: {}
+[1.201433] (-) TimerEvent: {}
+[1.301694] (-) TimerEvent: {}
+[1.389635] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[1.398872] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[1.401808] (-) TimerEvent: {}
+[1.502058] (-) TimerEvent: {}
+[1.602317] (-) TimerEvent: {}
+[1.673117] (cspc_lidar) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[1.682499] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[1.691910] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[1.702435] (-) TimerEvent: {}
+[1.802697] (-) TimerEvent: {}
+[1.902954] (-) TimerEvent: {}
+[1.951013] (cspc_lidar) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[2.003079] (-) TimerEvent: {}
+[2.103360] (-) TimerEvent: {}
+[2.203615] (-) TimerEvent: {}
+[2.219476] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[2.303739] (-) TimerEvent: {}
+[2.404009] (-) TimerEvent: {}
+[2.497854] (cspc_lidar) StderrLine: {'line': b'CMake Warning (dev) at CMakeLists.txt:19 (find_package):\n'}
+[2.498291] (cspc_lidar) StderrLine: {'line': b'  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.\n'}
+[2.498529] (cspc_lidar) StderrLine: {'line': b'  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy\n'}
+[2.498725] (cspc_lidar) StderrLine: {'line': b'  command to set the policy and suppress this warning.\n'}
+[2.498897] (cspc_lidar) StderrLine: {'line': b'\n'}
+[2.499061] (cspc_lidar) StderrLine: {'line': b'  CMake variable PCL_ROOT is set to:\n'}
+[2.499214] (cspc_lidar) StderrLine: {'line': b'\n'}
+[2.499408] (cspc_lidar) StderrLine: {'line': b'    /usr\n'}
+[2.499569] (cspc_lidar) StderrLine: {'line': b'\n'}
+[2.499708] (cspc_lidar) StderrLine: {'line': b'  For compatibility, CMake is ignoring the variable.\n'}
+[2.499851] (cspc_lidar) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[2.499996] (cspc_lidar) StderrLine: {'line': b'\n'}
+[2.504130] (-) TimerEvent: {}
+[2.523381] (cspc_lidar) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.604241] (-) TimerEvent: {}
+[2.704489] (-) TimerEvent: {}
+[2.767082] (cspc_lidar) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[2.770292] (cspc_lidar) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[2.770607] (cspc_lidar) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[2.804615] (-) TimerEvent: {}
+[2.904875] (-) TimerEvent: {}
+[2.974267] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[2.978269] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.978874] (cspc_lidar) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar;/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk\n'}
+[2.979113] (cspc_lidar) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.982455] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[2.982752] (cspc_lidar) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[2.983773] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[2.985361] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.986463] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[2.989880] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.990170] (cspc_lidar) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.991050] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.992843] (cspc_lidar) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.004989] (-) TimerEvent: {}
+[3.105246] (-) TimerEvent: {}
+[3.105672] (cspc_lidar) StdoutLine: {'line': b'-- Generating done\n'}
+[3.130044] (cspc_lidar) StdoutLine: {'line': b'-- Build files have been written to: /root/udp_ws/build/cspc_lidar\n'}
+[3.192788] (cspc_lidar) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target cspc_lidar\n'}
+[3.205381] (-) TimerEvent: {}
+[3.209325] (cspc_lidar) StdoutLine: {'line': b'[ 11%] Building CXX object CMakeFiles/cspc_lidar.dir/sdk/mtime.cpp.o\n'}
+[3.209997] (cspc_lidar) StdoutLine: {'line': b'[ 22%] Building CXX object CMakeFiles/cspc_lidar.dir/sdk/node_lidar.cpp.o\n'}
+[3.211157] (cspc_lidar) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/cspc_lidar.dir/sdk/serial_port.cpp.o\n'}
+[3.305507] (-) TimerEvent: {}
+[3.405789] (-) TimerEvent: {}
+[3.422768] (cspc_lidar) StdoutLine: {'line': b'[ 44%] Building CXX object CMakeFiles/cspc_lidar.dir/sdk/point_cloud_optimize.cpp.o\n'}
+[3.505915] (-) TimerEvent: {}
+[3.606195] (-) TimerEvent: {}
+[3.706477] (-) TimerEvent: {}
+[3.806755] (-) TimerEvent: {}
+[3.907049] (-) TimerEvent: {}
+[3.986091] (cspc_lidar) StderrLine: {'line': b'In file included from /root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:12:\n'}
+[3.986531] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.h: In constructor \xe2\x80\x98Serial_Port::Serial_Port(const string&, uint32_t, Timeout, bytesize_t, parity_t, stopbits_t, flowcontrol_t)\xe2\x80\x99:\n'}
+[3.986814] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.h:102:14: warning: \xe2\x80\x98Serial_Port::bytesize_\xe2\x80\x99 will be initialized after [-Wreorder]\n'}
+[3.987041] (cspc_lidar) StderrLine: {'line': b'  102 |   bytesize_t bytesize_;       // Size of the bytes\n'}
+[3.987235] (cspc_lidar) StderrLine: {'line': b'      |              ^~~~~~~~~\n'}
+[3.987769] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.h:101:12: warning:   \xe2\x80\x98parity_t Serial_Port::parity_\xe2\x80\x99 [-Wreorder]\n'}
+[3.988006] (cspc_lidar) StderrLine: {'line': b'  101 |   parity_t parity_;           // Parity\n'}
+[3.988186] (cspc_lidar) StderrLine: {'line': b'      |            ^~~~~~~\n'}
+[3.988335] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:31:1: warning:   when initialized here [-Wreorder]\n'}
+[3.988472] (cspc_lidar) StderrLine: {'line': b'   31 | Serial_Port::Serial_Port(const string &port, uint32_t baudrate, Timeout timeout,\n'}
+[3.988603] (cspc_lidar) StderrLine: {'line': b'      | ^~~~~~~~~~~\n'}
+[3.995499] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp: In member function \xe2\x80\x98bool Serial_Port::setBaudrate(long unsigned int)\xe2\x80\x99:\n'}
+[3.995884] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:578:11: warning: unused variable \xe2\x80\x98new_baud\xe2\x80\x99 [-Wunused-variable]\n'}
+[3.996094] (cspc_lidar) StderrLine: {'line': b'  578 |   speed_t new_baud = static_cast<speed_t>(baudrate);\n'}
+[3.996275] (cspc_lidar) StderrLine: {'line': b'      |           ^~~~~~~~\n'}
+[4.007175] (-) TimerEvent: {}
+[4.082324] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp: In member function \xe2\x80\x98bool Serial_Port::setCustomBaudRate(long unsigned int)\xe2\x80\x99:\n'}
+[4.082705] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:571:1: warning: control reaches end of non-void function [-Wreturn-type]\n'}
+[4.082945] (cspc_lidar) StderrLine: {'line': b'  571 | }\n'}
+[4.083142] (cspc_lidar) StderrLine: {'line': b'      | ^\n'}
+[4.107447] (-) TimerEvent: {}
+[4.161858] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp: In function \xe2\x80\x98void flushSerial()\xe2\x80\x99:\n'}
+[4.162257] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:53:24: warning: unused variable \xe2\x80\x98bytes_read\xe2\x80\x99 [-Wunused-variable]\n'}
+[4.162960] (cspc_lidar) StderrLine: {'line': b'   53 |                 size_t bytes_read = node_lidar.serial_port->read_data(buffer, len);\n'}
+[4.163200] (cspc_lidar) StderrLine: {'line': b'      |                        ^~~~~~~~~~\n'}
+[4.164028] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp: In function \xe2\x80\x98bool lidar_state_judgment()\xe2\x80\x99:\n'}
+[4.164265] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:86:45: warning: format \xe2\x80\x98%lld\xe2\x80\x99 expects argument of type \xe2\x80\x98long long int\xe2\x80\x99, but argument 2 has type \xe2\x80\x98uint64_t\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wformat=]\n'}
+[4.164478] (cspc_lidar) StderrLine: {'line': b'   86 |                 printf("\xe7\x8a\xb6\xe6\x80\x81\xe5\xbc\x82\xe5\xb8\xb8\xe9\x87\x8d\xe6\x96\xb0\xe5\x90\xaf\xe5\x8a\xa8 %lld\\n",lidar_status_time);\n'}
+[4.164652] (cspc_lidar) StderrLine: {'line': b'      |                                          ~~~^    ~~~~~~~~~~~~~~~~~\n'}
+[4.164805] (cspc_lidar) StderrLine: {'line': b'      |                                             |    |\n'}
+[4.164987] (cspc_lidar) StderrLine: {'line': b'      |                                             |    uint64_t {aka long unsigned int}\n'}
+[4.165373] (cspc_lidar) StderrLine: {'line': b'      |                                             long long int\n'}
+[4.165573] (cspc_lidar) StderrLine: {'line': b'      |                                          %ld\n'}
+[4.165732] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:62:21: warning: unused variable \xe2\x80\x98status_judge\xe2\x80\x99 [-Wunused-variable]\n'}
+[4.165891] (cspc_lidar) StderrLine: {'line': b'   62 |         static bool status_judge = false;     //\xe6\x95\xb4\xe4\xbd\x93\xe7\x8a\xb6\xe6\x80\x81\xe5\x88\xa4\xe6\x96\xad\n'}
+[4.166031] (cspc_lidar) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[4.166169] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:65:21: warning: variable \xe2\x80\x98lidar_start_flag\xe2\x80\x99 set but not used [-Wunused-but-set-variable]\n'}
+[4.167014] (cspc_lidar) StderrLine: {'line': b'   65 |         static bool lidar_start_flag = false; //\xe4\xb8\x8b\xe5\x8f\x91\xe9\x9b\xb7\xe8\xbe\xbe\xe5\x90\xaf\xe5\x8a\xa8\xe6\x8c\x87\xe4\xbb\xa4\xe5\x90\x8e\xe7\x9a\x84\xe9\x9b\xb7\xe8\xbe\xbe\xe5\x8f\x8d\xe9\xa6\x88\xe6\xa0\x87\xe5\xbf\x97\n'}
+[4.167672] (cspc_lidar) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~~~~~\n'}
+[4.168446] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp: In function \xe2\x80\x98int read_forever()\xe2\x80\x99:\n'}
+[4.169067] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:206:82: warning: format \xe2\x80\x98%d\xe2\x80\x99 expects argument of type \xe2\x80\x98int\xe2\x80\x99, but argument 2 has type \xe2\x80\x98size_t\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wformat=]\n'}
+[4.169381] (cspc_lidar) StderrLine: {'line': b'  206 |                                                         printf("full----- count=%d,time=%lld,frequence=%d\\n",scan_count,current_times(),local_scan[0].scan_frequence);\n'}
+[4.169967] (cspc_lidar) StderrLine: {'line': b'      |                                                                                 ~^                           ~~~~~~~~~~\n'}
+[4.170571] (cspc_lidar) StderrLine: {'line': b'      |                                                                                  |                           |\n'}
+[4.171165] (cspc_lidar) StderrLine: {'line': b'      |                                                                                  int                         size_t {aka long unsigned int}\n'}
+[4.171657] (cspc_lidar) StderrLine: {'line': b'      |                                                                                 %ld\n'}
+[4.172046] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:206:92: warning: format \xe2\x80\x98%lld\xe2\x80\x99 expects argument of type \xe2\x80\x98long long int\xe2\x80\x99, but argument 3 has type \xe2\x80\x98int64_t\xe2\x80\x99 {aka \xe2\x80\x98long int\xe2\x80\x99} [-Wformat=]\n'}
+[4.172408] (cspc_lidar) StderrLine: {'line': b'  206 |                                                         printf("full----- count=%d,time=%lld,frequence=%d\\n",scan_count,current_times(),local_scan[0].scan_frequence);\n'}
+[4.172841] (cspc_lidar) StderrLine: {'line': b'      |                                                                                         ~~~^                            ~~~~~~~~~~~~~~~\n'}
+[4.173184] (cspc_lidar) StderrLine: {'line': b'      |                                                                                            |                                         |\n'}
+[4.174022] (cspc_lidar) StderrLine: {'line': b'      |                                                                                            long long int                             int64_t {aka long int}\n'}
+[4.174791] (cspc_lidar) StderrLine: {'line': b'      |                                                                                         %ld\n'}
+[4.175513] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp: In function \xe2\x80\x98void send_lidar_data(LaserScan&)\xe2\x80\x99:\n'}
+[4.176196] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:312:43: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98size_t\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[4.176832] (cspc_lidar) StderrLine: {'line': b'  312 |                         for (int i = 0; i < count; i++)\n'}
+[4.177491] (cspc_lidar) StderrLine: {'line': b'      |                                         ~~^~~~~~~\n'}
+[4.178365] (cspc_lidar) StdoutLine: {'line': b'[ 66%] Building CXX object CMakeFiles/cspc_lidar.dir/sdk/lidar_data_processing.cpp.o\n'}
+[4.179010] (cspc_lidar) StdoutLine: {'line': b'[ 66%] Building CXX object CMakeFiles/cspc_lidar.dir/sdk/calibration.cpp.o\n'}
+[4.207587] (-) TimerEvent: {}
+[4.285719] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp: In member function \xe2\x80\x98void Point_cloud_optimize::PointCloudFilter(LaserScan*)\xe2\x80\x99:\n'}
+[4.286191] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:25:25: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[4.286974] (cspc_lidar) StderrLine: {'line': b'   25 |         for (i0 = 0; i0 < Scan->points.size(); i0++)\n'}
+[4.287968] (cspc_lidar) StderrLine: {'line': b'      |                      ~~~^~~~~~~~~~~~~~~~~~~~~\n'}
+[4.288877] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:28:25: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[4.290500] (cspc_lidar) StderrLine: {'line': b'   28 |                 i1 = i1 < Scan->points.size() ? i1 : i1 - Scan->points.size();\n'}
+[4.291183] (cspc_lidar) StderrLine: {'line': b'      |                      ~~~^~~~~~~~~~~~~~~~~~~~~\n'}
+[4.291928] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:30:25: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[4.292633] (cspc_lidar) StderrLine: {'line': b'   30 |                 i2 = i2 < Scan->points.size() ? i2 : i2 - Scan->points.size();\n'}
+[4.293291] (cspc_lidar) StderrLine: {'line': b'      |                      ~~~^~~~~~~~~~~~~~~~~~~~~\n'}
+[4.294076] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:32:25: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[4.295070] (cspc_lidar) StderrLine: {'line': b'   32 |                 i3 = i3 < Scan->points.size() ? i3 : i3 - Scan->points.size();\n'}
+[4.295791] (cspc_lidar) StderrLine: {'line': b'      |                      ~~~^~~~~~~~~~~~~~~~~~~~~\n'}
+[4.296851] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:155:25: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[4.297756] (cspc_lidar) StderrLine: {'line': b'  155 |         for (i0 = 0; i0 < Scan->points.size(); i0++)\n'}
+[4.298730] (cspc_lidar) StderrLine: {'line': b'      |                      ~~~^~~~~~~~~~~~~~~~~~~~~\n'}
+[4.299463] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:158:25: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[4.300197] (cspc_lidar) StderrLine: {'line': b'  158 |                 i1 = i1 < Scan->points.size() ? i1 : i1 - Scan->points.size();\n'}
+[4.300882] (cspc_lidar) StderrLine: {'line': b'      |                      ~~~^~~~~~~~~~~~~~~~~~~~~\n'}
+[4.301764] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:160:25: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[4.302655] (cspc_lidar) StderrLine: {'line': b'  160 |                 i2 = i2 < Scan->points.size() ? i2 : i2 - Scan->points.size();\n'}
+[4.303605] (cspc_lidar) StderrLine: {'line': b'      |                      ~~~^~~~~~~~~~~~~~~~~~~~~\n'}
+[4.304497] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:162:25: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[4.305422] (cspc_lidar) StderrLine: {'line': b'  162 |                 i3 = i3 < Scan->points.size() ? i3 : i3 - Scan->points.size();\n'}
+[4.306295] (cspc_lidar) StderrLine: {'line': b'      |                      ~~~^~~~~~~~~~~~~~~~~~~~~\n'}
+[4.307160] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:164:25: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[4.308083] (-) TimerEvent: {}
+[4.308282] (cspc_lidar) StderrLine: {'line': b'  164 |                 i4 = i4 < Scan->points.size() ? i4 : i4 - Scan->points.size();\n'}
+[4.309163] (cspc_lidar) StderrLine: {'line': b'      |                      ~~~^~~~~~~~~~~~~~~~~~~~~\n'}
+[4.310076] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp: In member function \xe2\x80\x98int Point_cloud_optimize::UltrasonicSimRanging(LaserPoint&)\xe2\x80\x99:\n'}
+[4.311067] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:228:13: warning: unused variable \xe2\x80\x98i\xe2\x80\x99 [-Wunused-variable]\n'}
+[4.312092] (cspc_lidar) StderrLine: {'line': b'  228 |         int i, index;\n'}
+[4.313095] (cspc_lidar) StderrLine: {'line': b'      |             ^\n'}
+[4.314044] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:229:15: warning: unused variable \xe2\x80\x98tempdep\xe2\x80\x99 [-Wunused-variable]\n'}
+[4.314965] (cspc_lidar) StderrLine: {'line': b'  229 |         short tempdep;\n'}
+[4.315886] (cspc_lidar) StderrLine: {'line': b'      |               ^~~~~~~\n'}
+[4.316800] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:253:1: warning: no return statement in function returning non-void [-Wreturn-type]\n'}
+[4.317712] (cspc_lidar) StderrLine: {'line': b'  253 | }\n'}
+[4.318596] (cspc_lidar) StderrLine: {'line': b'      | ^\n'}
+[4.319590] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp: In member function \xe2\x80\x98void Point_cloud_optimize::lidar_blocked_judge(int)\xe2\x80\x99:\n'}
+[4.320460] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:341:60: warning: format \xe2\x80\x98%d\xe2\x80\x99 expects argument of type \xe2\x80\x98int\xe2\x80\x99, but argument 3 has type \xe2\x80\x98size_t\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wformat=]\n'}
+[4.321352] (cspc_lidar) StderrLine: {'line': b'  341 |                 printf("lidar \xe9\x9b\xb7\xe8\xbe\xbe\xe8\xa2\xab\xe4\xb8\xa5\xe9\x87\x8d\xe9\x81\xae\xe6\x8c\xa1\xe7\x99\xbe\xe5\x88\x86\xe4\xb9\x8b\xe4\xb8\x83\xe5\x8d\x81 %d,%d\\n",node_lidar.lidar_block.lidar_zero_count,node_lidar.scan_node_count);\n'}
+[4.322214] (cspc_lidar) StderrLine: {'line': b'      |                                                           ~^                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[4.323117] (cspc_lidar) StderrLine: {'line': b'      |                                                            |                                                       |\n'}
+[4.324048] (cspc_lidar) StderrLine: {'line': b'      |                                                            int                                                     size_t {aka long unsigned int}\n'}
+[4.324929] (cspc_lidar) StderrLine: {'line': b'      |                                                           %ld\n'}
+[4.325822] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp: In member function \xe2\x80\x98void Point_cloud_optimize::lidar_blocked_init()\xe2\x80\x99:\n'}
+[4.326721] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:404:69: warning: suggest parentheses around \xe2\x80\x98&&\xe2\x80\x99 within \xe2\x80\x98||\xe2\x80\x99 [-Wparentheses]\n'}
+[4.327676] (cspc_lidar) StderrLine: {'line': b'  404 |                         if((angle >= 0 && angle < 90)|| angle > 270 && angle <=360){\n'}
+[4.328533] (cspc_lidar) StderrLine: {'line': b'      |                                                         ~~~~~~~~~~~~^~~~~~~~~~~~~~\n'}
+[4.329589] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:375:21: warning: unused variable \xe2\x80\x98temp\xe2\x80\x99 [-Wunused-variable]\n'}
+[4.330460] (cspc_lidar) StderrLine: {'line': b'  375 |         float r, d, temp;\n'}
+[4.331298] (cspc_lidar) StderrLine: {'line': b'      |                     ^~~~\n'}
+[4.393603] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp: At global scope:\n'}
+[4.394555] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:62:21: warning: \xe2\x80\x98status_judge\xe2\x80\x99 defined but not used [-Wunused-variable]\n'}
+[4.395520] (cspc_lidar) StderrLine: {'line': b'   62 |         static bool status_judge = false;     //\xe6\x95\xb4\xe4\xbd\x93\xe7\x8a\xb6\xe6\x80\x81\xe5\x88\xa4\xe6\x96\xad\n'}
+[4.396416] (cspc_lidar) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[4.408199] (-) TimerEvent: {}
+[4.508560] (-) TimerEvent: {}
+[4.587546] (cspc_lidar) StdoutLine: {'line': b'[ 77%] Building CXX object CMakeFiles/cspc_lidar.dir/src/node_lidar_ros.cpp.o\n'}
+[4.608693] (-) TimerEvent: {}
+[4.683051] (cspc_lidar) StdoutLine: {'line': b'[ 88%] Building CXX object CMakeFiles/cspc_lidar.dir/sdk/timer.cpp.o\n'}
+[4.708832] (-) TimerEvent: {}
+[4.809141] (-) TimerEvent: {}
+[4.909413] (-) TimerEvent: {}
+[5.009703] (-) TimerEvent: {}
+[5.070683] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp: In function \xe2\x80\x98void pcloud_build_by_scan(LaserScan&, pcloud_t&)\xe2\x80\x99:\n'}
+[5.071113] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:44:21: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[5.071422] (cspc_lidar) StderrLine: {'line': b'   44 |   for (int i = 0; i < outscan.points.size(); i++)\n'}
+[5.071659] (cspc_lidar) StderrLine: {'line': b'      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.071846] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:46:11: warning: \xe2\x80\x98void* memset(void*, int, size_t)\xe2\x80\x99 clearing an object of non-trivial type \xe2\x80\x98point_t\xe2\x80\x99 {aka \xe2\x80\x98struct _point_\xe2\x80\x99}; use assignment or value-initialization instead [-Wclass-memaccess]\n'}
+[5.072384] (cspc_lidar) StderrLine: {'line': b'   46 |     memset(&point, 0, sizeof(point_t));\n'}
+[5.072670] (cspc_lidar) StderrLine: {'line': b'      |     ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.072881] (cspc_lidar) StderrLine: {'line': b'In file included from /root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8:\n'}
+[5.073053] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:52:16: note: \xe2\x80\x98point_t\xe2\x80\x99 {aka \xe2\x80\x98struct _point_\xe2\x80\x99} declared here\n'}
+[5.073205] (cspc_lidar) StderrLine: {'line': b'   52 | typedef struct _point_\n'}
+[5.073345] (cspc_lidar) StderrLine: {'line': b'      |                ^~~~~~~\n'}
+[5.073498] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp: In function \xe2\x80\x98int find_index(point_t, pcloud_t&)\xe2\x80\x99:\n'}
+[5.073634] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:105:9: warning: \xe2\x80\x98void* memset(void*, int, size_t)\xe2\x80\x99 clearing an object of non-trivial type \xe2\x80\x98point_t\xe2\x80\x99 {aka \xe2\x80\x98struct _point_\xe2\x80\x99}; use assignment or value-initialization instead [-Wclass-memaccess]\n'}
+[5.073777] (cspc_lidar) StderrLine: {'line': b'  105 |   memset(&point_min, 0, sizeof(point_t));\n'}
+[5.073914] (cspc_lidar) StderrLine: {'line': b'      |   ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.074051] (cspc_lidar) StderrLine: {'line': b'In file included from /root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8:\n'}
+[5.074178] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:52:16: note: \xe2\x80\x98point_t\xe2\x80\x99 {aka \xe2\x80\x98struct _point_\xe2\x80\x99} declared here\n'}
+[5.074302] (cspc_lidar) StderrLine: {'line': b'   52 | typedef struct _point_\n'}
+[5.074417] (cspc_lidar) StderrLine: {'line': b'      |                ^~~~~~~\n'}
+[5.075069] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:124:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[5.075649] (cspc_lidar) StderrLine: {'line': b'  124 |   if (point_min.index > pcloud.data.size())\n'}
+[5.076172] (cspc_lidar) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~\n'}
+[5.076673] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp: In function \xe2\x80\x98bool intersect(LineSegment, LineSegment, Vector2D&)\xe2\x80\x99:\n'}
+[5.077178] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:167:10: warning: unused variable \xe2\x80\x98cross1\xe2\x80\x99 [-Wunused-variable]\n'}
+[5.077570] (cspc_lidar) StderrLine: {'line': b'  167 |   double cross1 = position1.x * direction1.y - position1.y * direction1.x;\n'}
+[5.077926] (cspc_lidar) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[5.083983] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp: In function \xe2\x80\x98double pointToLineDist(point_t, double, double)\xe2\x80\x99:\n'}
+[5.084977] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:439:10: warning: unused variable \xe2\x80\x98y0\xe2\x80\x99 [-Wunused-variable]\n'}
+[5.085551] (cspc_lidar) StderrLine: {'line': b'  439 |   double y0 = k * x0 + b;\n'}
+[5.085996] (cspc_lidar) StderrLine: {'line': b'      |          ^~\n'}
+[5.086372] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp: In function \xe2\x80\x98bool line_judgment(std::vector<_point_>, point_t)\xe2\x80\x99:\n'}
+[5.086880] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:462:19: warning: comparison of integer expressions of different signedness: \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98int\xe2\x80\x99 [-Wsign-compare]\n'}
+[5.087477] (cspc_lidar) StderrLine: {'line': b'  462 |   if (line.size() <= reference)\n'}
+[5.088065] (cspc_lidar) StderrLine: {'line': b'      |       ~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[5.088653] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:467:19: warning: comparison of integer expressions of different signedness: \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98int\xe2\x80\x99 [-Wsign-compare]\n'}
+[5.088939] (cspc_lidar) StderrLine: {'line': b'  467 |   if (line.size() <= reference)\n'}
+[5.089599] (cspc_lidar) StderrLine: {'line': b'      |       ~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[5.090099] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:471:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[5.090590] (cspc_lidar) StderrLine: {'line': b'  471 |     for (int i = 1; i < line.size() - 1; i++)\n'}
+[5.091093] (cspc_lidar) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~\n'}
+[5.092772] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp: In function \xe2\x80\x98void fitting_line(pcloud_t&)\xe2\x80\x99:\n'}
+[5.093884] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:542:25: warning: comparison of integer expressions of different signedness: \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98int\xe2\x80\x99 [-Wsign-compare]\n'}
+[5.095120] (cspc_lidar) StderrLine: {'line': b'  542 |         if (line.size() >= calibration_params.line_judgment_point_num)\n'}
+[5.095668] (cspc_lidar) StderrLine: {'line': b'      |             ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.096405] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:560:63: warning: comparison of integer expressions of different signedness: \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98int\xe2\x80\x99 [-Wsign-compare]\n'}
+[5.096885] (cspc_lidar) StderrLine: {'line': b'  560 |         if(point.index == point_last_one.index && line.size() >= calibration_params.line_judgment_point_num)\n'}
+[5.097353] (cspc_lidar) StderrLine: {'line': b'      |                                                   ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.097783] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:571:26: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[5.098248] (cspc_lidar) StderrLine: {'line': b'  571 |   if(point_record2.index < pcloud.data.size()\n'}
+[5.098683] (cspc_lidar) StderrLine: {'line': b'      |      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~\n'}
+[5.099104] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:572:28: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[5.100015] (cspc_lidar) StderrLine: {'line': b'  572 |   &&  point_last_one.index < pcloud.data.size()\n'}
+[5.100453] (cspc_lidar) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~\n'}
+[5.100876] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:573:27: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[5.101306] (cspc_lidar) StderrLine: {'line': b'  573 |   &&  point_record1.index < pcloud.data.size())\n'}
+[5.101729] (cspc_lidar) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~\n'}
+[5.102149] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:597:28: warning: comparison of integer expressions of different signedness: \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98int\xe2\x80\x99 [-Wsign-compare]\n'}
+[5.102560] (cspc_lidar) StderrLine: {'line': b'  597 |     if (line_append.size() >= calibration_params.line_judgment_point_num)\n'}
+[5.102963] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.103265] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:606:29: warning: comparison of integer expressions of different signedness: \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98int\xe2\x80\x99 [-Wsign-compare]\n'}
+[5.103674] (cspc_lidar) StderrLine: {'line': b'  606 |             if (line.size() >= calibration_params.line_judgment_point_num)\n'}
+[5.104222] (cspc_lidar) StderrLine: {'line': b'      |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.104818] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:617:68: warning: comparison of integer expressions of different signedness: \xe2\x80\x98std::vector<_point_>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98int\xe2\x80\x99 [-Wsign-compare]\n'}
+[5.105292] (cspc_lidar) StderrLine: {'line': b'  617 |           if(point.index == point_append_last.index && line.size() >= calibration_params.line_judgment_point_num)\n'}
+[5.105734] (cspc_lidar) StderrLine: {'line': b'      |                                                        ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.106168] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:632:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<std::vector<_point_> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[5.106749] (cspc_lidar) StderrLine: {'line': b'  632 |     for (int i = 0; i < lines.size() - 1; i++)\n'}
+[5.107213] (cspc_lidar) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~\n'}
+[5.107846] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp: In function \xe2\x80\x98void lidar_calibration(LaserScan&)\xe2\x80\x99:\n'}
+[5.108333] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:662:11: warning: \xe2\x80\x98void* memset(void*, int, size_t)\xe2\x80\x99 clearing an object of type \xe2\x80\x98struct LaserPoint\xe2\x80\x99 with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]\n'}
+[5.108800] (cspc_lidar) StderrLine: {'line': b'  662 |     memset(&outscan_point, 0, sizeof(LaserPoint));\n'}
+[5.109242] (cspc_lidar) StderrLine: {'line': b'      |     ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.109689] (cspc_lidar) StderrLine: {'line': b'In file included from /root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:4,\n'}
+[5.110250] (-) TimerEvent: {}
+[5.110377] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8:\n'}
+[5.110779] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_information.h:210:8: note: \xe2\x80\x98struct LaserPoint\xe2\x80\x99 declared here\n'}
+[5.111154] (cspc_lidar) StderrLine: {'line': b'  210 | struct LaserPoint\n'}
+[5.111526] (cspc_lidar) StderrLine: {'line': b'      |        ^~~~~~~~~~\n'}
+[5.124076] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp: In member function \xe2\x80\x98bool Lidar_Data_Processing::wait_start_reply(uint64_t)\xe2\x80\x99:\n'}
+[5.124553] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:107:49: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int64_t\xe2\x80\x99 {aka \xe2\x80\x98long int\xe2\x80\x99} and \xe2\x80\x98uint64_t\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[5.125193] (cspc_lidar) StderrLine: {'line': b'  107 |   while ((waitTime = current_times() - startTs) <= timeout){\n'}
+[5.125672] (cspc_lidar) StderrLine: {'line': b'      |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[5.127564] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp: In member function \xe2\x80\x98result_t Lidar_Data_Processing::waitSpeedRight(uint8_t, uint64_t)\xe2\x80\x99:\n'}
+[5.128036] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:209:56: warning: unused parameter \xe2\x80\x98cmd\xe2\x80\x99 [-Wunused-parameter]\n'}
+[5.128471] (cspc_lidar) StderrLine: {'line': b'  209 | result_t Lidar_Data_Processing::waitSpeedRight(uint8_t cmd,uint64_t timeout)\n'}
+[5.128879] (cspc_lidar) StderrLine: {'line': b'      |                                                ~~~~~~~~^~~\n'}
+[5.129836] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp: In member function \xe2\x80\x98result_t Lidar_Data_Processing::waitResponseHeader(uint8_t, uint64_t)\xe2\x80\x99:\n'}
+[5.130302] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:481:28: warning: format \xe2\x80\x98%d\xe2\x80\x99 expects argument of type \xe2\x80\x98int\xe2\x80\x99, but argument 4 has type \xe2\x80\x98size_t\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wformat=]\n'}
+[5.130735] (cspc_lidar) StderrLine: {'line': b'  481 |       printf("data**%d,%d,%d\\n",check_sum_cal,recvBuffer[remainSize-1],remainSize);\n'}
+[5.131150] (cspc_lidar) StderrLine: {'line': b'      |                           ~^                                           ~~~~~~~~~~\n'}
+[5.131607] (cspc_lidar) StderrLine: {'line': b'      |                            |                                           |\n'}
+[5.132019] (cspc_lidar) StderrLine: {'line': b'      |                            int                                         size_t {aka long unsigned int}\n'}
+[5.132423] (cspc_lidar) StderrLine: {'line': b'      |                           %ld\n'}
+[5.138126] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp: In member function \xe2\x80\x98result_t Lidar_Data_Processing::waitPackage_coin(node_info*, uint32_t)\xe2\x80\x99:\n'}
+[5.138891] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:973:9: warning: unused variable \xe2\x80\x98k\xe2\x80\x99 [-Wunused-variable]\n'}
+[5.139381] (cspc_lidar) StderrLine: {'line': b'  973 |     int k;\n'}
+[5.139833] (cspc_lidar) StderrLine: {'line': b'      |         ^\n'}
+[5.140253] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:873:11: warning: variable \xe2\x80\x98AngleCorrectForDistance\xe2\x80\x99 set but not used [-Wunused-but-set-variable]\n'}
+[5.140671] (cspc_lidar) StderrLine: {'line': b'  873 |   int32_t AngleCorrectForDistance = 0;\n'}
+[5.141101] (cspc_lidar) StderrLine: {'line': b'      |           ^~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.141647] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:875:11: warning: unused variable \xe2\x80\x98package_type\xe2\x80\x99 [-Wunused-variable]\n'}
+[5.142052] (cspc_lidar) StderrLine: {'line': b'  875 |   uint8_t package_type = 0;\n'}
+[5.142445] (cspc_lidar) StderrLine: {'line': b'      |           ^~~~~~~~~~~~\n'}
+[5.142848] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:877:12: warning: unused variable \xe2\x80\x98start\xe2\x80\x99 [-Wunused-variable]\n'}
+[5.143270] (cspc_lidar) StderrLine: {'line': b'  877 |   uint16_t start;\n'}
+[5.143720] (cspc_lidar) StderrLine: {'line': b'      |            ^~~~~\n'}
+[5.144240] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:878:12: warning: unused variable \xe2\x80\x98stop\xe2\x80\x99 [-Wunused-variable]\n'}
+[5.144675] (cspc_lidar) StderrLine: {'line': b'  878 |   uint16_t stop;\n'}
+[5.145056] (cspc_lidar) StderrLine: {'line': b'      |            ^~~~\n'}
+[5.210383] (-) TimerEvent: {}
+[5.310653] (-) TimerEvent: {}
+[5.410925] (-) TimerEvent: {}
+[5.511190] (-) TimerEvent: {}
+[5.611477] (-) TimerEvent: {}
+[5.711727] (-) TimerEvent: {}
+[5.812165] (-) TimerEvent: {}
+[5.912410] (-) TimerEvent: {}
+[6.012666] (-) TimerEvent: {}
+[6.112922] (-) TimerEvent: {}
+[6.213183] (-) TimerEvent: {}
+[6.313434] (-) TimerEvent: {}
+[6.413691] (-) TimerEvent: {}
+[6.514122] (-) TimerEvent: {}
+[6.614380] (-) TimerEvent: {}
+[6.714638] (-) TimerEvent: {}
+[6.814899] (-) TimerEvent: {}
+[6.915153] (-) TimerEvent: {}
+[7.015412] (-) TimerEvent: {}
+[7.115669] (-) TimerEvent: {}
+[7.215927] (-) TimerEvent: {}
+[7.316181] (-) TimerEvent: {}
+[7.416455] (-) TimerEvent: {}
+[7.516715] (-) TimerEvent: {}
+[7.616969] (-) TimerEvent: {}
+[7.717230] (-) TimerEvent: {}
+[7.817509] (-) TimerEvent: {}
+[7.917804] (-) TimerEvent: {}
+[8.018092] (-) TimerEvent: {}
+[8.118350] (-) TimerEvent: {}
+[8.218592] (-) TimerEvent: {}
+[8.318837] (-) TimerEvent: {}
+[8.419082] (-) TimerEvent: {}
+[8.519432] (-) TimerEvent: {}
+[8.619720] (-) TimerEvent: {}
+[8.719996] (-) TimerEvent: {}
+[8.820253] (-) TimerEvent: {}
+[8.920505] (-) TimerEvent: {}
+[9.020945] (-) TimerEvent: {}
+[9.121196] (-) TimerEvent: {}
+[9.221451] (-) TimerEvent: {}
+[9.321702] (-) TimerEvent: {}
+[9.421956] (-) TimerEvent: {}
+[9.522212] (-) TimerEvent: {}
+[9.622471] (-) TimerEvent: {}
+[9.722743] (-) TimerEvent: {}
+[9.823007] (-) TimerEvent: {}
+[9.923442] (-) TimerEvent: {}
+[10.023872] (-) TimerEvent: {}
+[10.124121] (-) TimerEvent: {}
+[10.224362] (-) TimerEvent: {}
+[10.324607] (-) TimerEvent: {}
+[10.424874] (-) TimerEvent: {}
+[10.525421] (-) TimerEvent: {}
+[10.625647] (-) TimerEvent: {}
+[10.725883] (-) TimerEvent: {}
+[10.826118] (-) TimerEvent: {}
+[10.926532] (-) TimerEvent: {}
+[11.026789] (-) TimerEvent: {}
+[11.127050] (-) TimerEvent: {}
+[11.227311] (-) TimerEvent: {}
+[11.327581] (-) TimerEvent: {}
+[11.427840] (-) TimerEvent: {}
+[11.528093] (-) TimerEvent: {}
+[11.628354] (-) TimerEvent: {}
+[11.728609] (-) TimerEvent: {}
+[11.828865] (-) TimerEvent: {}
+[11.929299] (-) TimerEvent: {}
+[12.029549] (-) TimerEvent: {}
+[12.129800] (-) TimerEvent: {}
+[12.230061] (-) TimerEvent: {}
+[12.330330] (-) TimerEvent: {}
+[12.430598] (-) TimerEvent: {}
+[12.530849] (-) TimerEvent: {}
+[12.631106] (-) TimerEvent: {}
+[12.731378] (-) TimerEvent: {}
+[12.831630] (-) TimerEvent: {}
+[12.931892] (-) TimerEvent: {}
+[13.032325] (-) TimerEvent: {}
+[13.132585] (-) TimerEvent: {}
+[13.232842] (-) TimerEvent: {}
+[13.333100] (-) TimerEvent: {}
+[13.433357] (-) TimerEvent: {}
+[13.533623] (-) TimerEvent: {}
+[13.633881] (-) TimerEvent: {}
+[13.734153] (-) TimerEvent: {}
+[13.834423] (-) TimerEvent: {}
+[13.934692] (-) TimerEvent: {}
+[14.034956] (-) TimerEvent: {}
+[14.135211] (-) TimerEvent: {}
+[14.235485] (-) TimerEvent: {}
+[14.335746] (-) TimerEvent: {}
+[14.436006] (-) TimerEvent: {}
+[14.536267] (-) TimerEvent: {}
+[14.636529] (-) TimerEvent: {}
+[14.736794] (-) TimerEvent: {}
+[14.837053] (-) TimerEvent: {}
+[14.937320] (-) TimerEvent: {}
+[15.037586] (-) TimerEvent: {}
+[15.137848] (-) TimerEvent: {}
+[15.238108] (-) TimerEvent: {}
+[15.338387] (-) TimerEvent: {}
+[15.438689] (-) TimerEvent: {}
+[15.539013] (-) TimerEvent: {}
+[15.639293] (-) TimerEvent: {}
+[15.739747] (-) TimerEvent: {}
+[15.803935] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp: In function \xe2\x80\x98int Scan_to_PointCloud(LaserScan&, sensor_msgs::msg::PointCloud2&)\xe2\x80\x99:\n'}
+[15.804462] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:85:24: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[15.804695] (cspc_lidar) StderrLine: {'line': b'   85 |         for(int i = 0;i<scan.points.size();i++)\n'}
+[15.804887] (cspc_lidar) StderrLine: {'line': b'      |                       ~^~~~~~~~~~~~~~~~~~~\n'}
+[15.805065] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:95:1: warning: no return statement in function returning non-void [-Wreturn-type]\n'}
+[15.805243] (cspc_lidar) StderrLine: {'line': b'   95 | }\n'}
+[15.805405] (cspc_lidar) StderrLine: {'line': b'      | ^\n'}
+[15.811270] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp: In function \xe2\x80\x98int topic_thread()\xe2\x80\x99:\n'}
+[15.811977] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:100:1: warning: no return statement in function returning non-void [-Wreturn-type]\n'}
+[15.812419] (cspc_lidar) StderrLine: {'line': b'  100 | }\n'}
+[15.814045] (cspc_lidar) StderrLine: {'line': b'      | ^\n'}
+[15.814376] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp: In function \xe2\x80\x98int main(int, char**)\xe2\x80\x99:\n'}
+[15.814620] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:109:32: error: no matching function for call to \xe2\x80\x98rclcpp::Node::declare_parameter(const char [5])\xe2\x80\x99\n'}
+[15.814842] (cspc_lidar) StderrLine: {'line': b'  109 |         node->declare_parameter("port");\n'}
+[15.815031] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~\n'}
+[15.815192] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.815401] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.815611] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.815768] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.815915] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.816059] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3: note: candidate: \xe2\x80\x98template<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterT&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.816221] (cspc_lidar) StderrLine: {'line': b'  421 |   declare_parameter(\n'}
+[15.816363] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.816502] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3: note:   template argument deduction/substitution failed:\n'}
+[15.816630] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:109:32: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.816754] (cspc_lidar) StderrLine: {'line': b'  109 |         node->declare_parameter("port");\n'}
+[15.816899] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~\n'}
+[15.817081] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.817234] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.817370] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.817506] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.817705] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.817924] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3: note: candidate: \xe2\x80\x98template<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.818089] (cspc_lidar) StderrLine: {'line': b'  434 |   declare_parameter(\n'}
+[15.818236] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.818374] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3: note:   template argument deduction/substitution failed:\n'}
+[15.818517] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:109:32: note:   couldn\xe2\x80\x99t deduce template parameter \xe2\x80\x98ParameterT\xe2\x80\x99\n'}
+[15.818706] (cspc_lidar) StderrLine: {'line': b'  109 |         node->declare_parameter("port");\n'}
+[15.818889] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~\n'}
+[15.819040] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.819181] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.819362] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.819565] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.819710] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.819852] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3: note: candidate: \xe2\x80\x98const rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, const rclcpp::ParameterValue&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.819992] (cspc_lidar) StderrLine: {'line': b'  366 |   declare_parameter(\n'}
+[15.820175] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.820379] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.820528] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3: note: candidate: \xe2\x80\x98const rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, rclcpp::ParameterType, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.820684] (cspc_lidar) StderrLine: {'line': b'  391 |   declare_parameter(\n'}
+[15.820827] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.820968] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.821110] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:112:32: error: no matching function for call to \xe2\x80\x98rclcpp::Node::declare_parameter(const char [9])\xe2\x80\x99\n'}
+[15.821249] (cspc_lidar) StderrLine: {'line': b'  112 |         node->declare_parameter("baudrate");\n'}
+[15.821386] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[15.821516] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.821647] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.821778] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.821904] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.822038] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.822184] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3: note: candidate: \xe2\x80\x98template<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterT&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.822328] (cspc_lidar) StderrLine: {'line': b'  421 |   declare_parameter(\n'}
+[15.822467] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.822597] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3: note:   template argument deduction/substitution failed:\n'}
+[15.822737] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:112:32: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.822871] (cspc_lidar) StderrLine: {'line': b'  112 |         node->declare_parameter("baudrate");\n'}
+[15.823005] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[15.823135] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.823277] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.823447] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.823593] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.823727] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.823860] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3: note: candidate: \xe2\x80\x98template<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.824074] (cspc_lidar) StderrLine: {'line': b'  434 |   declare_parameter(\n'}
+[15.824286] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.824443] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3: note:   template argument deduction/substitution failed:\n'}
+[15.824595] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:112:32: note:   couldn\xe2\x80\x99t deduce template parameter \xe2\x80\x98ParameterT\xe2\x80\x99\n'}
+[15.824732] (cspc_lidar) StderrLine: {'line': b'  112 |         node->declare_parameter("baudrate");\n'}
+[15.824871] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[15.825074] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.825225] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.825367] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.825500] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.825691] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.825889] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3: note: candidate: \xe2\x80\x98const rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, const rclcpp::ParameterValue&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.826049] (cspc_lidar) StderrLine: {'line': b'  366 |   declare_parameter(\n'}
+[15.826198] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.826337] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.826475] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3: note: candidate: \xe2\x80\x98const rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, rclcpp::ParameterType, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.826618] (cspc_lidar) StderrLine: {'line': b'  391 |   declare_parameter(\n'}
+[15.826757] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.826879] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.826998] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:115:32: error: no matching function for call to \xe2\x80\x98rclcpp::Node::declare_parameter(const char [9])\xe2\x80\x99\n'}
+[15.827130] (cspc_lidar) StderrLine: {'line': b'  115 |         node->declare_parameter("frame_id");\n'}
+[15.827282] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[15.827441] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.827583] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.827712] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.827844] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.827986] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.828129] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3: note: candidate: \xe2\x80\x98template<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterT&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.828264] (cspc_lidar) StderrLine: {'line': b'  421 |   declare_parameter(\n'}
+[15.828402] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.828545] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3: note:   template argument deduction/substitution failed:\n'}
+[15.828685] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:115:32: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.828827] (cspc_lidar) StderrLine: {'line': b'  115 |         node->declare_parameter("frame_id");\n'}
+[15.828969] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[15.829108] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.829251] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.829390] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.829530] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.829667] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.829802] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3: note: candidate: \xe2\x80\x98template<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.829955] (cspc_lidar) StderrLine: {'line': b'  434 |   declare_parameter(\n'}
+[15.830088] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.830220] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3: note:   template argument deduction/substitution failed:\n'}
+[15.830354] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:115:32: note:   couldn\xe2\x80\x99t deduce template parameter \xe2\x80\x98ParameterT\xe2\x80\x99\n'}
+[15.830493] (cspc_lidar) StderrLine: {'line': b'  115 |         node->declare_parameter("frame_id");\n'}
+[15.830624] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[15.830761] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.830909] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.831057] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.831191] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.831355] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.831534] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3: note: candidate: \xe2\x80\x98const rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, const rclcpp::ParameterValue&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.831677] (cspc_lidar) StderrLine: {'line': b'  366 |   declare_parameter(\n'}
+[15.831819] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.831957] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.832099] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3: note: candidate: \xe2\x80\x98const rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, rclcpp::ParameterType, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.832248] (cspc_lidar) StderrLine: {'line': b'  391 |   declare_parameter(\n'}
+[15.832382] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.832504] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.832643] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:118:32: error: no matching function for call to \xe2\x80\x98rclcpp::Node::declare_parameter(const char [8])\xe2\x80\x99\n'}
+[15.832781] (cspc_lidar) StderrLine: {'line': b'  118 |         node->declare_parameter("version");\n'}
+[15.832914] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[15.833058] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.833216] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.833351] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.833480] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.833617] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.833748] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3: note: candidate: \xe2\x80\x98template<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterT&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.833892] (cspc_lidar) StderrLine: {'line': b'  421 |   declare_parameter(\n'}
+[15.834034] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.834172] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3: note:   template argument deduction/substitution failed:\n'}
+[15.834315] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:118:32: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.834455] (cspc_lidar) StderrLine: {'line': b'  118 |         node->declare_parameter("version");\n'}
+[15.834604] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[15.834741] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.834882] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.835019] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.835156] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.835294] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.835726] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3: note: candidate: \xe2\x80\x98template<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.835954] (cspc_lidar) StderrLine: {'line': b'  434 |   declare_parameter(\n'}
+[15.836125] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.836295] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3: note:   template argument deduction/substitution failed:\n'}
+[15.836449] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:118:32: note:   couldn\xe2\x80\x99t deduce template parameter \xe2\x80\x98ParameterT\xe2\x80\x99\n'}
+[15.836613] (cspc_lidar) StderrLine: {'line': b'  118 |         node->declare_parameter("version");\n'}
+[15.836764] (cspc_lidar) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[15.836903] (cspc_lidar) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[15.837036] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[15.837172] (cspc_lidar) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[15.837308] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar/node_lidar_ros.h:4,\n'}
+[15.837579] (cspc_lidar) StderrLine: {'line': b'                 from /root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:1:\n'}
+[15.837814] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3: note: candidate: \xe2\x80\x98const rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, const rclcpp::ParameterValue&, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.837999] (cspc_lidar) StderrLine: {'line': b'  366 |   declare_parameter(\n'}
+[15.838231] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.838443] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.838596] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3: note: candidate: \xe2\x80\x98const rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, rclcpp::ParameterType, const ParameterDescriptor&, bool)\xe2\x80\x99\n'}
+[15.838744] (cspc_lidar) StderrLine: {'line': b'  391 |   declare_parameter(\n'}
+[15.838879] (cspc_lidar) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~\n'}
+[15.839023] (cspc_lidar) StderrLine: {'line': b'/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3: note:   candidate expects 4 arguments, 1 provided\n'}
+[15.839876] (-) TimerEvent: {}
+[15.842857] (cspc_lidar) StderrLine: {'line': b'/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:183:40: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<LaserPoint>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[15.843172] (cspc_lidar) StderrLine: {'line': b'  183 |                         for(int i=0; i < scan.points.size(); i++) {\n'}
+[15.843421] (cspc_lidar) StderrLine: {'line': b'      |                                      ~~^~~~~~~~~~~~~~~~~~~~\n'}
+[15.939997] (-) TimerEvent: {}
+[16.040279] (-) TimerEvent: {}
+[16.140545] (-) TimerEvent: {}
+[16.240832] (-) TimerEvent: {}
+[16.341125] (-) TimerEvent: {}
+[16.441385] (-) TimerEvent: {}
+[16.541844] (-) TimerEvent: {}
+[16.642100] (-) TimerEvent: {}
+[16.742364] (-) TimerEvent: {}
+[16.842623] (-) TimerEvent: {}
+[16.942886] (-) TimerEvent: {}
+[17.043141] (-) TimerEvent: {}
+[17.143404] (-) TimerEvent: {}
+[17.243664] (-) TimerEvent: {}
+[17.344106] (-) TimerEvent: {}
+[17.444372] (-) TimerEvent: {}
+[17.544643] (-) TimerEvent: {}
+[17.644912] (-) TimerEvent: {}
+[17.745170] (-) TimerEvent: {}
+[17.845439] (-) TimerEvent: {}
+[17.945700] (-) TimerEvent: {}
+[18.046162] (-) TimerEvent: {}
+[18.146427] (-) TimerEvent: {}
+[18.246696] (-) TimerEvent: {}
+[18.346954] (-) TimerEvent: {}
+[18.447227] (-) TimerEvent: {}
+[18.547518] (-) TimerEvent: {}
+[18.647794] (-) TimerEvent: {}
+[18.748245] (-) TimerEvent: {}
+[18.848513] (-) TimerEvent: {}
+[18.948775] (-) TimerEvent: {}
+[19.049042] (-) TimerEvent: {}
+[19.149301] (-) TimerEvent: {}
+[19.249564] (-) TimerEvent: {}
+[19.349820] (-) TimerEvent: {}
+[19.450082] (-) TimerEvent: {}
+[19.550515] (-) TimerEvent: {}
+[19.650781] (-) TimerEvent: {}
+[19.751040] (-) TimerEvent: {}
+[19.851346] (-) TimerEvent: {}
+[19.951615] (-) TimerEvent: {}
+[20.051878] (-) TimerEvent: {}
+[20.152137] (-) TimerEvent: {}
+[20.252400] (-) TimerEvent: {}
+[20.352667] (-) TimerEvent: {}
+[20.452939] (-) TimerEvent: {}
+[20.553227] (-) TimerEvent: {}
+[20.653669] (-) TimerEvent: {}
+[20.753924] (-) TimerEvent: {}
+[20.854191] (-) TimerEvent: {}
+[20.954446] (-) TimerEvent: {}
+[21.054724] (-) TimerEvent: {}
+[21.154990] (-) TimerEvent: {}
+[21.255244] (-) TimerEvent: {}
+[21.355519] (-) TimerEvent: {}
+[21.455772] (-) TimerEvent: {}
+[21.556026] (-) TimerEvent: {}
+[21.656453] (-) TimerEvent: {}
+[21.756702] (-) TimerEvent: {}
+[21.821538] (cspc_lidar) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/cspc_lidar.dir/build.make:174\xef\xbc\x9aCMakeFiles/cspc_lidar.dir/src/node_lidar_ros.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[21.822185] (cspc_lidar) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137\xef\xbc\x9aCMakeFiles/cspc_lidar.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[21.822448] (cspc_lidar) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[21.824218] (cspc_lidar) CommandEnded: {'returncode': 2}
+[21.843043] (cspc_lidar) JobEnded: {'identifier': 'cspc_lidar', 'rc': 2}
+[21.853759] (-) EventReactorShutdown: {}

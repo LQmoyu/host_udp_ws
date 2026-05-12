@@ -1,0 +1,123 @@
+[0.000000] (-) TimerEvent: {}
+[0.000218] (-) JobUnselected: {'identifier': 'dog_udp_comm'}
+[0.000488] (cspc_lidar) JobQueued: {'identifier': 'cspc_lidar', 'dependencies': OrderedDict()}
+[0.000971] (cspc_lidar) JobStarted: {'identifier': 'cspc_lidar'}
+[0.016854] (cspc_lidar) JobProgress: {'identifier': 'cspc_lidar', 'progress': 'cmake'}
+[0.019356] (cspc_lidar) JobProgress: {'identifier': 'cspc_lidar', 'progress': 'build'}
+[0.021090] (cspc_lidar) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/udp_ws/build/cspc_lidar', '--', '-j6', '-l6'], 'cwd': '/root/udp_ws/build/cspc_lidar', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/root'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CODEX_CI', '1'), ('LANGUAGE', 'zh_CN:zh'), ('USER', 'root'), ('SSH_CLIENT', '192.168.222.48 61529 22'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/root/.vscode-server/cli/servers/Stable-8b640eef5a6c6089c029249d48efa5c99adf7d51/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/tcf.json","messagesFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/8b640eef5a6c6089c029249d48efa5c99adf7d51/nls.messages.json","corruptMarkerFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b912e1cc94c8380c6bb426bdce2c540f.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/tcf.json","_cacheRoot":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn","_resolvedLanguagePackCoreLocation":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/8b640eef5a6c6089c029249d48efa5c99adf7d51","_corruptedFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/corrupted.info"}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('HOBOT_ROOTFS_DIR', '/usr/hobot'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/lib/:/usr/lib/aarch64-linux-gnu:/lib/aarch64-linux-gnu:/app/lib:/app/pub/lib:/middleware/lib:/middleware/pub/lib:/usr/lib/gstreamer'), ('BROWSER', '/root/.vscode-server/cli/servers/Stable-8b640eef5a6c6089c029249d48efa5c99adf7d51/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/root'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/0/vscode-ipc-4796d3bc-1a69-4e7e-b2a2-bb54c3a09aff.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/0/bus'), ('COLORTERM', ''), ('DEBUGINFOD_URLS', ''), ('COLCON_PREFIX_PATH', '/root/ldlidar_ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'root'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('OPENSSL_CONF', '/etc/ssl/openssl.cnf'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '12'), ('VSCODE_CLI_REQUIRE_TOKEN', '02120ee3-486d-4966-abdf-47b29e3c2dd9'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/.codex/tmp/arg0/codex-arg0JVmzfh:/root/.vscode-server/cli/servers/Stable-8b640eef5a6c6089c029249d48efa5c99adf7d51/server/bin/remote-cli:/opt/ros/humble/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/hobot/bin:/app/bin:/middleware/bin:/var/busybox:/usr/local/sbin:/usr/local/bin:/usr/games:/usr/local/games:/snap/bin:/root/.vscode-server/extensions/openai.chatgpt-26.506.31421-linux-arm64/bin/linux-aarch64'), ('VSCODE_AGENT_FOLDER', '/root/.vscode-server'), ('XDG_RUNTIME_DIR', '/run/user/0'), ('LANG', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/root/ldlidar_ros2_ws/install/ldlidar_stl_ros2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('GST_PLUGIN_PATH', '/usr/hobot/lib/gst-plugins'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019e15d7-7908-7083-a9f8-b6e08a7d0f06'), ('GIT_PAGER', 'cat'), ('PWD', '/root/udp_ws/build/cspc_lidar'), ('LC_ALL', 'zh_CN.UTF-8'), ('SSH_CONNECTION', '192.168.222.48 61529 192.168.222.200 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('TZ', 'CST-08:00'), ('COLCON', '1'), ('LD_HWCAP_MASK', '0x00000000'), ('CMAKE_PREFIX_PATH', '/root/ldlidar_ros2_ws/install/ldlidar_stl_ros2:/opt/ros/humble')]), 'shell': False}
+[0.068474] (cspc_lidar) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099554] (-) TimerEvent: {}
+[0.199779] (-) TimerEvent: {}
+[0.300015] (-) TimerEvent: {}
+[0.337183] (cspc_lidar) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.392227] (cspc_lidar) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.397861] (cspc_lidar) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.400153] (-) TimerEvent: {}
+[0.410696] (cspc_lidar) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.430673] (cspc_lidar) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.457043] (cspc_lidar) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.500244] (-) TimerEvent: {}
+[0.530304] (cspc_lidar) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.534181] (cspc_lidar) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.600359] (-) TimerEvent: {}
+[0.679105] (cspc_lidar) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.700456] (-) TimerEvent: {}
+[0.775113] (cspc_lidar) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.800550] (-) TimerEvent: {}
+[0.827868] (cspc_lidar) StdoutLine: {'line': b'-- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[0.863905] (cspc_lidar) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[0.900668] (-) TimerEvent: {}
+[0.926293] (cspc_lidar) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[0.971728] (cspc_lidar) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/aarch64-linux-gnu/libflann_cpp.so)\n'}
+[1.000770] (-) TimerEvent: {}
+[1.100994] (-) TimerEvent: {}
+[1.201248] (-) TimerEvent: {}
+[1.301494] (-) TimerEvent: {}
+[1.401752] (-) TimerEvent: {}
+[1.491076] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[1.500429] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[1.501843] (-) TimerEvent: {}
+[1.602047] (-) TimerEvent: {}
+[1.702298] (-) TimerEvent: {}
+[1.777384] (cspc_lidar) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[1.786672] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[1.796255] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[1.802389] (-) TimerEvent: {}
+[1.902601] (-) TimerEvent: {}
+[2.002849] (-) TimerEvent: {}
+[2.058110] (cspc_lidar) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[2.102961] (-) TimerEvent: {}
+[2.203205] (-) TimerEvent: {}
+[2.303449] (-) TimerEvent: {}
+[2.325155] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[2.403568] (-) TimerEvent: {}
+[2.503811] (-) TimerEvent: {}
+[2.604058] (-) TimerEvent: {}
+[2.604808] (cspc_lidar) StderrLine: {'line': b'CMake Warning (dev) at CMakeLists.txt:19 (find_package):\n'}
+[2.605176] (cspc_lidar) StderrLine: {'line': b'  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.\n'}
+[2.605371] (cspc_lidar) StderrLine: {'line': b'  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy\n'}
+[2.605527] (cspc_lidar) StderrLine: {'line': b'  command to set the policy and suppress this warning.\n'}
+[2.605664] (cspc_lidar) StderrLine: {'line': b'\n'}
+[2.605791] (cspc_lidar) StderrLine: {'line': b'  CMake variable PCL_ROOT is set to:\n'}
+[2.605919] (cspc_lidar) StderrLine: {'line': b'\n'}
+[2.606036] (cspc_lidar) StderrLine: {'line': b'    /usr\n'}
+[2.606151] (cspc_lidar) StderrLine: {'line': b'\n'}
+[2.606264] (cspc_lidar) StderrLine: {'line': b'  For compatibility, CMake is ignoring the variable.\n'}
+[2.606379] (cspc_lidar) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[2.606495] (cspc_lidar) StderrLine: {'line': b'\n'}
+[2.630399] (cspc_lidar) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.704191] (-) TimerEvent: {}
+[2.804442] (-) TimerEvent: {}
+[2.841743] (cspc_lidar) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[2.844145] (cspc_lidar) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[2.904551] (-) TimerEvent: {}
+[3.002183] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[3.004638] (-) TimerEvent: {}
+[3.006180] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[3.006784] (cspc_lidar) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar;/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk\n'}
+[3.006953] (cspc_lidar) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[3.010402] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[3.010553] (cspc_lidar) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[3.011582] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[3.013105] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.014213] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[3.017739] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[3.017909] (cspc_lidar) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[3.018927] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.020694] (cspc_lidar) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.104758] (-) TimerEvent: {}
+[3.129019] (cspc_lidar) StdoutLine: {'line': b'-- Generating done\n'}
+[3.155790] (cspc_lidar) StdoutLine: {'line': b'-- Build files have been written to: /root/udp_ws/build/cspc_lidar\n'}
+[3.204878] (-) TimerEvent: {}
+[3.239792] (cspc_lidar) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target cspc_lidar\n'}
+[3.267438] (cspc_lidar) StdoutLine: {'line': b'[100%] Built target cspc_lidar\n'}
+[3.280788] (cspc_lidar) CommandEnded: {'returncode': 0}
+[3.282040] (cspc_lidar) JobProgress: {'identifier': 'cspc_lidar', 'progress': 'install'}
+[3.293507] (cspc_lidar) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/udp_ws/build/cspc_lidar'], 'cwd': '/root/udp_ws/build/cspc_lidar', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/root'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CODEX_CI', '1'), ('LANGUAGE', 'zh_CN:zh'), ('USER', 'root'), ('SSH_CLIENT', '192.168.222.48 61529 22'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/root/.vscode-server/cli/servers/Stable-8b640eef5a6c6089c029249d48efa5c99adf7d51/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/tcf.json","messagesFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/8b640eef5a6c6089c029249d48efa5c99adf7d51/nls.messages.json","corruptMarkerFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b912e1cc94c8380c6bb426bdce2c540f.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/tcf.json","_cacheRoot":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn","_resolvedLanguagePackCoreLocation":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/8b640eef5a6c6089c029249d48efa5c99adf7d51","_corruptedFile":"/root/.vscode-server/data/clp/b912e1cc94c8380c6bb426bdce2c540f.zh-cn/corrupted.info"}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('HOBOT_ROOTFS_DIR', '/usr/hobot'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/lib/:/usr/lib/aarch64-linux-gnu:/lib/aarch64-linux-gnu:/app/lib:/app/pub/lib:/middleware/lib:/middleware/pub/lib:/usr/lib/gstreamer'), ('BROWSER', '/root/.vscode-server/cli/servers/Stable-8b640eef5a6c6089c029249d48efa5c99adf7d51/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/root'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/0/vscode-ipc-4796d3bc-1a69-4e7e-b2a2-bb54c3a09aff.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/0/bus'), ('COLORTERM', ''), ('DEBUGINFOD_URLS', ''), ('COLCON_PREFIX_PATH', '/root/ldlidar_ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'root'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('OPENSSL_CONF', '/etc/ssl/openssl.cnf'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '12'), ('VSCODE_CLI_REQUIRE_TOKEN', '02120ee3-486d-4966-abdf-47b29e3c2dd9'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/root/.codex/tmp/arg0/codex-arg0JVmzfh:/root/.vscode-server/cli/servers/Stable-8b640eef5a6c6089c029249d48efa5c99adf7d51/server/bin/remote-cli:/opt/ros/humble/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/hobot/bin:/app/bin:/middleware/bin:/var/busybox:/usr/local/sbin:/usr/local/bin:/usr/games:/usr/local/games:/snap/bin:/root/.vscode-server/extensions/openai.chatgpt-26.506.31421-linux-arm64/bin/linux-aarch64'), ('VSCODE_AGENT_FOLDER', '/root/.vscode-server'), ('XDG_RUNTIME_DIR', '/run/user/0'), ('LANG', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/root/ldlidar_ros2_ws/install/ldlidar_stl_ros2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('GST_PLUGIN_PATH', '/usr/hobot/lib/gst-plugins'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019e15d7-7908-7083-a9f8-b6e08a7d0f06'), ('GIT_PAGER', 'cat'), ('PWD', '/root/udp_ws/build/cspc_lidar'), ('LC_ALL', 'zh_CN.UTF-8'), ('SSH_CONNECTION', '192.168.222.48 61529 192.168.222.200 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('TZ', 'CST-08:00'), ('COLCON', '1'), ('LD_HWCAP_MASK', '0x00000000'), ('CMAKE_PREFIX_PATH', '/root/ldlidar_ros2_ws/install/ldlidar_stl_ros2:/opt/ros/humble')]), 'shell': False}
+[3.304852] (cspc_lidar) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.305282] (-) TimerEvent: {}
+[3.305338] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/lib/cspc_lidar/cspc_lidar\n'}
+[3.305617] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /root/udp_ws/install/cspc_lidar/lib/cspc_lidar/front_distance_tester.py\n'}
+[3.306007] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/launch\n'}
+[3.306440] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_launch.py\n'}
+[3.306569] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_rviz.py\n'}
+[3.306689] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/params\n'}
+[3.306813] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/params/cspc_lidar.yaml\n'}
+[3.306928] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /root/udp_ws/install/cspc_lidar/share/ament_index/resource_index/package_run_dependencies/cspc_lidar\n'}
+[3.307470] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/ament_index/resource_index/parent_prefix_path/cspc_lidar\n'}
+[3.307746] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.sh\n'}
+[3.307866] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.dsv\n'}
+[3.308088] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.sh\n'}
+[3.308343] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.dsv\n'}
+[3.308583] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.bash\n'}
+[3.308931] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.sh\n'}
+[3.309050] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.zsh\n'}
+[3.309160] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.dsv\n'}
+[3.309360] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/package.dsv\n'}
+[3.309683] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/ament_index/resource_index/packages/cspc_lidar\n'}
+[3.310024] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig.cmake\n'}
+[3.310152] (cspc_lidar) StdoutLine: {'line': b'-- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig-version.cmake\n'}
+[3.310268] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/package.xml\n'}
+[3.311957] (cspc_lidar) CommandEnded: {'returncode': 0}
+[3.354451] (cspc_lidar) JobEnded: {'identifier': 'cspc_lidar', 'rc': 0}
+[3.355796] (-) EventReactorShutdown: {}

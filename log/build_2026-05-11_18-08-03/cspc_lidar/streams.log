@@ -1,0 +1,85 @@
+[0.020s] Invoking command in '/root/udp_ws/build/cspc_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/udp_ws/build/cspc_lidar -- -j6 -l6
+[0.059s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.307s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[0.352s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.356s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.367s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.383s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.405s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.461s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.464s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.605s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.696s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.749s] -- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)
+[0.785s] -- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+[0.845s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.888s] -- FLANN found (include: /usr/include, lib: /usr/lib/aarch64-linux-gnu/libflann_cpp.so)
+[1.374s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.384s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[1.659s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.668s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.678s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[1.937s] -- Found Qhull version 8.0.2
+[2.205s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.484s] CMake Warning (dev) at CMakeLists.txt:19 (find_package):
+[2.484s]   Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+[2.484s]   Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+[2.484s]   command to set the policy and suppress this warning.
+[2.485s] 
+[2.485s]   CMake variable PCL_ROOT is set to:
+[2.485s] 
+[2.485s]     /usr
+[2.485s] 
+[2.485s]   For compatibility, CMake is ignoring the variable.
+[2.485s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.485s] 
+[2.510s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.720s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[2.723s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.879s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.882s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.883s] -- Configured cppcheck include dirs: /root/udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar;/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk
+[2.883s] -- Configured cppcheck exclude dirs and/or files: 
+[2.886s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.887s] -- Configured cpplint exclude dirs and/or files: 
+[2.887s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.889s] -- Added test 'lint_cmake' to check CMake code style
+[2.890s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.893s] -- Added test 'uncrustify' to check C / C++ code style
+[2.893s] -- Configured uncrustify additional arguments: 
+[2.894s] -- Added test 'xmllint' to check XML markup files
+[2.895s] -- Configuring done
+[2.971s] -- Generating done
+[2.999s] -- Build files have been written to: /root/udp_ws/build/cspc_lidar
+[3.062s] [  9%] Building CXX object CMakeFiles/front_distance_tester.dir/src/front_distance_tester.cpp.o
+[3.089s] Consolidate compiler generated dependencies of target cspc_lidar
+[3.117s] [ 90%] Built target cspc_lidar
+[20.032s] [100%] Linking CXX executable front_distance_tester
+[20.730s] [100%] Built target front_distance_tester
+[20.743s] Invoked command in '/root/udp_ws/build/cspc_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/udp_ws/build/cspc_lidar -- -j6 -l6
+[20.756s] Invoking command in '/root/udp_ws/build/cspc_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/udp_ws/build/cspc_lidar
+[20.767s] -- Install configuration: ""
+[20.767s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/lib/cspc_lidar/cspc_lidar
+[20.767s] -- Installing: /root/udp_ws/install/cspc_lidar/lib/cspc_lidar/front_distance_tester
+[20.776s] -- Set runtime path of "/root/udp_ws/install/cspc_lidar/lib/cspc_lidar/front_distance_tester" to ""
+[20.776s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/launch
+[20.776s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_launch.py
+[20.777s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_rviz.py
+[20.777s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/params
+[20.777s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/params/cspc_lidar.yaml
+[20.777s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/ament_index/resource_index/package_run_dependencies/cspc_lidar
+[20.778s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/ament_index/resource_index/parent_prefix_path/cspc_lidar
+[20.778s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.sh
+[20.778s] -- Installing: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.dsv
+[20.778s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.sh
+[20.778s] -- Installing: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.dsv
+[20.778s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.bash
+[20.779s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.sh
+[20.779s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.zsh
+[20.779s] -- Installing: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.dsv
+[20.779s] -- Installing: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/package.dsv
+[20.779s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/ament_index/resource_index/packages/cspc_lidar
+[20.779s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig.cmake
+[20.780s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig-version.cmake
+[20.780s] -- Up-to-date: /root/udp_ws/install/cspc_lidar/share/cspc_lidar/package.xml
+[20.781s] Invoked command in '/root/udp_ws/build/cspc_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/udp_ws/build/cspc_lidar

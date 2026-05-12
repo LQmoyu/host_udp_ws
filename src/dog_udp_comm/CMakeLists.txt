@@ -10,6 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(std_srvs REQUIRED)
 
 # 编译 C++ 节点
@@ -26,6 +27,7 @@ install(TARGETS
 install(PROGRAMS
   scripts/keyboard_teleop.py
   scripts/host_mpc_controller.py
+  scripts/pixel_to_scan_polar.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

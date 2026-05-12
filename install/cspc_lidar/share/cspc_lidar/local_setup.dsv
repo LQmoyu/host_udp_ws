@@ -1,0 +1,2 @@
+source;share/cspc_lidar/environment/ament_prefix_path.sh
+source;share/cspc_lidar/environment/path.sh

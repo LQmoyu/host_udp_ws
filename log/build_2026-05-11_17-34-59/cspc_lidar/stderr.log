@@ -1,0 +1,137 @@
+[0m** WARNING ** io features related to pcap will be disabled[0m
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:[m[K In member function ‘[01m[Kvoid Point_cloud_optimize::PointCloudFilter(LaserScan*)[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:25:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   25 |         for (i0 = 0; [01;35m[Ki0 < Scan->points.size()[m[K; i0++)
+      |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:28:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   28 |                 i1 = [01;35m[Ki1 < Scan->points.size()[m[K ? i1 : i1 - Scan->points.size();
+      |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:30:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   30 |                 i2 = [01;35m[Ki2 < Scan->points.size()[m[K ? i2 : i2 - Scan->points.size();
+      |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:32:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   32 |                 i3 = [01;35m[Ki3 < Scan->points.size()[m[K ? i3 : i3 - Scan->points.size();
+      |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:155:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  155 |         for (i0 = 0; [01;35m[Ki0 < Scan->points.size()[m[K; i0++)
+      |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:158:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  158 |                 i1 = [01;35m[Ki1 < Scan->points.size()[m[K ? i1 : i1 - Scan->points.size();
+      |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:160:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  160 |                 i2 = [01;35m[Ki2 < Scan->points.size()[m[K ? i2 : i2 - Scan->points.size();
+      |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:162:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  162 |                 i3 = [01;35m[Ki3 < Scan->points.size()[m[K ? i3 : i3 - Scan->points.size();
+      |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:164:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  164 |                 i4 = [01;35m[Ki4 < Scan->points.size()[m[K ? i4 : i4 - Scan->points.size();
+      |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:[m[K In member function ‘[01m[Kint Point_cloud_optimize::UltrasonicSimRanging(LaserPoint&)[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:228:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ki[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  228 |         int [01;35m[Ki[m[K, index;
+      |             [01;35m[K^[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:229:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktempdep[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  229 |         short [01;35m[Ktempdep[m[K;
+      |               [01;35m[K^~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:253:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  253 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:[m[K In member function ‘[01m[Kvoid Point_cloud_optimize::lidar_blocked_judge(int)[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:341:60:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+  341 |                 printf("lidar 雷达被严重遮挡百分之七十 %d,[01;35m[K%d[m[K\n",node_lidar.lidar_block.lidar_zero_count,[32m[Knode_lidar.scan_node_count[m[K);
+      |                                                           [01;35m[K~^[m[K                                            [32m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                            [01;35m[K|[m[K                                                       [32m[K|[m[K
+      |                                                            [01;35m[Kint[m[K                                                     [32m[Ksize_t {aka long unsigned int}[m[K
+      |                                                           [32m[K%ld[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:[m[K In member function ‘[01m[Kvoid Point_cloud_optimize::lidar_blocked_init()[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:404:69:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+  404 |                         if((angle >= 0 && angle < 90)|| [01;35m[Kangle > 270 && angle <=360[m[K){
+      |                                                         [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:375:21:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktemp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  375 |         float r, d, [01;35m[Ktemp[m[K;
+      |                     [01;35m[K^~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kvoid pcloud_build_by_scan(LaserScan&, pcloud_t&)[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:44:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   44 |   for (int i = 0; [01;35m[Ki < outscan.points.size()[m[K; i++)
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:46:11:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* memset(void*, int, size_t)[m[K’ clearing an object of non-trivial type ‘[01m[Kpoint_t[m[K’ {aka ‘[01m[Kstruct _point_[m[K’}; use assignment or value-initialization instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess-Wclass-memaccess]8;;[m[K]
+   46 |     [01;35m[Kmemset(&point, 0, sizeof(point_t))[m[K;
+      |     [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8[m[K:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:52:16:[m[K [01;36m[Knote: [m[K‘[01m[Kpoint_t[m[K’ {aka ‘[01m[Kstruct _point_[m[K’} declared here
+   52 | typedef struct [01;36m[K_point_[m[K
+      |                [01;36m[K^~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kint find_index(point_t, pcloud_t&)[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:105:9:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* memset(void*, int, size_t)[m[K’ clearing an object of non-trivial type ‘[01m[Kpoint_t[m[K’ {aka ‘[01m[Kstruct _point_[m[K’}; use assignment or value-initialization instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess-Wclass-memaccess]8;;[m[K]
+  105 |   [01;35m[Kmemset(&point_min, 0, sizeof(point_t))[m[K;
+      |   [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8[m[K:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:52:16:[m[K [01;36m[Knote: [m[K‘[01m[Kpoint_t[m[K’ {aka ‘[01m[Kstruct _point_[m[K’} declared here
+   52 | typedef struct [01;36m[K_point_[m[K
+      |                [01;36m[K^~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:124:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  124 |   if ([01;35m[Kpoint_min.index > pcloud.data.size()[m[K)
+      |       [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kbool intersect(LineSegment, LineSegment, Vector2D&)[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:167:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcross1[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  167 |   double [01;35m[Kcross1[m[K = position1.x * direction1.y - position1.y * direction1.x;
+      |          [01;35m[K^~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kdouble pointToLineDist(point_t, double, double)[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:439:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ky0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  439 |   double [01;35m[Ky0[m[K = k * x0 + b;
+      |          [01;35m[K^~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kbool line_judgment(std::vector<_point_>, point_t)[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:462:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  462 |   if ([01;35m[Kline.size() <= reference[m[K)
+      |       [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:467:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  467 |   if ([01;35m[Kline.size() <= reference[m[K)
+      |       [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:471:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  471 |     for (int i = 1; [01;35m[Ki < line.size() - 1[m[K; i++)
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kvoid fitting_line(pcloud_t&)[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:542:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  542 |         if ([01;35m[Kline.size() >= calibration_params.line_judgment_point_num[m[K)
+      |             [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:560:63:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  560 |         if(point.index == point_last_one.index && [01;35m[Kline.size() >= calibration_params.line_judgment_point_num[m[K)
+      |                                                   [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:571:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  571 |   if([01;35m[Kpoint_record2.index < pcloud.data.size()[m[K
+      |      [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:572:28:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  572 |   &&  [01;35m[Kpoint_last_one.index < pcloud.data.size()[m[K
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:573:27:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  573 |   &&  [01;35m[Kpoint_record1.index < pcloud.data.size()[m[K)
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:597:28:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  597 |     if ([01;35m[Kline_append.size() >= calibration_params.line_judgment_point_num[m[K)
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:606:29:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  606 |             if ([01;35m[Kline.size() >= calibration_params.line_judgment_point_num[m[K)
+      |                 [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:617:68:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  617 |           if(point.index == point_append_last.index && [01;35m[Kline.size() >= calibration_params.line_judgment_point_num[m[K)
+      |                                                        [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:632:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<_point_> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  632 |     for (int i = 0; [01;35m[Ki < lines.size() - 1[m[K; i++)
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kvoid lidar_calibration(LaserScan&)[m[K’:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:662:11:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* memset(void*, int, size_t)[m[K’ clearing an object of type ‘[01m[Kstruct LaserPoint[m[K’ with no trivial copy-assignment; use assignment or value-initialization instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess-Wclass-memaccess]8;;[m[K]
+  662 |     [01;35m[Kmemset(&outscan_point, 0, sizeof(LaserPoint))[m[K;
+      |     [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:4[m[K,
+                 from [01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8[m[K:
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_information.h:210:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstruct LaserPoint[m[K’ declared here
+  210 | struct [01;36m[KLaserPoint[m[K
+      |        [01;36m[K^~~~~~~~~~[m[K
+[01m[K/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:11:10:[m[K [01;31m[Kfatal error: [m[Kpcl_conversions/pcl_conversions.h: 没有那个文件或目录
+   11 | #include [01;31m[K<pcl_conversions/pcl_conversions.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cspc_lidar.dir/build.make:174：CMakeFiles/cspc_lidar.dir/src/node_lidar_ros.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/cspc_lidar.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

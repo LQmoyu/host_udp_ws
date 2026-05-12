@@ -6,6 +6,24 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='dog_udp_comm',
+            executable='pixel_to_scan_polar.py',
+            name='pixel_to_scan_polar',
+            output='screen',
+            parameters=[
+                {'scan_topic': '/scan'},
+                {'pixel_topic': '/pixel_xy'},
+                {'out_topic': '/person_polar'},
+                {'fx': 600.0},
+                {'cx': 320.0},
+                {'yaw_cam_to_lidar': 0.0},
+                {'search_half_window': 6},
+                {'range_min_valid': 0.10},
+                {'range_max_valid': 10.0},
+                {'publish_debug': False},
+            ],
+        ),
+        Node(
+            package='dog_udp_comm',
             executable='sender_node',
             name='udp_cmd_vel_server',
             output='screen',

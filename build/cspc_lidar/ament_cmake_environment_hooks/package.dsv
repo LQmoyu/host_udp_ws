@@ -1,0 +1,4 @@
+source;share/cspc_lidar/local_setup.bash
+source;share/cspc_lidar/local_setup.dsv
+source;share/cspc_lidar/local_setup.sh
+source;share/cspc_lidar/local_setup.zsh

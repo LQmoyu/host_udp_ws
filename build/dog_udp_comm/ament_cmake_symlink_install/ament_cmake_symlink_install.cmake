@@ -313,8 +313,8 @@ message(STATUS "Execute custom install script")
 # install("TARGETS" "sender_node" "DESTINATION" "lib/dog_udp_comm")
 include("/root/udp_ws/build/dog_udp_comm/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(PROGRAMS "scripts/keyboard_teleop.py" "scripts/host_mpc_controller.py" "DESTINATION" "lib/dog_udp_comm")
-ament_cmake_symlink_install_programs("/root/udp_ws/src/dog_udp_comm" PROGRAMS "scripts/keyboard_teleop.py" "scripts/host_mpc_controller.py" "DESTINATION" "lib/dog_udp_comm")
+# install(PROGRAMS "scripts/keyboard_teleop.py" "scripts/host_mpc_controller.py" "scripts/pixel_to_scan_polar.py" "DESTINATION" "lib/dog_udp_comm")
+ament_cmake_symlink_install_programs("/root/udp_ws/src/dog_udp_comm" PROGRAMS "scripts/keyboard_teleop.py" "scripts/host_mpc_controller.py" "scripts/pixel_to_scan_polar.py" "DESTINATION" "lib/dog_udp_comm")
 
 # install(DIRECTORY "launch" "DESTINATION" "share/dog_udp_comm")
 ament_cmake_symlink_install_directory("/root/udp_ws/src/dog_udp_comm" DIRECTORY "launch" "DESTINATION" "share/dog_udp_comm")
