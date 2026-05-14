@@ -1,0 +1,20 @@
+[Unit]
+Description=ROS2 user_command autostart
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+EnvironmentFile=-/etc/default/user-command
+ExecStartPre=/bin/bash -lc 'for i in {1..30}; do ip -4 addr show eth1 | grep -q "inet 192.168.19." && exit 0; sleep 1; done; exit 1'
+ExecStart=/usr/local/bin/start_user_command.sh
+Restart=always
+RestartSec=2
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
