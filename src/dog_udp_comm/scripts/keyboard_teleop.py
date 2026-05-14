@@ -3,7 +3,7 @@
 
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import Twist, TwistStamped
 import sys, select, termios, tty
 
 msg = """
@@ -28,12 +28,22 @@ def getKey(settings, timeout):
 class KeyboardTeleop(Node):
     def __init__(self):
         super().__init__('keyboard_teleop')
-        self.pub = self.create_publisher(Twist, '/track_cmd_vel', 10)
-        
+        self.declare_parameter("cmd_topic", "/track_cmd_vel")
+        self.declare_parameter("use_stamped_msg", False)
         self.declare_parameter("linear_speed", 0.3)
         self.declare_parameter("angular_speed", 0.5)
+
+        self.cmd_topic = self.get_parameter("cmd_topic").value
+        self.use_stamped_msg = self.get_parameter("use_stamped_msg").value
         self.linear_speed = self.get_parameter("linear_speed").value
         self.angular_speed = self.get_parameter("angular_speed").value
+
+        self.pub_twist = None
+        self.pub_twist_stamped = None
+        if self.use_stamped_msg:
+            self.pub_twist_stamped = self.create_publisher(TwistStamped, self.cmd_topic, 10)
+        else:
+            self.pub_twist = self.create_publisher(Twist, self.cmd_topic, 10)
 
         self.cmd_vx = 0.0
         self.cmd_wz = 0.0
@@ -43,6 +53,10 @@ class KeyboardTeleop(Node):
         self.timer = self.create_timer(0.05, self.timer_callback) # 20Hz
         self.settings = termios.tcgetattr(sys.stdin)
         self.get_logger().info(msg)
+        self.get_logger().info(
+            f"Publish topic: {self.cmd_topic}, "
+            f"message type: {'geometry_msgs/msg/TwistStamped' if self.use_stamped_msg else 'geometry_msgs/msg/Twist'}"
+        )
 
     def timer_callback(self):
         key = getKey(self.settings, 0.02)
@@ -67,15 +81,24 @@ class KeyboardTeleop(Node):
             self.cmd_vx = 0.0
             self.cmd_wz = 0.0
 
-        twist = Twist()
-        twist.linear.x = float(self.cmd_vx)
-        twist.angular.z = float(self.cmd_wz)
-        self.pub.publish(twist)
+        self.publish_cmd(float(self.cmd_vx), float(self.cmd_wz))
 
     def stop_robot(self):
-        twist = Twist()
-        self.pub.publish(twist)
+        self.publish_cmd(0.0, 0.0)
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, self.settings)
+
+    def publish_cmd(self, linear_x, angular_z):
+        if self.use_stamped_msg:
+            msg_stamped = TwistStamped()
+            msg_stamped.header.stamp = self.get_clock().now().to_msg()
+            msg_stamped.twist.linear.x = linear_x
+            msg_stamped.twist.angular.z = angular_z
+            self.pub_twist_stamped.publish(msg_stamped)
+        else:
+            msg_twist = Twist()
+            msg_twist.linear.x = linear_x
+            msg_twist.angular.z = angular_z
+            self.pub_twist.publish(msg_twist)
 
 def main(args=None):
     rclpy.init(args=args)

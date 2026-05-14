@@ -1,1 +1,1 @@
-prepend-non-duplicate-if-exists;PATH;bin
+/home/talowe/host_udp_ws/build/cspc_lidar/ament_cmake_environment_hooks/path.dsv

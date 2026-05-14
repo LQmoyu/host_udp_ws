@@ -1,0 +1,383 @@
+[0.026s] Invoking command in '/home/talowe/host_udp_ws/build/cspc_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/talowe/host_udp_ws/install/cspc_lidar
+[0.410s] -- The C compiler identification is GNU 11.4.0
+[0.768s] -- The CXX compiler identification is GNU 11.4.0
+[0.808s] -- Detecting C compiler ABI info
+[0.998s] -- Detecting C compiler ABI info - done
+[1.045s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.048s] -- Detecting C compile features
+[1.052s] -- Detecting C compile features - done
+[1.070s] -- Detecting CXX compiler ABI info
+[1.263s] -- Detecting CXX compiler ABI info - done
+[1.315s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.316s] -- Detecting CXX compile features
+[1.316s] -- Detecting CXX compile features - done
+[1.326s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.308s] -- Found Python3: /home/talowe/miniforge3/bin/python3 (found version "3.12.12") found components: Interpreter 
+[2.470s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.560s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[2.710s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.719s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.743s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.775s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.815s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.921s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.927s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[3.132s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[3.183s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.239s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.259s] -- Looking for pthread.h
+[3.438s] -- Looking for pthread.h - found
+[3.438s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.643s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.649s] -- Found Threads: TRUE  
+[3.823s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[3.926s] -- Found visualization_msgs: 4.9.1 (/opt/ros/humble/share/visualization_msgs/cmake)
+[3.982s] -- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+[4.090s] -- Checking for module 'eigen3'
+[4.124s] --   Found eigen3, version 3.4.0
+[4.208s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[4.209s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[4.296s] -- Checking for module 'flann'
+[4.324s] --   Found flann, version 1.9.1
+[4.424s] -- Found FLANN: /usr/lib/aarch64-linux-gnu/libflann_cpp.so  
+[4.425s] -- FLANN found (include: /usr/include, lib: /usr/lib/aarch64-linux-gnu/libflann_cpp.so)
+[7.215s] -- Checking for module 'libusb-1.0'
+[7.250s] --   Found libusb-1.0, version 1.0.25
+[7.345s] -- Found libusb: /usr/lib/aarch64-linux-gnu/libusb-1.0.so  
+[7.350s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[7.498s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[7.794s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[7.806s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[7.820s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[8.115s] -- Found Qhull version 8.0.2
+[8.407s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[8.687s] -- Found PCL_COMMON: /usr/lib/aarch64-linux-gnu/libpcl_common.so  
+[8.688s] -- Found PCL_KDTREE: /usr/lib/aarch64-linux-gnu/libpcl_kdtree.so  
+[8.689s] -- Found PCL_OCTREE: /usr/lib/aarch64-linux-gnu/libpcl_octree.so  
+[8.691s] -- Found PCL_SEARCH: /usr/lib/aarch64-linux-gnu/libpcl_search.so  
+[8.692s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/aarch64-linux-gnu/libpcl_sample_consensus.so  
+[8.693s] -- Found PCL_FILTERS: /usr/lib/aarch64-linux-gnu/libpcl_filters.so  
+[8.694s] -- Found PCL_2D: /usr/include/pcl-1.12  
+[8.695s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+[8.696s] -- Found PCL_IO: /usr/lib/aarch64-linux-gnu/libpcl_io.so  
+[8.697s] -- Found PCL_FEATURES: /usr/lib/aarch64-linux-gnu/libpcl_features.so  
+[8.699s] -- Found PCL_ML: /usr/lib/aarch64-linux-gnu/libpcl_ml.so  
+[8.700s] -- Found PCL_SEGMENTATION: /usr/lib/aarch64-linux-gnu/libpcl_segmentation.so  
+[8.701s] -- Found PCL_VISUALIZATION: /usr/lib/aarch64-linux-gnu/libpcl_visualization.so  
+[8.703s] -- Found PCL_SURFACE: /usr/lib/aarch64-linux-gnu/libpcl_surface.so  
+[8.704s] -- Found PCL_REGISTRATION: /usr/lib/aarch64-linux-gnu/libpcl_registration.so  
+[8.706s] -- Found PCL_KEYPOINTS: /usr/lib/aarch64-linux-gnu/libpcl_keypoints.so  
+[8.707s] -- Found PCL_TRACKING: /usr/lib/aarch64-linux-gnu/libpcl_tracking.so  
+[8.709s] -- Found PCL_RECOGNITION: /usr/lib/aarch64-linux-gnu/libpcl_recognition.so  
+[8.710s] -- Found PCL_STEREO: /usr/lib/aarch64-linux-gnu/libpcl_stereo.so  
+[8.711s] -- Found PCL_APPS: /usr/lib/aarch64-linux-gnu/libpcl_apps.so  
+[8.713s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+[8.714s] -- Found PCL_MODELER: /usr/include/pcl-1.12  
+[8.716s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+[8.717s] -- Found PCL_OUTOFCORE: /usr/lib/aarch64-linux-gnu/libpcl_outofcore.so  
+[8.718s] -- Found PCL_PEOPLE: /usr/lib/aarch64-linux-gnu/libpcl_people.so  
+[8.722s] [33mCMake Warning (dev) at CMakeLists.txt:19 (find_package):
+[8.722s]   Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+[8.723s]   Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+[8.723s]   command to set the policy and suppress this warning.
+[8.724s] 
+[8.724s]   CMake variable PCL_ROOT is set to:
+[8.724s] 
+[8.725s]     /usr
+[8.725s] 
+[8.725s]   For compatibility, CMake is ignoring the variable.
+[8.726s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[8.726s] [0m
+[8.756s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[9.158s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[9.161s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[9.162s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[9.411s] -- Added test 'copyright' to check source files copyright and LICENSE
+[9.414s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[9.414s] -- Configured cppcheck include dirs: /home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar;/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk
+[9.415s] -- Configured cppcheck exclude dirs and/or files: 
+[9.416s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[9.417s] -- Configured cpplint exclude dirs and/or files: 
+[9.418s] -- Added test 'flake8' to check Python code syntax and style conventions
+[9.419s] -- Added test 'lint_cmake' to check CMake code style
+[9.420s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[9.422s] -- Added test 'uncrustify' to check C / C++ code style
+[9.422s] -- Configured uncrustify additional arguments: 
+[9.423s] -- Added test 'xmllint' to check XML markup files
+[9.426s] -- Configuring done
+[9.594s] [33mCMake Warning at CMakeLists.txt:32 (add_executable):
+[9.594s]   Cannot generate a safe runtime search path for target cspc_lidar because
+[9.594s]   files in some directories may conflict with libraries in implicit
+[9.594s]   directories:
+[9.594s] 
+[9.594s]     runtime library [libz.so.1] in /usr/lib/aarch64-linux-gnu may be hidden by files in:
+[9.595s]       /home/talowe/miniforge3/lib
+[9.595s] 
+[9.595s]   Some of these libraries may not be found correctly.
+[9.595s] 
+[9.595s] [0m
+[9.603s] -- Generating done
+[9.627s] -- Build files have been written to: /home/talowe/host_udp_ws/build/cspc_lidar
+[9.684s] Invoked command in '/home/talowe/host_udp_ws/build/cspc_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/talowe/host_udp_ws/install/cspc_lidar
+[9.691s] Invoking command in '/home/talowe/host_udp_ws/build/cspc_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/talowe/host_udp_ws/build/cspc_lidar -- -j8 -l8
+[9.829s] [ 11%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/serial_port.cpp.o[0m
+[9.829s] [ 22%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/point_cloud_optimize.cpp.o[0m
+[9.836s] [ 44%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/calibration.cpp.o[0m
+[9.837s] [ 44%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/mtime.cpp.o[0m
+[9.837s] [ 66%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/node_lidar.cpp.o[0m
+[9.837s] [ 66%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/timer.cpp.o[0m
+[9.840s] [ 77%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/src/node_lidar_ros.cpp.o[0m
+[9.862s] [ 88%] [32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/lidar_data_processing.cpp.o[0m
+[10.570s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:[m[K In member function ‘[01m[Kvoid Point_cloud_optimize::PointCloudFilter(LaserScan*)[m[K’:
+[10.572s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:25:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.572s]    25 |         for (i0 = 0; [01;35m[Ki0 < Scan->points.size()[m[K; i0++)
+[10.573s]       |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[10.573s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:28:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.573s]    28 |                 i1 = [01;35m[Ki1 < Scan->points.size()[m[K ? i1 : i1 - Scan->points.size();
+[10.574s]       |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[10.574s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:30:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.574s]    30 |                 i2 = [01;35m[Ki2 < Scan->points.size()[m[K ? i2 : i2 - Scan->points.size();
+[10.575s]       |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[10.575s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:32:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.576s]    32 |                 i3 = [01;35m[Ki3 < Scan->points.size()[m[K ? i3 : i3 - Scan->points.size();
+[10.576s]       |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[10.582s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:155:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.582s]   155 |         for (i0 = 0; [01;35m[Ki0 < Scan->points.size()[m[K; i0++)
+[10.583s]       |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[10.583s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:158:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.584s]   158 |                 i1 = [01;35m[Ki1 < Scan->points.size()[m[K ? i1 : i1 - Scan->points.size();
+[10.584s]       |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[10.585s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:160:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.585s]   160 |                 i2 = [01;35m[Ki2 < Scan->points.size()[m[K ? i2 : i2 - Scan->points.size();
+[10.585s]       |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[10.586s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:162:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.586s]   162 |                 i3 = [01;35m[Ki3 < Scan->points.size()[m[K ? i3 : i3 - Scan->points.size();
+[10.586s]       |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[10.587s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:164:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.587s]   164 |                 i4 = [01;35m[Ki4 < Scan->points.size()[m[K ? i4 : i4 - Scan->points.size();
+[10.587s]       |                      [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[10.595s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:[m[K In member function ‘[01m[Kint Point_cloud_optimize::UltrasonicSimRanging(LaserPoint&)[m[K’:
+[10.596s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:228:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ki[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.597s]   228 |         int [01;35m[Ki[m[K, index;
+[10.597s]       |             [01;35m[K^[m[K
+[10.598s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:229:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktempdep[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.599s]   229 |         short [01;35m[Ktempdep[m[K;
+[10.599s]       |               [01;35m[K^~~~~~~[m[K
+[10.600s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:253:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[10.600s]   253 | [01;35m[K}[m[K
+[10.601s]       | [01;35m[K^[m[K
+[10.602s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:[m[K In member function ‘[01m[Kvoid Point_cloud_optimize::lidar_blocked_judge(int)[m[K’:
+[10.603s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:341:60:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[10.603s]   341 |                 printf("lidar 雷达被严重遮挡百分之七十 %d,[01;35m[K%d[m[K\n",node_lidar.lidar_block.lidar_zero_count,[32m[Knode_lidar.scan_node_count[m[K);
+[10.604s]       |                                                           [01;35m[K~^[m[K                                            [32m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[10.604s]       |                                                            [01;35m[K|[m[K                                                       [32m[K|[m[K
+[10.605s]       |                                                            [01;35m[Kint[m[K                                                     [32m[Ksize_t {aka long unsigned int}[m[K
+[10.605s]       |                                                           [32m[K%ld[m[K
+[10.606s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:[m[K In member function ‘[01m[Kvoid Point_cloud_optimize::lidar_blocked_init()[m[K’:
+[10.606s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:404:69:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+[10.607s]   404 |                         if((angle >= 0 && angle < 90)|| [01;35m[Kangle > 270 && angle <=360[m[K){
+[10.607s]       |                                                         [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[10.608s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:375:21:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktemp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.608s]   375 |         float r, d, [01;35m[Ktemp[m[K;
+[10.608s]       |                     [01;35m[K^~~~[m[K
+[10.682s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:[m[K In function ‘[01m[Kvoid flushSerial()[m[K’:
+[10.683s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:53:24:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbytes_read[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.683s]    53 |                 size_t [01;35m[Kbytes_read[m[K = node_lidar.serial_port->read_data(buffer, len);
+[10.684s]       |                        [01;35m[K^~~~~~~~~~[m[K
+[10.685s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:[m[K In function ‘[01m[Kbool lidar_state_judgment()[m[K’:
+[10.686s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:86:45:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%lld[m[K’ expects argument of type ‘[01m[Klong long int[m[K’, but argument 2 has type ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[10.686s]    86 |                 printf("状态异常重新启动 [01;35m[K%lld[m[K\n",[32m[Klidar_status_time[m[K);
+[10.686s]       |                                          [01;35m[K~~~^[m[K    [32m[K~~~~~~~~~~~~~~~~~[m[K
+[10.687s]       |                                             [01;35m[K|[m[K    [32m[K|[m[K
+[10.687s]       |                                             [01;35m[K|[m[K    [32m[Kuint64_t {aka long unsigned int}[m[K
+[10.688s]       |                                             [01;35m[Klong long int[m[K
+[10.688s]       |                                          [32m[K%ld[m[K
+[10.689s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:62:21:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kstatus_judge[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.689s]    62 |         static bool [01;35m[Kstatus_judge[m[K = false;     //整体状态判断
+[10.689s]       |                     [01;35m[K^~~~~~~~~~~~[m[K
+[10.690s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:65:21:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Klidar_start_flag[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+[10.690s]    65 |         static bool [01;35m[Klidar_start_flag[m[K = false; //下发雷达启动指令后的雷达反馈标志
+[10.691s]       |                     [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[10.691s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:[m[K In function ‘[01m[Kint read_forever()[m[K’:
+[10.692s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:206:82:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[10.692s]   206 |                                                         printf("full----- count=[01;35m[K%d[m[K,time=%lld,frequence=%d\n",[32m[Kscan_count[m[K,current_times(),local_scan[0].scan_frequence);
+[10.693s]       |                                                                                 [01;35m[K~^[m[K                           [32m[K~~~~~~~~~~[m[K
+[10.693s]       |                                                                                  [01;35m[K|[m[K                           [32m[K|[m[K
+[10.694s]       |                                                                                  [01;35m[Kint[m[K                         [32m[Ksize_t {aka long unsigned int}[m[K
+[10.694s]       |                                                                                 [32m[K%ld[m[K
+[10.695s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:206:92:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%lld[m[K’ expects argument of type ‘[01m[Klong long int[m[K’, but argument 3 has type ‘[01m[Kint64_t[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[10.695s]   206 |                                                         printf("full----- count=%d,time=[01;35m[K%lld[m[K,frequence=%d\n",scan_count,[32m[Kcurrent_times()[m[K,local_scan[0].scan_frequence);
+[10.695s]       |                                                                                         [01;35m[K~~~^[m[K                            [32m[K~~~~~~~~~~~~~~~[m[K
+[10.696s]       |                                                                                            [01;35m[K|[m[K                                         [32m[K|[m[K
+[10.696s]       |                                                                                            [01;35m[Klong long int[m[K                             [32m[Kint64_t {aka long int}[m[K
+[10.697s]       |                                                                                         [32m[K%ld[m[K
+[10.697s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:[m[K In function ‘[01m[Kvoid send_lidar_data(LaserScan&)[m[K’:
+[10.697s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:312:43:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.698s]   312 |                         for (int i = 0; [01;35m[Ki < count[m[K; i++)
+[10.698s]       |                                         [01;35m[K~~^~~~~~~[m[K
+[10.849s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:[m[K In member function ‘[01m[Kbool Lidar_Data_Processing::wait_start_reply(uint64_t)[m[K’:
+[10.849s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:107:49:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint64_t[m[K’ {aka ‘[01m[Klong int[m[K’} and ‘[01m[Kuint64_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[10.850s]   107 |   while ([01;35m[K(waitTime = current_times() - startTs) <= timeout[m[K){
+[10.851s]       |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[10.851s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:[m[K In member function ‘[01m[Kresult_t Lidar_Data_Processing::waitSpeedRight(uint8_t, uint64_t)[m[K’:
+[10.852s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:209:56:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kcmd[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[10.852s]   209 | result_t Lidar_Data_Processing::waitSpeedRight([01;35m[Kuint8_t cmd[m[K,uint64_t timeout)
+[10.853s]       |                                                [01;35m[K~~~~~~~~^~~[m[K
+[10.854s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:[m[K In member function ‘[01m[Kresult_t Lidar_Data_Processing::waitResponseHeader(uint8_t, uint64_t)[m[K’:
+[10.854s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:481:28:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 4 has type ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[10.855s]   481 |       printf("data**%d,%d,[01;35m[K%d[m[K\n",check_sum_cal,recvBuffer[remainSize-1],[32m[KremainSize[m[K);
+[10.855s]       |                           [01;35m[K~^[m[K                                           [32m[K~~~~~~~~~~[m[K
+[10.856s]       |                            [01;35m[K|[m[K                                           [32m[K|[m[K
+[10.856s]       |                            [01;35m[Kint[m[K                                         [32m[Ksize_t {aka long unsigned int}[m[K
+[10.857s]       |                           [32m[K%ld[m[K
+[10.859s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:[m[K In member function ‘[01m[Kresult_t Lidar_Data_Processing::waitPackage_coin(node_info*, uint32_t)[m[K’:
+[10.860s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:973:9:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kk[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.861s]   973 |     int [01;35m[Kk[m[K;
+[10.861s]       |         [01;35m[K^[m[K
+[10.862s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:873:11:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KAngleCorrectForDistance[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+[10.862s]   873 |   int32_t [01;35m[KAngleCorrectForDistance[m[K = 0;
+[10.863s]       |           [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[10.863s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:875:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kpackage_type[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.864s]   875 |   uint8_t [01;35m[Kpackage_type[m[K = 0;
+[10.864s]       |           [01;35m[K^~~~~~~~~~~~[m[K
+[10.865s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:877:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kstart[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.866s]   877 |   uint16_t [01;35m[Kstart[m[K;
+[10.866s]       |            [01;35m[K^~~~~[m[K
+[10.867s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:878:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kstop[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.867s]   878 |   uint16_t [01;35m[Kstop[m[K;
+[10.868s]       |            [01;35m[K^~~~[m[K
+[10.868s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:[m[K At global scope:
+[10.869s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:62:21:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstatus_judge[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.869s]    62 |         static bool [01;35m[Kstatus_judge[m[K = false;     //整体状态判断
+[10.870s]       |                     [01;35m[K^~~~~~~~~~~~[m[K
+[10.926s] In file included from [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:12[m[K:
+[10.927s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.h:[m[K In constructor ‘[01m[KSerial_Port::Serial_Port(const string&, uint32_t, Timeout, bytesize_t, parity_t, stopbits_t, flowcontrol_t)[m[K’:
+[10.927s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.h:102:14:[m[K [01;35m[Kwarning: [m[K‘[01m[KSerial_Port::bytesize_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[10.928s]   102 |   bytesize_t [01;35m[Kbytesize_[m[K;       // Size of the bytes
+[10.928s]       |              [01;35m[K^~~~~~~~~[m[K
+[10.929s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.h:101:12:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kparity_t Serial_Port::parity_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[10.929s]   101 |   parity_t [01;35m[Kparity_[m[K;           // Parity
+[10.930s]       |            [01;35m[K^~~~~~~[m[K
+[10.930s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:31:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[10.930s]    31 | [01;35m[KSerial_Port[m[K::Serial_Port(const string &port, uint32_t baudrate, Timeout timeout,
+[10.931s]       | [01;35m[K^~~~~~~~~~~[m[K
+[10.931s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:[m[K In member function ‘[01m[Kbool Serial_Port::setBaudrate(long unsigned int)[m[K’:
+[10.932s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:578:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Knew_baud[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[10.932s]   578 |   speed_t [01;35m[Knew_baud[m[K = static_cast<speed_t>(baudrate);
+[10.932s]       |           [01;35m[K^~~~~~~~[m[K
+[11.004s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:[m[K In member function ‘[01m[Kbool Serial_Port::setCustomBaudRate(long unsigned int)[m[K’:
+[11.007s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:571:1:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[11.008s]   571 | [01;35m[K}[m[K
+[11.008s]       | [01;35m[K^[m[K
+[11.316s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kvoid pcloud_build_by_scan(LaserScan&, pcloud_t&)[m[K’:
+[11.316s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:44:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.317s]    44 |   for (int i = 0; [01;35m[Ki < outscan.points.size()[m[K; i++)
+[11.317s]       |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.318s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:46:11:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* memset(void*, int, size_t)[m[K’ clearing an object of non-trivial type ‘[01m[Kpoint_t[m[K’ {aka ‘[01m[Kstruct _point_[m[K’}; use assignment or value-initialization instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess-Wclass-memaccess]8;;[m[K]
+[11.318s]    46 |     [01;35m[Kmemset(&point, 0, sizeof(point_t))[m[K;
+[11.319s]       |     [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.319s] In file included from [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8[m[K:
+[11.319s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:52:16:[m[K [01;36m[Knote: [m[K‘[01m[Kpoint_t[m[K’ {aka ‘[01m[Kstruct _point_[m[K’} declared here
+[11.320s]    52 | typedef struct [01;36m[K_point_[m[K
+[11.320s]       |                [01;36m[K^~~~~~~[m[K
+[11.321s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kint find_index(point_t, pcloud_t&)[m[K’:
+[11.321s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:105:9:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* memset(void*, int, size_t)[m[K’ clearing an object of non-trivial type ‘[01m[Kpoint_t[m[K’ {aka ‘[01m[Kstruct _point_[m[K’}; use assignment or value-initialization instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess-Wclass-memaccess]8;;[m[K]
+[11.321s]   105 |   [01;35m[Kmemset(&point_min, 0, sizeof(point_t))[m[K;
+[11.322s]       |   [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.322s] In file included from [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8[m[K:
+[11.322s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:52:16:[m[K [01;36m[Knote: [m[K‘[01m[Kpoint_t[m[K’ {aka ‘[01m[Kstruct _point_[m[K’} declared here
+[11.323s]    52 | typedef struct [01;36m[K_point_[m[K
+[11.323s]       |                [01;36m[K^~~~~~~[m[K
+[11.323s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:124:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.324s]   124 |   if ([01;35m[Kpoint_min.index > pcloud.data.size()[m[K)
+[11.324s]       |       [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K
+[11.324s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kbool intersect(LineSegment, LineSegment, Vector2D&)[m[K’:
+[11.325s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:167:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcross1[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[11.326s]   167 |   double [01;35m[Kcross1[m[K = position1.x * direction1.y - position1.y * direction1.x;
+[11.326s]       |          [01;35m[K^~~~~~[m[K
+[11.326s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kdouble pointToLineDist(point_t, double, double)[m[K’:
+[11.327s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:439:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ky0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[11.327s]   439 |   double [01;35m[Ky0[m[K = k * x0 + b;
+[11.327s]       |          [01;35m[K^~[m[K
+[11.328s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kbool line_judgment(std::vector<_point_>, point_t)[m[K’:
+[11.328s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:462:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.329s]   462 |   if ([01;35m[Kline.size() <= reference[m[K)
+[11.329s]       |       [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[11.329s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:467:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.330s]   467 |   if ([01;35m[Kline.size() <= reference[m[K)
+[11.330s]       |       [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[11.330s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:471:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.331s]   471 |     for (int i = 1; [01;35m[Ki < line.size() - 1[m[K; i++)
+[11.331s]       |                     [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[11.333s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kvoid fitting_line(pcloud_t&)[m[K’:
+[11.334s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:542:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.335s]   542 |         if ([01;35m[Kline.size() >= calibration_params.line_judgment_point_num[m[K)
+[11.335s]       |             [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.336s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:560:63:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.336s]   560 |         if(point.index == point_last_one.index && [01;35m[Kline.size() >= calibration_params.line_judgment_point_num[m[K)
+[11.336s]       |                                                   [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.337s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:571:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.337s]   571 |   if([01;35m[Kpoint_record2.index < pcloud.data.size()[m[K
+[11.338s]       |      [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K
+[11.338s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:572:28:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.339s]   572 |   &&  [01;35m[Kpoint_last_one.index < pcloud.data.size()[m[K
+[11.339s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K
+[11.339s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:573:27:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.340s]   573 |   &&  [01;35m[Kpoint_record1.index < pcloud.data.size()[m[K)
+[11.340s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K
+[11.341s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:597:28:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.341s]   597 |     if ([01;35m[Kline_append.size() >= calibration_params.line_judgment_point_num[m[K)
+[11.341s]       |         [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.342s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:606:29:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.342s]   606 |             if ([01;35m[Kline.size() >= calibration_params.line_judgment_point_num[m[K)
+[11.343s]       |                 [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.343s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:617:68:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<_point_>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.343s]   617 |           if(point.index == point_append_last.index && [01;35m[Kline.size() >= calibration_params.line_judgment_point_num[m[K)
+[11.344s]       |                                                        [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.344s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:632:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<_point_> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.345s]   632 |     for (int i = 0; [01;35m[Ki < lines.size() - 1[m[K; i++)
+[11.345s]       |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[11.345s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:[m[K In function ‘[01m[Kvoid lidar_calibration(LaserScan&)[m[K’:
+[11.346s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:662:11:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid* memset(void*, int, size_t)[m[K’ clearing an object of type ‘[01m[Kstruct LaserPoint[m[K’ with no trivial copy-assignment; use assignment or value-initialization instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess-Wclass-memaccess]8;;[m[K]
+[11.346s]   662 |     [01;35m[Kmemset(&outscan_point, 0, sizeof(LaserPoint))[m[K;
+[11.346s]       |     [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.347s] In file included from [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:4[m[K,
+[11.347s]                  from [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8[m[K:
+[11.348s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_information.h:210:8:[m[K [01;36m[Knote: [m[K‘[01m[Kstruct LaserPoint[m[K’ declared here
+[11.348s]   210 | struct [01;36m[KLaserPoint[m[K
+[11.348s]       |        [01;36m[K^~~~~~~~~~[m[K
+[21.585s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:[m[K In function ‘[01m[Kvoid Scan_to_PointCloud(LaserScan&, sensor_msgs::msg::PointCloud2&)[m[K’:
+[21.586s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:85:24:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[21.586s]    85 |         for(int i = 0;[01;35m[Ki<scan.points.size()[m[K;i++)
+[21.587s]       |                       [01;35m[K~^~~~~~~~~~~~~~~~~~~[m[K
+[21.628s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[21.628s] [01m[K/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:181:40:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<LaserPoint>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[21.628s]   181 |                         for(int i=0; [01;35m[Ki < scan.points.size()[m[K; i++) {
+[21.629s]       |                                      [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+[35.481s] [100%] [32m[1mLinking CXX executable cspc_lidar[0m
+[38.466s] [100%] Built target cspc_lidar
+[38.488s] Invoked command in '/home/talowe/host_udp_ws/build/cspc_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/talowe/host_udp_ws/build/cspc_lidar -- -j8 -l8
+[38.496s] Invoking command in '/home/talowe/host_udp_ws/build/cspc_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/talowe/host_udp_ws/build/cspc_lidar
+[38.509s] -- Install configuration: ""
+[38.510s] -- Execute custom install script
+[38.510s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/lib/cspc_lidar/cspc_lidar
+[38.526s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/lib/cspc_lidar/front_distance_tester.py
+[38.542s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_launch.py
+[38.557s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_rviz.py
+[38.596s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/params/cspc_lidar.yaml
+[38.612s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/package_run_dependencies/cspc_lidar
+[38.629s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/parent_prefix_path/cspc_lidar
+[38.660s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.sh
+[38.677s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.dsv
+[38.693s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.sh
+[38.710s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.dsv
+[38.727s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.bash
+[38.743s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.sh
+[38.760s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.zsh
+[38.776s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.dsv
+[38.793s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/package.dsv
+[38.810s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/packages/cspc_lidar
+[38.827s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig.cmake
+[38.843s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig-version.cmake
+[38.859s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/package.xml
+[38.887s] Invoked command in '/home/talowe/host_udp_ws/build/cspc_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/talowe/host_udp_ws/build/cspc_lidar

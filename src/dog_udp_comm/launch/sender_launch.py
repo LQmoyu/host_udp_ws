@@ -10,7 +10,10 @@ def generate_launch_description():
             output='screen',
             parameters=[
                 {'local_ip': '0.0.0.0'},
-                {'local_port': 8888}
+                {'local_port': 8888},
+                {'use_fixed_receiver': False},
+                {'remote_ip': '192.168.19.90'},
+                {'remote_port': 8890},
             ]
         )
     ])

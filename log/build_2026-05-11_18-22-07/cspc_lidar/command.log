@@ -1,4 +1,0 @@
-Invoking command in '/root/udp_ws/build/cspc_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/udp_ws/build/cspc_lidar -- -j6 -l6
-Invoked command in '/root/udp_ws/build/cspc_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/udp_ws/build/cspc_lidar -- -j6 -l6
-Invoking command in '/root/udp_ws/build/cspc_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/udp_ws/build/cspc_lidar
-Invoked command in '/root/udp_ws/build/cspc_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/udp_ws/build/cspc_lidar

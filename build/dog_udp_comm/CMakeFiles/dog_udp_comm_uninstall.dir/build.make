@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/udp_ws/src/dog_udp_comm
+CMAKE_SOURCE_DIR = /home/talowe/host_udp_ws/src/dog_udp_comm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/udp_ws/build/dog_udp_comm
+CMAKE_BINARY_DIR = /home/talowe/host_udp_ws/build/dog_udp_comm
 
 # Utility rule file for dog_udp_comm_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/dog_udp_comm_uninstall.dir/compiler_depend.make
 include CMakeFiles/dog_udp_comm_uninstall.dir/progress.make
 
 CMakeFiles/dog_udp_comm_uninstall:
-	/usr/bin/cmake -P /root/udp_ws/build/dog_udp_comm/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 dog_udp_comm_uninstall: CMakeFiles/dog_udp_comm_uninstall
 dog_udp_comm_uninstall: CMakeFiles/dog_udp_comm_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/dog_udp_comm_uninstall.dir/clean:
 .PHONY : CMakeFiles/dog_udp_comm_uninstall.dir/clean
 
 CMakeFiles/dog_udp_comm_uninstall.dir/depend:
-	cd /root/udp_ws/build/dog_udp_comm && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/udp_ws/src/dog_udp_comm /root/udp_ws/src/dog_udp_comm /root/udp_ws/build/dog_udp_comm /root/udp_ws/build/dog_udp_comm /root/udp_ws/build/dog_udp_comm/CMakeFiles/dog_udp_comm_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/talowe/host_udp_ws/build/dog_udp_comm && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/talowe/host_udp_ws/src/dog_udp_comm /home/talowe/host_udp_ws/src/dog_udp_comm /home/talowe/host_udp_ws/build/dog_udp_comm /home/talowe/host_udp_ws/build/dog_udp_comm /home/talowe/host_udp_ws/build/dog_udp_comm/CMakeFiles/dog_udp_comm_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dog_udp_comm_uninstall.dir/depend
 

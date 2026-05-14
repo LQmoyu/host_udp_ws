@@ -1,0 +1,71 @@
+[0.066s] Invoking command in '/home/talowe/host_udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/talowe/host_udp_ws/src/dog_udp_comm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/talowe/host_udp_ws/install/dog_udp_comm
+[0.401s] -- The C compiler identification is GNU 11.4.0
+[0.749s] -- The CXX compiler identification is GNU 11.4.0
+[0.789s] -- Detecting C compiler ABI info
+[1.008s] -- Detecting C compiler ABI info - done
+[1.053s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.054s] -- Detecting C compile features
+[1.055s] -- Detecting C compile features - done
+[1.063s] -- Detecting CXX compiler ABI info
+[1.297s] -- Detecting CXX compiler ABI info - done
+[1.339s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.340s] -- Detecting CXX compile features
+[1.342s] -- Detecting CXX compile features - done
+[1.346s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.269s] -- Found Python3: /home/talowe/miniforge3/bin/python3 (found version "3.12.12") found components: Interpreter 
+[2.444s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.542s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[2.692s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.702s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.725s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.759s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.797s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.903s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.909s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[3.114s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[3.165s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.222s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.241s] -- Looking for pthread.h
+[3.459s] -- Looking for pthread.h - found
+[3.460s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.682s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.688s] -- Found Threads: TRUE  
+[3.811s] -- Found rclpy: 3.3.21 (/opt/ros/humble/share/rclpy/cmake)
+[3.812s] -- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+[3.862s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[3.909s] -- Found std_srvs: 4.9.1 (/opt/ros/humble/share/std_srvs/cmake)
+[4.251s] -- Configuring done
+[4.293s] -- Generating done
+[4.300s] -- Build files have been written to: /home/talowe/host_udp_ws/build/dog_udp_comm
+[4.328s] Invoked command in '/home/talowe/host_udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/talowe/host_udp_ws/src/dog_udp_comm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/talowe/host_udp_ws/install/dog_udp_comm
+[4.338s] Invoking command in '/home/talowe/host_udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/talowe/host_udp_ws/build/dog_udp_comm -- -j8 -l8
+[4.496s] [ 50%] [32mBuilding CXX object CMakeFiles/sender_node.dir/src/sender_node.cpp.o[0m
+[21.946s] [100%] [32m[1mLinking CXX executable sender_node[0m
+[23.082s] [100%] Built target sender_node
+[23.115s] Invoked command in '/home/talowe/host_udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/talowe/host_udp_ws/build/dog_udp_comm -- -j8 -l8
+[23.136s] Invoking command in '/home/talowe/host_udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/talowe/host_udp_ws/build/dog_udp_comm
+[23.161s] -- Install configuration: ""
+[23.162s] -- Execute custom install script
+[23.162s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/sender_node
+[23.191s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/keyboard_teleop.py
+[23.219s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/host_mpc_controller.py
+[23.247s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/pixel_to_scan_polar.py
+[23.275s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_string_bridge.py
+[23.304s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/person_follow_udp_launch.py
+[23.332s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/sender_launch.py
+[23.361s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm
+[23.390s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm
+[23.419s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.sh
+[23.448s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.dsv
+[23.463s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.sh
+[23.480s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.dsv
+[23.509s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.bash
+[23.538s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.sh
+[23.568s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.zsh
+[23.585s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.dsv
+[23.618s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.dsv
+[23.648s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/packages/dog_udp_comm
+[23.679s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig.cmake
+[23.708s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig-version.cmake
+[23.739s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.xml
+[23.774s] Invoked command in '/home/talowe/host_udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/talowe/host_udp_ws/build/dog_udp_comm

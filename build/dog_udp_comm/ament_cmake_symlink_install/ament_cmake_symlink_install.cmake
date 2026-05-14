@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/root/udp_ws/install/dog_udp_comm/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/talowe/host_udp_ws/install/dog_udp_comm/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -55,6 +55,11 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
         # remove trailing slash
         string(SUBSTRING "${dir}" 0 ${offset} dir)
       endif()
+      
+      # Create destination directory.
+      # This does *not* solve the problem of empty directories WITHIN the install tree,
+      # but does make sure that the top-level directory specified by the caller gets created.
+      file(MAKE_DIRECTORY "${destination}")
 
       # glob recursive files
       set(relative_files "")
@@ -123,7 +128,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/root/udp_ws/install/dog_udp_comm/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/talowe/host_udp_ws/install/dog_udp_comm/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +186,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/root/udp_ws/install/dog_udp_comm/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/talowe/host_udp_ws/install/dog_udp_comm/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +256,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/root/udp_ws/install/dog_udp_comm/${destination}")
+      set(destination "/home/talowe/host_udp_ws/install/dog_udp_comm/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -311,52 +316,52 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install("TARGETS" "sender_node" "DESTINATION" "lib/dog_udp_comm")
-include("/root/udp_ws/build/dog_udp_comm/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(PROGRAMS "scripts/keyboard_teleop.py" "scripts/host_mpc_controller.py" "scripts/pixel_to_scan_polar.py" "scripts/tracking_string_bridge.py" "DESTINATION" "lib/dog_udp_comm")
-ament_cmake_symlink_install_programs("/root/udp_ws/src/dog_udp_comm" PROGRAMS "scripts/keyboard_teleop.py" "scripts/host_mpc_controller.py" "scripts/pixel_to_scan_polar.py" "scripts/tracking_string_bridge.py" "DESTINATION" "lib/dog_udp_comm")
+ament_cmake_symlink_install_programs("/home/talowe/host_udp_ws/src/dog_udp_comm" PROGRAMS "scripts/keyboard_teleop.py" "scripts/host_mpc_controller.py" "scripts/pixel_to_scan_polar.py" "scripts/tracking_string_bridge.py" "DESTINATION" "lib/dog_udp_comm")
 
 # install(DIRECTORY "launch" "DESTINATION" "share/dog_udp_comm")
-ament_cmake_symlink_install_directory("/root/udp_ws/src/dog_udp_comm" DIRECTORY "launch" "DESTINATION" "share/dog_udp_comm")
+ament_cmake_symlink_install_directory("/home/talowe/host_udp_ws/src/dog_udp_comm" DIRECTORY "launch" "DESTINATION" "share/dog_udp_comm")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/dog_udp_comm/environment")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/dog_udp_comm/environment")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/dog_udp_comm/environment")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/dog_udp_comm/environment")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/dog_udp_comm/environment")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/dog_udp_comm/environment")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/dog_udp_comm/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/dog_udp_comm/environment")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/dog_udp_comm/environment")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/dog_udp_comm/environment")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/dog_udp_comm/environment")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/dog_udp_comm/environment")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/dog_udp_comm/environment")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/dog_udp_comm/environment")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/dog_udp_comm")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/dog_udp_comm")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/dog_udp_comm")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/dog_udp_comm")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/dog_udp_comm")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/dog_udp_comm")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/dog_udp_comm")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/dog_udp_comm")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/dog_udp_comm")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/dog_udp_comm")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/dog_udp_comm")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/dog_udp_comm")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/dog_udp_comm")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/dog_udp_comm")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/dog_udp_comm")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/dog_udp_comm")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/dog_udp_comm")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/dog_udp_comm")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/dog_udp_comm")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/dog_udp_comm")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/packages/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/packages/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/packages/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/packages/dog_udp_comm" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_core/dog_udp_commConfig.cmake" "/root/udp_ws/build/dog_udp_comm/ament_cmake_core/dog_udp_commConfig-version.cmake" "DESTINATION" "share/dog_udp_comm/cmake")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/build/dog_udp_comm/ament_cmake_core/dog_udp_commConfig.cmake" "/root/udp_ws/build/dog_udp_comm/ament_cmake_core/dog_udp_commConfig-version.cmake" "DESTINATION" "share/dog_udp_comm/cmake")
+# install(FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_core/dog_udp_commConfig.cmake" "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_core/dog_udp_commConfig-version.cmake" "DESTINATION" "share/dog_udp_comm/cmake")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_core/dog_udp_commConfig.cmake" "/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_core/dog_udp_commConfig-version.cmake" "DESTINATION" "share/dog_udp_comm/cmake")
 
-# install(FILES "/root/udp_ws/src/dog_udp_comm/package.xml" "DESTINATION" "share/dog_udp_comm")
-ament_cmake_symlink_install_files("/root/udp_ws/src/dog_udp_comm" FILES "/root/udp_ws/src/dog_udp_comm/package.xml" "DESTINATION" "share/dog_udp_comm")
+# install(FILES "/home/talowe/host_udp_ws/src/dog_udp_comm/package.xml" "DESTINATION" "share/dog_udp_comm")
+ament_cmake_symlink_install_files("/home/talowe/host_udp_ws/src/dog_udp_comm" FILES "/home/talowe/host_udp_ws/src/dog_udp_comm/package.xml" "DESTINATION" "share/dog_udp_comm")

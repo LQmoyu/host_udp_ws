@@ -1,0 +1,28 @@
+[0.022s] Invoking command in '/home/talowe/host_udp_ws/build/cspc_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/talowe/host_udp_ws/build/cspc_lidar -- -j8 -l8
+[0.168s] [35m[1mConsolidate compiler generated dependencies of target cspc_lidar[0m
+[0.244s] [100%] Built target cspc_lidar
+[0.295s] Invoked command in '/home/talowe/host_udp_ws/build/cspc_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/talowe/host_udp_ws/build/cspc_lidar -- -j8 -l8
+[0.306s] Invoking command in '/home/talowe/host_udp_ws/build/cspc_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/talowe/host_udp_ws/build/cspc_lidar
+[0.333s] -- Install configuration: ""
+[0.334s] -- Execute custom install script
+[0.334s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/lib/cspc_lidar/cspc_lidar
+[0.335s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/lib/cspc_lidar/front_distance_tester.py
+[0.336s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_launch.py
+[0.337s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_rviz.py
+[0.338s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/params/cspc_lidar.yaml
+[0.340s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/package_run_dependencies/cspc_lidar
+[0.341s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/parent_prefix_path/cspc_lidar
+[0.341s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.sh
+[0.342s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.dsv
+[0.343s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.sh
+[0.343s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.dsv
+[0.344s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.bash
+[0.345s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.sh
+[0.346s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.zsh
+[0.350s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.dsv
+[0.350s] -- Symlinking: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/package.dsv
+[0.391s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/packages/cspc_lidar
+[0.392s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig.cmake
+[0.394s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig-version.cmake
+[0.396s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/cspc_lidar/share/cspc_lidar/package.xml
+[0.461s] Invoked command in '/home/talowe/host_udp_ws/build/cspc_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/talowe/host_udp_ws/build/cspc_lidar

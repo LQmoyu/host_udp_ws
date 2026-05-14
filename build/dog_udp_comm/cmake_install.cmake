@@ -1,8 +1,8 @@
-# Install script for directory: /root/udp_ws/src/dog_udp_comm
+# Install script for directory: /home/talowe/host_udp_ws/src/dog_udp_comm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/root/udp_ws/install/dog_udp_comm")
+  set(CMAKE_INSTALL_PREFIX "/home/talowe/host_udp_ws/install/dog_udp_comm")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/root/udp_ws/build/dog_udp_comm/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/root/udp_ws/build/dog_udp_comm/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/talowe/host_udp_ws/build/dog_udp_comm/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

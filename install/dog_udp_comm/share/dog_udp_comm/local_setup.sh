@@ -1,1 +1,1 @@
-/root/udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.sh
+/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_environment_hooks/local_setup.sh

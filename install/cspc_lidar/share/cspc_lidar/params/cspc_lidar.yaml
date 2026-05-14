@@ -1,18 +1,1 @@
-cspc_lidar:
-  ros__parameters:
-    port: /dev/ttyUSB0
-    frame_id: laser_link
-    ignore_array: ""
-    baudrate: 230400
-    samp_rate: 9
-    resolution_fixed: true
-    singleChannel: false
-    auto_reconnect: true
-    reversion: true
-    isToFLidar: false
-    angle_max: 180.0
-    angle_min: -180.0
-    max_range: 16.0
-    min_range: 0.01
-    frequency: 10.0
-    version: 4
+/home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/params/cspc_lidar.yaml

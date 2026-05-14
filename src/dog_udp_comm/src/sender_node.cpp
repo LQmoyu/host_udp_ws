@@ -41,11 +41,20 @@ public:
         // 1. 声明并获取参数
         this->declare_parameter<std::string>("local_ip", "0.0.0.0");
         this->declare_parameter<int>("local_port", 8888);
+        this->declare_parameter<bool>("use_fixed_receiver", false);
+        this->declare_parameter<std::string>("remote_ip", "");
+        this->declare_parameter<int>("remote_port", 0);
         
         std::string local_ip;
         int local_port;
+        bool use_fixed_receiver;
+        std::string remote_ip;
+        int remote_port;
         this->get_parameter("local_ip", local_ip);
         this->get_parameter("local_port", local_port);
+        this->get_parameter("use_fixed_receiver", use_fixed_receiver);
+        this->get_parameter("remote_ip", remote_ip);
+        this->get_parameter("remote_port", remote_port);
 
         // 2. 初始化 UDP Socket
         sockfd_ = socket(AF_INET, SOCK_DGRAM, 0);
@@ -70,6 +79,36 @@ public:
 
         RCLCPP_INFO(this->get_logger(), "UDP SERVER Started, listening: %s:%d", local_ip.c_str(), local_port);
 
+        use_fixed_receiver_ = use_fixed_receiver;
+        if (use_fixed_receiver_) {
+            if (remote_ip.empty() || remote_port <= 0 || remote_port > 65535) {
+                RCLCPP_FATAL(
+                    this->get_logger(),
+                    "use_fixed_receiver=true but remote_ip/remote_port invalid (remote_ip='%s', remote_port=%d)",
+                    remote_ip.c_str(), remote_port);
+                close(sockfd_);
+                rclcpp::shutdown();
+                return;
+            }
+            memset(&fixed_client_addr_, 0, sizeof(fixed_client_addr_));
+            fixed_client_addr_.sin_family = AF_INET;
+            fixed_client_addr_.sin_addr.s_addr = inet_addr(remote_ip.c_str());
+            fixed_client_addr_.sin_port = htons(static_cast<uint16_t>(remote_port));
+
+            if (fixed_client_addr_.sin_addr.s_addr == INADDR_NONE) {
+                RCLCPP_FATAL(this->get_logger(), "Invalid remote_ip: %s", remote_ip.c_str());
+                close(sockfd_);
+                rclcpp::shutdown();
+                return;
+            }
+            RCLCPP_INFO(
+                this->get_logger(),
+                "Fixed receiver enabled: %s:%d (heartbeat registration not required)",
+                remote_ip.c_str(), remote_port);
+        } else {
+            RCLCPP_INFO(this->get_logger(), "Dynamic receiver mode: waiting for heartbeat registration");
+        }
+
         // 3. 创建订阅者和服务端
         cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
             "/track_cmd_vel", 1, std::bind(&UdpSenderNode::send_cmd_vel, this, std::placeholders::_1));
@@ -93,6 +132,8 @@ private:
     std::vector<ClientInfo> clients_;
     std::mutex clients_mutex_;
     std::thread heartbeat_thread_;
+    bool use_fixed_receiver_{false};
+    sockaddr_in fixed_client_addr_{};
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
     rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr init_srv_;
 
@@ -214,16 +255,33 @@ private:
         *((uint32_t *)(buffer + 8 + data_size)) = htonl(crc);
         *((uint32_t *)(buffer + 8 + data_size + 4)) = htonl(FRAME_TAIL);
 
-        std::lock_guard<std::mutex> lock(clients_mutex_);
-        time_t current_time = time(nullptr);
-        clients_.erase(
-            std::remove_if(clients_.begin(), clients_.end(),
-                           [current_time](const ClientInfo &client) { return (current_time - client.last_heartbeat) > 3; }),
-            clients_.end());
+        int sent_count = 0;
+        if (use_fixed_receiver_) {
+            const auto ret = sendto(sockfd_, buffer, packet_size, 0,
+                                    (struct sockaddr *)&fixed_client_addr_, sizeof(fixed_client_addr_));
+            if (ret >= 0) {
+                sent_count = 1;
+            }
+        } else {
+            std::lock_guard<std::mutex> lock(clients_mutex_);
+            time_t current_time = time(nullptr);
+            clients_.erase(
+                std::remove_if(clients_.begin(), clients_.end(),
+                               [current_time](const ClientInfo &client) { return (current_time - client.last_heartbeat) > 3; }),
+                clients_.end());
 
-        for (const auto &client : clients_) {
-            sendto(sockfd_, buffer, packet_size, 0, (struct sockaddr *)&client.addr, sizeof(client.addr));
+            for (const auto &client : clients_) {
+                const auto ret = sendto(sockfd_, buffer, packet_size, 0, (struct sockaddr *)&client.addr, sizeof(client.addr));
+                if (ret >= 0) {
+                    ++sent_count;
+                }
+            }
         }
+
+        RCLCPP_INFO_THROTTLE(
+            this->get_logger(), *this->get_clock(), 2000,
+            "cmd_vel sent: vx=%.3f wz=%.3f, receivers=%d",
+            msg->linear.x, msg->angular.z, sent_count);
     }
 
     void init_udp_receiver_handler(const std::shared_ptr<std_srvs::srv::Trigger::Request> req,
@@ -243,19 +301,31 @@ private:
         *((uint32_t *)(buffer + 8 + data_size)) = htonl(crc);
         *((uint32_t *)(buffer + 8 + data_size + 4)) = htonl(FRAME_TAIL);
 
-        std::lock_guard<std::mutex> glock(clients_mutex_);
-        time_t current_time = time(nullptr);
-        clients_.erase(
-            std::remove_if(clients_.begin(), clients_.end(),
-                           [current_time](const ClientInfo &client) { return (current_time - client.last_heartbeat) > 3; }),
-            clients_.end());
+        int sent_count = 0;
+        if (use_fixed_receiver_) {
+            const auto ret = sendto(sockfd_, buffer, packet_size, 0,
+                                    (struct sockaddr *)&fixed_client_addr_, sizeof(fixed_client_addr_));
+            if (ret >= 0) {
+                sent_count = 1;
+            }
+        } else {
+            std::lock_guard<std::mutex> glock(clients_mutex_);
+            time_t current_time = time(nullptr);
+            clients_.erase(
+                std::remove_if(clients_.begin(), clients_.end(),
+                               [current_time](const ClientInfo &client) { return (current_time - client.last_heartbeat) > 3; }),
+                clients_.end());
 
-        for (const auto &client : clients_) {
-            sendto(sockfd_, buffer, packet_size, 0, (struct sockaddr *)&client.addr, sizeof(client.addr));
+            for (const auto &client : clients_) {
+                const auto ret = sendto(sockfd_, buffer, packet_size, 0, (struct sockaddr *)&client.addr, sizeof(client.addr));
+                if (ret >= 0) {
+                    ++sent_count;
+                }
+            }
         }
 
         res->success = true;
-        res->message = "success";
+        res->message = "success, receivers=" + std::to_string(sent_count);
     }
 };
 

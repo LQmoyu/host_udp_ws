@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/udp_ws/src/cspc_lidar_sdk_ros2
+CMAKE_SOURCE_DIR = /home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/udp_ws/build/cspc_lidar
+CMAKE_BINARY_DIR = /home/talowe/host_udp_ws/build/cspc_lidar
 
 # Utility rule file for cspc_lidar_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/cspc_lidar_uninstall.dir/compiler_depend.make
 include CMakeFiles/cspc_lidar_uninstall.dir/progress.make
 
 CMakeFiles/cspc_lidar_uninstall:
-	/usr/bin/cmake -P /root/udp_ws/build/cspc_lidar/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/talowe/host_udp_ws/build/cspc_lidar/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 cspc_lidar_uninstall: CMakeFiles/cspc_lidar_uninstall
 cspc_lidar_uninstall: CMakeFiles/cspc_lidar_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/cspc_lidar_uninstall.dir/clean:
 .PHONY : CMakeFiles/cspc_lidar_uninstall.dir/clean
 
 CMakeFiles/cspc_lidar_uninstall.dir/depend:
-	cd /root/udp_ws/build/cspc_lidar && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/udp_ws/src/cspc_lidar_sdk_ros2 /root/udp_ws/src/cspc_lidar_sdk_ros2 /root/udp_ws/build/cspc_lidar /root/udp_ws/build/cspc_lidar /root/udp_ws/build/cspc_lidar/CMakeFiles/cspc_lidar_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/talowe/host_udp_ws/build/cspc_lidar && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2 /home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2 /home/talowe/host_udp_ws/build/cspc_lidar /home/talowe/host_udp_ws/build/cspc_lidar /home/talowe/host_udp_ws/build/cspc_lidar/CMakeFiles/cspc_lidar_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cspc_lidar_uninstall.dir/depend
 

@@ -1,8 +1,0 @@
-/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp: In function ‘void Scan_to_PointCloud(LaserScan&, sensor_msgs::msg::PointCloud2&)’:
-/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:85:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<LaserPoint>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
-   85 |         for(int i = 0;i<scan.points.size();i++)
-      |                       ~^~~~~~~~~~~~~~~~~~~
-/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp: In function ‘int main(int, char**)’:
-/root/udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:181:40: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<LaserPoint>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
-  181 |                         for(int i=0; i < scan.points.size(); i++) {
-      |                                      ~~^~~~~~~~~~~~~~~~~~~~
