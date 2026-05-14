@@ -28,6 +28,7 @@ install(PROGRAMS
   scripts/keyboard_teleop.py
   scripts/host_mpc_controller.py
   scripts/pixel_to_scan_polar.py
+  scripts/tracking_string_bridge.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

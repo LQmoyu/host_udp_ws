@@ -7,6 +7,8 @@ Input:
 - geometry_msgs/Vector3Stamped on `person_topic`
   - vector.x: person distance in meters
   - vector.y: person angle in radians (left positive)
+- geometry_msgs/Vector3Stamped on optional `tracking_state_topic`
+  - vector.z: detected flag (1 or -1), used for loss-state handling
 
 Output:
 - geometry_msgs/Twist on `cmd_topic` (default: /track_cmd_vel)
@@ -35,12 +37,13 @@ class HostMPCControllerNode(Node):
         super().__init__("host_mpc_controller")
 
         self.declare_parameter("person_topic", "/person_polar")
+        self.declare_parameter("tracking_state_topic", "/tracking_state")
         self.declare_parameter("cmd_topic", "/track_cmd_vel")
 
         self.declare_parameter("control_hz", 30.0)
         self.declare_parameter("dt", 0.0)  # <=0 means use 1/control_hz
         self.declare_parameter("horizon", 12)
-        self.declare_parameter("msg_timeout", 0.4)
+        self.declare_parameter("msg_timeout", 0.2)
 
         self.declare_parameter("desired_distance", 1.2)
         self.declare_parameter("distance_tolerance", 0.08)
@@ -48,6 +51,7 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("stop_when_aligned", True)
         self.declare_parameter("stop_on_lost_target", True)
         self.declare_parameter("allow_reverse", False)
+        self.declare_parameter("target_lost_duration_sec", 5.0)
 
         self.declare_parameter("max_v", 0.8)
         self.declare_parameter("max_w", 1.5)
@@ -67,6 +71,7 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("max_valid_distance", 8.0)
 
         self.person_topic = str(self.get_parameter("person_topic").value)
+        self.tracking_state_topic = str(self.get_parameter("tracking_state_topic").value)
         self.cmd_topic = str(self.get_parameter("cmd_topic").value)
 
         self.control_hz = float(self.get_parameter("control_hz").value)
@@ -81,6 +86,7 @@ class HostMPCControllerNode(Node):
         self.stop_when_aligned = bool(self.get_parameter("stop_when_aligned").value)
         self.stop_on_lost_target = bool(self.get_parameter("stop_on_lost_target").value)
         self.allow_reverse = bool(self.get_parameter("allow_reverse").value)
+        self.target_lost_duration_sec = float(self.get_parameter("target_lost_duration_sec").value)
 
         self.max_v = float(self.get_parameter("max_v").value)
         self.max_w = float(self.get_parameter("max_w").value)
@@ -103,15 +109,21 @@ class HostMPCControllerNode(Node):
         self.person_distance = None
         self.person_angle = None
         self.last_person_stamp_ns = 0
+        self.have_first_person_frame = False
+        self.last_detected_flag = -1
+        self.last_detected_stamp_ns = 0
+        self.continuous_lost_since_ns = 0
         self.last_warn_ns = 0
 
         self.cmd_pub = self.create_publisher(Twist, self.cmd_topic, 1)
         self.create_subscription(Vector3Stamped, self.person_topic, self.person_cb, 10)
+        self.create_subscription(Vector3Stamped, self.tracking_state_topic, self.tracking_state_cb, 10)
         self.timer = self.create_timer(1.0 / max(self.control_hz, 1e-3), self.control_tick)
 
         self.get_logger().info(
             "Host person-follow MPC ready. "
-            f"person_topic={self.person_topic} cmd_topic={self.cmd_topic} "
+            f"person_topic={self.person_topic} tracking_state_topic={self.tracking_state_topic} "
+            f"cmd_topic={self.cmd_topic} "
             f"hz={self.control_hz:.1f} dt={self.dt:.3f} N={self.horizon} "
             f"d_ref={self.desired_distance:.2f}"
         )
@@ -163,6 +175,22 @@ class HostMPCControllerNode(Node):
             self.person_distance = float(d)
             self.person_angle = float(a)
             self.last_person_stamp_ns = now_ns
+            self.have_first_person_frame = True
+
+    def tracking_state_cb(self, msg):
+        detected_raw = float(msg.vector.z)
+        if detected_raw not in (-1.0, 1.0):
+            return
+
+        now_ns = self.get_clock().now().nanoseconds
+        detected = int(detected_raw)
+        with self.state_lock:
+            self.last_detected_flag = detected
+            self.last_detected_stamp_ns = now_ns
+            if detected == 1:
+                self.continuous_lost_since_ns = 0
+            elif self.continuous_lost_since_ns == 0:
+                self.continuous_lost_since_ns = now_ns
 
     def step_model(self, x, u):
         """
@@ -270,6 +298,38 @@ class HostMPCControllerNode(Node):
             d = self.person_distance
             a = self.person_angle
             stamp_ns = self.last_person_stamp_ns
+            have_first_frame = self.have_first_person_frame
+            detected_flag = self.last_detected_flag
+            detected_stamp_ns = self.last_detected_stamp_ns
+            lost_since_ns = self.continuous_lost_since_ns
+
+        if not have_first_frame:
+            self.warn_throttle(1.0, "Waiting for first person frame before starting control.")
+            if self.stop_on_lost_target:
+                self.publish_zero()
+            return
+
+        if detected_stamp_ns > 0:
+            detect_age = (now_ns - detected_stamp_ns) * 1e-9
+            if detect_age > 0.2:
+                self.warn_throttle(
+                    1.0,
+                    f"Tracking state timeout: age={detect_age:.3f}s > 0.200s, publish zero."
+                )
+                if self.stop_on_lost_target:
+                    self.publish_zero()
+                return
+
+        if detected_flag == -1 and lost_since_ns > 0:
+            lost_for = (now_ns - lost_since_ns) * 1e-9
+            if lost_for > self.target_lost_duration_sec:
+                self.warn_throttle(
+                    1.0,
+                    f"Target lost continuously for {lost_for:.2f}s (>{self.target_lost_duration_sec:.2f}s), publish zero."
+                )
+                if self.stop_on_lost_target:
+                    self.publish_zero()
+                return
 
         if d is None or a is None:
             if self.stop_on_lost_target:
