@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Convert image pixel x coordinate to lidar polar measurement using single-line LaserScan.

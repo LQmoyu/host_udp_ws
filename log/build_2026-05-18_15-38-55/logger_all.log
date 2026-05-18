@@ -1,0 +1,129 @@
+[0.173s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'dog_udp_comm']
+[0.174s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['dog_udp_comm'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f8aae9cf0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f8abfb1c0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f8abfb1c0>>)
+[0.381s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.381s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.381s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.381s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.381s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.381s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.381s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/talowe/host_udp_ws'
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.382s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/cspc_lidar_sdk_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/cspc_lidar_sdk_ros2) by extension 'ignore'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/cspc_lidar_sdk_ros2) by extension 'ignore_ament_install'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/cspc_lidar_sdk_ros2) by extensions ['colcon_pkg']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/cspc_lidar_sdk_ros2) by extension 'colcon_pkg'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/cspc_lidar_sdk_ros2) by extensions ['colcon_meta']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/cspc_lidar_sdk_ros2) by extension 'colcon_meta'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/cspc_lidar_sdk_ros2) by extensions ['ros']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/cspc_lidar_sdk_ros2) by extension 'ros'
+[0.403s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cspc_lidar_sdk_ros2' with type 'ros.ament_cmake' and name 'cspc_lidar'
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src/dog_udp_comm) by extensions ['ignore', 'ignore_ament_install']
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src/dog_udp_comm) by extension 'ignore'
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src/dog_udp_comm) by extension 'ignore_ament_install'
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src/dog_udp_comm) by extensions ['colcon_pkg']
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src/dog_udp_comm) by extension 'colcon_pkg'
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src/dog_udp_comm) by extensions ['colcon_meta']
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src/dog_udp_comm) by extension 'colcon_meta'
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src/dog_udp_comm) by extensions ['ros']
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(src/dog_udp_comm) by extension 'ros'
+[0.405s] DEBUG:colcon.colcon_core.package_identification:Package 'src/dog_udp_comm' with type 'ros.ament_cmake' and name 'dog_udp_comm'
+[0.405s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.405s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.405s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.405s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.405s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.435s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'cspc_lidar' in 'src/cspc_lidar_sdk_ros2'
+[0.435s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.435s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.438s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/talowe/host_udp_ws/install
+[0.439s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 187 installed packages in /opt/ros/humble
+[0.440s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'dog_udp_comm' build argument 'cmake_args' from command line to 'None'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'dog_udp_comm' build argument 'cmake_target' from command line to 'None'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'dog_udp_comm' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'dog_udp_comm' build argument 'cmake_clean_cache' from command line to 'False'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'dog_udp_comm' build argument 'cmake_clean_first' from command line to 'False'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'dog_udp_comm' build argument 'cmake_force_configure' from command line to 'False'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'dog_udp_comm' build argument 'ament_cmake_args' from command line to 'None'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'dog_udp_comm' build argument 'catkin_cmake_args' from command line to 'None'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'dog_udp_comm' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.543s] DEBUG:colcon.colcon_core.verb:Building package 'dog_udp_comm' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/talowe/host_udp_ws/build/dog_udp_comm', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/talowe/host_udp_ws/install/dog_udp_comm', 'merge_install': False, 'path': '/home/talowe/host_udp_ws/src/dog_udp_comm', 'symlink_install': False, 'test_result_base': None}
+[0.544s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.545s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.546s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/talowe/host_udp_ws/src/dog_udp_comm' with build type 'ament_cmake'
+[0.546s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/talowe/host_udp_ws/src/dog_udp_comm'
+[0.549s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.549s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.549s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.568s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/talowe/host_udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/talowe/host_udp_ws/build/dog_udp_comm -- -j8 -l8
+[0.740s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dog_udp_comm)
+[0.752s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/talowe/host_udp_ws/build/dog_udp_comm' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/talowe/host_udp_ws/build/dog_udp_comm -- -j8 -l8
+[0.759s] Level 1:colcon.colcon_core.environment:checking '/home/talowe/host_udp_ws/install/dog_udp_comm' for CMake module files
+[0.762s] Level 1:colcon.colcon_core.environment:checking '/home/talowe/host_udp_ws/install/dog_udp_comm' for CMake config files
+[0.764s] Level 1:colcon.colcon_core.shell:create_environment_hook('dog_udp_comm', 'cmake_prefix_path')
+[0.765s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/hook/cmake_prefix_path.ps1'
+[0.769s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/hook/cmake_prefix_path.dsv'
+[0.771s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/hook/cmake_prefix_path.sh'
+[0.776s] Level 1:colcon.colcon_core.environment:checking '/home/talowe/host_udp_ws/install/dog_udp_comm/lib'
+[0.777s] Level 1:colcon.colcon_core.environment:checking '/home/talowe/host_udp_ws/install/dog_udp_comm/bin'
+[0.778s] Level 1:colcon.colcon_core.environment:checking '/home/talowe/host_udp_ws/install/dog_udp_comm/lib/pkgconfig/dog_udp_comm.pc'
+[0.779s] Level 1:colcon.colcon_core.environment:checking '/home/talowe/host_udp_ws/install/dog_udp_comm/lib/python3.10/site-packages'
+[0.781s] Level 1:colcon.colcon_core.environment:checking '/home/talowe/host_udp_ws/install/dog_udp_comm/bin'
+[0.783s] INFO:colcon.colcon_core.shell:Creating package script '/home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.ps1'
+[0.791s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.dsv'
+[0.795s] INFO:colcon.colcon_core.shell:Creating package script '/home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.sh'
+[0.797s] INFO:colcon.colcon_core.shell:Creating package script '/home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.bash'
+[0.799s] INFO:colcon.colcon_core.shell:Creating package script '/home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.zsh'
+[0.800s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/talowe/host_udp_ws/install/dog_udp_comm/share/colcon-core/packages/dog_udp_comm)
+[0.812s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.813s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.813s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[0.814s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.817s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[0.818s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/talowe/host_udp_ws/install/local_setup.ps1'
+[0.821s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/talowe/host_udp_ws/install/_local_setup_util_ps1.py'
+[0.824s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/talowe/host_udp_ws/install/setup.ps1'
+[0.827s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/talowe/host_udp_ws/install/local_setup.sh'
+[0.829s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/talowe/host_udp_ws/install/_local_setup_util_sh.py'
+[0.830s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/talowe/host_udp_ws/install/setup.sh'
+[0.833s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/talowe/host_udp_ws/install/local_setup.bash'
+[0.833s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/talowe/host_udp_ws/install/setup.bash'
+[0.835s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/talowe/host_udp_ws/install/local_setup.zsh'
+[0.836s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/talowe/host_udp_ws/install/setup.zsh'

@@ -18,6 +18,9 @@ def generate_launch_description():
                 {'max_allowed_age_ms': 500.0},
                 {'max_consecutive_drop': 3},
                 {'warn_interval_sec': 1.0},
+                {'use_source_timestamp_for_header': True},
+                {'topic_check_period_sec': 0.5},
+                {'tracking_topic_lost_timeout_sec': 1.0},
             ],
         ),
         Node(
@@ -61,6 +64,8 @@ def generate_launch_description():
                 {'dt': 0.0},
                 {'horizon': 12},
                 {'msg_timeout': 0.2},
+                {'tracking_state_timeout_sec': 0.2},
+                {'require_first_tracking_frame': True},
                 {'desired_distance': 1.2},
                 {'distance_tolerance': 0.08},
                 {'angle_tolerance': 0.08},

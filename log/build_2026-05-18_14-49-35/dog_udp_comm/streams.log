@@ -1,0 +1,30 @@
+[0.034s] Invoking command in '/home/talowe/host_udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/talowe/host_udp_ws/build/dog_udp_comm -- -j8 -l8
+[0.189s] [100%] Built target sender_node
+[0.205s] Invoked command in '/home/talowe/host_udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/talowe/host_udp_ws/build/dog_udp_comm -- -j8 -l8
+[0.218s] Invoking command in '/home/talowe/host_udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/talowe/host_udp_ws/build/dog_udp_comm
+[0.238s] -- Install configuration: ""
+[0.240s] -- Execute custom install script
+[0.241s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/sender_node
+[0.242s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/keyboard_teleop.py
+[0.243s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/host_mpc_controller.py
+[0.243s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/pixel_to_scan_polar.py
+[0.244s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_string_bridge.py
+[0.246s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_center_tester.py
+[0.247s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/person_follow_udp_launch.py
+[0.248s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/sender_launch.py
+[0.248s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm
+[0.248s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm
+[0.249s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.sh
+[0.249s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.dsv
+[0.250s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.sh
+[0.250s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.dsv
+[0.250s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.bash
+[0.252s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.sh
+[0.253s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.zsh
+[0.254s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.dsv
+[0.254s] -- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.dsv
+[0.259s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/packages/dog_udp_comm
+[0.260s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig.cmake
+[0.261s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig-version.cmake
+[0.264s] -- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.xml
+[0.266s] Invoked command in '/home/talowe/host_udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/talowe/host_udp_ws/build/dog_udp_comm

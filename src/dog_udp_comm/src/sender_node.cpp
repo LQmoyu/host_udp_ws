@@ -279,7 +279,7 @@ private:
         }
 
         RCLCPP_INFO_THROTTLE(
-            this->get_logger(), *this->get_clock(), 2000,
+            this->get_logger(), *this->get_clock(), 1000,
             "cmd_vel sent: vx=%.3f wz=%.3f, receivers=%d",
             msg->linear.x, msg->angular.z, sent_count);
     }

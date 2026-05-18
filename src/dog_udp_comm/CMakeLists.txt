@@ -29,6 +29,8 @@ install(PROGRAMS
   scripts/host_mpc_controller.py
   scripts/pixel_to_scan_polar.py
   scripts/tracking_string_bridge.py
+  scripts/tracking_center_tester.py
+  scripts/analyze_tracking_cmd_bag.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

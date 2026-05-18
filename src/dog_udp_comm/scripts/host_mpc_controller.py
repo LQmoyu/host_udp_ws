@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Host-side person-following MPC controller (ROS2).
@@ -44,6 +44,8 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("dt", 0.0)  # <=0 means use 1/control_hz
         self.declare_parameter("horizon", 12)
         self.declare_parameter("msg_timeout", 0.2)
+        self.declare_parameter("tracking_state_timeout_sec", 0.2)
+        self.declare_parameter("require_first_tracking_frame", True)
 
         self.declare_parameter("desired_distance", 1.2)
         self.declare_parameter("distance_tolerance", 0.08)
@@ -79,6 +81,10 @@ class HostMPCControllerNode(Node):
         self.dt = dt_param if dt_param > 0.0 else (1.0 / max(self.control_hz, 1e-3))
         self.horizon = int(self.get_parameter("horizon").value)
         self.msg_timeout = float(self.get_parameter("msg_timeout").value)
+        self.tracking_state_timeout_sec = float(self.get_parameter("tracking_state_timeout_sec").value)
+        self.require_first_tracking_frame = bool(
+            self.get_parameter("require_first_tracking_frame").value
+        )
 
         self.desired_distance = float(self.get_parameter("desired_distance").value)
         self.distance_tolerance = float(self.get_parameter("distance_tolerance").value)
@@ -110,6 +116,7 @@ class HostMPCControllerNode(Node):
         self.person_angle = None
         self.last_person_stamp_ns = 0
         self.have_first_person_frame = False
+        self.have_first_tracking_frame = False
         self.last_detected_flag = -1
         self.last_detected_stamp_ns = 0
         self.continuous_lost_since_ns = 0
@@ -125,7 +132,8 @@ class HostMPCControllerNode(Node):
             f"person_topic={self.person_topic} tracking_state_topic={self.tracking_state_topic} "
             f"cmd_topic={self.cmd_topic} "
             f"hz={self.control_hz:.1f} dt={self.dt:.3f} N={self.horizon} "
-            f"d_ref={self.desired_distance:.2f}"
+            f"d_ref={self.desired_distance:.2f} "
+            f"tracking_timeout={self.tracking_state_timeout_sec:.3f}s"
         )
 
     def warn_throttle(self, period_sec, text):
@@ -180,13 +188,19 @@ class HostMPCControllerNode(Node):
     def tracking_state_cb(self, msg):
         detected_raw = float(msg.vector.z)
         if detected_raw not in (-1.0, 1.0):
+            self.warn_throttle(1.0, f"Ignore tracking_state with invalid detected={detected_raw}")
             return
 
         now_ns = self.get_clock().now().nanoseconds
+        stamp_ns = int(msg.header.stamp.sec) * 1_000_000_000 + int(msg.header.stamp.nanosec)
+        if stamp_ns <= 0:
+            stamp_ns = now_ns
+
         detected = int(detected_raw)
         with self.state_lock:
+            self.have_first_tracking_frame = True
             self.last_detected_flag = detected
-            self.last_detected_stamp_ns = now_ns
+            self.last_detected_stamp_ns = stamp_ns
             if detected == 1:
                 self.continuous_lost_since_ns = 0
             elif self.continuous_lost_since_ns == 0:
@@ -299,9 +313,16 @@ class HostMPCControllerNode(Node):
             a = self.person_angle
             stamp_ns = self.last_person_stamp_ns
             have_first_frame = self.have_first_person_frame
+            have_first_tracking_frame = self.have_first_tracking_frame
             detected_flag = self.last_detected_flag
             detected_stamp_ns = self.last_detected_stamp_ns
             lost_since_ns = self.continuous_lost_since_ns
+
+        if self.require_first_tracking_frame and not have_first_tracking_frame:
+            self.warn_throttle(1.0, "Waiting for first tracking_state frame before starting control.")
+            if self.stop_on_lost_target:
+                self.publish_zero()
+            return
 
         if not have_first_frame:
             self.warn_throttle(1.0, "Waiting for first person frame before starting control.")
@@ -311,10 +332,11 @@ class HostMPCControllerNode(Node):
 
         if detected_stamp_ns > 0:
             detect_age = (now_ns - detected_stamp_ns) * 1e-9
-            if detect_age > 0.2:
+            if detect_age > self.tracking_state_timeout_sec:
                 self.warn_throttle(
                     1.0,
-                    f"Tracking state timeout: age={detect_age:.3f}s > 0.200s, publish zero."
+                    f"Tracking state timeout: age={detect_age:.3f}s > "
+                    f"{self.tracking_state_timeout_sec:.3f}s, publish zero."
                 )
                 if self.stop_on_lost_target:
                     self.publish_zero()

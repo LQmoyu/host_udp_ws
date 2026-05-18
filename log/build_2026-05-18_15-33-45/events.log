@@ -1,0 +1,259 @@
+[0.000000] (-) TimerEvent: {}
+[0.001005] (-) JobUnselected: {'identifier': 'cspc_lidar'}
+[0.001175] (dog_udp_comm) JobQueued: {'identifier': 'dog_udp_comm', 'dependencies': OrderedDict()}
+[0.001732] (dog_udp_comm) JobStarted: {'identifier': 'dog_udp_comm'}
+[0.031737] (dog_udp_comm) JobProgress: {'identifier': 'dog_udp_comm', 'progress': 'cmake'}
+[0.032818] (dog_udp_comm) JobProgress: {'identifier': 'dog_udp_comm', 'progress': 'build'}
+[0.033851] (dog_udp_comm) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/talowe/host_udp_ws/build/dog_udp_comm', '--', '-j8', '-l8'], 'cwd': '/home/talowe/host_udp_ws/build/dog_udp_comm', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/talowe'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('CODEX_CI', '1'), ('USER', 'talowe'), ('SSH_CLIENT', '192.168.222.13 61456 22'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/home/talowe/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/tcf.json","messagesFile":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/0958016b2af9f09bb4257e0df4a95e2f90590f9f/nls.messages.json","corruptMarkerFile":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"87788cb759b3faab7fe87de19549c933.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/tcf.json","_cacheRoot":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn","_resolvedLanguagePackCoreLocation":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/0958016b2af9f09bb4257e0df4a95e2f90590f9f","_corruptedFile":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/corrupted.info"}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/talowe/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/talowe'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/talowe'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-eb10ce5f-6f65-4989-a7f0-61eb0bccbfeb.sock'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('PAGER', 'cat'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', ''), ('_CE_M', ''), ('_CONDA_ROOT', '/home/talowe/miniforge3'), ('QTWEBENGINE_CHROMIUM_FLAGS', '--no-sandbox --disable-es3-gl-context --ignore-gpu-blacklist --ignore-gpu-blocklist --enable-accelerated-video-decode'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'talowe'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('TERM', 'dumb'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', 'c4'), ('VSCODE_CLI_REQUIRE_TOKEN', 'dd002a5f-8e5b-4b8e-bd82-d17a0bea5697'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/talowe/.local/bin:/home/talowe/.codex/tmp/arg0/codex-arg0GS5owN:/home/talowe/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/bin/remote-cli:/home/talowe/.local/bin:/opt/ros/humble/bin:/home/talowe/.local/bin:/home/talowe/miniforge3/bin:/home/talowe/miniforge3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/talowe/.vscode-server/extensions/openai.chatgpt-26.506.31421-linux-arm64/bin/linux-aarch64'), ('VSCODE_AGENT_FOLDER', '/home/talowe/.vscode-server'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GST_GL_PLATFORM', 'egl'), ('ADBD_SHELL', '/bin/bash'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('QT_XCB_GL_INTEGRATION', 'xcb_egl'), ('XML_CATALOG_FILES', 'file:///home/talowe/miniforge3/etc/xml/catalog file:///etc/xml/catalog'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/talowe/miniforge3/bin/python'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('CODEX_THREAD_ID', '019e39a9-fe33-7122-96eb-134e3f7a02ea'), ('_CONDA_EXE', '/home/talowe/miniforge3/bin/conda'), ('GIT_PAGER', 'cat'), ('PWD', '/home/talowe/host_udp_ws/build/dog_udp_comm'), ('LC_ALL', 'C.UTF-8'), ('CONDA_EXE', '/home/talowe/miniforge3/bin/conda'), ('SSH_CONNECTION', '192.168.222.13 61456 192.168.222.14 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('ADB_TCP_PORT', '5555'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CONDA_PREFIX', '/home/talowe/miniforge3'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.086370] (dog_udp_comm) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.097978] (-) TimerEvent: {}
+[0.199222] (-) TimerEvent: {}
+[0.299916] (-) TimerEvent: {}
+[0.393098] (dog_udp_comm) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.400087] (-) TimerEvent: {}
+[0.430569] (dog_udp_comm) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.476119] (dog_udp_comm) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.480249] (dog_udp_comm) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.493166] (dog_udp_comm) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.500324] (-) TimerEvent: {}
+[0.505243] (dog_udp_comm) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.523498] (dog_udp_comm) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.572924] (dog_udp_comm) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.574441] (dog_udp_comm) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.600547] (-) TimerEvent: {}
+[0.701371] (-) TimerEvent: {}
+[0.707806] (dog_udp_comm) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.784144] (dog_udp_comm) StdoutLine: {'line': b'-- Found rclpy: 3.3.21 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[0.784982] (dog_udp_comm) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.801434] (-) TimerEvent: {}
+[0.804132] (dog_udp_comm) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.836020] (dog_udp_comm) StdoutLine: {'line': b'-- Found std_srvs: 4.9.1 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[0.901740] (-) TimerEvent: {}
+[1.002549] (-) TimerEvent: {}
+[1.080120] (dog_udp_comm) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.094031] (dog_udp_comm) StdoutLine: {'line': b'-- Generating done\n'}
+[1.099235] (dog_udp_comm) StdoutLine: {'line': b'-- Build files have been written to: /home/talowe/host_udp_ws/build/dog_udp_comm\n'}
+[1.102621] (-) TimerEvent: {}
+[1.188673] (dog_udp_comm) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target sender_node\n'}
+[1.202770] (-) TimerEvent: {}
+[1.227318] (dog_udp_comm) StdoutLine: {'line': b'[ 50%] Building CXX object CMakeFiles/sender_node.dir/src/sender_node.cpp.o\n'}
+[1.303373] (-) TimerEvent: {}
+[1.408302] (-) TimerEvent: {}
+[1.508681] (-) TimerEvent: {}
+[1.609450] (-) TimerEvent: {}
+[1.710274] (-) TimerEvent: {}
+[1.810776] (-) TimerEvent: {}
+[1.911587] (-) TimerEvent: {}
+[2.012197] (-) TimerEvent: {}
+[2.112716] (-) TimerEvent: {}
+[2.214084] (-) TimerEvent: {}
+[2.314988] (-) TimerEvent: {}
+[2.415421] (-) TimerEvent: {}
+[2.516233] (-) TimerEvent: {}
+[2.617200] (-) TimerEvent: {}
+[2.718034] (-) TimerEvent: {}
+[2.818951] (-) TimerEvent: {}
+[2.919510] (-) TimerEvent: {}
+[3.020174] (-) TimerEvent: {}
+[3.121119] (-) TimerEvent: {}
+[3.222078] (-) TimerEvent: {}
+[3.322899] (-) TimerEvent: {}
+[3.423966] (-) TimerEvent: {}
+[3.524713] (-) TimerEvent: {}
+[3.625237] (-) TimerEvent: {}
+[3.725760] (-) TimerEvent: {}
+[3.826421] (-) TimerEvent: {}
+[3.927139] (-) TimerEvent: {}
+[4.027954] (-) TimerEvent: {}
+[4.128512] (-) TimerEvent: {}
+[4.229128] (-) TimerEvent: {}
+[4.330069] (-) TimerEvent: {}
+[4.430753] (-) TimerEvent: {}
+[4.531554] (-) TimerEvent: {}
+[4.632206] (-) TimerEvent: {}
+[4.732691] (-) TimerEvent: {}
+[4.833660] (-) TimerEvent: {}
+[4.934670] (-) TimerEvent: {}
+[5.035301] (-) TimerEvent: {}
+[5.136137] (-) TimerEvent: {}
+[5.237080] (-) TimerEvent: {}
+[5.337615] (-) TimerEvent: {}
+[5.438040] (-) TimerEvent: {}
+[5.538834] (-) TimerEvent: {}
+[5.639595] (-) TimerEvent: {}
+[5.740081] (-) TimerEvent: {}
+[5.840825] (-) TimerEvent: {}
+[5.941461] (-) TimerEvent: {}
+[6.042042] (-) TimerEvent: {}
+[6.143078] (-) TimerEvent: {}
+[6.243952] (-) TimerEvent: {}
+[6.344485] (-) TimerEvent: {}
+[6.445139] (-) TimerEvent: {}
+[6.546050] (-) TimerEvent: {}
+[6.646935] (-) TimerEvent: {}
+[6.747648] (-) TimerEvent: {}
+[6.848364] (-) TimerEvent: {}
+[6.949005] (-) TimerEvent: {}
+[7.049530] (-) TimerEvent: {}
+[7.150229] (-) TimerEvent: {}
+[7.251481] (-) TimerEvent: {}
+[7.352554] (-) TimerEvent: {}
+[7.453013] (-) TimerEvent: {}
+[7.553948] (-) TimerEvent: {}
+[7.654730] (-) TimerEvent: {}
+[7.755294] (-) TimerEvent: {}
+[7.855976] (-) TimerEvent: {}
+[7.956729] (-) TimerEvent: {}
+[8.057546] (-) TimerEvent: {}
+[8.158326] (-) TimerEvent: {}
+[8.259116] (-) TimerEvent: {}
+[8.359644] (-) TimerEvent: {}
+[8.460226] (-) TimerEvent: {}
+[8.560893] (-) TimerEvent: {}
+[8.661586] (-) TimerEvent: {}
+[8.762420] (-) TimerEvent: {}
+[8.863393] (-) TimerEvent: {}
+[8.963925] (-) TimerEvent: {}
+[9.064677] (-) TimerEvent: {}
+[9.165368] (-) TimerEvent: {}
+[9.265795] (-) TimerEvent: {}
+[9.366116] (-) TimerEvent: {}
+[9.466735] (-) TimerEvent: {}
+[9.567240] (-) TimerEvent: {}
+[9.667552] (-) TimerEvent: {}
+[9.767913] (-) TimerEvent: {}
+[9.868479] (-) TimerEvent: {}
+[9.968783] (-) TimerEvent: {}
+[10.069140] (-) TimerEvent: {}
+[10.169415] (-) TimerEvent: {}
+[10.269743] (-) TimerEvent: {}
+[10.370012] (-) TimerEvent: {}
+[10.470580] (-) TimerEvent: {}
+[10.571075] (-) TimerEvent: {}
+[10.671797] (-) TimerEvent: {}
+[10.772247] (-) TimerEvent: {}
+[10.872818] (-) TimerEvent: {}
+[10.973752] (-) TimerEvent: {}
+[11.073992] (-) TimerEvent: {}
+[11.174530] (-) TimerEvent: {}
+[11.275318] (-) TimerEvent: {}
+[11.375531] (-) TimerEvent: {}
+[11.475813] (-) TimerEvent: {}
+[11.576157] (-) TimerEvent: {}
+[11.676669] (-) TimerEvent: {}
+[11.777119] (-) TimerEvent: {}
+[11.877429] (-) TimerEvent: {}
+[11.977645] (-) TimerEvent: {}
+[12.077946] (-) TimerEvent: {}
+[12.178282] (-) TimerEvent: {}
+[12.278665] (-) TimerEvent: {}
+[12.379256] (-) TimerEvent: {}
+[12.479899] (-) TimerEvent: {}
+[12.580418] (-) TimerEvent: {}
+[12.680817] (-) TimerEvent: {}
+[12.781688] (-) TimerEvent: {}
+[12.882569] (-) TimerEvent: {}
+[12.983088] (-) TimerEvent: {}
+[13.083518] (-) TimerEvent: {}
+[13.184254] (-) TimerEvent: {}
+[13.285136] (-) TimerEvent: {}
+[13.385747] (-) TimerEvent: {}
+[13.486836] (-) TimerEvent: {}
+[13.587972] (-) TimerEvent: {}
+[13.688493] (-) TimerEvent: {}
+[13.788875] (-) TimerEvent: {}
+[13.889381] (-) TimerEvent: {}
+[13.990294] (-) TimerEvent: {}
+[14.091270] (-) TimerEvent: {}
+[14.191979] (-) TimerEvent: {}
+[14.292369] (-) TimerEvent: {}
+[14.393065] (-) TimerEvent: {}
+[14.493845] (-) TimerEvent: {}
+[14.594563] (-) TimerEvent: {}
+[14.695291] (-) TimerEvent: {}
+[14.796264] (-) TimerEvent: {}
+[14.897636] (-) TimerEvent: {}
+[14.999087] (-) TimerEvent: {}
+[15.100022] (-) TimerEvent: {}
+[15.201001] (-) TimerEvent: {}
+[15.301677] (-) TimerEvent: {}
+[15.402235] (-) TimerEvent: {}
+[15.547418] (-) TimerEvent: {}
+[15.648067] (-) TimerEvent: {}
+[15.748899] (-) TimerEvent: {}
+[15.849632] (-) TimerEvent: {}
+[15.950557] (-) TimerEvent: {}
+[16.051451] (-) TimerEvent: {}
+[16.152087] (-) TimerEvent: {}
+[16.252635] (-) TimerEvent: {}
+[16.353206] (-) TimerEvent: {}
+[16.453917] (-) TimerEvent: {}
+[16.554327] (-) TimerEvent: {}
+[16.654958] (-) TimerEvent: {}
+[16.755565] (-) TimerEvent: {}
+[16.856169] (-) TimerEvent: {}
+[16.956791] (-) TimerEvent: {}
+[17.057271] (-) TimerEvent: {}
+[17.157952] (-) TimerEvent: {}
+[17.258719] (-) TimerEvent: {}
+[17.359388] (-) TimerEvent: {}
+[17.459760] (-) TimerEvent: {}
+[17.560226] (-) TimerEvent: {}
+[17.660840] (-) TimerEvent: {}
+[17.761500] (-) TimerEvent: {}
+[17.862051] (-) TimerEvent: {}
+[17.962667] (-) TimerEvent: {}
+[18.063261] (-) TimerEvent: {}
+[18.163769] (-) TimerEvent: {}
+[18.264278] (-) TimerEvent: {}
+[18.306745] (dog_udp_comm) StdoutLine: {'line': b'[100%] Linking CXX executable sender_node\n'}
+[18.364567] (-) TimerEvent: {}
+[18.465246] (-) TimerEvent: {}
+[18.565851] (-) TimerEvent: {}
+[18.666362] (-) TimerEvent: {}
+[18.766880] (-) TimerEvent: {}
+[18.867364] (-) TimerEvent: {}
+[18.968078] (-) TimerEvent: {}
+[19.068891] (-) TimerEvent: {}
+[19.169507] (-) TimerEvent: {}
+[19.270638] (-) TimerEvent: {}
+[19.371184] (-) TimerEvent: {}
+[19.471913] (-) TimerEvent: {}
+[19.572625] (-) TimerEvent: {}
+[19.673134] (-) TimerEvent: {}
+[19.773660] (-) TimerEvent: {}
+[19.812553] (dog_udp_comm) StdoutLine: {'line': b'[100%] Built target sender_node\n'}
+[19.828116] (dog_udp_comm) CommandEnded: {'returncode': 0}
+[19.830741] (dog_udp_comm) JobProgress: {'identifier': 'dog_udp_comm', 'progress': 'install'}
+[19.848531] (dog_udp_comm) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/talowe/host_udp_ws/build/dog_udp_comm'], 'cwd': '/home/talowe/host_udp_ws/build/dog_udp_comm', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/talowe'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('CODEX_CI', '1'), ('USER', 'talowe'), ('SSH_CLIENT', '192.168.222.13 61456 22'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/home/talowe/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/tcf.json","messagesFile":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/0958016b2af9f09bb4257e0df4a95e2f90590f9f/nls.messages.json","corruptMarkerFile":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"87788cb759b3faab7fe87de19549c933.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/tcf.json","_cacheRoot":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn","_resolvedLanguagePackCoreLocation":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/0958016b2af9f09bb4257e0df4a95e2f90590f9f","_corruptedFile":"/home/talowe/.vscode-server/data/clp/87788cb759b3faab7fe87de19549c933.zh-cn/corrupted.info"}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/talowe/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/talowe'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/talowe'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-eb10ce5f-6f65-4989-a7f0-61eb0bccbfeb.sock'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('PAGER', 'cat'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', ''), ('_CE_M', ''), ('_CONDA_ROOT', '/home/talowe/miniforge3'), ('QTWEBENGINE_CHROMIUM_FLAGS', '--no-sandbox --disable-es3-gl-context --ignore-gpu-blacklist --ignore-gpu-blocklist --enable-accelerated-video-decode'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'talowe'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('TERM', 'dumb'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', 'c4'), ('VSCODE_CLI_REQUIRE_TOKEN', 'dd002a5f-8e5b-4b8e-bd82-d17a0bea5697'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/talowe/.local/bin:/home/talowe/.codex/tmp/arg0/codex-arg0GS5owN:/home/talowe/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/bin/remote-cli:/home/talowe/.local/bin:/opt/ros/humble/bin:/home/talowe/.local/bin:/home/talowe/miniforge3/bin:/home/talowe/miniforge3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/talowe/.vscode-server/extensions/openai.chatgpt-26.506.31421-linux-arm64/bin/linux-aarch64'), ('VSCODE_AGENT_FOLDER', '/home/talowe/.vscode-server'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GST_GL_PLATFORM', 'egl'), ('ADBD_SHELL', '/bin/bash'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('QT_XCB_GL_INTEGRATION', 'xcb_egl'), ('XML_CATALOG_FILES', 'file:///home/talowe/miniforge3/etc/xml/catalog file:///etc/xml/catalog'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/talowe/miniforge3/bin/python'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('CODEX_THREAD_ID', '019e39a9-fe33-7122-96eb-134e3f7a02ea'), ('_CONDA_EXE', '/home/talowe/miniforge3/bin/conda'), ('GIT_PAGER', 'cat'), ('PWD', '/home/talowe/host_udp_ws/build/dog_udp_comm'), ('LC_ALL', 'C.UTF-8'), ('CONDA_EXE', '/home/talowe/miniforge3/bin/conda'), ('SSH_CONNECTION', '192.168.222.13 61456 192.168.222.14 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('ADB_TCP_PORT', '5555'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CONDA_PREFIX', '/home/talowe/miniforge3'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[19.874352] (dog_udp_comm) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[19.876062] (-) TimerEvent: {}
+[19.876194] (dog_udp_comm) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[19.876692] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/sender_node\n'}
+[19.877099] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/keyboard_teleop.py\n'}
+[19.877498] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/host_mpc_controller.py\n'}
+[19.877892] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/pixel_to_scan_polar.py\n'}
+[19.878303] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_string_bridge.py\n'}
+[19.878723] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_center_tester.py\n'}
+[19.879115] (dog_udp_comm) StdoutLine: {'line': b'-- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/analyze_tracking_cmd_bag.py\n'}
+[19.894134] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/person_follow_udp_launch.py\n'}
+[19.895013] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/sender_launch.py\n'}
+[19.895687] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm\n'}
+[19.896309] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm\n'}
+[19.897159] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.sh\n'}
+[19.897881] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.dsv\n'}
+[19.898568] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.sh\n'}
+[19.899235] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.dsv\n'}
+[19.899876] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.bash\n'}
+[19.900405] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.sh\n'}
+[19.900879] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.zsh\n'}
+[19.901311] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.dsv\n'}
+[19.901761] (dog_udp_comm) StdoutLine: {'line': b'-- Symlinking: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.dsv\n'}
+[19.921086] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/packages/dog_udp_comm\n'}
+[19.927815] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig.cmake\n'}
+[19.929449] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig-version.cmake\n'}
+[19.933847] (dog_udp_comm) StdoutLine: {'line': b'-- Up-to-date symlink: /home/talowe/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.xml\n'}
+[19.935551] (dog_udp_comm) CommandEnded: {'returncode': 0}
+[19.976309] (-) TimerEvent: {}
+[20.012538] (dog_udp_comm) JobEnded: {'identifier': 'dog_udp_comm', 'rc': 0}
+[20.014769] (-) EventReactorShutdown: {}
