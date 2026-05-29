@@ -54,22 +54,22 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("angle_tolerance", 0.08)
         self.declare_parameter("stop_when_aligned", True)
         self.declare_parameter("stop_on_lost_target", True)
-        self.declare_parameter("allow_reverse", False)
+        self.declare_parameter("allow_reverse", True)
         self.declare_parameter("target_lost_duration_sec", 1.0)
 
-        self.declare_parameter("max_v", 0.8)
+        self.declare_parameter("max_v", 0.35)
         self.declare_parameter("max_w", 5.0)
-        self.declare_parameter("max_reverse_v", 0.2)
+        self.declare_parameter("max_reverse_v", 0.15)
         self.declare_parameter("force_zero_linear_velocity", False)
         self.declare_parameter("reverse_angular_output", False)
 
         self.declare_parameter("q_dist", 16.0)
         self.declare_parameter("q_angle", 35.0)
-        self.declare_parameter("r_v", 0.35)
-        self.declare_parameter("r_w", 0.06)
+        self.declare_parameter("r_v", 0.75)
+        self.declare_parameter("r_w", 0.10)
         self.declare_parameter("qf_scale", 4.0)
 
-        self.declare_parameter("kff_dist", 0.9)
+        self.declare_parameter("kff_dist", 0.45)
         self.declare_parameter("kff_angle", 3.0)
         self.declare_parameter("use_tracking_x_for_angle", True)
         self.declare_parameter("tracking_x_target", 0.5)
@@ -87,20 +87,22 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("fx", 600.0)
         self.declare_parameter("cx", 320.0)
         self.declare_parameter("yaw_cam_to_control", 0.0)
-        self.declare_parameter("tracking_angle_gain", 2.5)
+        self.declare_parameter("tracking_angle_gain", 2.0)
         self.declare_parameter("distance_filter_alpha", 0.65)
         self.declare_parameter("angle_filter_alpha", 0.65)
         self.declare_parameter("min_valid_distance", 0.15)
         self.declare_parameter("max_valid_distance", 8.0)
         self.declare_parameter("enable_distance_speed_profile", True)
+        self.declare_parameter("reverse_distance_threshold", 0.9)
+        self.declare_parameter("stop_reverse_distance", 1.05)
         self.declare_parameter("speed_profile_near_distance", 1.3)
         self.declare_parameter("speed_profile_far_distance", 3.2)
-        self.declare_parameter("speed_profile_min_v", 0.10)
-        self.declare_parameter("speed_profile_max_v", 0.80)
-        self.declare_parameter("angle_priority_threshold", 0.30)
-        self.declare_parameter("min_heading_speed_scale", 0.20)
-        self.declare_parameter("max_accel", 1.20)
-        self.declare_parameter("max_w_accel", 20.0)
+        self.declare_parameter("speed_profile_min_v", 0.04)
+        self.declare_parameter("speed_profile_max_v", 0.35)
+        self.declare_parameter("angle_priority_threshold", 0.12)
+        self.declare_parameter("min_heading_speed_scale", 0.05)
+        self.declare_parameter("max_accel", 0.45)
+        self.declare_parameter("max_w_accel", 8.0)
 
         self.person_topic = str(self.get_parameter("person_topic").value)
         self.tracking_state_topic = str(self.get_parameter("tracking_state_topic").value)
@@ -171,6 +173,8 @@ class HostMPCControllerNode(Node):
         self.min_valid_distance = float(self.get_parameter("min_valid_distance").value)
         self.max_valid_distance = float(self.get_parameter("max_valid_distance").value)
         self.enable_distance_speed_profile = bool(self.get_parameter("enable_distance_speed_profile").value)
+        self.reverse_distance_threshold = float(self.get_parameter("reverse_distance_threshold").value)
+        self.stop_reverse_distance = float(self.get_parameter("stop_reverse_distance").value)
         self.speed_profile_near_distance = float(self.get_parameter("speed_profile_near_distance").value)
         self.speed_profile_far_distance = float(self.get_parameter("speed_profile_far_distance").value)
         self.speed_profile_min_v = float(self.get_parameter("speed_profile_min_v").value)
@@ -380,6 +384,22 @@ class HostMPCControllerNode(Node):
         ratio = (d - near) / max(far - near, 1e-6)
         v_lim = self.speed_profile_min_v + ratio * (self.speed_profile_max_v - self.speed_profile_min_v)
         return min(self.max_v, max(0.0, v_lim))
+
+    def apply_near_distance_reverse(self, v_cmd, distance, angle):
+        if not self.allow_reverse:
+            return v_cmd
+        if abs(wrap_to_pi(angle - self.desired_angle)) > 0.5:
+            return v_cmd
+        if distance >= self.stop_reverse_distance:
+            return v_cmd
+
+        if distance <= self.reverse_distance_threshold:
+            return -abs(self.max_reverse_v)
+
+        ratio = (self.stop_reverse_distance - distance) / max(
+            self.stop_reverse_distance - self.reverse_distance_threshold, 1e-6
+        )
+        return min(v_cmd, -abs(self.max_reverse_v) * float(np.clip(ratio, 0.0, 1.0)))
 
     def heading_speed_scale(self, angle_error):
         if self.angle_priority_threshold <= 1e-6:
@@ -613,6 +633,7 @@ class HostMPCControllerNode(Node):
             v_lim_distance = self.distance_speed_limit(d)
             v_lim_heading = v_lim_distance * self.heading_speed_scale(a - self.desired_angle)
             v_cmd = min(v_cmd, v_lim_heading)
+        v_cmd = self.apply_near_distance_reverse(v_cmd, d, a)
 
         v_cmd = self.accel_limit_v(v_cmd)
         if self.force_zero_linear_velocity:
