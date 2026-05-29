@@ -1,1 +1,1 @@
-/home/talowe/host_udp_ws/build/dog_udp_comm/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm
+rclcpp;rclpy;geometry_msgs;sensor_msgs;nav_msgs;std_srvs;std_msgs;launch;launch_ros;cspc_lidar;ament_lint_auto;ament_lint_common

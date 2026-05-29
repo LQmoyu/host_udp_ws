@@ -5,7 +5,7 @@ set(dog_udp_comm_BUILD_DEPENDS "rclcpp" "rclpy" "geometry_msgs" "sensor_msgs" "n
 set(dog_udp_comm_BUILDTOOL_DEPENDS "ament_cmake")
 set(dog_udp_comm_BUILD_EXPORT_DEPENDS "rclcpp" "rclpy" "geometry_msgs" "sensor_msgs" "nav_msgs" "std_srvs" "std_msgs")
 set(dog_udp_comm_BUILDTOOL_EXPORT_DEPENDS )
-set(dog_udp_comm_EXEC_DEPENDS "rclcpp" "rclpy" "geometry_msgs" "sensor_msgs" "nav_msgs" "std_srvs" "std_msgs")
+set(dog_udp_comm_EXEC_DEPENDS "launch" "launch_ros" "cspc_lidar" "rclcpp" "rclpy" "geometry_msgs" "sensor_msgs" "nav_msgs" "std_srvs" "std_msgs")
 set(dog_udp_comm_TEST_DEPENDS "ament_lint_auto" "ament_lint_common")
 set(dog_udp_comm_GROUP_DEPENDS )
 set(dog_udp_comm_MEMBER_OF_GROUPS )

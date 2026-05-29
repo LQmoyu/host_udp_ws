@@ -12,7 +12,7 @@ Input:
 Output:
 - geometry_msgs/Vector3Stamped on `out_topic` (default: /person_polar)
   - vector.x: distance in meters
-  - vector.y: angle in radians in lidar frame (left positive in ROS frame convention)
+  - vector.y: angle in radians used by controller (left positive)
 """
 
 import math
@@ -56,6 +56,7 @@ class PixelToScanPolarNode(Node):
         self.declare_parameter("search_half_window", 6)
         self.declare_parameter("range_min_valid", 0.10)
         self.declare_parameter("range_max_valid", 10.0)
+        self.declare_parameter("prefer_scan_angle_output", False)
         self.declare_parameter("publish_debug", False)
 
         self.scan_topic = str(self.get_parameter("scan_topic").value)
@@ -69,6 +70,7 @@ class PixelToScanPolarNode(Node):
         self.search_half_window = int(self.get_parameter("search_half_window").value)
         self.range_min_valid = float(self.get_parameter("range_min_valid").value)
         self.range_max_valid = float(self.get_parameter("range_max_valid").value)
+        self.prefer_scan_angle_output = bool(self.get_parameter("prefer_scan_angle_output").value)
         self.publish_debug = bool(self.get_parameter("publish_debug").value)
 
         self.scan_lock = Lock()
@@ -129,8 +131,10 @@ class PixelToScanPolarNode(Node):
         # Horizontal pinhole projection: pixel x -> camera yaw angle.
         theta_cam = math.atan2((u - self.cx), max(self.fx, 1e-6))
 
-        # Convert to lidar frame angle.
+        # Convert to lidar frame angle. This directly represents the image-centering
+        # direction (x=0.5 -> angle~=0 with correct camera intrinsics/extrinsics).
         theta_lidar = theta_cam + self.yaw_cam_to_lidar
+        theta_control = wrap_to_pi(theta_lidar)
 
         # Driver currently provides scan in [0, 2pi].
         theta_lidar = wrap_to_2pi(theta_lidar)
@@ -145,19 +149,24 @@ class PixelToScanPolarNode(Node):
         if best_idx < 0:
             return
 
-        angle = scan.angle_min + best_idx * scan.angle_increment
+        angle_scan = scan.angle_min + best_idx * scan.angle_increment
+        if self.prefer_scan_angle_output:
+            angle_out = wrap_to_pi(angle_scan)
+        else:
+            angle_out = theta_control
 
         out = Vector3Stamped()
         out.header = msg.header
         out.vector.x = float(best_range)
-        out.vector.y = float(wrap_to_pi(angle))
+        out.vector.y = float(angle_out)
         out.vector.z = 0.0
         self.polar_pub.publish(out)
 
         if self.publish_debug:
             self.get_logger().info(
                 f"u={u:.1f}, idx={idx}, use_idx={best_idx}, "
-                f"range={best_range:.3f}m, angle={out.vector.y:.3f}rad"
+                f"range={best_range:.3f}m, angle_ctrl={theta_control:.3f}rad, "
+                f"angle_scan={wrap_to_pi(angle_scan):.3f}rad, out={out.vector.y:.3f}rad"
             )
 
 

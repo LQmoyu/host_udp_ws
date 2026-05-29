@@ -1,7 +1,7 @@
 CMakeFiles/cspc_lidar.dir/sdk/mtime.cpp.o: \
- /home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/mtime.cpp \
+ /home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/mtime.cpp \
  /usr/include/stdc-predef.h \
- /home/talowe/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/mtime.h \
+ /home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/mtime.h \
  /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
  /usr/include/c++/11/type_traits \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \

@@ -91,10 +91,11 @@ class TrackingStringBridgeNode(Node):
         self.declare_parameter("pixel_topic", "/tracking_pixel")
         self.declare_parameter("image_width", 640.0)
         self.declare_parameter("image_height", 480.0)
-        self.declare_parameter("max_allowed_age_ms", 500.0)
+        self.declare_parameter("max_allowed_age_ms", 1000.0)
         self.declare_parameter("max_consecutive_drop", 3)
         self.declare_parameter("warn_interval_sec", 1.0)
         self.declare_parameter("use_source_timestamp_for_header", True)
+        self.declare_parameter("relative_timestamp_threshold_ms", 1.0e9)
         self.declare_parameter("topic_check_period_sec", 0.5)
         self.declare_parameter("tracking_topic_lost_timeout_sec", 1.0)
 
@@ -108,6 +109,9 @@ class TrackingStringBridgeNode(Node):
         self.warn_interval_sec = float(self.get_parameter("warn_interval_sec").value)
         self.use_source_timestamp_for_header = bool(
             self.get_parameter("use_source_timestamp_for_header").value
+        )
+        self.relative_timestamp_threshold_ms = float(
+            self.get_parameter("relative_timestamp_threshold_ms").value
         )
         self.topic_check_period_sec = max(0.1, float(self.get_parameter("topic_check_period_sec").value))
         self.tracking_topic_lost_timeout_sec = max(
@@ -188,7 +192,8 @@ class TrackingStringBridgeNode(Node):
         x, y, detected, ts_raw = parsed
         ts_ms = normalize_timestamp_to_ms(ts_raw)
         now_ms = self.get_clock().now().nanoseconds / 1.0e6
-        age_ms = now_ms - ts_ms
+        is_relative_timestamp = ts_ms < self.relative_timestamp_threshold_ms
+        age_ms = 0.0 if is_relative_timestamp else now_ms - ts_ms
 
         if age_ms > self.max_allowed_age_ms:
             self.bump_drop(f"stale_age_ms={age_ms:.1f}")
@@ -198,7 +203,7 @@ class TrackingStringBridgeNode(Node):
             self.bump_drop(f"future_timestamp_age_ms={age_ms:.1f}")
             return
 
-        if self.use_source_timestamp_for_header:
+        if self.use_source_timestamp_for_header and not is_relative_timestamp:
             stamp_pair = split_stamp_from_ms(ts_ms)
             if stamp_pair is None:
                 self.bump_drop("timestamp_out_of_ros_time_range")
