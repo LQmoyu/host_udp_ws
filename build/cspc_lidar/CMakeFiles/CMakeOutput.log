@@ -28,10 +28,17 @@ The CXX compiler identification is GNU, found in "/home/admin/workspace/host_udp
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_240ab/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_240ab.dir/build.make CMakeFiles/cmTC_240ab.dir/build
 gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o
 /usr/bin/cc   -v -o CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+=======
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8efb2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8efb2.dir/build.make CMakeFiles/cmTC_8efb2.dir/build
+gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+>>>>>>> 23658be (x z 参数整定 1.1)
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 Target: aarch64-linux-gnu
@@ -39,8 +46,13 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~2
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) 
+<<<<<<< HEAD
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_240ab.dir/'
  /usr/lib/gcc/aarch64-linux-gnu/11/cc1 -quiet -v -imultiarch aarch64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_240ab.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/ccTvcZVE.s
+=======
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_8efb2.dir/'
+ /usr/lib/gcc/aarch64-linux-gnu/11/cc1 -quiet -v -imultiarch aarch64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8efb2.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/ccdoOfCg.s
+>>>>>>> 23658be (x z 参数整定 1.1)
 GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04.3) version 11.4.0 (aarch64-linux-gnu)
 	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
 
@@ -60,6 +72,7 @@ GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04.3) version 11.4.0 (aarch64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 44447769998af3517ef276c2696d65ed
+<<<<<<< HEAD
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_240ab.dir/'
  as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o /tmp/ccTvcZVE.s
 GNU assembler version 2.38 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
@@ -69,6 +82,17 @@ COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o' 
 Linking C executable cmTC_240ab
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_240ab.dir/link.txt --verbose=1
 /usr/bin/cc  -v CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o -o cmTC_240ab 
+=======
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_8efb2.dir/'
+ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o /tmp/ccdoOfCg.s
+GNU assembler version 2.38 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
+COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.'
+Linking C executable cmTC_8efb2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8efb2.dir/link.txt --verbose=1
+/usr/bin/cc  -v CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o -o cmTC_8efb2 
+>>>>>>> 23658be (x z 参数整定 1.1)
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper
@@ -79,9 +103,15 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) 
 COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../:/lib/:/usr/lib/
+<<<<<<< HEAD
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_240ab' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_240ab.'
  /usr/lib/gcc/aarch64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cczZErGi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_240ab /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/11 -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/11/../../.. CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_240ab' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_240ab.'
+=======
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8efb2' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_8efb2.'
+ /usr/lib/gcc/aarch64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccT0Ryrw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_8efb2 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/11 -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/11/../../.. CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8efb2' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_8efb2.'
+>>>>>>> 23658be (x z 参数整定 1.1)
 gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 
 
@@ -105,10 +135,17 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp]
   ignore line: []
+<<<<<<< HEAD
   ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_240ab/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_240ab.dir/build.make CMakeFiles/cmTC_240ab.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp']
   ignore line: [Building C object CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o]
   ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+=======
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8efb2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8efb2.dir/build.make CMakeFiles/cmTC_8efb2.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+>>>>>>> 23658be (x z 参数整定 1.1)
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [Target: aarch64-linux-gnu]
@@ -116,8 +153,13 @@ Parsed C implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) ]
+<<<<<<< HEAD
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_240ab.dir/']
   ignore line: [ /usr/lib/gcc/aarch64-linux-gnu/11/cc1 -quiet -v -imultiarch aarch64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_240ab.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/ccTvcZVE.s]
+=======
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_8efb2.dir/']
+  ignore line: [ /usr/lib/gcc/aarch64-linux-gnu/11/cc1 -quiet -v -imultiarch aarch64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8efb2.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/ccdoOfCg.s]
+>>>>>>> 23658be (x z 参数整定 1.1)
   ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04.3) version 11.4.0 (aarch64-linux-gnu)]
   ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
   ignore line: []
@@ -137,6 +179,7 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 44447769998af3517ef276c2696d65ed]
+<<<<<<< HEAD
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_240ab.dir/']
   ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o /tmp/ccTvcZVE.s]
   ignore line: [GNU assembler version 2.38 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
@@ -146,6 +189,17 @@ Parsed C implicit link information from above output:
   ignore line: [Linking C executable cmTC_240ab]
   ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_240ab.dir/link.txt --verbose=1]
   ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o -o cmTC_240ab ]
+=======
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_8efb2.dir/']
+  ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o /tmp/ccdoOfCg.s]
+  ignore line: [GNU assembler version 2.38 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C executable cmTC_8efb2]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8efb2.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o -o cmTC_8efb2 ]
+>>>>>>> 23658be (x z 参数整定 1.1)
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper]
@@ -156,13 +210,22 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../:/lib/:/usr/lib/]
+<<<<<<< HEAD
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_240ab' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_240ab.']
   link line: [ /usr/lib/gcc/aarch64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cczZErGi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_240ab /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/11 -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/11/../../.. CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o]
+=======
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8efb2' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_8efb2.']
+  link line: [ /usr/lib/gcc/aarch64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccT0Ryrw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_8efb2 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/11 -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/11/../../.. CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o]
+>>>>>>> 23658be (x z 参数整定 1.1)
     arg [/usr/lib/gcc/aarch64-linux-gnu/11/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/11/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper] ==> ignore
+<<<<<<< HEAD
     arg [-plugin-opt=-fresolution=/tmp/cczZErGi.res] ==> ignore
+=======
+    arg [-plugin-opt=-fresolution=/tmp/ccT0Ryrw.res] ==> ignore
+>>>>>>> 23658be (x z 参数整定 1.1)
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -182,7 +245,11 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
+<<<<<<< HEAD
     arg [cmTC_240ab] ==> ignore
+=======
+    arg [cmTC_8efb2] ==> ignore
+>>>>>>> 23658be (x z 参数整定 1.1)
     arg [/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o]
@@ -194,7 +261,11 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/aarch64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/11/../../..]
+<<<<<<< HEAD
     arg [CMakeFiles/cmTC_240ab.dir/CMakeCCompilerABI.c.o] ==> ignore
+=======
+    arg [CMakeFiles/cmTC_8efb2.dir/CMakeCCompilerABI.c.o] ==> ignore
+>>>>>>> 23658be (x z 参数整定 1.1)
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -228,10 +299,17 @@ Parsed C implicit link information from above output:
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_57e68/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_57e68.dir/build.make CMakeFiles/cmTC_57e68.dir/build
 gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 Building CXX object CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o
 /usr/bin/c++   -v -o CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+=======
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_63cac/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_63cac.dir/build.make CMakeFiles/cmTC_63cac.dir/build
+gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -o CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+>>>>>>> 23658be (x z 参数整定 1.1)
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 Target: aarch64-linux-gnu
@@ -239,8 +317,13 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~2
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) 
+<<<<<<< HEAD
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_57e68.dir/'
  /usr/lib/gcc/aarch64-linux-gnu/11/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_57e68.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/ccclzOqj.s
+=======
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63cac.dir/'
+ /usr/lib/gcc/aarch64-linux-gnu/11/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_63cac.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/cc9plebo.s
+>>>>>>> 23658be (x z 参数整定 1.1)
 GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04.3) version 11.4.0 (aarch64-linux-gnu)
 	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
 
@@ -264,6 +347,7 @@ GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04.3) version 11.4.0 (aarch64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 1ec2e7097ef542eddc6fe6fb48e7bad4
+<<<<<<< HEAD
 COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_57e68.dir/'
  as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccclzOqj.s
 GNU assembler version 2.38 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
@@ -273,6 +357,17 @@ COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp
 Linking CXX executable cmTC_57e68
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57e68.dir/link.txt --verbose=1
 /usr/bin/c++  -v CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_57e68 
+=======
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63cac.dir/'
+ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc9plebo.s
+GNU assembler version 2.38 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
+COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_63cac
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63cac.dir/link.txt --verbose=1
+/usr/bin/c++  -v CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_63cac 
+>>>>>>> 23658be (x z 参数整定 1.1)
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper
@@ -283,9 +378,15 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) 
 COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../:/lib/:/usr/lib/
+<<<<<<< HEAD
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_57e68' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_57e68.'
  /usr/lib/gcc/aarch64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpfNq1w.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_57e68 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/11 -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/11/../../.. CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_57e68' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_57e68.'
+=======
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_63cac' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_63cac.'
+ /usr/lib/gcc/aarch64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2t28eE.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_63cac /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/11 -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/11/../../.. CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_63cac' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_63cac.'
+>>>>>>> 23658be (x z 参数整定 1.1)
 gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 
 
@@ -315,10 +416,17 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp]
   ignore line: []
+<<<<<<< HEAD
   ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_57e68/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_57e68.dir/build.make CMakeFiles/cmTC_57e68.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp']
   ignore line: [Building CXX object CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o]
   ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
+=======
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_63cac/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_63cac.dir/build.make CMakeFiles/cmTC_63cac.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
+>>>>>>> 23658be (x z 参数整定 1.1)
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [Target: aarch64-linux-gnu]
@@ -326,8 +434,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) ]
+<<<<<<< HEAD
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_57e68.dir/']
   ignore line: [ /usr/lib/gcc/aarch64-linux-gnu/11/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_57e68.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/ccclzOqj.s]
+=======
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63cac.dir/']
+  ignore line: [ /usr/lib/gcc/aarch64-linux-gnu/11/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_63cac.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -o /tmp/cc9plebo.s]
+>>>>>>> 23658be (x z 参数整定 1.1)
   ignore line: [GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04.3) version 11.4.0 (aarch64-linux-gnu)]
   ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
   ignore line: []
@@ -351,6 +464,7 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 1ec2e7097ef542eddc6fe6fb48e7bad4]
+<<<<<<< HEAD
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_57e68.dir/']
   ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccclzOqj.s]
   ignore line: [GNU assembler version 2.38 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
@@ -360,6 +474,17 @@ Parsed CXX implicit link information from above output:
   ignore line: [Linking CXX executable cmTC_57e68]
   ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57e68.dir/link.txt --verbose=1]
   ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_57e68 ]
+=======
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63cac.dir/']
+  ignore line: [ as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc9plebo.s]
+  ignore line: [GNU assembler version 2.38 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_63cac]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63cac.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_63cac ]
+>>>>>>> 23658be (x z 参数整定 1.1)
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper]
@@ -370,13 +495,22 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/11/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/11/../../../:/lib/:/usr/lib/]
+<<<<<<< HEAD
   ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_57e68' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_57e68.']
   link line: [ /usr/lib/gcc/aarch64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpfNq1w.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_57e68 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/11 -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/11/../../.. CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o]
+=======
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_63cac' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_63cac.']
+  link line: [ /usr/lib/gcc/aarch64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2t28eE.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_63cac /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/11 -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/11/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/11/../../.. CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o]
+>>>>>>> 23658be (x z 参数整定 1.1)
     arg [/usr/lib/gcc/aarch64-linux-gnu/11/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/aarch64-linux-gnu/11/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/11/lto-wrapper] ==> ignore
+<<<<<<< HEAD
     arg [-plugin-opt=-fresolution=/tmp/ccpfNq1w.res] ==> ignore
+=======
+    arg [-plugin-opt=-fresolution=/tmp/cc2t28eE.res] ==> ignore
+>>>>>>> 23658be (x z 参数整定 1.1)
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -396,7 +530,11 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
+<<<<<<< HEAD
     arg [cmTC_57e68] ==> ignore
+=======
+    arg [cmTC_63cac] ==> ignore
+>>>>>>> 23658be (x z 参数整定 1.1)
     arg [/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o]
@@ -408,7 +546,11 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/aarch64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/11/../../..]
+<<<<<<< HEAD
     arg [CMakeFiles/cmTC_57e68.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+=======
+    arg [CMakeFiles/cmTC_63cac.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+>>>>>>> 23658be (x z 参数整定 1.1)
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -438,6 +580,7 @@ Parsed CXX implicit link information from above output:
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_71490/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_71490.dir/build.make CMakeFiles/cmTC_71490.dir/build
 gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_71490.dir/CheckIncludeFile.c.o
@@ -445,6 +588,15 @@ Building C object CMakeFiles/cmTC_71490.dir/CheckIncludeFile.c.o
 Linking C executable cmTC_71490
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71490.dir/link.txt --verbose=1
 /usr/bin/cc CMakeFiles/cmTC_71490.dir/CheckIncludeFile.c.o -o cmTC_71490 
+=======
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c67ce/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c67ce.dir/build.make CMakeFiles/cmTC_c67ce.dir/build
+gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c67ce.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c67ce.dir/CheckIncludeFile.c.o -c /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_c67ce
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c67ce.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c67ce.dir/CheckIncludeFile.c.o -o cmTC_c67ce 
+>>>>>>> 23658be (x z 参数整定 1.1)
 gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 
 
@@ -452,6 +604,7 @@ gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
 Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5ca1e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5ca1e.dir/build.make CMakeFiles/cmTC_5ca1e.dir/build
 gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_5ca1e.dir/src.c.o
@@ -459,6 +612,15 @@ Building C object CMakeFiles/cmTC_5ca1e.dir/src.c.o
 Linking C executable cmTC_5ca1e
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ca1e.dir/link.txt --verbose=1
 /usr/bin/cc CMakeFiles/cmTC_5ca1e.dir/src.c.o -o cmTC_5ca1e 
+=======
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_03f4c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_03f4c.dir/build.make CMakeFiles/cmTC_03f4c.dir/build
+gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_03f4c.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_03f4c.dir/src.c.o -c /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_03f4c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03f4c.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_03f4c.dir/src.c.o -o cmTC_03f4c 
+>>>>>>> 23658be (x z 参数整定 1.1)
 gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 
 
@@ -486,6 +648,7 @@ int main(void)
 Determining if the function XOpenDisplay exists in the /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so passed with the following output:
 Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0214d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0214d.dir/build.make CMakeFiles/cmTC_0214d.dir/build
 gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_0214d.dir/CheckFunctionExists.c.o
@@ -493,6 +656,15 @@ Building C object CMakeFiles/cmTC_0214d.dir/CheckFunctionExists.c.o
 Linking C executable cmTC_0214d
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0214d.dir/link.txt --verbose=1
 /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_0214d.dir/CheckFunctionExists.c.o -o cmTC_0214d  /usr/lib/aarch64-linux-gnu/libX11.so /usr/lib/aarch64-linux-gnu/libXext.so 
+=======
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_37c78/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_37c78.dir/build.make CMakeFiles/cmTC_37c78.dir/build
+gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_37c78.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_37c78.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_37c78
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37c78.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_37c78.dir/CheckFunctionExists.c.o -o cmTC_37c78  /usr/lib/aarch64-linux-gnu/libX11.so /usr/lib/aarch64-linux-gnu/libXext.so 
+>>>>>>> 23658be (x z 参数整定 1.1)
 gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 
 
@@ -500,6 +672,7 @@ gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/
 Determining if the function gethostbyname exists passed with the following output:
 Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0a0fd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0a0fd.dir/build.make CMakeFiles/cmTC_0a0fd.dir/build
 gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_0a0fd.dir/CheckFunctionExists.c.o
@@ -507,6 +680,15 @@ Building C object CMakeFiles/cmTC_0a0fd.dir/CheckFunctionExists.c.o
 Linking C executable cmTC_0a0fd
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a0fd.dir/link.txt --verbose=1
 /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_0a0fd.dir/CheckFunctionExists.c.o -o cmTC_0a0fd 
+=======
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_71841/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_71841.dir/build.make CMakeFiles/cmTC_71841.dir/build
+gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_71841.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_71841.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_71841
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71841.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_71841.dir/CheckFunctionExists.c.o -o cmTC_71841 
+>>>>>>> 23658be (x z 参数整定 1.1)
 gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 
 
@@ -514,6 +696,7 @@ gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/
 Determining if the function connect exists passed with the following output:
 Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8e692/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8e692.dir/build.make CMakeFiles/cmTC_8e692.dir/build
 gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_8e692.dir/CheckFunctionExists.c.o
@@ -521,6 +704,15 @@ Building C object CMakeFiles/cmTC_8e692.dir/CheckFunctionExists.c.o
 Linking C executable cmTC_8e692
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e692.dir/link.txt --verbose=1
 /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_8e692.dir/CheckFunctionExists.c.o -o cmTC_8e692 
+=======
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b5d49/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b5d49.dir/build.make CMakeFiles/cmTC_b5d49.dir/build
+gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b5d49.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_b5d49.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b5d49
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b5d49.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_b5d49.dir/CheckFunctionExists.c.o -o cmTC_b5d49 
+>>>>>>> 23658be (x z 参数整定 1.1)
 gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 
 
@@ -528,6 +720,7 @@ gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/
 Determining if the function remove exists passed with the following output:
 Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ac69a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ac69a.dir/build.make CMakeFiles/cmTC_ac69a.dir/build
 gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_ac69a.dir/CheckFunctionExists.c.o
@@ -535,6 +728,15 @@ Building C object CMakeFiles/cmTC_ac69a.dir/CheckFunctionExists.c.o
 Linking C executable cmTC_ac69a
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac69a.dir/link.txt --verbose=1
 /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_ac69a.dir/CheckFunctionExists.c.o -o cmTC_ac69a 
+=======
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_82af9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_82af9.dir/build.make CMakeFiles/cmTC_82af9.dir/build
+gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_82af9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_82af9.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_82af9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_82af9.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_82af9.dir/CheckFunctionExists.c.o -o cmTC_82af9 
+>>>>>>> 23658be (x z 参数整定 1.1)
 gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 
 
@@ -542,6 +744,7 @@ gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/
 Determining if the function shmat exists passed with the following output:
 Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6f6d9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6f6d9.dir/build.make CMakeFiles/cmTC_6f6d9.dir/build
 gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_6f6d9.dir/CheckFunctionExists.c.o
@@ -549,6 +752,15 @@ Building C object CMakeFiles/cmTC_6f6d9.dir/CheckFunctionExists.c.o
 Linking C executable cmTC_6f6d9
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6f6d9.dir/link.txt --verbose=1
 /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_6f6d9.dir/CheckFunctionExists.c.o -o cmTC_6f6d9 
+=======
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1dbe5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1dbe5.dir/build.make CMakeFiles/cmTC_1dbe5.dir/build
+gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1dbe5.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_1dbe5.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1dbe5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1dbe5.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_1dbe5.dir/CheckFunctionExists.c.o -o cmTC_1dbe5 
+>>>>>>> 23658be (x z 参数整定 1.1)
 gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 
 
@@ -556,6 +768,7 @@ gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/
 Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
 Change Dir: /home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp
 
+<<<<<<< HEAD
 Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_266e3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_266e3.dir/build.make CMakeFiles/cmTC_266e3.dir/build
 gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_266e3.dir/CheckFunctionExists.c.o
@@ -563,6 +776,15 @@ Building C object CMakeFiles/cmTC_266e3.dir/CheckFunctionExists.c.o
 Linking C executable cmTC_266e3
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_266e3.dir/link.txt --verbose=1
 /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_266e3.dir/CheckFunctionExists.c.o -o cmTC_266e3  -lICE 
+=======
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0a956/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0a956.dir/build.make CMakeFiles/cmTC_0a956.dir/build
+gmake[1]: Entering directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0a956.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_0a956.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0a956
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a956.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_0a956.dir/CheckFunctionExists.c.o -o cmTC_0a956  -lICE 
+>>>>>>> 23658be (x z 参数整定 1.1)
 gmake[1]: Leaving directory '/home/admin/workspace/host_udp_ws/build/cspc_lidar/CMakeFiles/CMakeTmp'
 
 

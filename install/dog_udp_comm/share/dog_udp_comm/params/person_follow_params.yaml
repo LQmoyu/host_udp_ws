@@ -52,34 +52,48 @@ host_mpc_controller:
     force_zero_linear_velocity: false
     reverse_angular_output: true
     q_dist: 16.0
+<<<<<<< HEAD
     q_angle: 15.0
     r_v: 0.75
     r_w: 0.10
     qf_scale: 4.0
     kff_dist: 0.45
     kff_angle: 2.0
+=======
+    q_angle: 12.0
+    r_v: 0.75
+    r_w: 0.18
+    qf_scale: 4.0
+    kff_dist: 0.45
+    kff_angle: 1.6
+>>>>>>> 23658be (x z 参数整定 1.1)
     use_tracking_x_for_angle: true
     tracking_x_target: 0.5
-    tracking_x_deadband: 0.003
+    tracking_x_deadband: 0.012
     tracking_x_timeout_sec: 1.0
     enable_angle_prediction: true
     max_prediction_sec: 0.35
-    angle_rate_filter_alpha: 0.6
-    max_angle_rate: 3.5
+    angle_rate_filter_alpha: 0.8
+    max_angle_rate: 2.0
     enable_tracking_only_fallback: true
     tracking_only_linear_speed: 0.1
     tracking_only_kp_w: 3.0
-    tracking_only_kd_w: 0.4
+    tracking_only_kd_w: 0.2
     image_width: 640.0
     fx: 600.0
     cx: 320.0
     yaw_cam_to_control: 0.0
+<<<<<<< HEAD
     tracking_angle_gain: 2.5
+=======
+    tracking_angle_gain: 1.6
+>>>>>>> 23658be (x z 参数整定 1.1)
     distance_filter_alpha: 0.65
-    angle_filter_alpha: 0.65
+    angle_filter_alpha: 0.78
     min_valid_distance: 0.15
     max_valid_distance: 8.0
     enable_distance_speed_profile: true
+<<<<<<< HEAD
     reverse_distance_threshold: 0.5
     stop_reverse_distance: 0.8
     speed_profile_near_distance: 1.3
@@ -90,6 +104,18 @@ host_mpc_controller:
     min_heading_speed_scale: 0.05
     max_accel: 1.0
     max_w_accel: 10.0
+=======
+    reverse_distance_threshold: 0.9
+    stop_reverse_distance: 1.05
+    speed_profile_near_distance: 1.3
+    speed_profile_far_distance: 3.2
+    speed_profile_min_v: 0.04
+    speed_profile_max_v: 0.6
+    angle_priority_threshold: 0.20
+    min_heading_speed_scale: 0.20
+    max_accel: 0.8
+    max_w_accel: 4.0
+>>>>>>> 23658be (x z 参数整定 1.1)
 
 udp_cmd_vel_server:
   ros__parameters:

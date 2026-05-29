@@ -5,7 +5,6 @@ from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
-from launch_ros.parameter_descriptions import ParameterValue
 
 
 def generate_launch_description():
@@ -15,10 +14,13 @@ def generate_launch_description():
     lidar_launch = f"{lidar_share}/launch/lidar_launch.py"
     lidar_default_params = f"{lidar_share}/params/cspc_lidar.yaml"
 
-    args = [
+    follow_params_file = LaunchConfiguration("follow_params_file")
+
+    return LaunchDescription([
         DeclareLaunchArgument("follow_params_file", default_value=follow_default_params),
         DeclareLaunchArgument("enable_lidar", default_value="true"),
         DeclareLaunchArgument("lidar_params_file", default_value=lidar_default_params),
+<<<<<<< HEAD
         DeclareLaunchArgument("tracking_topic", default_value="/tracking"),
         DeclareLaunchArgument("state_topic", default_value="/tracking_state"),
         DeclareLaunchArgument("pixel_topic", default_value="/tracking_pixel"),
@@ -190,3 +192,42 @@ def generate_launch_description():
             sender_node,
         ]
     )
+=======
+
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(lidar_launch),
+            condition=IfCondition(LaunchConfiguration("enable_lidar")),
+            launch_arguments={
+                "params_file": LaunchConfiguration("lidar_params_file"),
+            }.items(),
+        ),
+        Node(
+            package="dog_udp_comm",
+            executable="tracking_string_bridge.py",
+            name="tracking_string_bridge",
+            output="screen",
+            parameters=[follow_params_file],
+        ),
+        Node(
+            package="dog_udp_comm",
+            executable="pixel_to_scan_polar.py",
+            name="pixel_to_scan_polar",
+            output="screen",
+            parameters=[follow_params_file],
+        ),
+        Node(
+            package="dog_udp_comm",
+            executable="host_mpc_controller.py",
+            name="host_mpc_controller",
+            output="screen",
+            parameters=[follow_params_file],
+        ),
+        Node(
+            package="dog_udp_comm",
+            executable="sender_node",
+            name="udp_cmd_vel_server",
+            output="screen",
+            parameters=[follow_params_file],
+        ),
+    ])
+>>>>>>> 23658be (x z 参数整定 1.1)
