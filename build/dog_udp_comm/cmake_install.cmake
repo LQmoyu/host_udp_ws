@@ -70,6 +70,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/admin/workspace/host_udp_ws/src/dog_udp_comm/scripts/tracking_string_bridge.py"
     "/home/admin/workspace/host_udp_ws/src/dog_udp_comm/scripts/tracking_center_tester.py"
     "/home/admin/workspace/host_udp_ws/src/dog_udp_comm/scripts/analyze_tracking_cmd_bag.py"
+    "/home/admin/workspace/host_udp_ws/src/dog_udp_comm/scripts/latency_monitor.py"
     )
 endif()
 

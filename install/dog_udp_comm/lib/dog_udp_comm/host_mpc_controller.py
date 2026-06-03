@@ -95,6 +95,7 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("enable_distance_speed_profile", True)
         self.declare_parameter("reverse_distance_threshold", 0.9)
         self.declare_parameter("stop_reverse_distance", 1.05)
+        self.declare_parameter("min_forward_distance", 0.0)
         self.declare_parameter("speed_profile_near_distance", 1.3)
         self.declare_parameter("speed_profile_far_distance", 3.2)
         self.declare_parameter("speed_profile_min_v", 0.04)
@@ -175,6 +176,7 @@ class HostMPCControllerNode(Node):
         self.enable_distance_speed_profile = bool(self.get_parameter("enable_distance_speed_profile").value)
         self.reverse_distance_threshold = float(self.get_parameter("reverse_distance_threshold").value)
         self.stop_reverse_distance = float(self.get_parameter("stop_reverse_distance").value)
+        self.min_forward_distance = float(self.get_parameter("min_forward_distance").value)
         self.speed_profile_near_distance = float(self.get_parameter("speed_profile_near_distance").value)
         self.speed_profile_far_distance = float(self.get_parameter("speed_profile_far_distance").value)
         self.speed_profile_min_v = float(self.get_parameter("speed_profile_min_v").value)
@@ -187,6 +189,9 @@ class HostMPCControllerNode(Node):
         self.speed_profile_far_distance = max(
             self.speed_profile_far_distance, self.speed_profile_near_distance + 1e-3
         )
+        if self.min_forward_distance <= 0.0:
+            self.min_forward_distance = self.desired_distance + self.distance_tolerance
+        self.min_forward_distance = max(0.0, self.min_forward_distance)
         self.speed_profile_min_v = max(0.0, self.speed_profile_min_v)
         self.speed_profile_max_v = max(self.speed_profile_min_v, self.speed_profile_max_v)
         self.min_heading_speed_scale = float(np.clip(self.min_heading_speed_scale, 0.0, 1.0))
@@ -373,11 +378,15 @@ class HostMPCControllerNode(Node):
         if not self.enable_distance_speed_profile:
             return self.max_v
 
-        near = self.speed_profile_near_distance
+        forward_start = max(self.min_forward_distance, self.desired_distance + self.distance_tolerance)
+        near = max(self.speed_profile_near_distance, forward_start + 1e-3)
         far = self.speed_profile_far_distance
         d = max(distance, 0.0)
+        if d <= forward_start:
+            return 0.0
         if d <= near:
-            return min(self.max_v, self.speed_profile_min_v)
+            ratio = (d - forward_start) / max(near - forward_start, 1e-6)
+            return min(self.max_v, self.speed_profile_min_v * float(np.clip(ratio, 0.0, 1.0)))
         if d >= far:
             return min(self.max_v, self.speed_profile_max_v)
 
@@ -387,8 +396,6 @@ class HostMPCControllerNode(Node):
 
     def apply_near_distance_reverse(self, v_cmd, distance, angle):
         if not self.allow_reverse:
-            return v_cmd
-        if abs(wrap_to_pi(angle - self.desired_angle)) > 0.5:
             return v_cmd
         if distance >= self.stop_reverse_distance:
             return v_cmd
@@ -633,6 +640,8 @@ class HostMPCControllerNode(Node):
             v_lim_distance = self.distance_speed_limit(d)
             v_lim_heading = v_lim_distance * self.heading_speed_scale(a - self.desired_angle)
             v_cmd = min(v_cmd, v_lim_heading)
+        if d <= self.min_forward_distance and v_cmd > 0.0:
+            v_cmd = 0.0
         v_cmd = self.apply_near_distance_reverse(v_cmd, d, a)
 
         v_cmd = self.accel_limit_v(v_cmd)

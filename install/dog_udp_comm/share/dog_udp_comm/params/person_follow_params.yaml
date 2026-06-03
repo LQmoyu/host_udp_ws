@@ -27,8 +27,8 @@ pixel_to_scan_polar:
     prefer_scan_angle_output: false
     publish_debug: false
     sync_policy: latest
-    max_sync_diff_sec: 0.08
-    warn_sync_diff_sec: 0.05
+    max_sync_diff_sec: 0.12
+    warn_sync_diff_sec: 0.08
     scan_buffer_sec: 1.0
     stamp_mismatch_fallback_sec: 10.0
 
@@ -45,56 +45,57 @@ host_mpc_controller:
     require_first_tracking_frame: true
     desired_distance: 1.2
     desired_angle: 0.0
-    distance_tolerance: 0.08
-    angle_tolerance: 0.08
+    distance_tolerance: 0.14
+    angle_tolerance: 0.10
     stop_when_aligned: true
     stop_on_lost_target: true
     allow_reverse: true
     target_lost_duration_sec: 1.0
-    max_v: 0.6
+    max_v: 0.55
     max_w: 2.5
-    max_reverse_v: 0.15
+    max_reverse_v: 0.18
     force_zero_linear_velocity: false
     reverse_angular_output: true
-    q_dist: 16.0
-    q_angle: 15.0
-    r_v: 0.75
-    r_w: 0.10
+    q_dist: 10.0
+    q_angle: 18.0
+    r_v: 1.40
+    r_w: 0.16
     qf_scale: 4.0
-    kff_dist: 0.45
-    kff_angle: 2.2
+    kff_dist: 0.32
+    kff_angle: 1.8
     use_tracking_x_for_angle: true
     tracking_x_target: 0.5
-    tracking_x_deadband: 0.006
+    tracking_x_deadband: 0.008
     tracking_x_timeout_sec: 1.0
     enable_angle_prediction: true
     max_prediction_sec: 0.35
-    angle_rate_filter_alpha: 0.6
-    max_angle_rate: 3.5
+    angle_rate_filter_alpha: 0.75
+    max_angle_rate: 2.5
     enable_tracking_only_fallback: true
-    tracking_only_linear_speed: 0.1
-    tracking_only_kp_w: 3.0
-    tracking_only_kd_w: 0.4
+    tracking_only_linear_speed: 0.0
+    tracking_only_kp_w: 2.4
+    tracking_only_kd_w: 0.5
     image_width: 640.0
     fx: 600.0
     cx: 320.0
     yaw_cam_to_control: 0.0
-    tracking_angle_gain: 2.5
-    distance_filter_alpha: 0.65
-    angle_filter_alpha: 0.70
+    tracking_angle_gain: 2.0
+    distance_filter_alpha: 0.78
+    angle_filter_alpha: 0.78
     min_valid_distance: 0.15
     max_valid_distance: 8.0
     enable_distance_speed_profile: true
-    reverse_distance_threshold: 0.5
-    stop_reverse_distance: 0.8
-    speed_profile_near_distance: 1.3
-    speed_profile_far_distance: 3.2
-    speed_profile_min_v: 0.08
-    speed_profile_max_v: 0.6
-    angle_priority_threshold: 0.16
-    min_heading_speed_scale: 0.15
-    max_accel: 0.8
-    max_w_accel: 10.0
+    reverse_distance_threshold: 0.75
+    stop_reverse_distance: 1.05
+    min_forward_distance: 1.34
+    speed_profile_near_distance: 1.55
+    speed_profile_far_distance: 2.80
+    speed_profile_min_v: 0.10
+    speed_profile_max_v: 0.55
+    angle_priority_threshold: 0.12
+    min_heading_speed_scale: 0.05
+    max_accel: 0.45
+    max_w_accel: 7.0
 
 udp_cmd_vel_server:
   ros__parameters:

@@ -31,6 +31,7 @@ install(PROGRAMS
   scripts/tracking_string_bridge.py
   scripts/tracking_center_tester.py
   scripts/analyze_tracking_cmd_bag.py
+  scripts/latency_monitor.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

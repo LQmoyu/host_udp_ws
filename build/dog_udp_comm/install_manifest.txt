@@ -5,6 +5,7 @@
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_string_bridge.py
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_center_tester.py
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/analyze_tracking_cmd_bag.py
+/home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/latency_monitor.py
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/__pycache__/sender_launch.cpython-313.pyc
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/__pycache__/person_follow_udp_launch.cpython-313.pyc
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/person_follow_udp_launch.py

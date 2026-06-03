@@ -47,6 +47,7 @@
 -- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_string_bridge.py
 -- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_center_tester.py
 -- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/analyze_tracking_cmd_bag.py
+-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/latency_monitor.py
 -- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch
 -- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/__pycache__
 -- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/__pycache__/sender_launch.cpython-313.pyc

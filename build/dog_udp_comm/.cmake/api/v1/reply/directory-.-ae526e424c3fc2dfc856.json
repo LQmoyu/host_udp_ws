@@ -48,19 +48,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 38,
+				"line" : 39,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 42,
+				"line" : 43,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 46,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -264,7 +264,8 @@
 				"scripts/pixel_to_scan_polar.py",
 				"scripts/tracking_string_bridge.py",
 				"scripts/tracking_center_tester.py",
-				"scripts/analyze_tracking_cmd_bag.py"
+				"scripts/analyze_tracking_cmd_bag.py",
+				"scripts/latency_monitor.py"
 			],
 			"type" : "file"
 		},
