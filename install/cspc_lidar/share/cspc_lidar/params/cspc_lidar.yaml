@@ -16,3 +16,4 @@ cspc_lidar:
     min_range: 0.01
     frequency: 10.0
     version: 4
+    use_ros_now_stamp: true

@@ -115,6 +115,9 @@ int main(int argc, char **argv)
 
 	node_lidar.lidar_general_info.version = node->declare_parameter<int>(
 		"version", node_lidar.lidar_general_info.version);
+
+	const bool use_ros_now_stamp = node->declare_parameter<bool>(
+		"use_ros_now_stamp", true);
 	//std::string frame_id = "base_scan";
 	rclcpp::Publisher<std_msgs::msg::String>::SharedPtr error_pub;
 	error_pub = node->create_publisher<std_msgs::msg::String>("lsd_error", 10);
@@ -167,9 +170,18 @@ int main(int argc, char **argv)
 			scan_msg->ranges.resize(scan.points.size());
 			scan_msg->intensities.resize(scan.points.size());
 
-			scan_msg->header.stamp.sec = RCL_NS_TO_S(scan.stamp);;
-			scan_msg->header.stamp.nanosec = scan.stamp - RCL_S_TO_NS(scan_msg->header.stamp.sec);
+			if(use_ros_now_stamp)
+			{
+				scan_msg->header.stamp = node->now();
+			}
+			else
+			{
+				scan_msg->header.stamp.sec = RCL_NS_TO_S(scan.stamp);;
+				scan_msg->header.stamp.nanosec = scan.stamp - RCL_S_TO_NS(scan_msg->header.stamp.sec);
+			}
 			scan_msg->header.frame_id = node_lidar.lidar_general_info.frame_id;
+			pclMsg.header.stamp = scan_msg->header.stamp;
+			pclMsg.header.frame_id = node_lidar.lidar_general_info.frame_id;
 
 			scan_msg->angle_min = scan.config.min_angle;
 			scan_msg->angle_max = scan.config.max_angle;

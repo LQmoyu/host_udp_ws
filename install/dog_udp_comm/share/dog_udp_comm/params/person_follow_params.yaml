@@ -26,6 +26,11 @@ pixel_to_scan_polar:
     range_max_valid: 10.0
     prefer_scan_angle_output: false
     publish_debug: false
+    sync_policy: latest
+    max_sync_diff_sec: 0.08
+    warn_sync_diff_sec: 0.05
+    scan_buffer_sec: 1.0
+    stamp_mismatch_fallback_sec: 10.0
 
 host_mpc_controller:
   ros__parameters:
@@ -47,75 +52,49 @@ host_mpc_controller:
     allow_reverse: true
     target_lost_duration_sec: 1.0
     max_v: 0.6
-    max_w: 2.2
+    max_w: 2.5
     max_reverse_v: 0.15
     force_zero_linear_velocity: false
     reverse_angular_output: true
     q_dist: 16.0
-<<<<<<< HEAD
     q_angle: 15.0
     r_v: 0.75
     r_w: 0.10
     qf_scale: 4.0
     kff_dist: 0.45
-    kff_angle: 2.0
-=======
-    q_angle: 12.0
-    r_v: 0.75
-    r_w: 0.18
-    qf_scale: 4.0
-    kff_dist: 0.45
-    kff_angle: 1.6
->>>>>>> 23658be (x z 参数整定 1.1)
+    kff_angle: 2.2
     use_tracking_x_for_angle: true
     tracking_x_target: 0.5
-    tracking_x_deadband: 0.012
+    tracking_x_deadband: 0.006
     tracking_x_timeout_sec: 1.0
     enable_angle_prediction: true
     max_prediction_sec: 0.35
-    angle_rate_filter_alpha: 0.8
-    max_angle_rate: 2.0
+    angle_rate_filter_alpha: 0.6
+    max_angle_rate: 3.5
     enable_tracking_only_fallback: true
     tracking_only_linear_speed: 0.1
     tracking_only_kp_w: 3.0
-    tracking_only_kd_w: 0.2
+    tracking_only_kd_w: 0.4
     image_width: 640.0
     fx: 600.0
     cx: 320.0
     yaw_cam_to_control: 0.0
-<<<<<<< HEAD
     tracking_angle_gain: 2.5
-=======
-    tracking_angle_gain: 1.6
->>>>>>> 23658be (x z 参数整定 1.1)
     distance_filter_alpha: 0.65
-    angle_filter_alpha: 0.78
+    angle_filter_alpha: 0.70
     min_valid_distance: 0.15
     max_valid_distance: 8.0
     enable_distance_speed_profile: true
-<<<<<<< HEAD
     reverse_distance_threshold: 0.5
     stop_reverse_distance: 0.8
     speed_profile_near_distance: 1.3
     speed_profile_far_distance: 3.2
-    speed_profile_min_v: 0.04
-    speed_profile_max_v: 0.8
-    angle_priority_threshold: 0.12
-    min_heading_speed_scale: 0.05
-    max_accel: 1.0
-    max_w_accel: 10.0
-=======
-    reverse_distance_threshold: 0.9
-    stop_reverse_distance: 1.05
-    speed_profile_near_distance: 1.3
-    speed_profile_far_distance: 3.2
-    speed_profile_min_v: 0.04
+    speed_profile_min_v: 0.08
     speed_profile_max_v: 0.6
-    angle_priority_threshold: 0.20
-    min_heading_speed_scale: 0.20
+    angle_priority_threshold: 0.16
+    min_heading_speed_scale: 0.15
     max_accel: 0.8
-    max_w_accel: 4.0
->>>>>>> 23658be (x z 参数整定 1.1)
+    max_w_accel: 10.0
 
 udp_cmd_vel_server:
   ros__parameters:

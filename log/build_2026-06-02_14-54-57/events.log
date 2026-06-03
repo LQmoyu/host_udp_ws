@@ -1,0 +1,1000 @@
+[0.000000] (-) TimerEvent: {}
+[0.001199] (cspc_lidar) JobQueued: {'identifier': 'cspc_lidar', 'dependencies': OrderedDict()}
+[0.001561] (dog_udp_comm) JobQueued: {'identifier': 'dog_udp_comm', 'dependencies': OrderedDict([('cspc_lidar', '/home/admin/workspace/host_udp_ws/install/cspc_lidar')])}
+[0.001731] (cspc_lidar) JobStarted: {'identifier': 'cspc_lidar'}
+[0.015321] (cspc_lidar) JobProgress: {'identifier': 'cspc_lidar', 'progress': 'cmake'}
+[0.016597] (cspc_lidar) Command: {'cmd': ['/usr/bin/cmake', '/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2', '-DCMAKE_INSTALL_PREFIX=/home/admin/workspace/host_udp_ws/install/cspc_lidar'], 'cwd': '/home/admin/workspace/host_udp_ws/build/cspc_lidar', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'admin'), ('SSH_CLIENT', '192.168.88.243 51802 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/admin'), ('OLDPWD', '/home/admin/workspace'), ('TERM_PROGRAM_VERSION', '1.122.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-c551cede-6660-4825-9c3e-31c179a015f0.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]\\[\x1b]633;A\x07\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \\[\x1b]633;B\x07\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'admin'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '11'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/remote-cli:/home/admin/.local/bin:/opt/ros/humble/bin:/home/admin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-de57f957e7.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/admin/workspace/host_udp_ws/build/cspc_lidar'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.88.243 51802 192.168.88.181 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('UMS_FILE', '/userdata/ums_shared.img'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.099282] (-) TimerEvent: {}
+[0.200696] (-) TimerEvent: {}
+[0.210992] (cspc_lidar) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.300991] (-) TimerEvent: {}
+[0.380629] (cspc_lidar) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.401277] (-) TimerEvent: {}
+[0.408801] (cspc_lidar) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.501580] (-) TimerEvent: {}
+[0.602762] (-) TimerEvent: {}
+[0.660955] (cspc_lidar) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.699466] (cspc_lidar) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.700496] (cspc_lidar) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.702115] (cspc_lidar) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.702797] (-) TimerEvent: {}
+[0.713395] (cspc_lidar) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.803190] (-) TimerEvent: {}
+[0.904339] (-) TimerEvent: {}
+[0.974776] (cspc_lidar) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.004502] (-) TimerEvent: {}
+[1.019239] (cspc_lidar) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.020313] (cspc_lidar) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.022346] (cspc_lidar) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.035226] (cspc_lidar) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.104839] (-) TimerEvent: {}
+[1.205887] (-) TimerEvent: {}
+[1.306929] (-) TimerEvent: {}
+[1.408020] (-) TimerEvent: {}
+[1.447360] (cspc_lidar) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.508340] (-) TimerEvent: {}
+[1.609512] (-) TimerEvent: {}
+[1.661727] (cspc_lidar) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.709846] (-) TimerEvent: {}
+[1.714873] (cspc_lidar) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.720913] (cspc_lidar) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.731439] (cspc_lidar) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.746996] (cspc_lidar) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.767664] (cspc_lidar) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.810135] (-) TimerEvent: {}
+[1.823336] (cspc_lidar) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.826136] (cspc_lidar) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.910283] (-) TimerEvent: {}
+[2.011005] (-) TimerEvent: {}
+[2.024771] (cspc_lidar) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[2.088594] (cspc_lidar) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[2.111318] (-) TimerEvent: {}
+[2.175770] (cspc_lidar) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.185711] (cspc_lidar) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[2.211536] (-) TimerEvent: {}
+[2.312708] (-) TimerEvent: {}
+[2.413730] (-) TimerEvent: {}
+[2.440058] (cspc_lidar) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[2.440724] (cspc_lidar) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[2.513933] (-) TimerEvent: {}
+[2.614763] (-) TimerEvent: {}
+[2.686071] (cspc_lidar) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[2.690627] (cspc_lidar) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[2.714971] (-) TimerEvent: {}
+[2.806648] (cspc_lidar) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[2.815213] (-) TimerEvent: {}
+[2.853392] (cspc_lidar) StdoutLine: {'line': b'-- Found visualization_msgs: 4.9.1 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[2.884693] (cspc_lidar) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[2.915630] (-) TimerEvent: {}
+[2.958738] (cspc_lidar) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[2.992957] (cspc_lidar) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[3.015881] (-) TimerEvent: {}
+[3.083615] (cspc_lidar) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[3.084783] (cspc_lidar) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[3.116157] (-) TimerEvent: {}
+[3.148104] (cspc_lidar) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[3.182659] (cspc_lidar) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[3.216514] (-) TimerEvent: {}
+[3.308665] (cspc_lidar) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/aarch64-linux-gnu/libflann_cpp.so  \n'}
+[3.309827] (cspc_lidar) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/aarch64-linux-gnu/libflann_cpp.so)\n'}
+[3.316643] (-) TimerEvent: {}
+[3.417588] (-) TimerEvent: {}
+[3.519585] (-) TimerEvent: {}
+[3.621037] (-) TimerEvent: {}
+[3.722221] (-) TimerEvent: {}
+[3.823500] (-) TimerEvent: {}
+[3.924925] (-) TimerEvent: {}
+[4.026141] (-) TimerEvent: {}
+[4.127402] (-) TimerEvent: {}
+[4.228581] (-) TimerEvent: {}
+[4.329787] (-) TimerEvent: {}
+[4.431057] (-) TimerEvent: {}
+[4.532335] (-) TimerEvent: {}
+[4.633701] (-) TimerEvent: {}
+[4.734915] (-) TimerEvent: {}
+[4.836332] (-) TimerEvent: {}
+[4.937548] (-) TimerEvent: {}
+[5.038852] (-) TimerEvent: {}
+[5.140168] (-) TimerEvent: {}
+[5.241379] (-) TimerEvent: {}
+[5.342584] (-) TimerEvent: {}
+[5.443807] (-) TimerEvent: {}
+[5.545077] (-) TimerEvent: {}
+[5.646288] (-) TimerEvent: {}
+[5.747521] (-) TimerEvent: {}
+[5.848736] (-) TimerEvent: {}
+[5.950141] (-) TimerEvent: {}
+[6.051353] (-) TimerEvent: {}
+[6.152544] (-) TimerEvent: {}
+[6.226306] (cspc_lidar) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[6.252865] (-) TimerEvent: {}
+[6.272877] (cspc_lidar) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[6.353251] (-) TimerEvent: {}
+[6.381643] (cspc_lidar) StdoutLine: {'line': b'-- Found libusb: /usr/lib/aarch64-linux-gnu/libusb-1.0.so  \n'}
+[6.385796] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[6.453559] (-) TimerEvent: {}
+[6.554669] (-) TimerEvent: {}
+[6.558579] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[6.655025] (-) TimerEvent: {}
+[6.756227] (-) TimerEvent: {}
+[6.846539] (cspc_lidar) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[6.856505] (-) TimerEvent: {}
+[6.864975] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[6.881849] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[6.956910] (-) TimerEvent: {}
+[7.058457] (-) TimerEvent: {}
+[7.130298] (cspc_lidar) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[7.158769] (-) TimerEvent: {}
+[7.259979] (-) TimerEvent: {}
+[7.361173] (-) TimerEvent: {}
+[7.397202] (cspc_lidar) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[7.461527] (-) TimerEvent: {}
+[7.562690] (-) TimerEvent: {}
+[7.647057] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/aarch64-linux-gnu/libpcl_common.so  \n'}
+[7.648589] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/aarch64-linux-gnu/libpcl_kdtree.so  \n'}
+[7.649480] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/aarch64-linux-gnu/libpcl_octree.so  \n'}
+[7.650733] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/aarch64-linux-gnu/libpcl_search.so  \n'}
+[7.651896] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/aarch64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[7.652918] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/aarch64-linux-gnu/libpcl_filters.so  \n'}
+[7.653559] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[7.654037] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[7.655217] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/aarch64-linux-gnu/libpcl_io.so  \n'}
+[7.656436] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/aarch64-linux-gnu/libpcl_features.so  \n'}
+[7.657842] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/aarch64-linux-gnu/libpcl_ml.so  \n'}
+[7.658898] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/aarch64-linux-gnu/libpcl_segmentation.so  \n'}
+[7.660269] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/aarch64-linux-gnu/libpcl_visualization.so  \n'}
+[7.661579] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/aarch64-linux-gnu/libpcl_surface.so  \n'}
+[7.662686] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/aarch64-linux-gnu/libpcl_registration.so  \n'}
+[7.662876] (-) TimerEvent: {}
+[7.664223] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/aarch64-linux-gnu/libpcl_keypoints.so  \n'}
+[7.665392] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/aarch64-linux-gnu/libpcl_tracking.so  \n'}
+[7.666540] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/aarch64-linux-gnu/libpcl_recognition.so  \n'}
+[7.668052] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/aarch64-linux-gnu/libpcl_stereo.so  \n'}
+[7.669168] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/aarch64-linux-gnu/libpcl_apps.so  \n'}
+[7.670563] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[7.671147] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[7.671707] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[7.673150] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/aarch64-linux-gnu/libpcl_outofcore.so  \n'}
+[7.674478] (cspc_lidar) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/aarch64-linux-gnu/libpcl_people.so  \n'}
+[7.677309] (cspc_lidar) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at CMakeLists.txt:19 (find_package):\n'}
+[7.677762] (cspc_lidar) StderrLine: {'line': b'  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.\n'}
+[7.677999] (cspc_lidar) StderrLine: {'line': b'  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy\n'}
+[7.678209] (cspc_lidar) StderrLine: {'line': b'  command to set the policy and suppress this warning.\n'}
+[7.678410] (cspc_lidar) StderrLine: {'line': b'\n'}
+[7.678608] (cspc_lidar) StderrLine: {'line': b'  CMake variable PCL_ROOT is set to:\n'}
+[7.678805] (cspc_lidar) StderrLine: {'line': b'\n'}
+[7.678998] (cspc_lidar) StderrLine: {'line': b'    /usr\n'}
+[7.679191] (cspc_lidar) StderrLine: {'line': b'\n'}
+[7.679384] (cspc_lidar) StderrLine: {'line': b'  For compatibility, CMake is ignoring the variable.\n'}
+[7.679578] (cspc_lidar) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[7.679774] (cspc_lidar) StderrLine: {'line': b'\x1b[0m\n'}
+[7.710959] (cspc_lidar) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[7.763193] (-) TimerEvent: {}
+[7.864346] (-) TimerEvent: {}
+[7.935070] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[7.938001] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[7.938677] (cspc_lidar) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/include/cspc_lidar;/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk\n'}
+[7.939062] (cspc_lidar) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[7.941124] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[7.941498] (cspc_lidar) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[7.942028] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[7.943288] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[7.944262] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[7.946904] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[7.947345] (cspc_lidar) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[7.948216] (cspc_lidar) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[7.950466] (cspc_lidar) StdoutLine: {'line': b'-- Configuring done\n'}
+[7.964664] (-) TimerEvent: {}
+[8.065955] (-) TimerEvent: {}
+[8.083770] (cspc_lidar) StdoutLine: {'line': b'-- Generating done\n'}
+[8.103487] (cspc_lidar) StdoutLine: {'line': b'-- Build files have been written to: /home/admin/workspace/host_udp_ws/build/cspc_lidar\n'}
+[8.157577] (cspc_lidar) CommandEnded: {'returncode': 0}
+[8.161390] (cspc_lidar) JobProgress: {'identifier': 'cspc_lidar', 'progress': 'build'}
+[8.166589] (cspc_lidar) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/admin/workspace/host_udp_ws/build/cspc_lidar', '--', '-j8', '-l8'], 'cwd': '/home/admin/workspace/host_udp_ws/build/cspc_lidar', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'admin'), ('SSH_CLIENT', '192.168.88.243 51802 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/admin'), ('OLDPWD', '/home/admin/workspace'), ('TERM_PROGRAM_VERSION', '1.122.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-c551cede-6660-4825-9c3e-31c179a015f0.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]\\[\x1b]633;A\x07\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \\[\x1b]633;B\x07\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'admin'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '11'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/remote-cli:/home/admin/.local/bin:/opt/ros/humble/bin:/home/admin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-de57f957e7.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/admin/workspace/host_udp_ws/build/cspc_lidar'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.88.243 51802 192.168.88.181 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('UMS_FILE', '/userdata/ums_shared.img'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[8.172168] (-) TimerEvent: {}
+[8.274247] (-) TimerEvent: {}
+[8.365550] (cspc_lidar) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/calibration.cpp.o\x1b[0m\n'}
+[8.366676] (cspc_lidar) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/serial_port.cpp.o\x1b[0m\n'}
+[8.367430] (cspc_lidar) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/node_lidar.cpp.o\x1b[0m\n'}
+[8.368013] (cspc_lidar) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/mtime.cpp.o\x1b[0m\n'}
+[8.368668] (cspc_lidar) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/point_cloud_optimize.cpp.o\x1b[0m\n'}
+[8.368801] (cspc_lidar) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/timer.cpp.o\x1b[0m\n'}
+[8.369631] (cspc_lidar) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/cspc_lidar.dir/src/node_lidar_ros.cpp.o\x1b[0m\n'}
+[8.371175] (cspc_lidar) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding CXX object CMakeFiles/cspc_lidar.dir/sdk/lidar_data_processing.cpp.o\x1b[0m\n'}
+[8.374553] (-) TimerEvent: {}
+[8.476185] (-) TimerEvent: {}
+[8.578931] (-) TimerEvent: {}
+[8.682056] (-) TimerEvent: {}
+[8.783185] (-) TimerEvent: {}
+[8.884365] (-) TimerEvent: {}
+[8.985657] (-) TimerEvent: {}
+[9.051806] (cspc_lidar) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:12\x1b[m\x1b[K:\n'}
+[9.052734] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KSerial_Port::Serial_Port(const string&, uint32_t, Timeout, bytesize_t, parity_t, stopbits_t, flowcontrol_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.053416] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.h:102:14:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSerial_Port::bytesize_\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.054053] (cspc_lidar) StderrLine: {'line': b'  102 |   bytesize_t \x1b[01;35m\x1b[Kbytesize_\x1b[m\x1b[K;       // Size of the bytes\n'}
+[9.054772] (cspc_lidar) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[9.055354] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.h:101:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kparity_t Serial_Port::parity_\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.055913] (cspc_lidar) StderrLine: {'line': b'  101 |   parity_t \x1b[01;35m\x1b[Kparity_\x1b[m\x1b[K;           // Parity\n'}
+[9.056398] (cspc_lidar) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[9.057004] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:31:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.057518] (cspc_lidar) StderrLine: {'line': b'   31 | \x1b[01;35m\x1b[KSerial_Port\x1b[m\x1b[K::Serial_Port(const string &port, uint32_t baudrate, Timeout timeout,\n'}
+[9.058720] (cspc_lidar) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.059186] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kbool Serial_Port::setBaudrate(long unsigned int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.059593] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:578:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Knew_baud\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.060083] (cspc_lidar) StderrLine: {'line': b'  578 |   speed_t \x1b[01;35m\x1b[Knew_baud\x1b[m\x1b[K = static_cast<speed_t>(baudrate);\n'}
+[9.060490] (cspc_lidar) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[9.085966] (-) TimerEvent: {}
+[9.125417] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Point_cloud_optimize::PointCloudFilter(LaserScan*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.126251] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:25:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.126841] (cspc_lidar) StderrLine: {'line': b'   25 |         for (i0 = 0; \x1b[01;35m\x1b[Ki0 < Scan->points.size()\x1b[m\x1b[K; i0++)\n'}
+[9.127880] (cspc_lidar) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K~~~^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.128466] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:28:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.129000] (cspc_lidar) StderrLine: {'line': b'   28 |                 i1 = \x1b[01;35m\x1b[Ki1 < Scan->points.size()\x1b[m\x1b[K ? i1 : i1 - Scan->points.size();\n'}
+[9.129462] (cspc_lidar) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K~~~^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.129872] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:30:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.130414] (cspc_lidar) StderrLine: {'line': b'   30 |                 i2 = \x1b[01;35m\x1b[Ki2 < Scan->points.size()\x1b[m\x1b[K ? i2 : i2 - Scan->points.size();\n'}
+[9.130795] (cspc_lidar) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K~~~^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.131242] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:32:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.132019] (cspc_lidar) StderrLine: {'line': b'   32 |                 i3 = \x1b[01;35m\x1b[Ki3 < Scan->points.size()\x1b[m\x1b[K ? i3 : i3 - Scan->points.size();\n'}
+[9.132454] (cspc_lidar) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K~~~^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.132848] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:155:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.133326] (cspc_lidar) StderrLine: {'line': b'  155 |         for (i0 = 0; \x1b[01;35m\x1b[Ki0 < Scan->points.size()\x1b[m\x1b[K; i0++)\n'}
+[9.133731] (cspc_lidar) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K~~~^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.134099] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:158:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.134752] (cspc_lidar) StderrLine: {'line': b'  158 |                 i1 = \x1b[01;35m\x1b[Ki1 < Scan->points.size()\x1b[m\x1b[K ? i1 : i1 - Scan->points.size();\n'}
+[9.135128] (cspc_lidar) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K~~~^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.135495] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:160:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.135898] (cspc_lidar) StderrLine: {'line': b'  160 |                 i2 = \x1b[01;35m\x1b[Ki2 < Scan->points.size()\x1b[m\x1b[K ? i2 : i2 - Scan->points.size();\n'}
+[9.136280] (cspc_lidar) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K~~~^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.136693] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:162:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.137455] (cspc_lidar) StderrLine: {'line': b'  162 |                 i3 = \x1b[01;35m\x1b[Ki3 < Scan->points.size()\x1b[m\x1b[K ? i3 : i3 - Scan->points.size();\n'}
+[9.137912] (cspc_lidar) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K~~~^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.138636] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:164:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.139074] (cspc_lidar) StderrLine: {'line': b'  164 |                 i4 = \x1b[01;35m\x1b[Ki4 < Scan->points.size()\x1b[m\x1b[K ? i4 : i4 - Scan->points.size();\n'}
+[9.139501] (cspc_lidar) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K~~~^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.139870] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kint Point_cloud_optimize::UltrasonicSimRanging(LaserPoint&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.140314] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:228:13:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Ki\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.140689] (cspc_lidar) StderrLine: {'line': b'  228 |         int \x1b[01;35m\x1b[Ki\x1b[m\x1b[K, index;\n'}
+[9.141040] (cspc_lidar) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[9.141391] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:229:15:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Ktempdep\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.141764] (cspc_lidar) StderrLine: {'line': b'  229 |         short \x1b[01;35m\x1b[Ktempdep\x1b[m\x1b[K;\n'}
+[9.142128] (cspc_lidar) StderrLine: {'line': b'      |               \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[9.142482] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:253:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kno return statement in function returning non-void [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type\x07-Wreturn-type\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.142861] (cspc_lidar) StderrLine: {'line': b'  253 | \x1b[01;35m\x1b[K}\x1b[m\x1b[K\n'}
+[9.143257] (cspc_lidar) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[9.143647] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Point_cloud_optimize::lidar_blocked_judge(int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.144078] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:341:60:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%d\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99, but argument 3 has type \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.144510] (cspc_lidar) StderrLine: {'line': b'  341 |                 printf("lidar \xe9\x9b\xb7\xe8\xbe\xbe\xe8\xa2\xab\xe4\xb8\xa5\xe9\x87\x8d\xe9\x81\xae\xe6\x8c\xa1\xe7\x99\xbe\xe5\x88\x86\xe4\xb9\x8b\xe4\xb8\x83\xe5\x8d\x81 %d,\x1b[01;35m\x1b[K%d\x1b[m\x1b[K\\n",node_lidar.lidar_block.lidar_zero_count,\x1b[32m\x1b[Knode_lidar.scan_node_count\x1b[m\x1b[K);\n'}
+[9.144890] (cspc_lidar) StderrLine: {'line': b'      |                                                           \x1b[01;35m\x1b[K~^\x1b[m\x1b[K                                            \x1b[32m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.145256] (cspc_lidar) StderrLine: {'line': b'      |                                                            \x1b[01;35m\x1b[K|\x1b[m\x1b[K                                                       \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[9.145615] (cspc_lidar) StderrLine: {'line': b'      |                                                            \x1b[01;35m\x1b[Kint\x1b[m\x1b[K                                                     \x1b[32m\x1b[Ksize_t {aka long unsigned int}\x1b[m\x1b[K\n'}
+[9.145988] (cspc_lidar) StderrLine: {'line': b'      |                                                           \x1b[32m\x1b[K%ld\x1b[m\x1b[K\n'}
+[9.146354] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Point_cloud_optimize::lidar_blocked_init()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.146788] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:404:69:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Ksuggest parentheses around \xe2\x80\x98\x1b[01m\x1b[K&&\x1b[m\x1b[K\xe2\x80\x99 within \xe2\x80\x98\x1b[01m\x1b[K||\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses\x07-Wparentheses\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.147243] (cspc_lidar) StderrLine: {'line': b'  404 |                         if((angle >= 0 && angle < 90)|| \x1b[01;35m\x1b[Kangle > 270 && angle <=360\x1b[m\x1b[K){\n'}
+[9.147637] (cspc_lidar) StderrLine: {'line': b'      |                                                         \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.148031] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/point_cloud_optimize.cpp:375:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Ktemp\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.148440] (cspc_lidar) StderrLine: {'line': b'  375 |         float r, d, \x1b[01;35m\x1b[Ktemp\x1b[m\x1b[K;\n'}
+[9.148821] (cspc_lidar) StderrLine: {'line': b'      |                     \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.164436] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kbool Serial_Port::setCustomBaudRate(long unsigned int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.165521] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/serial_port.cpp:571:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcontrol reaches end of non-void function [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type\x07-Wreturn-type\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.166233] (cspc_lidar) StderrLine: {'line': b'  571 | \x1b[01;35m\x1b[K}\x1b[m\x1b[K\n'}
+[9.166866] (cspc_lidar) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[9.171198] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid pcloud_build_by_scan(LaserScan&, pcloud_t&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.172420] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:44:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.173166] (cspc_lidar) StderrLine: {'line': b'   44 |   for (int i = 0; \x1b[01;35m\x1b[Ki < outscan.points.size()\x1b[m\x1b[K; i++)\n'}
+[9.173928] (cspc_lidar) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K~~^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.174439] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:46:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid* memset(void*, int, size_t)\x1b[m\x1b[K\xe2\x80\x99 clearing an object of non-trivial type \xe2\x80\x98\x1b[01m\x1b[Kpoint_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstruct _point_\x1b[m\x1b[K\xe2\x80\x99}; use assignment or value-initialization instead [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess\x07-Wclass-memaccess\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.174979] (cspc_lidar) StderrLine: {'line': b'   46 |     \x1b[01;35m\x1b[Kmemset(&point, 0, sizeof(point_t))\x1b[m\x1b[K;\n'}
+[9.175413] (cspc_lidar) StderrLine: {'line': b'      |     \x1b[01;35m\x1b[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.175816] (cspc_lidar) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8\x1b[m\x1b[K:\n'}
+[9.176207] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:52:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpoint_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstruct _point_\x1b[m\x1b[K\xe2\x80\x99} declared here\n'}
+[9.176684] (cspc_lidar) StderrLine: {'line': b'   52 | typedef struct \x1b[01;36m\x1b[K_point_\x1b[m\x1b[K\n'}
+[9.177128] (cspc_lidar) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[9.177522] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint find_index(point_t, pcloud_t&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.177922] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:105:9:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid* memset(void*, int, size_t)\x1b[m\x1b[K\xe2\x80\x99 clearing an object of non-trivial type \xe2\x80\x98\x1b[01m\x1b[Kpoint_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstruct _point_\x1b[m\x1b[K\xe2\x80\x99}; use assignment or value-initialization instead [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess\x07-Wclass-memaccess\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.178347] (cspc_lidar) StderrLine: {'line': b'  105 |   \x1b[01;35m\x1b[Kmemset(&point_min, 0, sizeof(point_t))\x1b[m\x1b[K;\n'}
+[9.178771] (cspc_lidar) StderrLine: {'line': b'      |   \x1b[01;35m\x1b[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.179136] (cspc_lidar) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8\x1b[m\x1b[K:\n'}
+[9.179496] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:52:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpoint_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstruct _point_\x1b[m\x1b[K\xe2\x80\x99} declared here\n'}
+[9.179935] (cspc_lidar) StderrLine: {'line': b'   52 | typedef struct \x1b[01;36m\x1b[K_point_\x1b[m\x1b[K\n'}
+[9.180315] (cspc_lidar) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[9.180671] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:124:23:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.181077] (cspc_lidar) StderrLine: {'line': b'  124 |   if (\x1b[01;35m\x1b[Kpoint_min.index > pcloud.data.size()\x1b[m\x1b[K)\n'}
+[9.181487] (cspc_lidar) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.182438] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kbool intersect(LineSegment, LineSegment, Vector2D&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.182989] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:167:10:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kcross1\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.183777] (cspc_lidar) StderrLine: {'line': b'  167 |   double \x1b[01;35m\x1b[Kcross1\x1b[m\x1b[K = position1.x * direction1.y - position1.y * direction1.x;\n'}
+[9.184262] (cspc_lidar) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[9.184745] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kdouble pointToLineDist(point_t, double, double)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.185243] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:439:10:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Ky0\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.185729] (cspc_lidar) StderrLine: {'line': b'  439 |   double \x1b[01;35m\x1b[Ky0\x1b[m\x1b[K = k * x0 + b;\n'}
+[9.186165] (-) TimerEvent: {}
+[9.186727] (cspc_lidar) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[9.187293] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kbool line_judgment(std::vector<_point_>, point_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.187817] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:462:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.188427] (cspc_lidar) StderrLine: {'line': b'  462 |   if (\x1b[01;35m\x1b[Kline.size() <= reference\x1b[m\x1b[K)\n'}
+[9.188912] (cspc_lidar) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.190527] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:467:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.191468] (cspc_lidar) StderrLine: {'line': b'  467 |   if (\x1b[01;35m\x1b[Kline.size() <= reference\x1b[m\x1b[K)\n'}
+[9.192020] (cspc_lidar) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.192552] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:471:23:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.193128] (cspc_lidar) StderrLine: {'line': b'  471 |     for (int i = 1; \x1b[01;35m\x1b[Ki < line.size() - 1\x1b[m\x1b[K; i++)\n'}
+[9.193797] (cspc_lidar) StderrLine: {'line': b'      |                     \x1b[01;35m\x1b[K~~^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.194403] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid fitting_line(pcloud_t&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.195415] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:542:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.196048] (cspc_lidar) StderrLine: {'line': b'  542 |         if (\x1b[01;35m\x1b[Kline.size() >= calibration_params.line_judgment_point_num\x1b[m\x1b[K)\n'}
+[9.196712] (cspc_lidar) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.197342] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:560:63:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.197998] (cspc_lidar) StderrLine: {'line': b'  560 |         if(point.index == point_last_one.index && \x1b[01;35m\x1b[Kline.size() >= calibration_params.line_judgment_point_num\x1b[m\x1b[K)\n'}
+[9.198624] (cspc_lidar) StderrLine: {'line': b'      |                                                   \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.199157] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:571:26:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.199685] (cspc_lidar) StderrLine: {'line': b'  571 |   if(\x1b[01;35m\x1b[Kpoint_record2.index < pcloud.data.size()\x1b[m\x1b[K\n'}
+[9.200237] (cspc_lidar) StderrLine: {'line': b'      |      \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.200757] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:572:28:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.201282] (cspc_lidar) StderrLine: {'line': b'  572 |   &&  \x1b[01;35m\x1b[Kpoint_last_one.index < pcloud.data.size()\x1b[m\x1b[K\n'}
+[9.201776] (cspc_lidar) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.202244] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:573:27:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.202784] (cspc_lidar) StderrLine: {'line': b'  573 |   &&  \x1b[01;35m\x1b[Kpoint_record1.index < pcloud.data.size()\x1b[m\x1b[K)\n'}
+[9.203287] (cspc_lidar) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.203762] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:597:28:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.204223] (cspc_lidar) StderrLine: {'line': b'  597 |     if (\x1b[01;35m\x1b[Kline_append.size() >= calibration_params.line_judgment_point_num\x1b[m\x1b[K)\n'}
+[9.204666] (cspc_lidar) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.205164] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:606:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.205660] (cspc_lidar) StderrLine: {'line': b'  606 |             if (\x1b[01;35m\x1b[Kline.size() >= calibration_params.line_judgment_point_num\x1b[m\x1b[K)\n'}
+[9.206093] (cspc_lidar) StderrLine: {'line': b'      |                 \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.206520] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:617:68:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<_point_>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.207054] (cspc_lidar) StderrLine: {'line': b'  617 |           if(point.index == point_append_last.index && \x1b[01;35m\x1b[Kline.size() >= calibration_params.line_judgment_point_num\x1b[m\x1b[K)\n'}
+[9.207488] (cspc_lidar) StderrLine: {'line': b'      |                                                        \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.207922] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:632:23:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<std::vector<_point_> >::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.209347] (cspc_lidar) StderrLine: {'line': b'  632 |     for (int i = 0; \x1b[01;35m\x1b[Ki < lines.size() - 1\x1b[m\x1b[K; i++)\n'}
+[9.209987] (cspc_lidar) StderrLine: {'line': b'      |                     \x1b[01;35m\x1b[K~~^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.210578] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid lidar_calibration(LaserScan&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.211100] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:662:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid* memset(void*, int, size_t)\x1b[m\x1b[K\xe2\x80\x99 clearing an object of type \xe2\x80\x98\x1b[01m\x1b[Kstruct LaserPoint\x1b[m\x1b[K\xe2\x80\x99 with no trivial copy-assignment; use assignment or value-initialization instead [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wclass-memaccess\x07-Wclass-memaccess\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.211642] (cspc_lidar) StderrLine: {'line': b'  662 |     \x1b[01;35m\x1b[Kmemset(&outscan_point, 0, sizeof(LaserPoint))\x1b[m\x1b[K;\n'}
+[9.212127] (cspc_lidar) StderrLine: {'line': b'      |     \x1b[01;35m\x1b[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.212660] (cspc_lidar) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.h:4\x1b[m\x1b[K,\n'}
+[9.213131] (cspc_lidar) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/calibration.cpp:8\x1b[m\x1b[K:\n'}
+[9.213665] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_information.h:210:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct LaserPoint\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[9.214146] (cspc_lidar) StderrLine: {'line': b'  210 | struct \x1b[01;36m\x1b[KLaserPoint\x1b[m\x1b[K\n'}
+[9.214670] (cspc_lidar) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.220135] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid flushSerial()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.221446] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:53:24:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kbytes_read\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.222380] (cspc_lidar) StderrLine: {'line': b'   53 |                 size_t \x1b[01;35m\x1b[Kbytes_read\x1b[m\x1b[K = node_lidar.serial_port->read_data(buffer, len);\n'}
+[9.222884] (cspc_lidar) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.223667] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kbool lidar_state_judgment()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.224104] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:86:45:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%lld\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Klong long int\x1b[m\x1b[K\xe2\x80\x99, but argument 2 has type \xe2\x80\x98\x1b[01m\x1b[Kuint64_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.224546] (cspc_lidar) StderrLine: {'line': b'   86 |                 printf("\xe7\x8a\xb6\xe6\x80\x81\xe5\xbc\x82\xe5\xb8\xb8\xe9\x87\x8d\xe6\x96\xb0\xe5\x90\xaf\xe5\x8a\xa8 \x1b[01;35m\x1b[K%lld\x1b[m\x1b[K\\n",\x1b[32m\x1b[Klidar_status_time\x1b[m\x1b[K);\n'}
+[9.224914] (cspc_lidar) StderrLine: {'line': b'      |                                          \x1b[01;35m\x1b[K~~~^\x1b[m\x1b[K    \x1b[32m\x1b[K~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.225270] (cspc_lidar) StderrLine: {'line': b'      |                                             \x1b[01;35m\x1b[K|\x1b[m\x1b[K    \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[9.225622] (cspc_lidar) StderrLine: {'line': b'      |                                             \x1b[01;35m\x1b[K|\x1b[m\x1b[K    \x1b[32m\x1b[Kuint64_t {aka long unsigned int}\x1b[m\x1b[K\n'}
+[9.225972] (cspc_lidar) StderrLine: {'line': b'      |                                             \x1b[01;35m\x1b[Klong long int\x1b[m\x1b[K\n'}
+[9.226318] (cspc_lidar) StderrLine: {'line': b'      |                                          \x1b[32m\x1b[K%ld\x1b[m\x1b[K\n'}
+[9.226735] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:62:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kstatus_judge\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.227207] (cspc_lidar) StderrLine: {'line': b'   62 |         static bool \x1b[01;35m\x1b[Kstatus_judge\x1b[m\x1b[K = false;     //\xe6\x95\xb4\xe4\xbd\x93\xe7\x8a\xb6\xe6\x80\x81\xe5\x88\xa4\xe6\x96\xad\n'}
+[9.227564] (cspc_lidar) StderrLine: {'line': b'      |                     \x1b[01;35m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.227911] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:65:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[Klidar_start_flag\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.228300] (cspc_lidar) StderrLine: {'line': b'   65 |         static bool \x1b[01;35m\x1b[Klidar_start_flag\x1b[m\x1b[K = false; //\xe4\xb8\x8b\xe5\x8f\x91\xe9\x9b\xb7\xe8\xbe\xbe\xe5\x90\xaf\xe5\x8a\xa8\xe6\x8c\x87\xe4\xbb\xa4\xe5\x90\x8e\xe7\x9a\x84\xe9\x9b\xb7\xe8\xbe\xbe\xe5\x8f\x8d\xe9\xa6\x88\xe6\xa0\x87\xe5\xbf\x97\n'}
+[9.228651] (cspc_lidar) StderrLine: {'line': b'      |                     \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.228996] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint read_forever()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.229351] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:206:82:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%d\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99, but argument 2 has type \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.229718] (cspc_lidar) StderrLine: {'line': b'  206 |                                                         printf("full----- count=\x1b[01;35m\x1b[K%d\x1b[m\x1b[K,time=%lld,frequence=%d\\n",\x1b[32m\x1b[Kscan_count\x1b[m\x1b[K,current_times(),local_scan[0].scan_frequence);\n'}
+[9.230132] (cspc_lidar) StderrLine: {'line': b'      |                                                                                 \x1b[01;35m\x1b[K~^\x1b[m\x1b[K                           \x1b[32m\x1b[K~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.230501] (cspc_lidar) StderrLine: {'line': b'      |                                                                                  \x1b[01;35m\x1b[K|\x1b[m\x1b[K                           \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[9.230861] (cspc_lidar) StderrLine: {'line': b'      |                                                                                  \x1b[01;35m\x1b[Kint\x1b[m\x1b[K                         \x1b[32m\x1b[Ksize_t {aka long unsigned int}\x1b[m\x1b[K\n'}
+[9.231216] (cspc_lidar) StderrLine: {'line': b'      |                                                                                 \x1b[32m\x1b[K%ld\x1b[m\x1b[K\n'}
+[9.231636] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:206:92:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%lld\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Klong long int\x1b[m\x1b[K\xe2\x80\x99, but argument 3 has type \xe2\x80\x98\x1b[01m\x1b[Kint64_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.232013] (cspc_lidar) StderrLine: {'line': b'  206 |                                                         printf("full----- count=%d,time=\x1b[01;35m\x1b[K%lld\x1b[m\x1b[K,frequence=%d\\n",scan_count,\x1b[32m\x1b[Kcurrent_times()\x1b[m\x1b[K,local_scan[0].scan_frequence);\n'}
+[9.232432] (cspc_lidar) StderrLine: {'line': b'      |                                                                                         \x1b[01;35m\x1b[K~~~^\x1b[m\x1b[K                            \x1b[32m\x1b[K~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.232831] (cspc_lidar) StderrLine: {'line': b'      |                                                                                            \x1b[01;35m\x1b[K|\x1b[m\x1b[K                                         \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[9.233196] (cspc_lidar) StderrLine: {'line': b'      |                                                                                            \x1b[01;35m\x1b[Klong long int\x1b[m\x1b[K                             \x1b[32m\x1b[Kint64_t {aka long int}\x1b[m\x1b[K\n'}
+[9.233651] (cspc_lidar) StderrLine: {'line': b'      |                                                                                         \x1b[32m\x1b[K%ld\x1b[m\x1b[K\n'}
+[9.234021] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid send_lidar_data(LaserScan&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.234383] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:312:43:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.234760] (cspc_lidar) StderrLine: {'line': b'  312 |                         for (int i = 0; \x1b[01;35m\x1b[Ki < count\x1b[m\x1b[K; i++)\n'}
+[9.235115] (cspc_lidar) StderrLine: {'line': b'      |                                         \x1b[01;35m\x1b[K~~^~~~~~~\x1b[m\x1b[K\n'}
+[9.286640] (-) TimerEvent: {}
+[9.387686] (-) TimerEvent: {}
+[9.402328] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:\x1b[m\x1b[K At global scope:\n'}
+[9.403324] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/node_lidar.cpp:62:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstatus_judge\x1b[m\x1b[K\xe2\x80\x99 defined but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.404003] (cspc_lidar) StderrLine: {'line': b'   62 |         static bool \x1b[01;35m\x1b[Kstatus_judge\x1b[m\x1b[K = false;     //\xe6\x95\xb4\xe4\xbd\x93\xe7\x8a\xb6\xe6\x80\x81\xe5\x88\xa4\xe6\x96\xad\n'}
+[9.404536] (cspc_lidar) StderrLine: {'line': b'      |                     \x1b[01;35m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.487925] (-) TimerEvent: {}
+[9.588950] (-) TimerEvent: {}
+[9.613891] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kbool Lidar_Data_Processing::wait_start_reply(uint64_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.614250] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:107:49:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint64_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Kuint64_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.614430] (cspc_lidar) StderrLine: {'line': b'  107 |   while (\x1b[01;35m\x1b[K(waitTime = current_times() - startTs) <= timeout\x1b[m\x1b[K){\n'}
+[9.614524] (cspc_lidar) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.615823] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kresult_t Lidar_Data_Processing::waitSpeedRight(uint8_t, uint64_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.615960] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:209:56:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kcmd\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.616066] (cspc_lidar) StderrLine: {'line': b'  209 | result_t Lidar_Data_Processing::waitSpeedRight(\x1b[01;35m\x1b[Kuint8_t cmd\x1b[m\x1b[K,uint64_t timeout)\n'}
+[9.616142] (cspc_lidar) StderrLine: {'line': b'      |                                                \x1b[01;35m\x1b[K~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[9.617347] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kresult_t Lidar_Data_Processing::waitResponseHeader(uint8_t, uint64_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.617482] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:481:28:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%d\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99, but argument 4 has type \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.617583] (cspc_lidar) StderrLine: {'line': b'  481 |       printf("data**%d,%d,\x1b[01;35m\x1b[K%d\x1b[m\x1b[K\\n",check_sum_cal,recvBuffer[remainSize-1],\x1b[32m\x1b[KremainSize\x1b[m\x1b[K);\n'}
+[9.617663] (cspc_lidar) StderrLine: {'line': b'      |                           \x1b[01;35m\x1b[K~^\x1b[m\x1b[K                                           \x1b[32m\x1b[K~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.617734] (cspc_lidar) StderrLine: {'line': b'      |                            \x1b[01;35m\x1b[K|\x1b[m\x1b[K                                           \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[9.617805] (cspc_lidar) StderrLine: {'line': b'      |                            \x1b[01;35m\x1b[Kint\x1b[m\x1b[K                                         \x1b[32m\x1b[Ksize_t {aka long unsigned int}\x1b[m\x1b[K\n'}
+[9.617876] (cspc_lidar) StderrLine: {'line': b'      |                           \x1b[32m\x1b[K%ld\x1b[m\x1b[K\n'}
+[9.623143] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kresult_t Lidar_Data_Processing::waitPackage_coin(node_info*, uint32_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.623466] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:973:9:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kk\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.623814] (cspc_lidar) StderrLine: {'line': b'  973 |     int \x1b[01;35m\x1b[Kk\x1b[m\x1b[K;\n'}
+[9.623900] (cspc_lidar) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[9.623971] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:873:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[KAngleCorrectForDistance\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.624064] (cspc_lidar) StderrLine: {'line': b'  873 |   int32_t \x1b[01;35m\x1b[KAngleCorrectForDistance\x1b[m\x1b[K = 0;\n'}
+[9.624137] (cspc_lidar) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.624207] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:875:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kpackage_type\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.624306] (cspc_lidar) StderrLine: {'line': b'  875 |   uint8_t \x1b[01;35m\x1b[Kpackage_type\x1b[m\x1b[K = 0;\n'}
+[9.624375] (cspc_lidar) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.624444] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:877:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kstart\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.624516] (cspc_lidar) StderrLine: {'line': b'  877 |   uint16_t \x1b[01;35m\x1b[Kstart\x1b[m\x1b[K;\n'}
+[9.624583] (cspc_lidar) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[9.624651] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/sdk/lidar_data_processing.cpp:878:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kstop\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[9.624722] (cspc_lidar) StderrLine: {'line': b'  878 |   uint16_t \x1b[01;35m\x1b[Kstop\x1b[m\x1b[K;\n'}
+[9.624789] (cspc_lidar) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[9.689259] (-) TimerEvent: {}
+[9.790690] (-) TimerEvent: {}
+[9.892016] (-) TimerEvent: {}
+[9.993324] (-) TimerEvent: {}
+[10.094624] (-) TimerEvent: {}
+[10.195852] (-) TimerEvent: {}
+[10.297096] (-) TimerEvent: {}
+[10.398426] (-) TimerEvent: {}
+[10.499634] (-) TimerEvent: {}
+[10.600854] (-) TimerEvent: {}
+[10.702013] (-) TimerEvent: {}
+[10.803165] (-) TimerEvent: {}
+[10.904366] (-) TimerEvent: {}
+[11.005554] (-) TimerEvent: {}
+[11.106776] (-) TimerEvent: {}
+[11.208016] (-) TimerEvent: {}
+[11.309289] (-) TimerEvent: {}
+[11.410580] (-) TimerEvent: {}
+[11.511904] (-) TimerEvent: {}
+[11.613181] (-) TimerEvent: {}
+[11.714490] (-) TimerEvent: {}
+[11.815935] (-) TimerEvent: {}
+[11.917303] (-) TimerEvent: {}
+[12.018631] (-) TimerEvent: {}
+[12.120071] (-) TimerEvent: {}
+[12.221475] (-) TimerEvent: {}
+[12.322798] (-) TimerEvent: {}
+[12.424193] (-) TimerEvent: {}
+[12.525534] (-) TimerEvent: {}
+[12.626879] (-) TimerEvent: {}
+[12.728121] (-) TimerEvent: {}
+[12.829440] (-) TimerEvent: {}
+[12.931054] (-) TimerEvent: {}
+[13.032328] (-) TimerEvent: {}
+[13.133624] (-) TimerEvent: {}
+[13.234951] (-) TimerEvent: {}
+[13.336178] (-) TimerEvent: {}
+[13.437423] (-) TimerEvent: {}
+[13.538725] (-) TimerEvent: {}
+[13.639979] (-) TimerEvent: {}
+[13.741204] (-) TimerEvent: {}
+[13.842436] (-) TimerEvent: {}
+[13.943698] (-) TimerEvent: {}
+[14.044917] (-) TimerEvent: {}
+[14.146175] (-) TimerEvent: {}
+[14.247426] (-) TimerEvent: {}
+[14.348701] (-) TimerEvent: {}
+[14.450011] (-) TimerEvent: {}
+[14.551246] (-) TimerEvent: {}
+[14.652515] (-) TimerEvent: {}
+[14.753883] (-) TimerEvent: {}
+[14.855095] (-) TimerEvent: {}
+[14.956373] (-) TimerEvent: {}
+[15.057625] (-) TimerEvent: {}
+[15.158825] (-) TimerEvent: {}
+[15.260167] (-) TimerEvent: {}
+[15.361412] (-) TimerEvent: {}
+[15.462640] (-) TimerEvent: {}
+[15.563932] (-) TimerEvent: {}
+[15.665441] (-) TimerEvent: {}
+[15.766696] (-) TimerEvent: {}
+[15.867890] (-) TimerEvent: {}
+[15.969086] (-) TimerEvent: {}
+[16.070298] (-) TimerEvent: {}
+[16.171444] (-) TimerEvent: {}
+[16.272657] (-) TimerEvent: {}
+[16.373916] (-) TimerEvent: {}
+[16.475154] (-) TimerEvent: {}
+[16.576378] (-) TimerEvent: {}
+[16.677621] (-) TimerEvent: {}
+[16.778855] (-) TimerEvent: {}
+[16.880131] (-) TimerEvent: {}
+[16.981280] (-) TimerEvent: {}
+[17.082506] (-) TimerEvent: {}
+[17.183684] (-) TimerEvent: {}
+[17.284893] (-) TimerEvent: {}
+[17.386166] (-) TimerEvent: {}
+[17.487459] (-) TimerEvent: {}
+[17.588696] (-) TimerEvent: {}
+[17.689917] (-) TimerEvent: {}
+[17.791111] (-) TimerEvent: {}
+[17.892325] (-) TimerEvent: {}
+[17.993559] (-) TimerEvent: {}
+[18.094765] (-) TimerEvent: {}
+[18.195976] (-) TimerEvent: {}
+[18.297152] (-) TimerEvent: {}
+[18.398350] (-) TimerEvent: {}
+[18.499504] (-) TimerEvent: {}
+[18.511737] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid Scan_to_PointCloud(LaserScan&, sensor_msgs::msg::PointCloud2&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[18.512186] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:85:24:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[18.512387] (cspc_lidar) StderrLine: {'line': b'   85 |         for(int i = 0;\x1b[01;35m\x1b[Ki<scan.points.size()\x1b[m\x1b[K;i++)\n'}
+[18.512488] (cspc_lidar) StderrLine: {'line': b'      |                       \x1b[01;35m\x1b[K~^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[18.548257] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint main(int, char**)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[18.548671] (cspc_lidar) StderrLine: {'line': b'\x1b[01m\x1b[K/home/admin/workspace/host_udp_ws/src/cspc_lidar_sdk_ros2/src/node_lidar_ros.cpp:193:40:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<LaserPoint>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[18.548823] (cspc_lidar) StderrLine: {'line': b'  193 |                         for(int i=0; \x1b[01;35m\x1b[Ki < scan.points.size()\x1b[m\x1b[K; i++) {\n'}
+[18.548911] (cspc_lidar) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K~~^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[18.599600] (-) TimerEvent: {}
+[18.700235] (-) TimerEvent: {}
+[18.800833] (-) TimerEvent: {}
+[18.901416] (-) TimerEvent: {}
+[19.002015] (-) TimerEvent: {}
+[19.102587] (-) TimerEvent: {}
+[19.203256] (-) TimerEvent: {}
+[19.303880] (-) TimerEvent: {}
+[19.404505] (-) TimerEvent: {}
+[19.505132] (-) TimerEvent: {}
+[19.605738] (-) TimerEvent: {}
+[19.706355] (-) TimerEvent: {}
+[19.806983] (-) TimerEvent: {}
+[19.907582] (-) TimerEvent: {}
+[20.008172] (-) TimerEvent: {}
+[20.108769] (-) TimerEvent: {}
+[20.209331] (-) TimerEvent: {}
+[20.309904] (-) TimerEvent: {}
+[20.410470] (-) TimerEvent: {}
+[20.511025] (-) TimerEvent: {}
+[20.611606] (-) TimerEvent: {}
+[20.712193] (-) TimerEvent: {}
+[20.812761] (-) TimerEvent: {}
+[20.913337] (-) TimerEvent: {}
+[21.013888] (-) TimerEvent: {}
+[21.114396] (-) TimerEvent: {}
+[21.214954] (-) TimerEvent: {}
+[21.315458] (-) TimerEvent: {}
+[21.416020] (-) TimerEvent: {}
+[21.516609] (-) TimerEvent: {}
+[21.617141] (-) TimerEvent: {}
+[21.717618] (-) TimerEvent: {}
+[21.818244] (-) TimerEvent: {}
+[21.918814] (-) TimerEvent: {}
+[22.019403] (-) TimerEvent: {}
+[22.119973] (-) TimerEvent: {}
+[22.220553] (-) TimerEvent: {}
+[22.321112] (-) TimerEvent: {}
+[22.421675] (-) TimerEvent: {}
+[22.522233] (-) TimerEvent: {}
+[22.622799] (-) TimerEvent: {}
+[22.723379] (-) TimerEvent: {}
+[22.823966] (-) TimerEvent: {}
+[22.924540] (-) TimerEvent: {}
+[23.025134] (-) TimerEvent: {}
+[23.125738] (-) TimerEvent: {}
+[23.226378] (-) TimerEvent: {}
+[23.327047] (-) TimerEvent: {}
+[23.427657] (-) TimerEvent: {}
+[23.528278] (-) TimerEvent: {}
+[23.628895] (-) TimerEvent: {}
+[23.729544] (-) TimerEvent: {}
+[23.830307] (-) TimerEvent: {}
+[23.930882] (-) TimerEvent: {}
+[24.031472] (-) TimerEvent: {}
+[24.132084] (-) TimerEvent: {}
+[24.232677] (-) TimerEvent: {}
+[24.333351] (-) TimerEvent: {}
+[24.433988] (-) TimerEvent: {}
+[24.534593] (-) TimerEvent: {}
+[24.635220] (-) TimerEvent: {}
+[24.735836] (-) TimerEvent: {}
+[24.836442] (-) TimerEvent: {}
+[24.937327] (-) TimerEvent: {}
+[25.038744] (-) TimerEvent: {}
+[25.139658] (-) TimerEvent: {}
+[25.240839] (-) TimerEvent: {}
+[25.341954] (-) TimerEvent: {}
+[25.443286] (-) TimerEvent: {}
+[25.544496] (-) TimerEvent: {}
+[25.645710] (-) TimerEvent: {}
+[25.746926] (-) TimerEvent: {}
+[25.848130] (-) TimerEvent: {}
+[25.949366] (-) TimerEvent: {}
+[26.050643] (-) TimerEvent: {}
+[26.151859] (-) TimerEvent: {}
+[26.253089] (-) TimerEvent: {}
+[26.354248] (-) TimerEvent: {}
+[26.455368] (-) TimerEvent: {}
+[26.556548] (-) TimerEvent: {}
+[26.657787] (-) TimerEvent: {}
+[26.759014] (-) TimerEvent: {}
+[26.860243] (-) TimerEvent: {}
+[26.961445] (-) TimerEvent: {}
+[27.062699] (-) TimerEvent: {}
+[27.164002] (-) TimerEvent: {}
+[27.265219] (-) TimerEvent: {}
+[27.366456] (-) TimerEvent: {}
+[27.467723] (-) TimerEvent: {}
+[27.568938] (-) TimerEvent: {}
+[27.670178] (-) TimerEvent: {}
+[27.771438] (-) TimerEvent: {}
+[27.872682] (-) TimerEvent: {}
+[27.973939] (-) TimerEvent: {}
+[28.075158] (-) TimerEvent: {}
+[28.176390] (-) TimerEvent: {}
+[28.277639] (-) TimerEvent: {}
+[28.378870] (-) TimerEvent: {}
+[28.480121] (-) TimerEvent: {}
+[28.581340] (-) TimerEvent: {}
+[28.682536] (-) TimerEvent: {}
+[28.783696] (-) TimerEvent: {}
+[28.884927] (-) TimerEvent: {}
+[28.986136] (-) TimerEvent: {}
+[29.087402] (-) TimerEvent: {}
+[29.188650] (-) TimerEvent: {}
+[29.289877] (-) TimerEvent: {}
+[29.391158] (-) TimerEvent: {}
+[29.492460] (-) TimerEvent: {}
+[29.593549] (-) TimerEvent: {}
+[29.694778] (-) TimerEvent: {}
+[29.795950] (-) TimerEvent: {}
+[29.897108] (-) TimerEvent: {}
+[29.998274] (-) TimerEvent: {}
+[30.099464] (-) TimerEvent: {}
+[30.200599] (-) TimerEvent: {}
+[30.301782] (-) TimerEvent: {}
+[30.403001] (-) TimerEvent: {}
+[30.504305] (-) TimerEvent: {}
+[30.605640] (-) TimerEvent: {}
+[30.706921] (-) TimerEvent: {}
+[30.808156] (-) TimerEvent: {}
+[30.909566] (-) TimerEvent: {}
+[31.011013] (-) TimerEvent: {}
+[31.112229] (-) TimerEvent: {}
+[31.113266] (cspc_lidar) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable cspc_lidar\x1b[0m\n'}
+[31.212726] (-) TimerEvent: {}
+[31.314501] (-) TimerEvent: {}
+[31.415945] (-) TimerEvent: {}
+[31.517612] (-) TimerEvent: {}
+[31.619393] (-) TimerEvent: {}
+[31.720785] (-) TimerEvent: {}
+[31.822274] (-) TimerEvent: {}
+[31.923964] (-) TimerEvent: {}
+[32.025773] (-) TimerEvent: {}
+[32.127361] (-) TimerEvent: {}
+[32.228803] (-) TimerEvent: {}
+[32.330150] (-) TimerEvent: {}
+[32.431516] (-) TimerEvent: {}
+[32.532780] (-) TimerEvent: {}
+[32.634328] (-) TimerEvent: {}
+[32.735836] (-) TimerEvent: {}
+[32.837421] (-) TimerEvent: {}
+[32.938840] (-) TimerEvent: {}
+[33.040344] (-) TimerEvent: {}
+[33.141839] (-) TimerEvent: {}
+[33.243151] (-) TimerEvent: {}
+[33.343996] (-) TimerEvent: {}
+[33.444763] (-) TimerEvent: {}
+[33.545560] (-) TimerEvent: {}
+[33.646170] (-) TimerEvent: {}
+[33.746797] (-) TimerEvent: {}
+[33.847725] (-) TimerEvent: {}
+[33.948989] (-) TimerEvent: {}
+[34.027371] (cspc_lidar) StdoutLine: {'line': b'[100%] Built target cspc_lidar\n'}
+[34.049315] (-) TimerEvent: {}
+[34.071530] (cspc_lidar) CommandEnded: {'returncode': 0}
+[34.073631] (cspc_lidar) JobProgress: {'identifier': 'cspc_lidar', 'progress': 'install'}
+[34.108847] (cspc_lidar) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/admin/workspace/host_udp_ws/build/cspc_lidar'], 'cwd': '/home/admin/workspace/host_udp_ws/build/cspc_lidar', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'admin'), ('SSH_CLIENT', '192.168.88.243 51802 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/admin'), ('OLDPWD', '/home/admin/workspace'), ('TERM_PROGRAM_VERSION', '1.122.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-c551cede-6660-4825-9c3e-31c179a015f0.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]\\[\x1b]633;A\x07\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \\[\x1b]633;B\x07\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'admin'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '11'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/remote-cli:/home/admin/.local/bin:/opt/ros/humble/bin:/home/admin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-de57f957e7.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/admin/workspace/host_udp_ws/build/cspc_lidar'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.88.243 51802 192.168.88.181 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('UMS_FILE', '/userdata/ums_shared.img'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[34.137272] (cspc_lidar) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[34.138587] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/lib/cspc_lidar/cspc_lidar\n'}
+[34.149532] (-) TimerEvent: {}
+[34.161092] (cspc_lidar) StdoutLine: {'line': b'-- Set runtime path of "/home/admin/workspace/host_udp_ws/install/cspc_lidar/lib/cspc_lidar/cspc_lidar" to ""\n'}
+[34.162349] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/lib/cspc_lidar/front_distance_tester.py\n'}
+[34.163070] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/launch\n'}
+[34.163605] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_launch.py\n'}
+[34.164236] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_rviz.py\n'}
+[34.164451] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/params\n'}
+[34.164651] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/params/cspc_lidar.yaml\n'}
+[34.164845] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/package_run_dependencies/cspc_lidar\n'}
+[34.165041] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/parent_prefix_path/cspc_lidar\n'}
+[34.165234] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.sh\n'}
+[34.165427] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.dsv\n'}
+[34.165615] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.sh\n'}
+[34.165804] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.dsv\n'}
+[34.166183] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.bash\n'}
+[34.166356] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.sh\n'}
+[34.166523] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.zsh\n'}
+[34.166725] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.dsv\n'}
+[34.166892] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/package.dsv\n'}
+[34.167056] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/packages/cspc_lidar\n'}
+[34.167220] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig.cmake\n'}
+[34.167416] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig-version.cmake\n'}
+[34.167605] (cspc_lidar) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/package.xml\n'}
+[34.170534] (cspc_lidar) CommandEnded: {'returncode': 0}
+[34.249821] (-) TimerEvent: {}
+[34.264159] (cspc_lidar) JobEnded: {'identifier': 'cspc_lidar', 'rc': 0}
+[34.270666] (dog_udp_comm) JobStarted: {'identifier': 'dog_udp_comm'}
+[34.280819] (dog_udp_comm) JobProgress: {'identifier': 'dog_udp_comm', 'progress': 'cmake'}
+[34.281998] (dog_udp_comm) Command: {'cmd': ['/usr/bin/cmake', '/home/admin/workspace/host_udp_ws/src/dog_udp_comm', '-DCMAKE_INSTALL_PREFIX=/home/admin/workspace/host_udp_ws/install/dog_udp_comm'], 'cwd': '/home/admin/workspace/host_udp_ws/build/dog_udp_comm', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'admin'), ('SSH_CLIENT', '192.168.88.243 51802 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/admin'), ('OLDPWD', '/home/admin/workspace'), ('TERM_PROGRAM_VERSION', '1.122.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-c551cede-6660-4825-9c3e-31c179a015f0.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]\\[\x1b]633;A\x07\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \\[\x1b]633;B\x07\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'admin'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '11'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/remote-cli:/home/admin/.local/bin:/opt/ros/humble/bin:/home/admin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-de57f957e7.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/admin/workspace/host_udp_ws/install/cspc_lidar:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/admin/workspace/host_udp_ws/build/dog_udp_comm'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.88.243 51802 192.168.88.181 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('UMS_FILE', '/userdata/ums_shared.img'), ('CMAKE_PREFIX_PATH', '/home/admin/workspace/host_udp_ws/install/cspc_lidar:/opt/ros/humble')]), 'shell': False}
+[34.350234] (-) TimerEvent: {}
+[34.451389] (-) TimerEvent: {}
+[34.476330] (dog_udp_comm) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[34.551730] (-) TimerEvent: {}
+[34.642243] (dog_udp_comm) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[34.652035] (-) TimerEvent: {}
+[34.659541] (dog_udp_comm) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[34.752412] (-) TimerEvent: {}
+[34.853535] (-) TimerEvent: {}
+[34.919942] (dog_udp_comm) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[34.953680] (-) TimerEvent: {}
+[34.956524] (dog_udp_comm) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[34.957469] (dog_udp_comm) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[34.959123] (dog_udp_comm) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[34.971568] (dog_udp_comm) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[35.054056] (-) TimerEvent: {}
+[35.155255] (-) TimerEvent: {}
+[35.245142] (dog_udp_comm) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[35.255307] (-) TimerEvent: {}
+[35.286680] (dog_udp_comm) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[35.287963] (dog_udp_comm) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[35.289825] (dog_udp_comm) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[35.298578] (dog_udp_comm) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[35.355763] (-) TimerEvent: {}
+[35.456780] (-) TimerEvent: {}
+[35.557481] (-) TimerEvent: {}
+[35.658240] (-) TimerEvent: {}
+[35.735683] (dog_udp_comm) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[35.758630] (-) TimerEvent: {}
+[35.860585] (-) TimerEvent: {}
+[35.949346] (dog_udp_comm) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[35.961043] (-) TimerEvent: {}
+[36.007136] (dog_udp_comm) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[36.013126] (dog_udp_comm) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[36.024069] (dog_udp_comm) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[36.040334] (dog_udp_comm) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[36.061295] (-) TimerEvent: {}
+[36.062123] (dog_udp_comm) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[36.120551] (dog_udp_comm) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[36.123462] (dog_udp_comm) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[36.161659] (-) TimerEvent: {}
+[36.262726] (-) TimerEvent: {}
+[36.309679] (dog_udp_comm) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[36.362901] (-) TimerEvent: {}
+[36.377023] (dog_udp_comm) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[36.461833] (dog_udp_comm) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[36.463028] (-) TimerEvent: {}
+[36.474343] (dog_udp_comm) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[36.563405] (-) TimerEvent: {}
+[36.664376] (-) TimerEvent: {}
+[36.729062] (dog_udp_comm) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[36.732425] (dog_udp_comm) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[36.764618] (-) TimerEvent: {}
+[36.865781] (-) TimerEvent: {}
+[36.966768] (-) TimerEvent: {}
+[36.994322] (dog_udp_comm) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[36.998653] (dog_udp_comm) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[37.067171] (-) TimerEvent: {}
+[37.117977] (dog_udp_comm) StdoutLine: {'line': b'-- Found rclpy: 3.3.21 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[37.119341] (dog_udp_comm) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[37.143060] (dog_udp_comm) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[37.167223] (-) TimerEvent: {}
+[37.171340] (dog_udp_comm) StdoutLine: {'line': b'-- Found std_srvs: 4.9.1 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[37.267477] (-) TimerEvent: {}
+[37.368554] (-) TimerEvent: {}
+[37.369552] (dog_udp_comm) StdoutLine: {'line': b'-- Configuring done\n'}
+[37.390691] (dog_udp_comm) StdoutLine: {'line': b'-- Generating done\n'}
+[37.396667] (dog_udp_comm) StdoutLine: {'line': b'-- Build files have been written to: /home/admin/workspace/host_udp_ws/build/dog_udp_comm\n'}
+[37.423900] (dog_udp_comm) CommandEnded: {'returncode': 0}
+[37.425561] (dog_udp_comm) JobProgress: {'identifier': 'dog_udp_comm', 'progress': 'build'}
+[37.428872] (dog_udp_comm) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/admin/workspace/host_udp_ws/build/dog_udp_comm', '--', '-j8', '-l8'], 'cwd': '/home/admin/workspace/host_udp_ws/build/dog_udp_comm', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'admin'), ('SSH_CLIENT', '192.168.88.243 51802 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/admin'), ('OLDPWD', '/home/admin/workspace'), ('TERM_PROGRAM_VERSION', '1.122.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-c551cede-6660-4825-9c3e-31c179a015f0.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]\\[\x1b]633;A\x07\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \\[\x1b]633;B\x07\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'admin'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '11'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/remote-cli:/home/admin/.local/bin:/opt/ros/humble/bin:/home/admin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-de57f957e7.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/admin/workspace/host_udp_ws/install/cspc_lidar:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/admin/workspace/host_udp_ws/build/dog_udp_comm'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.88.243 51802 192.168.88.181 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('UMS_FILE', '/userdata/ums_shared.img'), ('CMAKE_PREFIX_PATH', '/home/admin/workspace/host_udp_ws/install/cspc_lidar:/opt/ros/humble')]), 'shell': False}
+[37.469264] (-) TimerEvent: {}
+[37.570500] (-) TimerEvent: {}
+[37.627646] (dog_udp_comm) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/sender_node.dir/src/sender_node.cpp.o\x1b[0m\n'}
+[37.670789] (-) TimerEvent: {}
+[37.772065] (-) TimerEvent: {}
+[37.873284] (-) TimerEvent: {}
+[37.974486] (-) TimerEvent: {}
+[38.075741] (-) TimerEvent: {}
+[38.176971] (-) TimerEvent: {}
+[38.278194] (-) TimerEvent: {}
+[38.379415] (-) TimerEvent: {}
+[38.480645] (-) TimerEvent: {}
+[38.581845] (-) TimerEvent: {}
+[38.683000] (-) TimerEvent: {}
+[38.784229] (-) TimerEvent: {}
+[38.885444] (-) TimerEvent: {}
+[38.986707] (-) TimerEvent: {}
+[39.087858] (-) TimerEvent: {}
+[39.189079] (-) TimerEvent: {}
+[39.290301] (-) TimerEvent: {}
+[39.391494] (-) TimerEvent: {}
+[39.492740] (-) TimerEvent: {}
+[39.593986] (-) TimerEvent: {}
+[39.695156] (-) TimerEvent: {}
+[39.796365] (-) TimerEvent: {}
+[39.897737] (-) TimerEvent: {}
+[39.998979] (-) TimerEvent: {}
+[40.100227] (-) TimerEvent: {}
+[40.201460] (-) TimerEvent: {}
+[40.302732] (-) TimerEvent: {}
+[40.404013] (-) TimerEvent: {}
+[40.505244] (-) TimerEvent: {}
+[40.606484] (-) TimerEvent: {}
+[40.707731] (-) TimerEvent: {}
+[40.808938] (-) TimerEvent: {}
+[40.910168] (-) TimerEvent: {}
+[41.011372] (-) TimerEvent: {}
+[41.112589] (-) TimerEvent: {}
+[41.213835] (-) TimerEvent: {}
+[41.315072] (-) TimerEvent: {}
+[41.416323] (-) TimerEvent: {}
+[41.517620] (-) TimerEvent: {}
+[41.618846] (-) TimerEvent: {}
+[41.720096] (-) TimerEvent: {}
+[41.821347] (-) TimerEvent: {}
+[41.922593] (-) TimerEvent: {}
+[42.023784] (-) TimerEvent: {}
+[42.125006] (-) TimerEvent: {}
+[42.226281] (-) TimerEvent: {}
+[42.327546] (-) TimerEvent: {}
+[42.428819] (-) TimerEvent: {}
+[42.530075] (-) TimerEvent: {}
+[42.631319] (-) TimerEvent: {}
+[42.732519] (-) TimerEvent: {}
+[42.833719] (-) TimerEvent: {}
+[42.934879] (-) TimerEvent: {}
+[43.036120] (-) TimerEvent: {}
+[43.137308] (-) TimerEvent: {}
+[43.238521] (-) TimerEvent: {}
+[43.339744] (-) TimerEvent: {}
+[43.441002] (-) TimerEvent: {}
+[43.542229] (-) TimerEvent: {}
+[43.643518] (-) TimerEvent: {}
+[43.744764] (-) TimerEvent: {}
+[43.845976] (-) TimerEvent: {}
+[43.947209] (-) TimerEvent: {}
+[44.048415] (-) TimerEvent: {}
+[44.149616] (-) TimerEvent: {}
+[44.250868] (-) TimerEvent: {}
+[44.352075] (-) TimerEvent: {}
+[44.453307] (-) TimerEvent: {}
+[44.554489] (-) TimerEvent: {}
+[44.655625] (-) TimerEvent: {}
+[44.756851] (-) TimerEvent: {}
+[44.858106] (-) TimerEvent: {}
+[44.959392] (-) TimerEvent: {}
+[45.060673] (-) TimerEvent: {}
+[45.161876] (-) TimerEvent: {}
+[45.263089] (-) TimerEvent: {}
+[45.364363] (-) TimerEvent: {}
+[45.465567] (-) TimerEvent: {}
+[45.566887] (-) TimerEvent: {}
+[45.668108] (-) TimerEvent: {}
+[45.769317] (-) TimerEvent: {}
+[45.870568] (-) TimerEvent: {}
+[45.971808] (-) TimerEvent: {}
+[46.073043] (-) TimerEvent: {}
+[46.174316] (-) TimerEvent: {}
+[46.275528] (-) TimerEvent: {}
+[46.376765] (-) TimerEvent: {}
+[46.478059] (-) TimerEvent: {}
+[46.579318] (-) TimerEvent: {}
+[46.680699] (-) TimerEvent: {}
+[46.781945] (-) TimerEvent: {}
+[46.883197] (-) TimerEvent: {}
+[46.984465] (-) TimerEvent: {}
+[47.085626] (-) TimerEvent: {}
+[47.186848] (-) TimerEvent: {}
+[47.288103] (-) TimerEvent: {}
+[47.389418] (-) TimerEvent: {}
+[47.490688] (-) TimerEvent: {}
+[47.592015] (-) TimerEvent: {}
+[47.693353] (-) TimerEvent: {}
+[47.794596] (-) TimerEvent: {}
+[47.895815] (-) TimerEvent: {}
+[47.997029] (-) TimerEvent: {}
+[48.098228] (-) TimerEvent: {}
+[48.199515] (-) TimerEvent: {}
+[48.300689] (-) TimerEvent: {}
+[48.401912] (-) TimerEvent: {}
+[48.503134] (-) TimerEvent: {}
+[48.604333] (-) TimerEvent: {}
+[48.705558] (-) TimerEvent: {}
+[48.806809] (-) TimerEvent: {}
+[48.907951] (-) TimerEvent: {}
+[49.009151] (-) TimerEvent: {}
+[49.110401] (-) TimerEvent: {}
+[49.211651] (-) TimerEvent: {}
+[49.312881] (-) TimerEvent: {}
+[49.414172] (-) TimerEvent: {}
+[49.515415] (-) TimerEvent: {}
+[49.616725] (-) TimerEvent: {}
+[49.717917] (-) TimerEvent: {}
+[49.819118] (-) TimerEvent: {}
+[49.920405] (-) TimerEvent: {}
+[50.021623] (-) TimerEvent: {}
+[50.122858] (-) TimerEvent: {}
+[50.224137] (-) TimerEvent: {}
+[50.325350] (-) TimerEvent: {}
+[50.426610] (-) TimerEvent: {}
+[50.527840] (-) TimerEvent: {}
+[50.629057] (-) TimerEvent: {}
+[50.730299] (-) TimerEvent: {}
+[50.831507] (-) TimerEvent: {}
+[50.932705] (-) TimerEvent: {}
+[51.033952] (-) TimerEvent: {}
+[51.135182] (-) TimerEvent: {}
+[51.236419] (-) TimerEvent: {}
+[51.337613] (-) TimerEvent: {}
+[51.438841] (-) TimerEvent: {}
+[51.540074] (-) TimerEvent: {}
+[51.641340] (-) TimerEvent: {}
+[51.742521] (-) TimerEvent: {}
+[51.843725] (-) TimerEvent: {}
+[51.944934] (-) TimerEvent: {}
+[52.046051] (-) TimerEvent: {}
+[52.147269] (-) TimerEvent: {}
+[52.248447] (-) TimerEvent: {}
+[52.349645] (-) TimerEvent: {}
+[52.450957] (-) TimerEvent: {}
+[52.552308] (-) TimerEvent: {}
+[52.653682] (-) TimerEvent: {}
+[52.754957] (-) TimerEvent: {}
+[52.856146] (-) TimerEvent: {}
+[52.957365] (-) TimerEvent: {}
+[53.007590] (dog_udp_comm) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable sender_node\x1b[0m\n'}
+[53.057653] (-) TimerEvent: {}
+[53.158867] (-) TimerEvent: {}
+[53.260274] (-) TimerEvent: {}
+[53.361977] (-) TimerEvent: {}
+[53.463595] (-) TimerEvent: {}
+[53.565373] (-) TimerEvent: {}
+[53.666470] (-) TimerEvent: {}
+[53.767320] (-) TimerEvent: {}
+[53.868253] (-) TimerEvent: {}
+[53.969262] (-) TimerEvent: {}
+[54.070502] (-) TimerEvent: {}
+[54.171675] (-) TimerEvent: {}
+[54.248083] (dog_udp_comm) StdoutLine: {'line': b'[100%] Built target sender_node\n'}
+[54.272034] (-) TimerEvent: {}
+[54.290821] (dog_udp_comm) CommandEnded: {'returncode': 0}
+[54.294228] (dog_udp_comm) JobProgress: {'identifier': 'dog_udp_comm', 'progress': 'install'}
+[54.295936] (dog_udp_comm) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/admin/workspace/host_udp_ws/build/dog_udp_comm'], 'cwd': '/home/admin/workspace/host_udp_ws/build/dog_udp_comm', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('UMS_MOUNTPOINT', '/mnt/ums'), ('GST_V4L2_PREFERRED_FOURCC', 'NV12:YU12:NV16:YUY2'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'admin'), ('SSH_CLIENT', '192.168.88.243 51802 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('USB_FUNCS', 'adb'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/admin'), ('OLDPWD', '/home/admin/workspace'), ('TERM_PROGRAM_VERSION', '1.122.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-c551cede-6660-4825-9c3e-31c179a015f0.sock'), ('GST_INSPECT_NO_COLORS', '1'), ('GST_MPP_NO_RGA', '1'), ('ROS_PYTHON_VERSION', '3'), ('COGL_DRIVER', 'gles2'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]\\[\x1b]633;A\x07\\]\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \\[\x1b]633;B\x07\\]\\[\x1b]633;B\x07\\]'), ('VSCODE_GIT_ASKPASS_NODE', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GST_V4L2SRC_MAX_RESOLUTION', '3840x2160'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'admin'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GST_GL_API', 'gles2'), ('XDG_SESSION_ID', '11'), ('GST_VIDEO_CONVERT_PREFERRED_FORMAT', 'NV12:NV16:I420:YUY2'), ('GST_V4L2SRC_RK_DEVICES', '_mainpath:_selfpath:_bypass:_scale'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/home/admin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/remote-cli:/home/admin/.local/bin:/opt/ros/humble/bin:/home/admin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GST_GL_PLATFORM', 'egl'), ('GST_DEBUG_NO_COLOR', '1'), ('GST_V4L2SRC_DEFAULT_DEVICE', '/dev/video-camera0'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-de57f957e7.sock'), ('TERM_PROGRAM', 'vscode'), ('GST_V4L2_USE_LIBV4L2', '1'), ('UMS_SIZE', '256M'), ('AMENT_PREFIX_PATH', '/home/admin/workspace/host_udp_ws/install/cspc_lidar:/opt/ros/humble'), ('LC_MESSAGES', 'en_US.UTF-8'), ('SHELL', '/bin/bash'), ('UMS_RO', '0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('UMS_FSTYPE', 'vfat'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/admin/workspace/host_udp_ws/build/dog_udp_comm'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.88.243 51802 192.168.88.181 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('UMS_MOUNT', '0'), ('COLCON', '1'), ('UMS_FILE', '/userdata/ums_shared.img'), ('CMAKE_PREFIX_PATH', '/home/admin/workspace/host_udp_ws/install/cspc_lidar:/opt/ros/humble')]), 'shell': False}
+[54.327018] (dog_udp_comm) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[54.330100] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/sender_node\n'}
+[54.344891] (dog_udp_comm) StdoutLine: {'line': b'-- Set runtime path of "/home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/sender_node" to ""\n'}
+[54.345251] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/keyboard_teleop.py\n'}
+[54.345421] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/host_mpc_controller.py\n'}
+[54.345518] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/pixel_to_scan_polar.py\n'}
+[54.345657] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_string_bridge.py\n'}
+[54.345812] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_center_tester.py\n'}
+[54.345946] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/analyze_tracking_cmd_bag.py\n'}
+[54.346020] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch\n'}
+[54.346156] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/__pycache__\n'}
+[54.346291] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/__pycache__/sender_launch.cpython-313.pyc\n'}
+[54.346431] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/__pycache__/person_follow_udp_launch.cpython-313.pyc\n'}
+[54.346615] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/person_follow_udp_launch.py\n'}
+[54.346793] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/sender_launch.py\n'}
+[54.346943] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/params\n'}
+[54.347016] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/params/person_follow_params.yaml\n'}
+[54.347164] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm\n'}
+[54.347380] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm\n'}
+[54.347611] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.sh\n'}
+[54.347787] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.dsv\n'}
+[54.347956] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.sh\n'}
+[54.348121] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.dsv\n'}
+[54.348285] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.bash\n'}
+[54.348467] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.sh\n'}
+[54.348641] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.zsh\n'}
+[54.348809] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.dsv\n'}
+[54.348972] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.dsv\n'}
+[54.349194] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/packages/dog_udp_comm\n'}
+[54.349413] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig.cmake\n'}
+[54.349583] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig-version.cmake\n'}
+[54.349713] (dog_udp_comm) StdoutLine: {'line': b'-- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.xml\n'}
+[54.355130] (dog_udp_comm) CommandEnded: {'returncode': 0}
+[54.372903] (-) TimerEvent: {}
+[54.416628] (dog_udp_comm) JobEnded: {'identifier': 'dog_udp_comm', 'rc': 0}
+[54.418720] (-) EventReactorShutdown: {}
