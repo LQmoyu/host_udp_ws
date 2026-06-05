@@ -54,6 +54,7 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("angle_tolerance", 0.08)
         self.declare_parameter("stop_when_aligned", True)
         self.declare_parameter("stop_on_lost_target", True)
+        self.declare_parameter("hold_on_lost_tracking", False)
         self.declare_parameter("allow_reverse", True)
         self.declare_parameter("target_lost_duration_sec", 1.0)
 
@@ -90,12 +91,24 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("tracking_angle_gain", 2.0)
         self.declare_parameter("distance_filter_alpha", 0.65)
         self.declare_parameter("angle_filter_alpha", 0.65)
+        self.declare_parameter("enable_person_state_prediction", True)
+        self.declare_parameter("max_person_prediction_sec", 0.18)
+        self.declare_parameter("person_rate_filter_alpha", 0.75)
+        self.declare_parameter("max_distance_rate", 1.2)
+        self.declare_parameter("max_person_angle_rate", 2.5)
+        self.declare_parameter("latency_speed_scale_start_sec", 0.06)
+        self.declare_parameter("latency_speed_scale_end_sec", 0.20)
+        self.declare_parameter("stale_forward_stop_sec", 0.25)
+        self.declare_parameter("latency_distance_margin_gain", 0.6)
+        self.declare_parameter("max_latency_distance_margin", 0.12)
         self.declare_parameter("min_valid_distance", 0.15)
         self.declare_parameter("max_valid_distance", 8.0)
         self.declare_parameter("enable_distance_speed_profile", True)
         self.declare_parameter("reverse_distance_threshold", 0.9)
         self.declare_parameter("stop_reverse_distance", 1.05)
         self.declare_parameter("min_forward_distance", 0.0)
+        self.declare_parameter("soft_stop_distance", 0.0)
+        self.declare_parameter("stop_hold_distance", 0.0)
         self.declare_parameter("speed_profile_near_distance", 1.3)
         self.declare_parameter("speed_profile_far_distance", 3.2)
         self.declare_parameter("speed_profile_min_v", 0.04)
@@ -103,7 +116,20 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("angle_priority_threshold", 0.12)
         self.declare_parameter("min_heading_speed_scale", 0.05)
         self.declare_parameter("max_accel", 0.45)
+        self.declare_parameter("max_decel", 0.90)
         self.declare_parameter("max_w_accel", 8.0)
+        self.declare_parameter("linear_cmd_filter_alpha", 0.0)
+        self.declare_parameter("linear_sign_change_hold_sec", 0.0)
+        self.declare_parameter("reverse_angle_gate", 0.0)
+        self.declare_parameter("enable_reacquire_ramp", True)
+        self.declare_parameter("reacquire_trigger_lost_sec", 0.08)
+        self.declare_parameter("reacquire_hold_sec", 0.15)
+        self.declare_parameter("reacquire_ramp_duration_sec", 0.90)
+        self.declare_parameter("reacquire_forward_scale_initial", 0.15)
+        self.declare_parameter("reacquire_turn_scale_initial", 0.45)
+        self.declare_parameter("clear_person_on_tracking_lost", True)
+        self.declare_parameter("require_fresh_person_after_reacquire", True)
+        self.declare_parameter("fresh_person_wait_sec", 0.35)
 
         self.person_topic = str(self.get_parameter("person_topic").value)
         self.tracking_state_topic = str(self.get_parameter("tracking_state_topic").value)
@@ -125,6 +151,7 @@ class HostMPCControllerNode(Node):
         self.angle_tolerance = float(self.get_parameter("angle_tolerance").value)
         self.stop_when_aligned = bool(self.get_parameter("stop_when_aligned").value)
         self.stop_on_lost_target = bool(self.get_parameter("stop_on_lost_target").value)
+        self.hold_on_lost_tracking = bool(self.get_parameter("hold_on_lost_tracking").value)
         self.allow_reverse = bool(self.get_parameter("allow_reverse").value)
         self.target_lost_duration_sec = float(self.get_parameter("target_lost_duration_sec").value)
 
@@ -171,12 +198,39 @@ class HostMPCControllerNode(Node):
         self.tracking_angle_gain = max(0.1, float(self.get_parameter("tracking_angle_gain").value))
         self.distance_filter_alpha = float(self.get_parameter("distance_filter_alpha").value)
         self.angle_filter_alpha = float(self.get_parameter("angle_filter_alpha").value)
+        self.enable_person_state_prediction = bool(
+            self.get_parameter("enable_person_state_prediction").value
+        )
+        self.max_person_prediction_sec = max(
+            0.0, float(self.get_parameter("max_person_prediction_sec").value)
+        )
+        self.person_rate_filter_alpha = float(
+            np.clip(float(self.get_parameter("person_rate_filter_alpha").value), 0.0, 1.0)
+        )
+        self.max_distance_rate = max(0.0, float(self.get_parameter("max_distance_rate").value))
+        self.max_person_angle_rate = max(0.0, float(self.get_parameter("max_person_angle_rate").value))
+        self.latency_speed_scale_start_sec = max(
+            0.0, float(self.get_parameter("latency_speed_scale_start_sec").value)
+        )
+        self.latency_speed_scale_end_sec = max(
+            self.latency_speed_scale_start_sec + 1e-3,
+            float(self.get_parameter("latency_speed_scale_end_sec").value),
+        )
+        self.stale_forward_stop_sec = max(0.0, float(self.get_parameter("stale_forward_stop_sec").value))
+        self.latency_distance_margin_gain = max(
+            0.0, float(self.get_parameter("latency_distance_margin_gain").value)
+        )
+        self.max_latency_distance_margin = max(
+            0.0, float(self.get_parameter("max_latency_distance_margin").value)
+        )
         self.min_valid_distance = float(self.get_parameter("min_valid_distance").value)
         self.max_valid_distance = float(self.get_parameter("max_valid_distance").value)
         self.enable_distance_speed_profile = bool(self.get_parameter("enable_distance_speed_profile").value)
         self.reverse_distance_threshold = float(self.get_parameter("reverse_distance_threshold").value)
         self.stop_reverse_distance = float(self.get_parameter("stop_reverse_distance").value)
         self.min_forward_distance = float(self.get_parameter("min_forward_distance").value)
+        self.soft_stop_distance = float(self.get_parameter("soft_stop_distance").value)
+        self.stop_hold_distance = float(self.get_parameter("stop_hold_distance").value)
         self.speed_profile_near_distance = float(self.get_parameter("speed_profile_near_distance").value)
         self.speed_profile_far_distance = float(self.get_parameter("speed_profile_far_distance").value)
         self.speed_profile_min_v = float(self.get_parameter("speed_profile_min_v").value)
@@ -184,7 +238,42 @@ class HostMPCControllerNode(Node):
         self.angle_priority_threshold = max(0.0, float(self.get_parameter("angle_priority_threshold").value))
         self.min_heading_speed_scale = float(self.get_parameter("min_heading_speed_scale").value)
         self.max_accel = max(0.0, float(self.get_parameter("max_accel").value))
+        self.max_decel = max(
+            self.max_accel,
+            float(self.get_parameter("max_decel").value),
+        )
         self.max_w_accel = max(0.0, float(self.get_parameter("max_w_accel").value))
+        self.linear_cmd_filter_alpha = float(
+            np.clip(float(self.get_parameter("linear_cmd_filter_alpha").value), 0.0, 0.95)
+        )
+        self.linear_sign_change_hold_sec = max(
+            0.0,
+            float(self.get_parameter("linear_sign_change_hold_sec").value),
+        )
+        self.reverse_angle_gate = max(0.0, float(self.get_parameter("reverse_angle_gate").value))
+        self.enable_reacquire_ramp = bool(self.get_parameter("enable_reacquire_ramp").value)
+        self.reacquire_trigger_lost_sec = max(
+            0.0,
+            float(self.get_parameter("reacquire_trigger_lost_sec").value),
+        )
+        self.reacquire_hold_sec = max(0.0, float(self.get_parameter("reacquire_hold_sec").value))
+        self.reacquire_ramp_duration_sec = max(
+            1e-3,
+            float(self.get_parameter("reacquire_ramp_duration_sec").value),
+        )
+        self.reacquire_forward_scale_initial = float(
+            np.clip(float(self.get_parameter("reacquire_forward_scale_initial").value), 0.0, 1.0)
+        )
+        self.reacquire_turn_scale_initial = float(
+            np.clip(float(self.get_parameter("reacquire_turn_scale_initial").value), 0.0, 1.0)
+        )
+        self.clear_person_on_tracking_lost = bool(
+            self.get_parameter("clear_person_on_tracking_lost").value
+        )
+        self.require_fresh_person_after_reacquire = bool(
+            self.get_parameter("require_fresh_person_after_reacquire").value
+        )
+        self.fresh_person_wait_sec = max(0.0, float(self.get_parameter("fresh_person_wait_sec").value))
 
         self.speed_profile_far_distance = max(
             self.speed_profile_far_distance, self.speed_profile_near_distance + 1e-3
@@ -192,6 +281,12 @@ class HostMPCControllerNode(Node):
         if self.min_forward_distance <= 0.0:
             self.min_forward_distance = self.desired_distance + self.distance_tolerance
         self.min_forward_distance = max(0.0, self.min_forward_distance)
+        if self.soft_stop_distance <= 0.0:
+            self.soft_stop_distance = self.min_forward_distance + 0.30
+        if self.stop_hold_distance <= 0.0:
+            self.stop_hold_distance = max(self.desired_distance - self.distance_tolerance, 0.0)
+        self.soft_stop_distance = max(self.soft_stop_distance, self.min_forward_distance + 1e-3)
+        self.stop_hold_distance = max(0.0, min(self.stop_hold_distance, self.min_forward_distance))
         self.speed_profile_min_v = max(0.0, self.speed_profile_min_v)
         self.speed_profile_max_v = max(self.speed_profile_min_v, self.speed_profile_max_v)
         self.min_heading_speed_scale = float(np.clip(self.min_heading_speed_scale, 0.0, 1.0))
@@ -199,6 +294,8 @@ class HostMPCControllerNode(Node):
         self.state_lock = Lock()
         self.person_distance = None
         self.person_angle = None
+        self.person_distance_rate = 0.0
+        self.person_angle_rate = 0.0
         self.latest_tracking_x = None
         self.latest_tracking_x_stamp_ns = 0
         self.latest_tracking_angle = None
@@ -210,13 +307,15 @@ class HostMPCControllerNode(Node):
         self.last_detected_flag = -1
         self.last_detected_stamp_ns = 0
         self.continuous_lost_since_ns = 0
+        self.last_reacquire_ns = 0
         self.last_warn_ns = 0
         self.last_cmd_v = 0.0
         self.last_cmd_w = 0.0
+        self.last_v_sign_change_ns = 0
 
         self.cmd_pub = self.create_publisher(Twist, self.cmd_topic, 1)
-        self.create_subscription(Vector3Stamped, self.person_topic, self.person_cb, 10)
-        self.create_subscription(Vector3Stamped, self.tracking_state_topic, self.tracking_state_cb, 10)
+        self.create_subscription(Vector3Stamped, self.person_topic, self.person_cb, 1)
+        self.create_subscription(Vector3Stamped, self.tracking_state_topic, self.tracking_state_cb, 1)
         self.timer = self.create_timer(1.0 / max(self.control_hz, 1e-3), self.control_tick)
 
         self.get_logger().info(
@@ -225,8 +324,16 @@ class HostMPCControllerNode(Node):
             f"cmd_topic={self.cmd_topic} "
             f"hz={self.control_hz:.1f} dt={self.dt:.3f} N={self.horizon} "
             f"d_ref={self.desired_distance:.2f} a_ref={self.desired_angle:.2f} "
-            f"tracking_timeout={self.tracking_state_timeout_sec:.3f}s"
+            f"tracking_timeout={self.tracking_state_timeout_sec:.3f}s "
+            f"max_accel={self.max_accel:.2f} max_decel={self.max_decel:.2f} "
+            f"reacquire_ramp={self.enable_reacquire_ramp}"
         )
+
+    def message_stamp_ns(self, msg_stamp, fallback_ns):
+        stamp_ns = int(msg_stamp.sec) * 1_000_000_000 + int(msg_stamp.nanosec)
+        if stamp_ns <= 0:
+            return fallback_ns
+        return stamp_ns
 
     def warn_throttle(self, period_sec, text):
         now_ns = self.get_clock().now().nanoseconds
@@ -241,6 +348,22 @@ class HostMPCControllerNode(Node):
         self.cmd_pub.publish(cmd)
         self.last_cmd_v = 0.0
         self.last_cmd_w = 0.0
+
+    def mark_tracking_lost(self, now_ns):
+        with self.state_lock:
+            self.last_detected_flag = -1
+            if self.continuous_lost_since_ns == 0:
+                self.continuous_lost_since_ns = now_ns
+            if self.clear_person_on_tracking_lost:
+                self.clear_person_state_locked()
+
+    def clear_person_state_locked(self):
+        self.person_distance = None
+        self.person_angle = None
+        self.person_distance_rate = 0.0
+        self.person_angle_rate = 0.0
+        self.last_person_stamp_ns = 0
+        self.have_first_person_frame = False
 
     def clip_v(self, v):
         vmax = self.max_v
@@ -266,7 +389,12 @@ class HostMPCControllerNode(Node):
             return
 
         now_ns = self.get_clock().now().nanoseconds
+        stamp_ns = self.message_stamp_ns(msg.header.stamp, now_ns)
         with self.state_lock:
+            prev_d = self.person_distance
+            prev_a = self.person_angle
+            prev_stamp_ns = self.last_person_stamp_ns
+
             if self.person_distance is None:
                 d = d_raw
                 a = a_raw
@@ -279,9 +407,30 @@ class HostMPCControllerNode(Node):
                 sa = aa * math.sin(self.person_angle) + (1.0 - aa) * math.sin(a_raw)
                 a = math.atan2(sa, ca)
 
+            if prev_d is not None and prev_a is not None and prev_stamp_ns > 0:
+                rate_dt = (stamp_ns - prev_stamp_ns) * 1e-9
+                if rate_dt > 1e-3:
+                    d_rate_raw = (d - prev_d) / rate_dt
+                    a_rate_raw = wrap_to_pi(a - prev_a) / rate_dt
+                    if self.max_distance_rate > 0.0:
+                        d_rate_raw = float(
+                            np.clip(d_rate_raw, -self.max_distance_rate, self.max_distance_rate)
+                        )
+                    if self.max_person_angle_rate > 0.0:
+                        a_rate_raw = float(
+                            np.clip(a_rate_raw, -self.max_person_angle_rate, self.max_person_angle_rate)
+                        )
+                    alpha = self.person_rate_filter_alpha
+                    self.person_distance_rate = (
+                        alpha * self.person_distance_rate + (1.0 - alpha) * d_rate_raw
+                    )
+                    self.person_angle_rate = (
+                        alpha * self.person_angle_rate + (1.0 - alpha) * a_rate_raw
+                    )
+
             self.person_distance = float(d)
             self.person_angle = float(a)
-            self.last_person_stamp_ns = now_ns
+            self.last_person_stamp_ns = stamp_ns
             self.have_first_person_frame = True
 
     def tracking_state_cb(self, msg):
@@ -298,6 +447,8 @@ class HostMPCControllerNode(Node):
         detected = int(detected_raw)
         x_norm = float(msg.vector.x)
         with self.state_lock:
+            prev_detected_flag = self.last_detected_flag
+            prev_lost_since_ns = self.continuous_lost_since_ns
             self.have_first_tracking_frame = True
             self.last_detected_flag = detected
             self.last_detected_stamp_ns = stamp_ns
@@ -321,9 +472,17 @@ class HostMPCControllerNode(Node):
                 self.latest_tracking_angle = a_new
                 self.latest_tracking_angle_stamp_ns = stamp_ns
             if detected == 1:
+                if prev_detected_flag != 1:
+                    lost_for = 0.0
+                    if prev_lost_since_ns > 0:
+                        lost_for = max(0.0, (now_ns - prev_lost_since_ns) * 1e-9)
+                    if lost_for >= self.reacquire_trigger_lost_sec:
+                        self.last_reacquire_ns = now_ns
                 self.continuous_lost_since_ns = 0
             elif self.continuous_lost_since_ns == 0:
                 self.continuous_lost_since_ns = now_ns
+                if self.clear_person_on_tracking_lost:
+                    self.clear_person_state_locked()
 
     def tracking_x_to_angle(self, x_norm):
         x_norm = float(np.clip(x_norm, 0.0, 1.0))
@@ -345,6 +504,74 @@ class HostMPCControllerNode(Node):
         pred_dt = min(age, self.max_prediction_sec)
         return wrap_to_pi(angle + angle_rate * pred_dt), angle_rate, age
 
+    def predict_person_state(self, now_ns, distance, angle, distance_rate, angle_rate, stamp_ns):
+        if distance is None or angle is None:
+            return distance, angle, 0.0, 0.0
+
+        age = 0.0
+        if stamp_ns > 0:
+            age = max(0.0, (now_ns - stamp_ns) * 1e-9)
+
+        if not self.enable_person_state_prediction:
+            return distance, angle, age, 0.0
+
+        pred_dt = min(age, self.max_person_prediction_sec)
+        d_pred = distance + distance_rate * pred_dt
+        a_pred = wrap_to_pi(angle + angle_rate * pred_dt)
+        d_pred = float(np.clip(d_pred, self.min_valid_distance, self.max_valid_distance))
+        return d_pred, a_pred, age, pred_dt
+
+    def latency_speed_scale(self, age_sec):
+        if self.stale_forward_stop_sec > 0.0 and age_sec >= self.stale_forward_stop_sec:
+            return 0.0
+        if age_sec <= self.latency_speed_scale_start_sec:
+            return 1.0
+        if age_sec >= self.latency_speed_scale_end_sec:
+            return 0.0
+
+        ratio = (age_sec - self.latency_speed_scale_start_sec) / max(
+            self.latency_speed_scale_end_sec - self.latency_speed_scale_start_sec, 1e-6
+        )
+        return float(np.clip(1.0 - ratio, 0.0, 1.0))
+
+    def effective_min_forward_distance(self, age_sec):
+        margin = min(
+            self.max_latency_distance_margin,
+            self.latency_distance_margin_gain * max(0.0, age_sec),
+        )
+        return self.min_forward_distance + margin
+
+    def reacquire_motion_scale(self, now_ns):
+        if not self.enable_reacquire_ramp or self.last_reacquire_ns <= 0:
+            return 1.0, 1.0
+
+        age = max(0.0, (now_ns - self.last_reacquire_ns) * 1e-9)
+        if age < self.reacquire_hold_sec:
+            return 0.0, self.reacquire_turn_scale_initial
+
+        ramp_age = age - self.reacquire_hold_sec
+        if ramp_age >= self.reacquire_ramp_duration_sec:
+            return 1.0, 1.0
+
+        ratio = ramp_age / max(self.reacquire_ramp_duration_sec, 1e-6)
+        smooth = ratio * ratio * (3.0 - 2.0 * ratio)
+        v_scale = self.reacquire_forward_scale_initial + (
+            1.0 - self.reacquire_forward_scale_initial
+        ) * smooth
+        w_scale = self.reacquire_turn_scale_initial + (
+            1.0 - self.reacquire_turn_scale_initial
+        ) * smooth
+        return float(np.clip(v_scale, 0.0, 1.0)), float(np.clip(w_scale, 0.0, 1.0))
+
+    def waiting_for_fresh_person_after_reacquire(self, now_ns, person_stamp_ns):
+        if not self.require_fresh_person_after_reacquire or self.last_reacquire_ns <= 0:
+            return False, 0.0
+        if person_stamp_ns > self.last_reacquire_ns:
+            return False, 0.0
+
+        wait_age = max(0.0, (now_ns - self.last_reacquire_ns) * 1e-9)
+        return wait_age < self.fresh_person_wait_sec, wait_age
+
     def accel_limit_w(self, w_cmd):
         if self.max_w_accel <= 1e-6:
             self.last_cmd_w = w_cmd
@@ -355,15 +582,20 @@ class HostMPCControllerNode(Node):
         self.last_cmd_w = w_out
         return w_out
 
-    def publish_tracking_only_cmd(self, angle, angle_rate):
+    def publish_tracking_only_cmd(self, angle, angle_rate, allow_linear=True):
+        now_ns = self.get_clock().now().nanoseconds
+        forward_scale, turn_scale = self.reacquire_motion_scale(now_ns)
         w_cmd = (
             self.tracking_only_kp_w * wrap_to_pi(angle - self.desired_angle)
             + self.tracking_only_kd_w * angle_rate
         )
         w_cmd = self.map_output_w(w_cmd)
+        w_cmd *= turn_scale
         w_cmd = self.accel_limit_w(w_cmd)
-        v_cmd = min(self.tracking_only_linear_speed, self.max_v)
+        v_cmd = min(self.tracking_only_linear_speed, self.max_v) if allow_linear else 0.0
         v_cmd = v_cmd * self.heading_speed_scale(angle - self.desired_angle)
+        if v_cmd > 0.0:
+            v_cmd *= forward_scale
         v_cmd = self.accel_limit_v(v_cmd)
         if self.force_zero_linear_velocity:
             v_cmd = 0.0
@@ -379,14 +611,15 @@ class HostMPCControllerNode(Node):
             return self.max_v
 
         forward_start = max(self.min_forward_distance, self.desired_distance + self.distance_tolerance)
-        near = max(self.speed_profile_near_distance, forward_start + 1e-3)
+        near = max(self.speed_profile_near_distance, self.soft_stop_distance, forward_start + 1e-3)
         far = self.speed_profile_far_distance
         d = max(distance, 0.0)
         if d <= forward_start:
             return 0.0
         if d <= near:
             ratio = (d - forward_start) / max(near - forward_start, 1e-6)
-            return min(self.max_v, self.speed_profile_min_v * float(np.clip(ratio, 0.0, 1.0)))
+            smooth = ratio * ratio * (3.0 - 2.0 * ratio)
+            return min(self.max_v, self.speed_profile_min_v * float(np.clip(smooth, 0.0, 1.0)))
         if d >= far:
             return min(self.max_v, self.speed_profile_max_v)
 
@@ -397,14 +630,18 @@ class HostMPCControllerNode(Node):
     def apply_near_distance_reverse(self, v_cmd, distance, angle):
         if not self.allow_reverse:
             return v_cmd
+        if self.reverse_angle_gate > 0.0 and abs(wrap_to_pi(angle - self.desired_angle)) > self.reverse_angle_gate:
+            return min(v_cmd, 0.0)
         if distance >= self.stop_reverse_distance:
             return v_cmd
+        if distance >= self.stop_hold_distance:
+            return min(v_cmd, 0.0)
 
         if distance <= self.reverse_distance_threshold:
             return -abs(self.max_reverse_v)
 
-        ratio = (self.stop_reverse_distance - distance) / max(
-            self.stop_reverse_distance - self.reverse_distance_threshold, 1e-6
+        ratio = (self.stop_hold_distance - distance) / max(
+            self.stop_hold_distance - self.reverse_distance_threshold, 1e-6
         )
         return min(v_cmd, -abs(self.max_reverse_v) * float(np.clip(ratio, 0.0, 1.0)))
 
@@ -424,11 +661,37 @@ class HostMPCControllerNode(Node):
         return float(np.clip(scale, self.min_heading_speed_scale, 1.0))
 
     def accel_limit_v(self, v_cmd):
-        if self.max_accel <= 1e-6:
+        now_ns = self.get_clock().now().nanoseconds
+        if (
+            self.linear_sign_change_hold_sec > 0.0
+            and self.last_cmd_v * v_cmd < 0.0
+            and abs(self.last_cmd_v) > 1e-3
+            and abs(v_cmd) > 1e-3
+        ):
+            if self.last_v_sign_change_ns == 0:
+                self.last_v_sign_change_ns = now_ns
+            hold_elapsed = (now_ns - self.last_v_sign_change_ns) * 1e-9
+            if hold_elapsed < self.linear_sign_change_hold_sec:
+                v_cmd = 0.0
+            else:
+                self.last_v_sign_change_ns = 0
+        elif abs(v_cmd) < 1e-3 or self.last_cmd_v * v_cmd >= 0.0:
+            self.last_v_sign_change_ns = 0
+
+        if self.linear_cmd_filter_alpha > 0.0:
+            alpha = self.linear_cmd_filter_alpha
+            v_cmd = alpha * self.last_cmd_v + (1.0 - alpha) * v_cmd
+
+        if self.max_accel <= 1e-6 and self.max_decel <= 1e-6:
             self.last_cmd_v = v_cmd
             return v_cmd
 
-        dv_lim = self.max_accel * self.dt
+        limit = self.max_accel if v_cmd >= self.last_cmd_v else self.max_decel
+        if limit <= 1e-6:
+            self.last_cmd_v = v_cmd
+            return v_cmd
+
+        dv_lim = limit * self.dt
         v_out = float(np.clip(v_cmd, self.last_cmd_v - dv_lim, self.last_cmd_v + dv_lim))
         self.last_cmd_v = v_out
         return v_out
@@ -539,6 +802,8 @@ class HostMPCControllerNode(Node):
         with self.state_lock:
             d = self.person_distance
             a_scan = self.person_angle
+            d_rate = self.person_distance_rate
+            a_scan_rate = self.person_angle_rate
             x_track = self.latest_tracking_x
             x_track_stamp_ns = self.latest_tracking_x_stamp_ns
             tracking_angle = self.latest_tracking_angle
@@ -551,6 +816,9 @@ class HostMPCControllerNode(Node):
             detected_stamp_ns = self.last_detected_stamp_ns
             lost_since_ns = self.continuous_lost_since_ns
 
+        d, a_scan, person_age, person_pred_dt = self.predict_person_state(
+            now_ns, d, a_scan, d_rate, a_scan_rate, stamp_ns
+        )
         predicted_angle, predicted_angle_rate, predicted_age = self.predict_tracking_angle(
             now_ns, tracking_angle, tracking_angle_rate, tracking_angle_stamp_ns
         )
@@ -558,6 +826,9 @@ class HostMPCControllerNode(Node):
             detected_flag == 1
             and predicted_angle is not None
             and predicted_age <= self.tracking_x_timeout_sec
+        )
+        waiting_fresh_person, fresh_wait_age = self.waiting_for_fresh_person_after_reacquire(
+            now_ns, stamp_ns
         )
 
         if self.require_first_tracking_frame and not have_first_tracking_frame:
@@ -567,8 +838,17 @@ class HostMPCControllerNode(Node):
             return
 
         if not have_first_frame:
+            if waiting_fresh_person:
+                self.warn_throttle(
+                    1.0,
+                    f"Reacquired tracking; waiting for fresh person_polar "
+                    f"({fresh_wait_age:.2f}s/{self.fresh_person_wait_sec:.2f}s)."
+                )
+                if self.stop_on_lost_target:
+                    self.publish_zero()
+                return
             if self.enable_tracking_only_fallback and tracking_available:
-                self.publish_tracking_only_cmd(predicted_angle, predicted_angle_rate)
+                self.publish_tracking_only_cmd(predicted_angle, predicted_angle_rate, allow_linear=True)
                 return
             self.warn_throttle(1.0, "Waiting for first person frame before starting control.")
             if self.stop_on_lost_target:
@@ -583,12 +863,21 @@ class HostMPCControllerNode(Node):
                     f"Tracking state timeout: age={detect_age:.3f}s > "
                     f"{self.tracking_state_timeout_sec:.3f}s, publish zero."
                 )
+                self.mark_tracking_lost(now_ns)
                 if self.stop_on_lost_target:
                     self.publish_zero()
                 return
 
         if detected_flag == -1 and lost_since_ns > 0:
             lost_for = (now_ns - lost_since_ns) * 1e-9
+            if self.hold_on_lost_tracking and lost_for > self.target_lost_duration_sec:
+                self.warn_throttle(
+                    1.0,
+                    f"Tracking target lost for {lost_for:.2f}s, hold zero cmd."
+                )
+                if self.stop_on_lost_target:
+                    self.publish_zero()
+                return
             if lost_for > self.target_lost_duration_sec:
                 self.warn_throttle(
                     1.0,
@@ -598,9 +887,19 @@ class HostMPCControllerNode(Node):
                     self.publish_zero()
                 return
 
+        if waiting_fresh_person:
+            self.warn_throttle(
+                1.0,
+                f"Reacquired tracking; hold until fresh person_polar arrives "
+                f"({fresh_wait_age:.2f}s/{self.fresh_person_wait_sec:.2f}s)."
+            )
+            if self.stop_on_lost_target:
+                self.publish_zero()
+            return
+
         if d is None or a_scan is None:
             if self.enable_tracking_only_fallback and tracking_available:
-                self.publish_tracking_only_cmd(predicted_angle, predicted_angle_rate)
+                self.publish_tracking_only_cmd(predicted_angle, predicted_angle_rate, allow_linear=True)
                 return
             if self.stop_on_lost_target:
                 self.publish_zero()
@@ -610,10 +909,15 @@ class HostMPCControllerNode(Node):
         if self.use_tracking_x_for_angle and tracking_available:
             a = predicted_angle
 
-        age = (now_ns - stamp_ns) * 1e-9
+        age = person_age
         if age > self.msg_timeout:
             if self.enable_tracking_only_fallback and tracking_available:
-                self.publish_tracking_only_cmd(predicted_angle, predicted_angle_rate)
+                allow_linear = d is not None and d > self.effective_min_forward_distance(age)
+                self.publish_tracking_only_cmd(
+                    predicted_angle,
+                    predicted_angle_rate,
+                    allow_linear=allow_linear,
+                )
                 return
             self.warn_throttle(
                 1.0,
@@ -639,10 +943,18 @@ class HostMPCControllerNode(Node):
         if v_cmd > 0.0:
             v_lim_distance = self.distance_speed_limit(d)
             v_lim_heading = v_lim_distance * self.heading_speed_scale(a - self.desired_angle)
-            v_cmd = min(v_cmd, v_lim_heading)
-        if d <= self.min_forward_distance and v_cmd > 0.0:
+            v_cmd = min(v_cmd, v_lim_heading * self.latency_speed_scale(age))
+        min_forward_distance = self.effective_min_forward_distance(age)
+        if d <= min_forward_distance and v_cmd > 0.0:
             v_cmd = 0.0
         v_cmd = self.apply_near_distance_reverse(v_cmd, d, a)
+        if d > min_forward_distance and v_cmd < 0.0:
+            v_cmd = 0.0
+
+        forward_scale, turn_scale = self.reacquire_motion_scale(now_ns)
+        if v_cmd > 0.0:
+            v_cmd *= forward_scale
+        w_cmd *= turn_scale
 
         v_cmd = self.accel_limit_v(v_cmd)
         if self.force_zero_linear_velocity:
