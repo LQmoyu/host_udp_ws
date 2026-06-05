@@ -96,6 +96,9 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("person_rate_filter_alpha", 0.75)
         self.declare_parameter("max_distance_rate", 1.2)
         self.declare_parameter("max_person_angle_rate", 2.5)
+        self.declare_parameter("distance_increase_filter_alpha", -1.0)
+        self.declare_parameter("max_distance_jump_up", 0.0)
+        self.declare_parameter("max_forward_v_after_reacquire", 0.0)
         self.declare_parameter("latency_speed_scale_start_sec", 0.06)
         self.declare_parameter("latency_speed_scale_end_sec", 0.20)
         self.declare_parameter("stale_forward_stop_sec", 0.25)
@@ -121,6 +124,18 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("linear_cmd_filter_alpha", 0.0)
         self.declare_parameter("linear_sign_change_hold_sec", 0.0)
         self.declare_parameter("reverse_angle_gate", 0.0)
+        self.declare_parameter("safety_hold_distance", 0.0)
+        self.declare_parameter("safety_reverse_distance", 0.0)
+        self.declare_parameter("safety_reverse_v", 0.0)
+        self.declare_parameter("near_distance_turn_scale", 1.0)
+        self.declare_parameter("settle_hold_enabled", True)
+        self.declare_parameter("settle_hold_min_distance", 0.0)
+        self.declare_parameter("settle_hold_max_distance", 0.0)
+        self.declare_parameter("settle_hold_max_abs_distance_rate", 0.08)
+        self.declare_parameter("settle_hold_angle", 0.12)
+        self.declare_parameter("settle_hold_cmd_epsilon", 0.04)
+        self.declare_parameter("settle_hold_release_margin", 0.18)
+        self.declare_parameter("settle_hold_release_distance_rate", 0.18)
         self.declare_parameter("enable_reacquire_ramp", True)
         self.declare_parameter("reacquire_trigger_lost_sec", 0.08)
         self.declare_parameter("reacquire_hold_sec", 0.15)
@@ -209,6 +224,19 @@ class HostMPCControllerNode(Node):
         )
         self.max_distance_rate = max(0.0, float(self.get_parameter("max_distance_rate").value))
         self.max_person_angle_rate = max(0.0, float(self.get_parameter("max_person_angle_rate").value))
+        self.distance_increase_filter_alpha = float(
+            self.get_parameter("distance_increase_filter_alpha").value
+        )
+        if self.distance_increase_filter_alpha < 0.0:
+            self.distance_increase_filter_alpha = self.distance_filter_alpha
+        self.distance_increase_filter_alpha = float(
+            np.clip(self.distance_increase_filter_alpha, 0.0, 0.98)
+        )
+        self.max_distance_jump_up = max(0.0, float(self.get_parameter("max_distance_jump_up").value))
+        self.max_forward_v_after_reacquire = max(
+            0.0,
+            float(self.get_parameter("max_forward_v_after_reacquire").value),
+        )
         self.latency_speed_scale_start_sec = max(
             0.0, float(self.get_parameter("latency_speed_scale_start_sec").value)
         )
@@ -251,6 +279,29 @@ class HostMPCControllerNode(Node):
             float(self.get_parameter("linear_sign_change_hold_sec").value),
         )
         self.reverse_angle_gate = max(0.0, float(self.get_parameter("reverse_angle_gate").value))
+        self.safety_hold_distance = float(self.get_parameter("safety_hold_distance").value)
+        self.safety_reverse_distance = float(self.get_parameter("safety_reverse_distance").value)
+        self.safety_reverse_v = max(0.0, float(self.get_parameter("safety_reverse_v").value))
+        self.near_distance_turn_scale = float(
+            np.clip(float(self.get_parameter("near_distance_turn_scale").value), 0.0, 1.0)
+        )
+        self.settle_hold_enabled = bool(self.get_parameter("settle_hold_enabled").value)
+        self.settle_hold_min_distance = float(self.get_parameter("settle_hold_min_distance").value)
+        self.settle_hold_max_distance = float(self.get_parameter("settle_hold_max_distance").value)
+        self.settle_hold_max_abs_distance_rate = max(
+            0.0,
+            float(self.get_parameter("settle_hold_max_abs_distance_rate").value),
+        )
+        self.settle_hold_angle = max(0.0, float(self.get_parameter("settle_hold_angle").value))
+        self.settle_hold_cmd_epsilon = max(0.0, float(self.get_parameter("settle_hold_cmd_epsilon").value))
+        self.settle_hold_release_margin = max(
+            0.0,
+            float(self.get_parameter("settle_hold_release_margin").value),
+        )
+        self.settle_hold_release_distance_rate = max(
+            self.settle_hold_max_abs_distance_rate,
+            float(self.get_parameter("settle_hold_release_distance_rate").value),
+        )
         self.enable_reacquire_ramp = bool(self.get_parameter("enable_reacquire_ramp").value)
         self.reacquire_trigger_lost_sec = max(
             0.0,
@@ -285,8 +336,21 @@ class HostMPCControllerNode(Node):
             self.soft_stop_distance = self.min_forward_distance + 0.30
         if self.stop_hold_distance <= 0.0:
             self.stop_hold_distance = max(self.desired_distance - self.distance_tolerance, 0.0)
+        if self.safety_hold_distance <= 0.0:
+            self.safety_hold_distance = self.min_forward_distance
+        if self.safety_reverse_distance <= 0.0:
+            self.safety_reverse_distance = self.stop_reverse_distance
+        if self.safety_reverse_v <= 0.0:
+            self.safety_reverse_v = min(abs(self.max_reverse_v), 0.12)
+        if self.settle_hold_min_distance <= 0.0:
+            self.settle_hold_min_distance = max(self.safety_reverse_distance, self.desired_distance - self.distance_tolerance)
+        if self.settle_hold_max_distance <= 0.0:
+            self.settle_hold_max_distance = max(self.safety_hold_distance, self.desired_distance + self.distance_tolerance)
         self.soft_stop_distance = max(self.soft_stop_distance, self.min_forward_distance + 1e-3)
         self.stop_hold_distance = max(0.0, min(self.stop_hold_distance, self.min_forward_distance))
+        self.safety_hold_distance = max(self.safety_hold_distance, self.min_forward_distance)
+        self.safety_reverse_distance = min(self.safety_reverse_distance, self.safety_hold_distance)
+        self.settle_hold_min_distance = max(0.0, min(self.settle_hold_min_distance, self.settle_hold_max_distance))
         self.speed_profile_min_v = max(0.0, self.speed_profile_min_v)
         self.speed_profile_max_v = max(self.speed_profile_min_v, self.speed_profile_max_v)
         self.min_heading_speed_scale = float(np.clip(self.min_heading_speed_scale, 0.0, 1.0))
@@ -312,6 +376,7 @@ class HostMPCControllerNode(Node):
         self.last_cmd_v = 0.0
         self.last_cmd_w = 0.0
         self.last_v_sign_change_ns = 0
+        self.settle_hold_active = False
 
         self.cmd_pub = self.create_publisher(Twist, self.cmd_topic, 1)
         self.create_subscription(Vector3Stamped, self.person_topic, self.person_cb, 1)
@@ -399,7 +464,12 @@ class HostMPCControllerNode(Node):
                 d = d_raw
                 a = a_raw
             else:
-                ad = np.clip(self.distance_filter_alpha, 0.0, 1.0)
+                if d_raw > self.person_distance:
+                    ad = np.clip(self.distance_increase_filter_alpha, 0.0, 1.0)
+                    if self.max_distance_jump_up > 0.0:
+                        d_raw = min(d_raw, self.person_distance + self.max_distance_jump_up)
+                else:
+                    ad = np.clip(self.distance_filter_alpha, 0.0, 1.0)
                 aa = np.clip(self.angle_filter_alpha, 0.0, 1.0)
                 d = ad * self.person_distance + (1.0 - ad) * d_raw
                 # Keep angle filter robust near +/-pi boundary.
@@ -630,6 +700,15 @@ class HostMPCControllerNode(Node):
     def apply_near_distance_reverse(self, v_cmd, distance, angle):
         if not self.allow_reverse:
             return v_cmd
+        if distance < self.safety_reverse_distance:
+            ratio = (self.safety_reverse_distance - distance) / max(
+                self.safety_reverse_distance - self.reverse_distance_threshold,
+                1e-6,
+            )
+            v_reverse = self.safety_reverse_v + ratio * (abs(self.max_reverse_v) - self.safety_reverse_v)
+            return min(v_cmd, -float(np.clip(v_reverse, self.safety_reverse_v, abs(self.max_reverse_v))))
+        if distance < self.safety_hold_distance:
+            return min(v_cmd, 0.0)
         if self.reverse_angle_gate > 0.0 and abs(wrap_to_pi(angle - self.desired_angle)) > self.reverse_angle_gate:
             return min(v_cmd, 0.0)
         if distance >= self.stop_reverse_distance:
@@ -659,6 +738,58 @@ class HostMPCControllerNode(Node):
         ratio = (a - self.angle_priority_threshold) / max(max_angle - self.angle_priority_threshold, 1e-6)
         scale = 1.0 - ratio * (1.0 - self.min_heading_speed_scale)
         return float(np.clip(scale, self.min_heading_speed_scale, 1.0))
+
+    def near_distance_w_scale(self, distance):
+        if self.near_distance_turn_scale >= 1.0 or distance >= self.safety_hold_distance:
+            return 1.0
+        if distance <= self.safety_reverse_distance:
+            return self.near_distance_turn_scale
+
+        ratio = (distance - self.safety_reverse_distance) / max(
+            self.safety_hold_distance - self.safety_reverse_distance,
+            1e-6,
+        )
+        return float(
+            np.clip(
+                self.near_distance_turn_scale + ratio * (1.0 - self.near_distance_turn_scale),
+                self.near_distance_turn_scale,
+                1.0,
+            )
+        )
+
+    def should_hold_settled_distance(self, distance, angle, distance_rate, v_cmd):
+        if not self.settle_hold_enabled:
+            self.settle_hold_active = False
+            return False
+
+        angle_ok = abs(wrap_to_pi(angle - self.desired_angle)) <= self.settle_hold_angle
+        rate_abs = abs(distance_rate)
+
+        if self.settle_hold_active:
+            release_min = self.settle_hold_min_distance - self.settle_hold_release_margin
+            release_max = self.settle_hold_max_distance + self.settle_hold_release_margin
+            release = (
+                distance < release_min
+                or distance > release_max
+                or rate_abs > self.settle_hold_release_distance_rate
+                or not angle_ok
+            )
+            if release:
+                self.settle_hold_active = False
+                return False
+            return True
+
+        if distance < self.settle_hold_min_distance or distance > self.settle_hold_max_distance:
+            return False
+        if rate_abs > self.settle_hold_max_abs_distance_rate:
+            return False
+        if not angle_ok:
+            return False
+        if abs(v_cmd) > self.settle_hold_cmd_epsilon:
+            return False
+
+        self.settle_hold_active = True
+        return True
 
     def accel_limit_v(self, v_cmd):
         now_ns = self.get_clock().now().nanoseconds
@@ -944,6 +1075,13 @@ class HostMPCControllerNode(Node):
             v_lim_distance = self.distance_speed_limit(d)
             v_lim_heading = v_lim_distance * self.heading_speed_scale(a - self.desired_angle)
             v_cmd = min(v_cmd, v_lim_heading * self.latency_speed_scale(age))
+            if self.max_forward_v_after_reacquire > 0.0 and self.last_reacquire_ns > 0:
+                reacquire_age = max(0.0, (now_ns - self.last_reacquire_ns) * 1e-9)
+                capped_duration = self.reacquire_hold_sec + 0.5 * self.reacquire_ramp_duration_sec
+                if reacquire_age < capped_duration:
+                    v_cmd = min(v_cmd, self.max_forward_v_after_reacquire)
+        if self.should_hold_settled_distance(d, a, d_rate, v_cmd):
+            v_cmd = 0.0
         min_forward_distance = self.effective_min_forward_distance(age)
         if d <= min_forward_distance and v_cmd > 0.0:
             v_cmd = 0.0
@@ -954,7 +1092,7 @@ class HostMPCControllerNode(Node):
         forward_scale, turn_scale = self.reacquire_motion_scale(now_ns)
         if v_cmd > 0.0:
             v_cmd *= forward_scale
-        w_cmd *= turn_scale
+        w_cmd *= turn_scale * self.near_distance_w_scale(d)
 
         v_cmd = self.accel_limit_v(v_cmd)
         if self.force_zero_linear_velocity:

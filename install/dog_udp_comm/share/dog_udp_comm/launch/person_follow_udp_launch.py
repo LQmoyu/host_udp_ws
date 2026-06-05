@@ -20,6 +20,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument("follow_params_file", default_value=follow_default_params),
         DeclareLaunchArgument("enable_lidar", default_value="true"),
+        DeclareLaunchArgument("enable_latency_monitor", default_value="true"),
         DeclareLaunchArgument("lidar_params_file", default_value=lidar_default_params),
 
         IncludeLaunchDescription(
@@ -55,6 +56,14 @@ def generate_launch_description():
             executable="sender_node",
             name="udp_cmd_vel_server",
             output="screen",
+            parameters=[follow_params_file],
+        ),
+        Node(
+            package="dog_udp_comm",
+            executable="latency_monitor.py",
+            name="person_follow_latency_monitor",
+            output="screen",
+            condition=IfCondition(LaunchConfiguration("enable_latency_monitor")),
             parameters=[follow_params_file],
         ),
     ])

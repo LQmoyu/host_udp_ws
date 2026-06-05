@@ -22,10 +22,25 @@ pixel_to_scan_polar:
     cx: 320.0
     yaw_cam_to_lidar: 0.0
     search_half_window: 4
+    search_mode: sector
+    sector_half_angle_deg: 2.0
+    sector_min_points: 1
+    sector_select_mode: percentile
+    sector_range_percentile: 70.0
+    ignore_close_range_below: 0.95
+    ignore_close_if_farther_exists: 1.25
+    enable_output_filter: true
+    range_filter_alpha_near: 0.35
+    range_filter_alpha_far: 0.72
+    angle_filter_alpha: 0.55
+    max_range_step_up: 0.18
+    max_range_step_down: 0.30
     range_min_valid: 0.10
     range_max_valid: 10.0
     prefer_scan_angle_output: false
     publish_debug: false
+    debug_topic: /person_polar_debug
+    debug_log_period_sec: 1.0
     sync_policy: latest
     max_sync_diff_sec: 0.12
     warn_sync_diff_sec: 0.08
@@ -43,51 +58,54 @@ host_mpc_controller:
     msg_timeout: 1.0
     tracking_state_timeout_sec: 1.0
     require_first_tracking_frame: true
-    desired_distance: 1.35
+    desired_distance: 1.20
     desired_angle: 0.0
-    distance_tolerance: 0.24
-    angle_tolerance: 0.08
+    distance_tolerance: 0.14
+    angle_tolerance: 0.10
     stop_when_aligned: true
     stop_on_lost_target: true
     hold_on_lost_tracking: true
     allow_reverse: true
     target_lost_duration_sec: 0.10
-    max_v: 0.68
-    max_w: 2.5
-    max_reverse_v: 0.32
+    max_v: 0.55
+    max_w: 2.3
+    max_reverse_v: 0.18
     force_zero_linear_velocity: false
     reverse_angular_output: true
-    q_dist: 8.0
+    q_dist: 10.0
     q_angle: 17.0
-    r_v: 1.45
-    r_w: 0.34
+    r_v: 1.05
+    r_w: 0.42
     qf_scale: 4.0
-    kff_dist: 0.28
-    kff_angle: 1.55
+    kff_dist: 0.32
+    kff_angle: 1.35
     use_tracking_x_for_angle: true
     tracking_x_target: 0.5
-    tracking_x_deadband: 0.014
+    tracking_x_deadband: 0.024
     tracking_x_timeout_sec: 1.0
     enable_angle_prediction: true
     max_prediction_sec: 0.24
-    angle_rate_filter_alpha: 0.86
-    max_angle_rate: 1.6
+    angle_rate_filter_alpha: 0.90
+    max_angle_rate: 1.2
     enable_tracking_only_fallback: true
-    tracking_only_linear_speed: 0.07
-    tracking_only_kp_w: 1.95
-    tracking_only_kd_w: 0.75
+    tracking_only_linear_speed: 0.10
+    tracking_only_kp_w: 1.65
+    tracking_only_kd_w: 0.95
     image_width: 640.0
     fx: 600.0
     cx: 320.0
     yaw_cam_to_control: 0.0
-    tracking_angle_gain: 1.35
-    distance_filter_alpha: 0.90
-    angle_filter_alpha: 0.88
+    tracking_angle_gain: 1.15
+    distance_filter_alpha: 0.84
+    angle_filter_alpha: 0.92
     enable_person_state_prediction: true
     max_person_prediction_sec: 0.32
     person_rate_filter_alpha: 0.72
-    max_distance_rate: 0.8
-    max_person_angle_rate: 1.5
+    max_distance_rate: 0.60
+    max_person_angle_rate: 1.0
+    distance_increase_filter_alpha: 0.86
+    max_distance_jump_up: 0.25
+    max_forward_v_after_reacquire: 0.16
     latency_speed_scale_start_sec: 0.18
     latency_speed_scale_end_sec: 0.55
     stale_forward_stop_sec: 0.75
@@ -96,32 +114,56 @@ host_mpc_controller:
     min_valid_distance: 0.15
     max_valid_distance: 8.0
     enable_distance_speed_profile: true
-    reverse_distance_threshold: 0.95
-    stop_reverse_distance: 1.18
-    min_forward_distance: 1.62
-    soft_stop_distance: 2.05
-    stop_hold_distance: 1.12
-    speed_profile_near_distance: 2.05
-    speed_profile_far_distance: 2.75
-    speed_profile_min_v: 0.06
-    speed_profile_max_v: 0.68
+    reverse_distance_threshold: 0.85
+    stop_reverse_distance: 1.05
+    min_forward_distance: 1.35
+    soft_stop_distance: 1.85
+    stop_hold_distance: 0.98
+    speed_profile_near_distance: 1.85
+    speed_profile_far_distance: 2.50
+    speed_profile_min_v: 0.10
+    speed_profile_max_v: 0.55
     angle_priority_threshold: 0.15
     min_heading_speed_scale: 0.03
-    max_accel: 0.30
-    max_decel: 0.85
-    max_w_accel: 3.2
-    linear_cmd_filter_alpha: 0.65
-    linear_sign_change_hold_sec: 0.18
+    max_accel: 0.36
+    max_decel: 1.25
+    max_w_accel: 2.8
+    linear_cmd_filter_alpha: 0.38
+    linear_sign_change_hold_sec: 0.16
     reverse_angle_gate: 0.20
+    safety_hold_distance: 1.35
+    safety_reverse_distance: 1.02
+    safety_reverse_v: 0.04
+    near_distance_turn_scale: 0.65
+    settle_hold_enabled: true
+    settle_hold_min_distance: 1.00
+    settle_hold_max_distance: 1.45
+    settle_hold_max_abs_distance_rate: 0.12
+    settle_hold_angle: 0.14
+    settle_hold_cmd_epsilon: 0.16
+    settle_hold_release_margin: 0.22
+    settle_hold_release_distance_rate: 0.24
     enable_reacquire_ramp: true
     reacquire_trigger_lost_sec: 0.08
-    reacquire_hold_sec: 0.15
-    reacquire_ramp_duration_sec: 0.90
-    reacquire_forward_scale_initial: 0.12
+    reacquire_hold_sec: 0.12
+    reacquire_ramp_duration_sec: 0.70
+    reacquire_forward_scale_initial: 0.18
     reacquire_turn_scale_initial: 0.45
     clear_person_on_tracking_lost: true
     require_fresh_person_after_reacquire: true
-    fresh_person_wait_sec: 0.35
+    fresh_person_wait_sec: 0.12
+
+person_follow_latency_monitor:
+  ros__parameters:
+    tracking_topic: /tracking
+    tracking_state_topic: /tracking_state
+    pixel_topic: /tracking_pixel
+    person_topic: /person_polar
+    person_debug_topic: /person_polar_debug
+    cmd_topic: /track_cmd_vel
+    report_period_sec: 1.0
+    window_size: 120
+    relative_timestamp_threshold_ms: 1000000000.0
 
 udp_cmd_vel_server:
   ros__parameters:

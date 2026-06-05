@@ -106,6 +106,7 @@ class LatencyMonitorNode(Node):
         self.declare_parameter("tracking_state_topic", "/tracking_state")
         self.declare_parameter("pixel_topic", "/tracking_pixel")
         self.declare_parameter("person_topic", "/person_polar")
+        self.declare_parameter("person_debug_topic", "/person_polar_debug")
         self.declare_parameter("cmd_topic", "/track_cmd_vel")
         self.declare_parameter("report_period_sec", 1.0)
         self.declare_parameter("window_size", 120)
@@ -115,6 +116,7 @@ class LatencyMonitorNode(Node):
         self.tracking_state_topic = str(self.get_parameter("tracking_state_topic").value)
         self.pixel_topic = str(self.get_parameter("pixel_topic").value)
         self.person_topic = str(self.get_parameter("person_topic").value)
+        self.person_debug_topic = str(self.get_parameter("person_debug_topic").value)
         self.cmd_topic = str(self.get_parameter("cmd_topic").value)
         self.report_period_sec = max(0.2, float(self.get_parameter("report_period_sec").value))
         self.window_size = max(10, int(self.get_parameter("window_size").value))
@@ -134,18 +136,21 @@ class LatencyMonitorNode(Node):
         self.cmd_from_person_ms = deque(maxlen=self.window_size)
         self.latest_cmd_v = 0.0
         self.latest_cmd_w = 0.0
+        self.latest_person_debug = "n/a"
 
         self.create_subscription(String, self.tracking_topic, self.tracking_cb, 10)
         self.create_subscription(Vector3Stamped, self.tracking_state_topic, self.state_cb, 10)
         self.create_subscription(PointStamped, self.pixel_topic, self.pixel_cb, 10)
         self.create_subscription(Vector3Stamped, self.person_topic, self.person_cb, 10)
+        self.create_subscription(String, self.person_debug_topic, self.person_debug_cb, 10)
         self.create_subscription(Twist, self.cmd_topic, self.cmd_cb, 10)
         self.create_timer(self.report_period_sec, self.report)
 
         self.get_logger().info(
             "Latency monitor ready. "
             f"tracking={self.tracking_topic}, state={self.tracking_state_topic}, "
-            f"pixel={self.pixel_topic}, person={self.person_topic}, cmd={self.cmd_topic}"
+            f"pixel={self.pixel_topic}, person={self.person_topic}, "
+            f"person_debug={self.person_debug_topic}, cmd={self.cmd_topic}"
         )
 
     def now_ns(self) -> int:
@@ -188,6 +193,9 @@ class LatencyMonitorNode(Node):
         if self.person.last_header_stamp_ns > 0:
             self.cmd_from_person_ms.append(ms_from_ns(rx_ns - self.person.last_header_stamp_ns))
 
+    def person_debug_cb(self, msg: String):
+        self.latest_person_debug = msg.data
+
     def median(self, values) -> Optional[float]:
         if not values:
             return None
@@ -217,6 +225,7 @@ class LatencyMonitorNode(Node):
             f"  cmd_age: from_tracking_state={fmt_ms(self.median(self.cmd_from_state_ms))}, "
             f"from_person_polar={fmt_ms(self.median(self.cmd_from_person_ms))}, "
             f"last_cmd_v={self.latest_cmd_v:+.3f}, last_cmd_w={self.latest_cmd_w:+.3f}",
+            f"  lidar_match: {self.latest_person_debug}",
         ]
         source_age = self.median(self.tracking_source_ages_ms)
         if source_age is not None:
