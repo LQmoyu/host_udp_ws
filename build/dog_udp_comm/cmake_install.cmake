@@ -65,6 +65,7 @@ endif()
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/dog_udp_comm" TYPE PROGRAM FILES
     "/home/admin/workspace/host_udp_ws/src/dog_udp_comm/scripts/keyboard_teleop.py"
+    "/home/admin/workspace/host_udp_ws/src/dog_udp_comm/scripts/person_follow_utils.py"
     "/home/admin/workspace/host_udp_ws/src/dog_udp_comm/scripts/host_mpc_controller.py"
     "/home/admin/workspace/host_udp_ws/src/dog_udp_comm/scripts/pixel_to_scan_polar.py"
     "/home/admin/workspace/host_udp_ws/src/dog_udp_comm/scripts/tracking_string_bridge.py"

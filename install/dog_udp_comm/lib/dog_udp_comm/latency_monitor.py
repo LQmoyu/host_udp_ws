@@ -60,6 +60,29 @@ def fmt_hz(value: Optional[float]) -> str:
     return f"{value:.1f}Hz"
 
 
+def fmt_m(value: Optional[float]) -> str:
+    if value is None or not math.isfinite(value):
+        return "n/a"
+    return f"{value:.3f}m"
+
+
+def parse_debug_float(text: str, key: str) -> Optional[float]:
+    match = re.search(rf"(?:^|\s){re.escape(key)}=([-+]?\d*\.?\d+(?:[eE][-+]?\d+)?)", text)
+    if not match:
+        return None
+    try:
+        return float(match.group(1))
+    except ValueError:
+        return None
+
+
+def parse_debug_int(text: str, key: str) -> Optional[int]:
+    value = parse_debug_float(text, key)
+    if value is None:
+        return None
+    return int(value)
+
+
 class TopicStats:
     def __init__(self, window_size: int):
         self.times_ns = deque(maxlen=max(2, window_size))
@@ -137,6 +160,14 @@ class LatencyMonitorNode(Node):
         self.latest_cmd_v = 0.0
         self.latest_cmd_w = 0.0
         self.latest_person_debug = "n/a"
+        self.lidar_hit_values = deque(maxlen=self.window_size)
+        self.lidar_raw_ranges = deque(maxlen=self.window_size)
+        self.lidar_filtered_ranges = deque(maxlen=self.window_size)
+        self.lidar_filter_deltas = deque(maxlen=self.window_size)
+        self.lidar_valid_points = deque(maxlen=self.window_size)
+        self.lidar_filtered_close = deque(maxlen=self.window_size)
+        self.lidar_debug_pixel_ages_ms = deque(maxlen=self.window_size)
+        self.lidar_debug_sync_diffs_ms = deque(maxlen=self.window_size)
 
         self.create_subscription(String, self.tracking_topic, self.tracking_cb, 10)
         self.create_subscription(Vector3Stamped, self.tracking_state_topic, self.state_cb, 10)
@@ -195,6 +226,31 @@ class LatencyMonitorNode(Node):
 
     def person_debug_cb(self, msg: String):
         self.latest_person_debug = msg.data
+        hit = parse_debug_int(msg.data, "hit")
+        if hit is not None:
+            self.lidar_hit_values.append(1 if hit == 1 else 0)
+
+        range_m = parse_debug_float(msg.data, "range")
+        raw_range_m = parse_debug_float(msg.data, "raw_range")
+        valid_points = parse_debug_int(msg.data, "valid_points")
+        filtered_close = parse_debug_int(msg.data, "filtered_close")
+        pixel_age_ms = parse_debug_float(msg.data, "pixel_age")
+        sync_diff_ms = parse_debug_float(msg.data, "sync_diff")
+
+        if range_m is not None:
+            self.lidar_filtered_ranges.append(range_m)
+        if raw_range_m is not None:
+            self.lidar_raw_ranges.append(raw_range_m)
+        if range_m is not None and raw_range_m is not None:
+            self.lidar_filter_deltas.append(range_m - raw_range_m)
+        if valid_points is not None:
+            self.lidar_valid_points.append(valid_points)
+        if filtered_close is not None:
+            self.lidar_filtered_close.append(filtered_close)
+        if pixel_age_ms is not None:
+            self.lidar_debug_pixel_ages_ms.append(pixel_age_ms)
+        if sync_diff_ms is not None:
+            self.lidar_debug_sync_diffs_ms.append(sync_diff_ms)
 
     def median(self, values) -> Optional[float]:
         if not values:
@@ -208,7 +264,23 @@ class LatencyMonitorNode(Node):
         idx = int(round((len(sorted_values) - 1) * 0.95))
         return sorted_values[idx]
 
+    def stdev(self, values) -> Optional[float]:
+        if len(values) < 2:
+            return None
+        return statistics.pstdev(values)
+
+    def hit_rate(self) -> Optional[float]:
+        if not self.lidar_hit_values:
+            return None
+        return 100.0 * sum(self.lidar_hit_values) / len(self.lidar_hit_values)
+
     def report(self):
+        hit_rate = self.hit_rate()
+        hit_rate_text = "n/a" if hit_rate is None else f"{hit_rate:.1f}%"
+        valid_points_p50 = self.median(self.lidar_valid_points)
+        valid_points_text = "n/a" if valid_points_p50 is None else f"{valid_points_p50:.1f}"
+        filtered_close_sum = sum(self.lidar_filtered_close) if self.lidar_filtered_close else 0
+
         lines = [
             "latency summary:",
             f"  hz: tracking={fmt_hz(self.tracking.hz())}, "
@@ -225,6 +297,16 @@ class LatencyMonitorNode(Node):
             f"  cmd_age: from_tracking_state={fmt_ms(self.median(self.cmd_from_state_ms))}, "
             f"from_person_polar={fmt_ms(self.median(self.cmd_from_person_ms))}, "
             f"last_cmd_v={self.latest_cmd_v:+.3f}, last_cmd_w={self.latest_cmd_w:+.3f}",
+            f"  lidar_stats: hit_rate={hit_rate_text} "
+            f"raw_p50={fmt_m(self.median(self.lidar_raw_ranges))}, "
+            f"raw_std={fmt_m(self.stdev(self.lidar_raw_ranges))}, "
+            f"filtered_p50={fmt_m(self.median(self.lidar_filtered_ranges))}, "
+            f"filtered_std={fmt_m(self.stdev(self.lidar_filtered_ranges))}, "
+            f"filter_delta_p50={fmt_m(self.median(self.lidar_filter_deltas))}, "
+            f"valid_points_p50={valid_points_text}, "
+            f"filtered_close_sum={filtered_close_sum}",
+            f"  lidar_debug_age: pixel_age_p50={fmt_ms(self.median(self.lidar_debug_pixel_ages_ms))}, "
+            f"sync_diff_p50={fmt_ms(self.median(self.lidar_debug_sync_diffs_ms))}",
             f"  lidar_match: {self.latest_person_debug}",
         ]
         source_age = self.median(self.tracking_source_ages_ms)

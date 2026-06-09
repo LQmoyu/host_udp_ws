@@ -26,6 +26,11 @@ from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
 from std_msgs.msg import String
 
+try:
+    from person_follow_utils import select_stable_cluster
+except ImportError:
+    from .person_follow_utils import select_stable_cluster
+
 
 def wrap_to_pi(angle):
     while angle > math.pi:
@@ -61,6 +66,12 @@ class PixelToScanPolarNode(Node):
         self.declare_parameter("sector_min_points", 1)
         self.declare_parameter("sector_select_mode", "percentile")
         self.declare_parameter("sector_range_percentile", 35.0)
+        self.declare_parameter("stable_cluster_tolerance", 0.22)
+        self.declare_parameter("stable_cluster_min_points", 1)
+        self.declare_parameter("stable_cluster_max_jump_up", 0.35)
+        self.declare_parameter("stable_cluster_max_jump_down", 0.55)
+        self.declare_parameter("stable_cluster_near_prefer_margin", 0.20)
+        self.declare_parameter("stable_cluster_background_spread", 0.60)
         self.declare_parameter("ignore_close_range_below", 0.0)
         self.declare_parameter("ignore_close_if_farther_exists", 0.0)
         self.declare_parameter("enable_output_filter", True)
@@ -98,6 +109,24 @@ class PixelToScanPolarNode(Node):
         self.sector_select_mode = str(self.get_parameter("sector_select_mode").value).strip().lower()
         self.sector_range_percentile = float(
             np.clip(float(self.get_parameter("sector_range_percentile").value), 0.0, 100.0)
+        )
+        self.stable_cluster_tolerance = max(
+            0.01, float(self.get_parameter("stable_cluster_tolerance").value)
+        )
+        self.stable_cluster_min_points = max(
+            1, int(self.get_parameter("stable_cluster_min_points").value)
+        )
+        self.stable_cluster_max_jump_up = max(
+            0.0, float(self.get_parameter("stable_cluster_max_jump_up").value)
+        )
+        self.stable_cluster_max_jump_down = max(
+            0.0, float(self.get_parameter("stable_cluster_max_jump_down").value)
+        )
+        self.stable_cluster_near_prefer_margin = max(
+            0.0, float(self.get_parameter("stable_cluster_near_prefer_margin").value)
+        )
+        self.stable_cluster_background_spread = max(
+            0.0, float(self.get_parameter("stable_cluster_background_spread").value)
         )
         self.ignore_close_range_below = max(
             0.0,
@@ -142,7 +171,7 @@ class PixelToScanPolarNode(Node):
                 f"Unknown search_mode='{self.search_mode}', fallback to 'sector'."
             )
             self.search_mode = "sector"
-        if self.sector_select_mode not in ("nearest", "percentile", "median"):
+        if self.sector_select_mode not in ("nearest", "percentile", "median", "stable_cluster"):
             self.get_logger().warn(
                 f"Unknown sector_select_mode='{self.sector_select_mode}', fallback to 'percentile'."
             )
@@ -158,6 +187,13 @@ class PixelToScanPolarNode(Node):
         self.last_diag = ""
         self.filtered_range = None
         self.filtered_angle = None
+        self.last_sector_select_info = {
+            "cluster_count": 0,
+            "selected_reason": "none",
+            "selected_cluster_min": 0.0,
+            "selected_cluster_max": 0.0,
+            "selected_cluster_points": 0,
+        }
 
         self.create_subscription(LaserScan, self.scan_topic, self.scan_cb, 10)
         self.create_subscription(PointStamped, self.pixel_topic, self.pixel_cb, 10)
@@ -168,7 +204,8 @@ class PixelToScanPolarNode(Node):
             "Pixel->Scan polar bridge ready. "
             f"scan_topic={self.scan_topic} pixel_topic={self.pixel_topic} out_topic={self.out_topic} "
             f"fx={self.fx:.3f} cx={self.cx:.3f} yaw_cam_to_lidar={self.yaw_cam_to_lidar:.3f} "
-            f"search_mode={self.search_mode} sector_half_angle={math.degrees(self.sector_half_angle_rad):.1f}deg "
+            f"search_mode={self.search_mode} select_mode={self.sector_select_mode} "
+            f"sector_half_angle={math.degrees(self.sector_half_angle_rad):.1f}deg "
             f"sync_policy={self.sync_policy} max_sync_diff={self.max_sync_diff_sec:.3f}s "
             f"scan_buffer={self.scan_buffer_sec:.3f}s"
         )
@@ -315,6 +352,14 @@ class PixelToScanPolarNode(Node):
             angle_err = abs(wrap_to_pi(angle - center_angle_2pi))
             candidates.append((i, r, angle, angle_err))
 
+        self.last_sector_select_info = {
+            "cluster_count": 0,
+            "selected_reason": "none",
+            "selected_cluster_min": 0.0,
+            "selected_cluster_max": 0.0,
+            "selected_cluster_points": 0,
+        }
+
         if len(candidates) < self.sector_min_points:
             return -1, 0.0, 0, 0.0, 0.0, 0
 
@@ -335,13 +380,46 @@ class PixelToScanPolarNode(Node):
 
         if self.sector_select_mode == "nearest":
             selected = min(candidates, key=lambda item: (item[1], item[3]))
+            self.last_sector_select_info = {
+                "cluster_count": 1,
+                "selected_reason": "nearest",
+                "selected_cluster_min": selected[1],
+                "selected_cluster_max": selected[1],
+                "selected_cluster_points": 1,
+            }
         elif self.sector_select_mode == "median":
             candidates_sorted = sorted(candidates, key=lambda item: item[1])
             selected = candidates_sorted[len(candidates_sorted) // 2]
+            self.last_sector_select_info = {
+                "cluster_count": 1,
+                "selected_reason": "median",
+                "selected_cluster_min": selected[1],
+                "selected_cluster_max": selected[1],
+                "selected_cluster_points": len(candidates_sorted),
+            }
+        elif self.sector_select_mode == "stable_cluster":
+            selected, info = select_stable_cluster(
+                candidates,
+                previous_range=self.filtered_range,
+                cluster_tolerance=self.stable_cluster_tolerance,
+                min_cluster_points=self.stable_cluster_min_points,
+                max_jump_up=self.stable_cluster_max_jump_up,
+                max_jump_down=self.stable_cluster_max_jump_down,
+                near_prefer_margin=self.stable_cluster_near_prefer_margin,
+                background_spread=self.stable_cluster_background_spread,
+            )
+            self.last_sector_select_info = info
         else:
             ranges = np.array([item[1] for item in candidates], dtype=float)
             target_range = float(np.percentile(ranges, self.sector_range_percentile))
             selected = min(candidates, key=lambda item: (abs(item[1] - target_range), item[3]))
+            self.last_sector_select_info = {
+                "cluster_count": 1,
+                "selected_reason": f"percentile_{self.sector_range_percentile:.0f}",
+                "selected_cluster_min": min(item[1] for item in candidates),
+                "selected_cluster_max": max(item[1] for item in candidates),
+                "selected_cluster_points": len(candidates),
+            }
 
         return selected[0], selected[1], raw_valid_count, raw_min, raw_max, filtered_close_count
 
@@ -459,6 +537,11 @@ class PixelToScanPolarNode(Node):
             f"range={filtered_range:.3f}m raw_range={raw_range:.3f}m valid_points={valid_count} "
             f"sector_min={sector_min:.3f}m sector_max={sector_max:.3f}m "
             f"filtered_close={filtered_close_count} "
+            f"cluster_count={self.last_sector_select_info.get('cluster_count', 0)} "
+            f"cluster_points={self.last_sector_select_info.get('selected_cluster_points', 0)} "
+            f"cluster_min={self.last_sector_select_info.get('selected_cluster_min', 0.0):.3f}m "
+            f"cluster_max={self.last_sector_select_info.get('selected_cluster_max', 0.0):.3f}m "
+            f"cluster_reason={self.last_sector_select_info.get('selected_reason', 'none')} "
             f"angle_ctrl={theta_control:.3f}rad angle_scan={wrap_to_pi(angle_scan):.3f}rad "
             f"out_angle={out.vector.y:.3f}rad raw_angle={raw_angle_out:.3f}rad "
             f"pixel_age={pixel_age_sec*1000.0:.1f}ms "

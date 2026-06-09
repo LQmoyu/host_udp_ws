@@ -1,5 +1,6 @@
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/sender_node
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/keyboard_teleop.py
+/home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/person_follow_utils.py
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/host_mpc_controller.py
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/pixel_to_scan_polar.py
 /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_string_bridge.py

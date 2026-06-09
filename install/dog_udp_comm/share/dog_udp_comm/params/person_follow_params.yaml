@@ -23,10 +23,16 @@ pixel_to_scan_polar:
     yaw_cam_to_lidar: 0.0
     search_half_window: 4
     search_mode: sector
-    sector_half_angle_deg: 2.0
+    sector_half_angle_deg: 4.0
     sector_min_points: 1
-    sector_select_mode: percentile
+    sector_select_mode: stable_cluster
     sector_range_percentile: 70.0
+    stable_cluster_tolerance: 0.22
+    stable_cluster_min_points: 1
+    stable_cluster_max_jump_up: 0.35
+    stable_cluster_max_jump_down: 0.55
+    stable_cluster_near_prefer_margin: 0.20
+    stable_cluster_background_spread: 0.60
     ignore_close_range_below: 0.95
     ignore_close_if_farther_exists: 1.25
     enable_output_filter: true
@@ -52,7 +58,7 @@ host_mpc_controller:
     person_topic: /person_polar
     tracking_state_topic: /tracking_state
     cmd_topic: /track_cmd_vel
-    control_hz: 50.0
+    control_hz: 60.0 
     dt: 0.0
     horizon: 12
     msg_timeout: 1.0
@@ -105,6 +111,11 @@ host_mpc_controller:
     max_person_angle_rate: 1.0
     distance_increase_filter_alpha: 0.86
     max_distance_jump_up: 0.25
+    enable_far_jump_suppression: true
+    far_jump_threshold: 0.35
+    far_jump_confirm_frames: 3
+    far_jump_hold_sec: 0.35
+    far_jump_max_forward_v: 0.0
     max_forward_v_after_reacquire: 0.16
     latency_speed_scale_start_sec: 0.18
     latency_speed_scale_end_sec: 0.55

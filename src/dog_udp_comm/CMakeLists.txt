@@ -26,6 +26,7 @@ install(TARGETS
 # 安装 Python 脚本 (赋予可执行权限)
 install(PROGRAMS
   scripts/keyboard_teleop.py
+  scripts/person_follow_utils.py
   scripts/host_mpc_controller.py
   scripts/pixel_to_scan_polar.py
   scripts/tracking_string_bridge.py
