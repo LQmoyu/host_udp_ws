@@ -87,9 +87,12 @@ class PixelToScanPolarNode(Node):
         self.declare_parameter("debug_topic", "/person_polar_debug")
         self.declare_parameter("debug_log_period_sec", 1.0)
         self.declare_parameter("sync_policy", "latest")
+        self.declare_parameter("scan_select_policy", "latest")
         self.declare_parameter("max_sync_diff_sec", 0.08)
         self.declare_parameter("warn_sync_diff_sec", 0.05)
+        self.declare_parameter("max_scan_age_sec", 0.10)
         self.declare_parameter("scan_buffer_sec", 1.0)
+        self.declare_parameter("subscription_qos_depth", 1)
         self.declare_parameter("stamp_mismatch_fallback_sec", 10.0)
 
         self.scan_topic = str(self.get_parameter("scan_topic").value)
@@ -155,9 +158,12 @@ class PixelToScanPolarNode(Node):
         self.debug_topic = str(self.get_parameter("debug_topic").value)
         self.debug_log_period_sec = max(0.1, float(self.get_parameter("debug_log_period_sec").value))
         self.sync_policy = str(self.get_parameter("sync_policy").value).strip().lower()
+        self.scan_select_policy = str(self.get_parameter("scan_select_policy").value).strip().lower()
         self.max_sync_diff_sec = max(0.0, float(self.get_parameter("max_sync_diff_sec").value))
         self.warn_sync_diff_sec = max(0.0, float(self.get_parameter("warn_sync_diff_sec").value))
+        self.max_scan_age_sec = max(0.0, float(self.get_parameter("max_scan_age_sec").value))
         self.scan_buffer_sec = max(0.05, float(self.get_parameter("scan_buffer_sec").value))
+        self.subscription_qos_depth = max(1, int(self.get_parameter("subscription_qos_depth").value))
         self.stamp_mismatch_fallback_sec = max(
             0.0, float(self.get_parameter("stamp_mismatch_fallback_sec").value)
         )
@@ -166,6 +172,11 @@ class PixelToScanPolarNode(Node):
                 f"Unknown sync_policy='{self.sync_policy}', fallback to 'latest'."
             )
             self.sync_policy = "latest"
+        if self.scan_select_policy not in ("nearest_stamp", "latest"):
+            self.get_logger().warn(
+                f"Unknown scan_select_policy='{self.scan_select_policy}', fallback to 'latest'."
+            )
+            self.scan_select_policy = "latest"
         if self.search_mode not in ("window", "sector"):
             self.get_logger().warn(
                 f"Unknown search_mode='{self.search_mode}', fallback to 'sector'."
@@ -195,8 +206,8 @@ class PixelToScanPolarNode(Node):
             "selected_cluster_points": 0,
         }
 
-        self.create_subscription(LaserScan, self.scan_topic, self.scan_cb, 10)
-        self.create_subscription(PointStamped, self.pixel_topic, self.pixel_cb, 10)
+        self.create_subscription(LaserScan, self.scan_topic, self.scan_cb, self.subscription_qos_depth)
+        self.create_subscription(PointStamped, self.pixel_topic, self.pixel_cb, self.subscription_qos_depth)
         self.polar_pub = self.create_publisher(Vector3Stamped, self.out_topic, 10)
         self.debug_pub = self.create_publisher(String, self.debug_topic, 10)
 
@@ -206,8 +217,9 @@ class PixelToScanPolarNode(Node):
             f"fx={self.fx:.3f} cx={self.cx:.3f} yaw_cam_to_lidar={self.yaw_cam_to_lidar:.3f} "
             f"search_mode={self.search_mode} select_mode={self.sector_select_mode} "
             f"sector_half_angle={math.degrees(self.sector_half_angle_rad):.1f}deg "
-            f"sync_policy={self.sync_policy} max_sync_diff={self.max_sync_diff_sec:.3f}s "
-            f"scan_buffer={self.scan_buffer_sec:.3f}s"
+            f"sync_policy={self.sync_policy} scan_select_policy={self.scan_select_policy} "
+            f"max_sync_diff={self.max_sync_diff_sec:.3f}s max_scan_age={self.max_scan_age_sec:.3f}s "
+            f"scan_buffer={self.scan_buffer_sec:.3f}s qos_depth={self.subscription_qos_depth}"
         )
 
     def scan_cb(self, msg: LaserScan):
@@ -280,17 +292,21 @@ class PixelToScanPolarNode(Node):
             return receive_ns
         return stamp_ns
 
-    def _select_scan(self, pixel_stamp_ns: int):
+    def _select_scan(self, pixel_stamp_ns: int, now_ns: int):
         with self.scan_lock:
             if not self.scan_buffer:
-                return None, 0.0
-            stamp_ns, _, scan = min(
-                self.scan_buffer,
-                key=lambda item: abs(item[0] - pixel_stamp_ns),
-            )
+                return None, 0.0, 0.0, "none"
+            if self.scan_select_policy == "nearest_stamp":
+                stamp_ns, receive_ns, scan = min(
+                    self.scan_buffer,
+                    key=lambda item: abs(item[0] - pixel_stamp_ns),
+                )
+            else:
+                stamp_ns, receive_ns, scan = self.scan_buffer[-1]
 
         sync_error_sec = abs(stamp_ns - pixel_stamp_ns) * 1e-9
-        return scan, sync_error_sec
+        scan_age_sec = max(0.0, (now_ns - receive_ns) * 1e-9)
+        return scan, sync_error_sec, scan_age_sec, self.scan_select_policy
 
     def _is_valid_range(self, r: float) -> bool:
         if not np.isfinite(r):
@@ -428,7 +444,10 @@ class PixelToScanPolarNode(Node):
         self.pixel_count += 1
         pixel_stamp_ns = self._message_stamp_ns(msg.header.stamp, now_ns)
         pixel_age_sec = max(0.0, (now_ns - pixel_stamp_ns) * 1e-9)
-        scan, sync_error_sec = self._select_scan(pixel_stamp_ns)
+        scan, sync_error_sec, scan_age_sec, scan_select_policy = self._select_scan(
+            pixel_stamp_ns,
+            now_ns,
+        )
 
         if scan is None:
             self.drop_count += 1
@@ -442,7 +461,22 @@ class PixelToScanPolarNode(Node):
             self.drop_count += 1
             self.publish_diag(
                 f"hit=0 reason=empty_scan pixel_age={pixel_age_sec*1000.0:.1f}ms "
-                f"sync_diff={sync_error_sec*1000.0:.1f}ms"
+                f"scan_age={scan_age_sec*1000.0:.1f}ms "
+                f"sync_diff={sync_error_sec*1000.0:.1f}ms scan_policy={scan_select_policy}"
+            )
+            return
+        if self.max_scan_age_sec > 0.0 and scan_age_sec > self.max_scan_age_sec:
+            self.drop_count += 1
+            self.publish_diag(
+                f"hit=0 reason=stale_scan scan_policy={scan_select_policy} "
+                f"pixel_age={pixel_age_sec*1000.0:.1f}ms "
+                f"scan_age={scan_age_sec*1000.0:.1f}ms "
+                f"sync_diff={sync_error_sec*1000.0:.1f}ms "
+                f"pixels={self.pixel_count} hits={self.hit_count} drops={self.drop_count}"
+            )
+            self.warn_throttle(
+                f"Latest /scan age {scan_age_sec:.3f}s exceeds "
+                f"max_scan_age_sec={self.max_scan_age_sec:.3f}s. Drop pixel frame."
             )
             return
         if sync_error_sec > self.max_sync_diff_sec:
@@ -454,11 +488,16 @@ class PixelToScanPolarNode(Node):
                 self.drop_count += 1
                 self.publish_diag(
                     f"hit=0 reason=sync_drop pixel_age={pixel_age_sec*1000.0:.1f}ms "
-                    f"sync_diff={sync_error_sec*1000.0:.1f}ms"
+                    f"scan_age={scan_age_sec*1000.0:.1f}ms "
+                    f"sync_diff={sync_error_sec*1000.0:.1f}ms "
+                    f"scan_policy={scan_select_policy}"
                 )
                 self.warn_throttle(text + " Drop pixel frame because sync_policy=strict.")
                 return
-            self.warn_throttle(text + " Keep nearest scan because sync_policy=latest.")
+            self.warn_throttle(
+                text
+                + f" Keep scan because sync_policy=latest, scan_select_policy={scan_select_policy}."
+            )
         elif sync_error_sec > self.warn_sync_diff_sec:
             self.warn_throttle(
                 f"Camera/Lidar sync diff {sync_error_sec:.3f}s exceeds "
@@ -508,7 +547,9 @@ class PixelToScanPolarNode(Node):
             self.publish_diag(
                 f"hit=0 reason=no_valid_range mode={self.search_mode} u={u:.1f} "
                 f"idx={idx} valid_points={valid_count} pixel_age={pixel_age_sec*1000.0:.1f}ms "
-                f"sync_diff={sync_error_sec*1000.0:.1f}ms hit_rate={hit_rate:.1f}% "
+                f"scan_age={scan_age_sec*1000.0:.1f}ms "
+                f"sync_diff={sync_error_sec*1000.0:.1f}ms scan_policy={scan_select_policy} "
+                f"hit_rate={hit_rate:.1f}% "
                 f"pixels={self.pixel_count} hits={self.hit_count} drops={self.drop_count}"
             )
             return
@@ -545,7 +586,9 @@ class PixelToScanPolarNode(Node):
             f"angle_ctrl={theta_control:.3f}rad angle_scan={wrap_to_pi(angle_scan):.3f}rad "
             f"out_angle={out.vector.y:.3f}rad raw_angle={raw_angle_out:.3f}rad "
             f"pixel_age={pixel_age_sec*1000.0:.1f}ms "
-            f"sync_diff={sync_error_sec*1000.0:.1f}ms hit_rate={hit_rate:.1f}% "
+            f"scan_age={scan_age_sec*1000.0:.1f}ms "
+            f"sync_diff={sync_error_sec*1000.0:.1f}ms scan_policy={scan_select_policy} "
+            f"hit_rate={hit_rate:.1f}% "
             f"pixels={self.pixel_count} hits={self.hit_count} drops={self.drop_count}"
         )
 

@@ -23,7 +23,7 @@ pixel_to_scan_polar:
     yaw_cam_to_lidar: 0.0
     search_half_window: 4
     search_mode: sector
-    sector_half_angle_deg: 4.0
+    sector_half_angle_deg: 6.0
     sector_min_points: 1
     sector_select_mode: stable_cluster
     sector_range_percentile: 70.0
@@ -48,9 +48,12 @@ pixel_to_scan_polar:
     debug_topic: /person_polar_debug
     debug_log_period_sec: 1.0
     sync_policy: latest
+    scan_select_policy: latest
     max_sync_diff_sec: 0.12
     warn_sync_diff_sec: 0.08
-    scan_buffer_sec: 1.0
+    max_scan_age_sec: 0.10
+    scan_buffer_sec: 0.30
+    subscription_qos_depth: 1
     stamp_mismatch_fallback_sec: 10.0
 
 host_mpc_controller:
@@ -60,7 +63,7 @@ host_mpc_controller:
     cmd_topic: /track_cmd_vel
     control_hz: 60.0 
     dt: 0.0
-    horizon: 12
+    horizon: 24
     msg_timeout: 1.0
     tracking_state_timeout_sec: 1.0
     require_first_tracking_frame: true
@@ -78,23 +81,24 @@ host_mpc_controller:
     max_reverse_v: 0.18
     force_zero_linear_velocity: false
     reverse_angular_output: true
-    q_dist: 10.0
+    q_dist: 8.0
     q_angle: 17.0
-    r_v: 1.05
+    r_v: 0.8
     r_w: 0.42
     qf_scale: 4.0
     kff_dist: 0.32
     kff_angle: 1.35
     use_tracking_x_for_angle: true
     tracking_x_target: 0.5
-    tracking_x_deadband: 0.024
+    tracking_x_deadband: 0.018
     tracking_x_timeout_sec: 1.0
     enable_angle_prediction: true
     max_prediction_sec: 0.24
-    angle_rate_filter_alpha: 0.90
-    max_angle_rate: 1.2
+    angle_rate_filter_alpha: 0.82
+    max_angle_rate: 1.8
     enable_tracking_only_fallback: true
     tracking_only_linear_speed: 0.10
+    tracking_only_safe_linear_speed: 0.06
     tracking_only_kp_w: 1.65
     tracking_only_kd_w: 0.95
     image_width: 640.0
@@ -112,10 +116,10 @@ host_mpc_controller:
     distance_increase_filter_alpha: 0.86
     max_distance_jump_up: 0.25
     enable_far_jump_suppression: true
-    far_jump_threshold: 0.35
-    far_jump_confirm_frames: 3
-    far_jump_hold_sec: 0.35
-    far_jump_max_forward_v: 0.0
+    far_jump_threshold: 0.50
+    far_jump_confirm_frames: 2
+    far_jump_hold_sec: 0.12
+    far_jump_max_forward_v: 0.07
     max_forward_v_after_reacquire: 0.16
     latency_speed_scale_start_sec: 0.18
     latency_speed_scale_end_sec: 0.55
@@ -136,10 +140,10 @@ host_mpc_controller:
     speed_profile_max_v: 0.55
     angle_priority_threshold: 0.15
     min_heading_speed_scale: 0.03
-    max_accel: 0.36
-    max_decel: 1.25
-    max_w_accel: 2.8
-    linear_cmd_filter_alpha: 0.38
+    max_accel: 0.40
+    max_decel: 1.05
+    max_w_accel: 5.0
+    linear_cmd_filter_alpha: 0.45
     linear_sign_change_hold_sec: 0.16
     reverse_angle_gate: 0.20
     safety_hold_distance: 1.35
@@ -175,6 +179,11 @@ person_follow_latency_monitor:
     report_period_sec: 1.0
     window_size: 120
     relative_timestamp_threshold_ms: 1000000000.0
+    enable_file_log: true
+    log_dir: ""
+    log_prefix: person_follow_debug
+    log_cmd_frames: true
+    cmd_log_period_sec: 0.10
 
 udp_cmd_vel_server:
   ros__parameters:

@@ -10,6 +10,8 @@ import math
 import re
 import statistics
 from collections import deque
+from datetime import datetime
+from pathlib import Path
 from typing import Optional
 
 import rclpy
@@ -134,6 +136,9 @@ class LatencyMonitorNode(Node):
         self.declare_parameter("report_period_sec", 1.0)
         self.declare_parameter("window_size", 120)
         self.declare_parameter("relative_timestamp_threshold_ms", 1.0e9)
+        self.declare_parameter("enable_file_log", True)
+        self.declare_parameter("log_dir", "")
+        self.declare_parameter("log_prefix", "person_follow_debug")
 
         self.tracking_topic = str(self.get_parameter("tracking_topic").value)
         self.tracking_state_topic = str(self.get_parameter("tracking_state_topic").value)
@@ -146,6 +151,9 @@ class LatencyMonitorNode(Node):
         self.relative_timestamp_threshold_ms = float(
             self.get_parameter("relative_timestamp_threshold_ms").value
         )
+        self.enable_file_log = bool(self.get_parameter("enable_file_log").value)
+        self.log_dir = str(self.get_parameter("log_dir").value).strip()
+        self.log_prefix = str(self.get_parameter("log_prefix").value).strip() or "person_follow_debug"
 
         self.tracking = TopicStats(self.window_size)
         self.state = TopicStats(self.window_size)
@@ -168,6 +176,12 @@ class LatencyMonitorNode(Node):
         self.lidar_filtered_close = deque(maxlen=self.window_size)
         self.lidar_debug_pixel_ages_ms = deque(maxlen=self.window_size)
         self.lidar_debug_sync_diffs_ms = deque(maxlen=self.window_size)
+        self.lidar_debug_scan_ages_ms = deque(maxlen=self.window_size)
+        self.log_file = None
+        self.log_path = ""
+
+        if self.enable_file_log:
+            self._open_log_file()
 
         self.create_subscription(String, self.tracking_topic, self.tracking_cb, 10)
         self.create_subscription(Vector3Stamped, self.tracking_state_topic, self.state_cb, 10)
@@ -183,6 +197,32 @@ class LatencyMonitorNode(Node):
             f"pixel={self.pixel_topic}, person={self.person_topic}, "
             f"person_debug={self.person_debug_topic}, cmd={self.cmd_topic}"
         )
+        if self.log_path:
+            self.get_logger().info(f"Latency monitor file log: {self.log_path}")
+
+    def _open_log_file(self):
+        if self.log_dir:
+            log_dir = Path(self.log_dir).expanduser()
+        else:
+            log_dir = Path.home() / ".ros" / "person_follow_logs"
+        log_dir.mkdir(parents=True, exist_ok=True)
+        safe_prefix = re.sub(r"[^A-Za-z0-9_.-]+", "_", self.log_prefix)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        path = log_dir / f"{safe_prefix}_{timestamp}.log"
+        self.log_file = path.open("a", encoding="utf-8")
+        self.log_path = str(path)
+        self.log_file.write("# person_follow_latency_monitor\n")
+        self.log_file.write(f"# created_at={datetime.now().isoformat(timespec='seconds')}\n")
+        self.log_file.write(f"# tracking_topic={self.tracking_topic}\n")
+        self.log_file.write(f"# tracking_state_topic={self.tracking_state_topic}\n")
+        self.log_file.write(f"# pixel_topic={self.pixel_topic}\n")
+        self.log_file.write(f"# person_topic={self.person_topic}\n")
+        self.log_file.write(f"# person_debug_topic={self.person_debug_topic}\n")
+        self.log_file.write(f"# cmd_topic={self.cmd_topic}\n")
+        self.log_file.write(f"# report_period_sec={self.report_period_sec:.3f}\n")
+        self.log_file.write(f"# window_size={self.window_size}\n")
+        self.log_file.write("# fields: hz/header_age/camera_lidar_sync/cmd_age/lidar_stats/lidar_debug_age/lidar_match\n")
+        self.log_file.flush()
 
     def now_ns(self) -> int:
         return self.get_clock().now().nanoseconds
@@ -235,6 +275,7 @@ class LatencyMonitorNode(Node):
         valid_points = parse_debug_int(msg.data, "valid_points")
         filtered_close = parse_debug_int(msg.data, "filtered_close")
         pixel_age_ms = parse_debug_float(msg.data, "pixel_age")
+        scan_age_ms = parse_debug_float(msg.data, "scan_age")
         sync_diff_ms = parse_debug_float(msg.data, "sync_diff")
 
         if range_m is not None:
@@ -249,6 +290,8 @@ class LatencyMonitorNode(Node):
             self.lidar_filtered_close.append(filtered_close)
         if pixel_age_ms is not None:
             self.lidar_debug_pixel_ages_ms.append(pixel_age_ms)
+        if scan_age_ms is not None:
+            self.lidar_debug_scan_ages_ms.append(scan_age_ms)
         if sync_diff_ms is not None:
             self.lidar_debug_sync_diffs_ms.append(sync_diff_ms)
 
@@ -306,13 +349,20 @@ class LatencyMonitorNode(Node):
             f"valid_points_p50={valid_points_text}, "
             f"filtered_close_sum={filtered_close_sum}",
             f"  lidar_debug_age: pixel_age_p50={fmt_ms(self.median(self.lidar_debug_pixel_ages_ms))}, "
+            f"scan_age_p50={fmt_ms(self.median(self.lidar_debug_scan_ages_ms))}, "
             f"sync_diff_p50={fmt_ms(self.median(self.lidar_debug_sync_diffs_ms))}",
             f"  lidar_match: {self.latest_person_debug}",
         ]
         source_age = self.median(self.tracking_source_ages_ms)
         if source_age is not None:
             lines.append(f"  tracking_source_age_p50: {fmt_ms(source_age)}")
-        self.get_logger().info("\n".join(lines))
+        summary = "\n".join(lines)
+        self.get_logger().info(summary)
+        if self.log_file is not None:
+            self.log_file.write(f"\n[{datetime.now().isoformat(timespec='milliseconds')}]\n")
+            self.log_file.write(summary)
+            self.log_file.write("\n")
+            self.log_file.flush()
 
 
 def main():
@@ -323,6 +373,8 @@ def main():
     except KeyboardInterrupt:
         pass
     finally:
+        if getattr(node, "log_file", None) is not None:
+            node.log_file.close()
         node.destroy_node()
         rclpy.shutdown()
 

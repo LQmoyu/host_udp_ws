@@ -59,6 +59,15 @@ class FarJumpSuppressor:
         return FarJumpDecision(False, raw_distance, self.required_frames, "far_jump_confirmed")
 
 
+def tracking_only_linear_limit(normal_speed, safe_speed, max_v, safe_linear=False):
+    """Return the forward speed limit for vision-only tracking."""
+    normal = max(0.0, float(normal_speed))
+    safe = max(0.0, float(safe_speed))
+    max_forward = max(0.0, float(max_v))
+    limit = min(normal, safe) if safe_linear else normal
+    return min(limit, max_forward)
+
+
 def _make_cluster(items):
     ranges = [item[1] for item in items]
     center = sum(ranges) / max(1, len(ranges))

@@ -24,6 +24,11 @@ import rclpy
 from geometry_msgs.msg import Twist, Vector3Stamped
 from rclpy.node import Node
 
+try:
+    from person_follow_utils import FarJumpSuppressor, tracking_only_linear_limit
+except ImportError:
+    from .person_follow_utils import FarJumpSuppressor, tracking_only_linear_limit
+
 
 def wrap_to_pi(angle):
     while angle > math.pi:
@@ -82,6 +87,7 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("max_angle_rate", 3.5)
         self.declare_parameter("enable_tracking_only_fallback", True)
         self.declare_parameter("tracking_only_linear_speed", 0.08)
+        self.declare_parameter("tracking_only_safe_linear_speed", 0.06)
         self.declare_parameter("tracking_only_kp_w", 3.0)
         self.declare_parameter("tracking_only_kd_w", 0.4)
         self.declare_parameter("image_width", 640.0)
@@ -98,6 +104,11 @@ class HostMPCControllerNode(Node):
         self.declare_parameter("max_person_angle_rate", 2.5)
         self.declare_parameter("distance_increase_filter_alpha", -1.0)
         self.declare_parameter("max_distance_jump_up", 0.0)
+        self.declare_parameter("enable_far_jump_suppression", True)
+        self.declare_parameter("far_jump_threshold", 0.50)
+        self.declare_parameter("far_jump_confirm_frames", 2)
+        self.declare_parameter("far_jump_hold_sec", 0.18)
+        self.declare_parameter("far_jump_max_forward_v", 0.05)
         self.declare_parameter("max_forward_v_after_reacquire", 0.0)
         self.declare_parameter("latency_speed_scale_start_sec", 0.06)
         self.declare_parameter("latency_speed_scale_end_sec", 0.20)
@@ -204,6 +215,9 @@ class HostMPCControllerNode(Node):
         self.tracking_only_linear_speed = max(
             0.0, float(self.get_parameter("tracking_only_linear_speed").value)
         )
+        self.tracking_only_safe_linear_speed = max(
+            0.0, float(self.get_parameter("tracking_only_safe_linear_speed").value)
+        )
         self.tracking_only_kp_w = float(self.get_parameter("tracking_only_kp_w").value)
         self.tracking_only_kd_w = float(self.get_parameter("tracking_only_kd_w").value)
         self.image_width = max(2.0, float(self.get_parameter("image_width").value))
@@ -233,6 +247,17 @@ class HostMPCControllerNode(Node):
             np.clip(self.distance_increase_filter_alpha, 0.0, 0.98)
         )
         self.max_distance_jump_up = max(0.0, float(self.get_parameter("max_distance_jump_up").value))
+        self.enable_far_jump_suppression = bool(
+            self.get_parameter("enable_far_jump_suppression").value
+        )
+        self.far_jump_threshold = max(0.0, float(self.get_parameter("far_jump_threshold").value))
+        self.far_jump_confirm_frames = max(
+            1, int(self.get_parameter("far_jump_confirm_frames").value)
+        )
+        self.far_jump_hold_sec = max(0.0, float(self.get_parameter("far_jump_hold_sec").value))
+        self.far_jump_max_forward_v = max(
+            0.0, float(self.get_parameter("far_jump_max_forward_v").value)
+        )
         self.max_forward_v_after_reacquire = max(
             0.0,
             float(self.get_parameter("max_forward_v_after_reacquire").value),
@@ -377,6 +402,16 @@ class HostMPCControllerNode(Node):
         self.last_cmd_w = 0.0
         self.last_v_sign_change_ns = 0
         self.settle_hold_active = False
+        self.far_jump_hold_until_ns = 0
+        self.far_jump_pending_frames = 0
+        self.far_jump_last_reason = "none"
+        self.far_jump_suppressor = FarJumpSuppressor(
+            enabled=self.enable_far_jump_suppression,
+            jump_threshold=self.far_jump_threshold,
+            required_frames=self.far_jump_confirm_frames,
+            hold_sec=self.far_jump_hold_sec,
+            max_forward_v=self.far_jump_max_forward_v,
+        )
 
         self.cmd_pub = self.create_publisher(Twist, self.cmd_topic, 1)
         self.create_subscription(Vector3Stamped, self.person_topic, self.person_cb, 1)
@@ -391,6 +426,7 @@ class HostMPCControllerNode(Node):
             f"d_ref={self.desired_distance:.2f} a_ref={self.desired_angle:.2f} "
             f"tracking_timeout={self.tracking_state_timeout_sec:.3f}s "
             f"max_accel={self.max_accel:.2f} max_decel={self.max_decel:.2f} "
+            f"far_jump_suppression={self.enable_far_jump_suppression} "
             f"reacquire_ramp={self.enable_reacquire_ramp}"
         )
 
@@ -429,6 +465,10 @@ class HostMPCControllerNode(Node):
         self.person_angle_rate = 0.0
         self.last_person_stamp_ns = 0
         self.have_first_person_frame = False
+        self.far_jump_hold_until_ns = 0
+        self.far_jump_pending_frames = 0
+        self.far_jump_last_reason = "cleared"
+        self.far_jump_suppressor.reset()
 
     def clip_v(self, v):
         vmax = self.max_v
@@ -463,7 +503,30 @@ class HostMPCControllerNode(Node):
             if self.person_distance is None:
                 d = d_raw
                 a = a_raw
+                self.far_jump_suppressor.reset()
+                self.far_jump_hold_until_ns = 0
+                self.far_jump_pending_frames = 0
+                self.far_jump_last_reason = "first"
             else:
+                decision = self.far_jump_suppressor.update(
+                    prev_distance=self.person_distance,
+                    raw_distance=d_raw,
+                    now_ns=now_ns,
+                )
+                d_raw = decision.distance_for_filter
+                self.far_jump_pending_frames = decision.pending_frames
+                self.far_jump_last_reason = decision.reason
+                if decision.hold:
+                    self.far_jump_hold_until_ns = max(
+                        self.far_jump_hold_until_ns,
+                        now_ns + int(self.far_jump_hold_sec * 1e9),
+                    )
+                    self.warn_throttle(
+                        1.0,
+                        f"Lidar far jump pending: prev={self.person_distance:.3f}m "
+                        f"raw={float(msg.vector.x):.3f}m frames={decision.pending_frames}/"
+                        f"{self.far_jump_confirm_frames}",
+                    )
                 if d_raw > self.person_distance:
                     ad = np.clip(self.distance_increase_filter_alpha, 0.0, 1.0)
                     if self.max_distance_jump_up > 0.0:
@@ -652,7 +715,7 @@ class HostMPCControllerNode(Node):
         self.last_cmd_w = w_out
         return w_out
 
-    def publish_tracking_only_cmd(self, angle, angle_rate, allow_linear=True):
+    def publish_tracking_only_cmd(self, angle, angle_rate, allow_linear=True, safe_linear=False):
         now_ns = self.get_clock().now().nanoseconds
         forward_scale, turn_scale = self.reacquire_motion_scale(now_ns)
         w_cmd = (
@@ -662,7 +725,13 @@ class HostMPCControllerNode(Node):
         w_cmd = self.map_output_w(w_cmd)
         w_cmd *= turn_scale
         w_cmd = self.accel_limit_w(w_cmd)
-        v_cmd = min(self.tracking_only_linear_speed, self.max_v) if allow_linear else 0.0
+        linear_limit = tracking_only_linear_limit(
+            self.tracking_only_linear_speed,
+            self.tracking_only_safe_linear_speed,
+            self.max_v,
+            safe_linear=safe_linear,
+        )
+        v_cmd = linear_limit if allow_linear else 0.0
         v_cmd = v_cmd * self.heading_speed_scale(angle - self.desired_angle)
         if v_cmd > 0.0:
             v_cmd *= forward_scale
@@ -946,6 +1015,8 @@ class HostMPCControllerNode(Node):
             detected_flag = self.last_detected_flag
             detected_stamp_ns = self.last_detected_stamp_ns
             lost_since_ns = self.continuous_lost_since_ns
+            far_jump_hold_until_ns = self.far_jump_hold_until_ns
+            far_jump_reason = self.far_jump_last_reason
 
         d, a_scan, person_age, person_pred_dt = self.predict_person_state(
             now_ns, d, a_scan, d_rate, a_scan_rate, stamp_ns
@@ -979,7 +1050,12 @@ class HostMPCControllerNode(Node):
                     self.publish_zero()
                 return
             if self.enable_tracking_only_fallback and tracking_available:
-                self.publish_tracking_only_cmd(predicted_angle, predicted_angle_rate, allow_linear=True)
+                self.publish_tracking_only_cmd(
+                    predicted_angle,
+                    predicted_angle_rate,
+                    allow_linear=True,
+                    safe_linear=True,
+                )
                 return
             self.warn_throttle(1.0, "Waiting for first person frame before starting control.")
             if self.stop_on_lost_target:
@@ -1030,7 +1106,12 @@ class HostMPCControllerNode(Node):
 
         if d is None or a_scan is None:
             if self.enable_tracking_only_fallback and tracking_available:
-                self.publish_tracking_only_cmd(predicted_angle, predicted_angle_rate, allow_linear=True)
+                self.publish_tracking_only_cmd(
+                    predicted_angle,
+                    predicted_angle_rate,
+                    allow_linear=True,
+                    safe_linear=True,
+                )
                 return
             if self.stop_on_lost_target:
                 self.publish_zero()
@@ -1048,6 +1129,7 @@ class HostMPCControllerNode(Node):
                     predicted_angle,
                     predicted_angle_rate,
                     allow_linear=allow_linear,
+                    safe_linear=True,
                 )
                 return
             self.warn_throttle(
@@ -1075,6 +1157,12 @@ class HostMPCControllerNode(Node):
             v_lim_distance = self.distance_speed_limit(d)
             v_lim_heading = v_lim_distance * self.heading_speed_scale(a - self.desired_angle)
             v_cmd = min(v_cmd, v_lim_heading * self.latency_speed_scale(age))
+            if now_ns < far_jump_hold_until_ns:
+                v_cmd = min(v_cmd, self.far_jump_max_forward_v)
+                self.warn_throttle(
+                    1.0,
+                    f"Suppress forward cmd during lidar far-jump hold: reason={far_jump_reason}",
+                )
             if self.max_forward_v_after_reacquire > 0.0 and self.last_reacquire_ns > 0:
                 reacquire_age = max(0.0, (now_ns - self.last_reacquire_ns) * 1e-9)
                 capped_duration = self.reacquire_hold_sec + 0.5 * self.reacquire_ramp_duration_sec

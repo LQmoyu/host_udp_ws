@@ -1,0 +1,25 @@
+[100%] Built target cspc_lidar
+-- Install configuration: ""
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/lib/cspc_lidar/cspc_lidar
+-- Set runtime path of "/home/admin/workspace/host_udp_ws/install/cspc_lidar/lib/cspc_lidar/cspc_lidar" to ""
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/lib/cspc_lidar/front_distance_tester.py
+-- Up-to-date: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/launch
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_launch.py
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/launch/lidar_rviz.py
+-- Up-to-date: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/params
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/params/cspc_lidar.yaml
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/package_run_dependencies/cspc_lidar
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/parent_prefix_path/cspc_lidar
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.sh
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/ament_prefix_path.dsv
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.sh
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/environment/path.dsv
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.bash
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.sh
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.zsh
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/local_setup.dsv
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/package.dsv
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/ament_index/resource_index/packages/cspc_lidar
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig.cmake
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/cmake/cspc_lidarConfig-version.cmake
+-- Installing: /home/admin/workspace/host_udp_ws/install/cspc_lidar/share/cspc_lidar/package.xml

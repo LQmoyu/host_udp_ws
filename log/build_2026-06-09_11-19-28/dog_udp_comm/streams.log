@@ -1,0 +1,38 @@
+[0.017s] Invoking command in '/home/admin/workspace/host_udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=/home/admin/workspace/host_udp_ws/install/cspc_lidar:/home/admin/workspace/host_udp_ws/install/dog_udp_comm:/opt/ros/humble /usr/bin/cmake --build /home/admin/workspace/host_udp_ws/build/dog_udp_comm -- -j8 -l8
+[0.172s] [100%] Built target sender_node
+[0.213s] Invoked command in '/home/admin/workspace/host_udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=/home/admin/workspace/host_udp_ws/install/cspc_lidar:/home/admin/workspace/host_udp_ws/install/dog_udp_comm:/opt/ros/humble /usr/bin/cmake --build /home/admin/workspace/host_udp_ws/build/dog_udp_comm -- -j8 -l8
+[0.218s] Invoking command in '/home/admin/workspace/host_udp_ws/build/dog_udp_comm': CMAKE_PREFIX_PATH=/home/admin/workspace/host_udp_ws/install/cspc_lidar:/home/admin/workspace/host_udp_ws/install/dog_udp_comm:/opt/ros/humble /usr/bin/cmake --install /home/admin/workspace/host_udp_ws/build/dog_udp_comm
+[0.248s] -- Install configuration: ""
+[0.249s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/sender_node
+[0.251s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/keyboard_teleop.py
+[0.252s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/person_follow_utils.py
+[0.253s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/host_mpc_controller.py
+[0.253s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/pixel_to_scan_polar.py
+[0.254s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_string_bridge.py
+[0.254s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/tracking_center_tester.py
+[0.254s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/analyze_tracking_cmd_bag.py
+[0.256s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/lib/dog_udp_comm/latency_monitor.py
+[0.259s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch
+[0.260s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/__pycache__
+[0.262s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/__pycache__/sender_launch.cpython-313.pyc
+[0.263s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/__pycache__/person_follow_udp_launch.cpython-313.pyc
+[0.264s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/person_follow_udp_launch.py
+[0.266s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/launch/sender_launch.py
+[0.266s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/params
+[0.267s] -- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/params/person_follow_params.yaml
+[0.268s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/package_run_dependencies/dog_udp_comm
+[0.271s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/parent_prefix_path/dog_udp_comm
+[0.272s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.sh
+[0.275s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/ament_prefix_path.dsv
+[0.276s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.sh
+[0.278s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/environment/path.dsv
+[0.281s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.bash
+[0.282s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.sh
+[0.283s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.zsh
+[0.286s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/local_setup.dsv
+[0.288s] -- Installing: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.dsv
+[0.289s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/ament_index/resource_index/packages/dog_udp_comm
+[0.291s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig.cmake
+[0.293s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/cmake/dog_udp_commConfig-version.cmake
+[0.295s] -- Up-to-date: /home/admin/workspace/host_udp_ws/install/dog_udp_comm/share/dog_udp_comm/package.xml
+[0.297s] Invoked command in '/home/admin/workspace/host_udp_ws/build/dog_udp_comm' returned '0': CMAKE_PREFIX_PATH=/home/admin/workspace/host_udp_ws/install/cspc_lidar:/home/admin/workspace/host_udp_ws/install/dog_udp_comm:/opt/ros/humble /usr/bin/cmake --install /home/admin/workspace/host_udp_ws/build/dog_udp_comm
